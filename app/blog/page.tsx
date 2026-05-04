@@ -1,108 +1,155 @@
 import React from 'react'
 import Link from 'next/link'
-import { BookOpen, ArrowRight } from 'lucide-react'
+import { getAllPosts } from '@/lib/blog'
 
 export const metadata = {
-  title: 'Blog - WebToolkit Pro',
-  description: 'Tips, tutorials, and guides for web developers. Learn about web development tools, best practices, and productivity hacks.',
+  title: 'Developer Blog - Web Development Tips & Tutorials | WebToolkit Pro',
+  description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
+  keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
+  alternates: {
+    canonical: 'https://webtoolkit-pro.netlify.app/blog/',
+  },
+  openGraph: {
+    title: 'Developer Blog - WebToolkit Pro',
+    description: 'Expert web development tips, tutorials, and guides for modern developers.',
+    url: 'https://webtoolkit-pro.netlify.app/blog/',
+    siteName: 'WebToolkit Pro',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Developer Blog - WebToolkit Pro',
+    description: 'Expert web development tips, tutorials, and guides for modern developers.',
+  },
+  other: {
+    'geo.region': 'US',
+    'geo.placename': 'United States',
+    'content-language': 'en-US',
+  },
 }
 
-const posts = [
-  {
-    slug: 'top-10-free-developer-tools-2026',
-    title: 'Top 10 Free Developer Tools You Need in 2026',
-    excerpt: 'Discover the most essential free online tools every web developer should bookmark this year.',
-    date: 'May 4, 2026',
-    category: 'Tools',
-    readTime: '5 min read',
-  },
-  {
-    slug: 'json-formatting-best-practices',
-    title: 'JSON Formatting Best Practices for Clean APIs',
-    excerpt: 'Learn how to structure, validate, and format JSON data for professional API development.',
-    date: 'May 3, 2026',
-    category: 'Tutorials',
-    readTime: '7 min read',
-  },
-  {
-    slug: 'password-security-guide',
-    title: 'The Ultimate Guide to Password Security in 2026',
-    excerpt: 'Everything you need to know about creating and managing strong passwords for maximum security.',
-    date: 'May 2, 2026',
-    category: 'Security',
-    readTime: '8 min read',
-  },
-  {
-    slug: 'seo-meta-tags-complete-guide',
-    title: 'SEO Meta Tags: A Complete Guide for Developers',
-    excerpt: 'Master the art of meta tags to boost your website ranking and drive organic traffic.',
-    date: 'May 1, 2026',
-    category: 'SEO',
-    readTime: '10 min read',
-  },
-  {
-    slug: 'css-units-explained',
-    title: 'CSS Units Explained: px, rem, em, vh, vw — When to Use Each',
-    excerpt: 'A deep dive into CSS units and when to use each one for responsive, accessible designs.',
-    date: 'April 30, 2026',
-    category: 'CSS',
-    readTime: '6 min read',
-  },
-  {
-    slug: 'base64-encoding-use-cases',
-    title: 'Base64 Encoding: What It Is and When to Use It',
-    excerpt: 'Understand Base64 encoding, its real-world use cases, and common pitfalls to avoid.',
-    date: 'April 28, 2026',
-    category: 'Tutorials',
-    readTime: '5 min read',
-  },
-]
-
 const categoryColors: { [k: string]: string } = {
-  'Tools': 'bg-blue-100 text-blue-700',
-  'Tutorials': 'bg-purple-100 text-purple-700',
-  'Security': 'bg-red-100 text-red-700',
-  'SEO': 'bg-green-100 text-green-700',
-  'CSS': 'bg-orange-100 text-orange-700',
+  'Tools': 'bg-blue-100 text-blue-700 border-blue-200',
+  'Tutorials': 'bg-purple-100 text-purple-700 border-purple-200',
+  'Security': 'bg-red-100 text-red-700 border-red-200',
+  'SEO': 'bg-green-100 text-green-700 border-green-200',
+  'CSS': 'bg-orange-100 text-orange-700 border-orange-200',
 }
 
 export default function BlogPage() {
+  const posts = getAllPosts()
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
+        {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-4">Developer Blog</h1>
-          <p className="text-xl text-gray-500 max-w-xl mx-auto">Tips, tutorials, and guides to level up your web development workflow</p>
+          <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4 border border-blue-100">
+            📝 Developer Blog
+          </span>
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
+            Tips, Tutorials &amp; Guides
+          </h1>
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Expert web development insights to level up your skills. From security best practices to CSS mastery.
+          </p>
         </div>
 
-        {/* Ad */}
-        <div className="max-w-3xl mx-auto mb-12 h-[90px]">{/* AdSense slot */}</div>
+        {/* Ad Slot - Top */}
+        <div className="max-w-3xl mx-auto mb-12 min-h-[90px] flex items-center justify-center">
+          {/* AdSense Leaderboard */}
+        </div>
 
+        {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {posts.map((post) => (
-            <article key={post.slug} className="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-              <div className="flex items-center gap-3 mb-4">
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${categoryColors[post.category] || 'bg-gray-100 text-gray-700'}`}>
-                  {post.category}
-                </span>
-                <span className="text-xs text-gray-400">{post.readTime}</span>
-              </div>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                {post.title}
-              </h2>
-              <p className="text-gray-500 mb-4 leading-relaxed">{post.excerpt}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-xs text-gray-400">{post.date}</span>
-                <span className="text-sm font-semibold text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Read More →
-                </span>
-              </div>
-            </article>
+          {posts.map((post, index) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}/`}
+              id={`blog-card-${post.slug}`}
+              className="group block"
+            >
+              <article className="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                {/* Category & Read Time */}
+                <div className="flex items-center gap-3 mb-4">
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full border ${categoryColors[post.category] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-gray-400">{post.readTime}</span>
+                </div>
+
+                {/* Title */}
+                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
+                  {post.title}
+                </h2>
+
+                {/* Description */}
+                <p className="text-gray-500 mb-5 leading-relaxed flex-grow text-sm">
+                  {post.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {post.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="text-xs text-gray-400 bg-gray-50 px-2 py-0.5 rounded">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Footer */}
+                <div className="flex justify-between items-center pt-4 border-t border-gray-50">
+                  <span className="text-xs text-gray-400">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                  <span className="text-sm font-semibold text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Read Article →
+                  </span>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 
-        {/* Bottom Ad */}
-        <div className="max-w-3xl mx-auto mt-16 h-[250px]">{/* AdSense slot */}</div>
+        {/* Ad Slot - Bottom */}
+        <div className="max-w-3xl mx-auto mt-16 min-h-[250px] flex items-center justify-center">
+          {/* AdSense Rectangle */}
+        </div>
+
+        {/* JSON-LD Structured Data for Blog listing */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Blog',
+              'name': 'WebToolkit Pro Developer Blog',
+              'description': 'Expert web development tips, tutorials, and guides.',
+              'url': 'https://webtoolkit-pro.netlify.app/blog/',
+              'publisher': {
+                '@type': 'Organization',
+                'name': 'WebToolkit Pro',
+                'url': 'https://webtoolkit-pro.netlify.app',
+              },
+              'blogPost': posts.map((post) => ({
+                '@type': 'BlogPosting',
+                'headline': post.title,
+                'description': post.description,
+                'datePublished': post.date,
+                'author': {
+                  '@type': 'Organization',
+                  'name': post.author,
+                },
+                'url': `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+              })),
+            }),
+          }}
+        />
       </div>
     </div>
   )

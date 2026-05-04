@@ -28,6 +28,13 @@ export async function GET() {
     { loc: '/tools/uuid-generator', priority: '0.7', freq: 'monthly' },
     { loc: '/tools/markdown-previewer', priority: '0.7', freq: 'monthly' },
     { loc: '/tools/meta-tag-generator', priority: '0.7', freq: 'monthly' },
+    // Blog posts
+    { loc: '/blog/top-10-free-developer-tools-2026', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/json-formatting-best-practices', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/password-security-guide', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/seo-meta-tags-complete-guide', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/css-units-explained', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/base64-encoding-use-cases', priority: '0.8', freq: 'monthly' },
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
