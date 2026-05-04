@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'WebToolkit Pro - Free Online Developer Tools',
     description: 'Free, premium online developer tools and utilities for web professionals.',
-    url: 'https://abusufyan-netizen.github.io/webtoolkit_pro',
+    url: 'https://abusufyan-netizen.github.io',
     siteName: 'WebToolkit Pro',
     type: 'website',
   },
