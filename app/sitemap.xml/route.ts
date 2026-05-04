@@ -37,6 +37,9 @@ export async function GET() {
     { loc: '/blog/seo-meta-tags-complete-guide', priority: '0.8', freq: 'monthly' },
     { loc: '/blog/css-units-explained', priority: '0.8', freq: 'monthly' },
     { loc: '/blog/base64-encoding-use-cases', priority: '0.8', freq: 'monthly' },
+    { loc: '/blog/enterprise-web-security-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/performance-optimization-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/securing-json-apis', priority: '0.9', freq: 'monthly' },
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
