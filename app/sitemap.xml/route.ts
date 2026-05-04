@@ -44,6 +44,8 @@ export async function GET() {
     { loc: '/blog/modern-css-architecture', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/nextjs-vs-vite-comparison', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/automated-testing-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/serverless-computing-future', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/ai-cybersecurity-trends', priority: '0.9', freq: 'monthly' },
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
