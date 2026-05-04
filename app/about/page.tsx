@@ -16,12 +16,11 @@ export default function AboutPage() {
           <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-bold rounded-full mb-4 border border-blue-100">
             Our Story
           </span>
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-            Building the Future of <br />
-            <span className="text-blue-600">Developer Productivity</span>
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Empowering US Developers with Enterprise-Grade Tools
           </h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            WebToolkit Pro is a comprehensive suite of free, high-performance tools designed to simplify the daily workflow of web developers and designers.
+          <p className="text-xl text-gray-600 leading-relaxed">
+            WebToolkit Pro is a professional suite of high-performance utilities designed for modern web developers. Based in the United States, we focus on providing secure, efficient, and privacy-first tools for the global developer community.
           </p>
         </div>
 

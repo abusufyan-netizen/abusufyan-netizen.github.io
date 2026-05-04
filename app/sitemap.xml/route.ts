@@ -5,9 +5,9 @@ export async function GET() {
   const now = new Date().toISOString()
 
   const pages = [
-    { loc: '', priority: '1.0', freq: 'weekly' },
-    { loc: '/tools', priority: '0.9', freq: 'weekly' },
-    { loc: '/blog', priority: '0.8', freq: 'weekly' },
+    { loc: '/', priority: '1.0', freq: 'daily' },
+    { loc: '/tools', priority: '1.0', freq: 'daily' },
+    { loc: '/blog', priority: '0.9', freq: 'daily' },
     { loc: '/about', priority: '0.6', freq: 'monthly' },
     { loc: '/contact', priority: '0.5', freq: 'monthly' },
     { loc: '/privacy', priority: '0.3', freq: 'yearly' },

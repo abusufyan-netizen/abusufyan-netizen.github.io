@@ -41,6 +41,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={inter.className}>
       <head>
+        {/* Global SEO & Trust Signals */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              'name': 'WebToolkit Pro',
+              'url': 'https://abusufyan-netizen.github.io',
+              'logo': 'https://abusufyan-netizen.github.io/favicon.svg',
+              'sameAs': [
+                'https://github.com/abusufyan-netizen/webtoolkit_pro'
+              ],
+              'address': {
+                '@type': 'PostalAddress',
+                'addressCountry': 'US'
+              },
+              'description': 'Professional developer tools and technical guides for enterprise web development.'
+            }),
+          }}
+        />
         {/* AdSense Script using Next.js Script component for better error handling and performance */}
         <Script
           id="adsense-init"
