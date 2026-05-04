@@ -7,12 +7,12 @@ export const metadata = {
   description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
   keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
   alternates: {
-    canonical: 'https://webtoolkit-pro.netlify.app/blog/',
+    canonical: 'https://abusufyan-netizen.github.io/blog/',
   },
   openGraph: {
     title: 'Developer Blog - WebToolkit Pro',
     description: 'Expert web development tips, tutorials, and guides for modern developers.',
-    url: 'https://webtoolkit-pro.netlify.app/blog/',
+    url: 'https://abusufyan-netizen.github.io/blog/',
     siteName: 'WebToolkit Pro',
     type: 'website',
     locale: 'en_US',
@@ -130,11 +130,11 @@ export default function BlogPage() {
               '@type': 'Blog',
               'name': 'WebToolkit Pro Developer Blog',
               'description': 'Expert web development tips, tutorials, and guides.',
-              'url': 'https://webtoolkit-pro.netlify.app/blog/',
+              'url': 'https://abusufyan-netizen.github.io/blog/',
               'publisher': {
                 '@type': 'Organization',
                 'name': 'WebToolkit Pro',
-                'url': 'https://webtoolkit-pro.netlify.app',
+                'url': 'https://abusufyan-netizen.github.io',
               },
               'blogPost': posts.map((post) => ({
                 '@type': 'BlogPosting',
@@ -145,7 +145,7 @@ export default function BlogPage() {
                   '@type': 'Organization',
                   'name': post.author,
                 },
-                'url': `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+                'url': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
               })),
             }),
           }}

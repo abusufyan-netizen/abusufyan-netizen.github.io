@@ -37,8 +37,8 @@ export function getAllPosts(): BlogPost[] {
       slug,
       title: data.title || '',
       description: data.description || '',
-      date: data.date || '',
-      category: data.category || '',
+      date: data.date || new Date().toISOString(),
+      category: data.category || 'General',
       tags: data.tags || [],
       keywords: data.keywords || [],
       readTime: data.readTime || '5 min read',
@@ -49,7 +49,12 @@ export function getAllPosts(): BlogPost[] {
     } as BlogPost
   })
 
-  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  // Safe sort with date validation
+  return posts.sort((a, b) => {
+    const dateA = new Date(a.date).getTime()
+    const dateB = new Date(b.date).getTime()
+    return (isNaN(dateB) ? 0 : dateB) - (isNaN(dateA) ? 0 : dateA)
+  })
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
@@ -59,14 +64,18 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
 
-  const result = await remark().use(html, { sanitize: false }).process(content)
+  // Use remark to convert markdown to HTML string
+  const processedContent = await remark()
+    .use(html)
+    .process(content)
+  const htmlContent = processedContent.toString()
 
   return {
     slug,
     title: data.title || '',
     description: data.description || '',
-    date: data.date || '',
-    category: data.category || '',
+    date: data.date || new Date().toISOString(),
+    category: data.category || 'General',
     tags: data.tags || [],
     keywords: data.keywords || [],
     readTime: data.readTime || '5 min read',
@@ -74,7 +83,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     image: data.image || '',
     imageAlt: data.imageAlt || data.title || '',
     content,
-    htmlContent: result.toString(),
+    htmlContent,
   }
 }
 

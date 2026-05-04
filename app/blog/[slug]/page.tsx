@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
     alternates: {
-      canonical: `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+      canonical: `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+      url: `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
       siteName: 'WebToolkit Pro',
       type: 'article',
       publishedTime: post.date,
@@ -244,21 +244,21 @@ export default async function BlogPostPage({ params }: Props) {
               'author': {
                 '@type': 'Organization',
                 'name': post.author,
-                'url': 'https://webtoolkit-pro.netlify.app',
+                'url': 'https://abusufyan-netizen.github.io',
               },
               'publisher': {
                 '@type': 'Organization',
                 'name': 'WebToolkit Pro',
-                'url': 'https://webtoolkit-pro.netlify.app',
+                'url': 'https://abusufyan-netizen.github.io',
               },
               'mainEntityOfPage': {
                 '@type': 'WebPage',
-                '@id': `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+                '@id': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
               },
               'keywords': post.keywords.join(', '),
               'articleSection': post.category,
               'inLanguage': 'en-US',
-              'url': `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+              'url': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
             }),
           }}
         />
@@ -275,19 +275,19 @@ export default async function BlogPostPage({ params }: Props) {
                   '@type': 'ListItem',
                   'position': 1,
                   'name': 'Home',
-                  'item': 'https://webtoolkit-pro.netlify.app',
+                  'item': 'https://abusufyan-netizen.github.io',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 2,
                   'name': 'Blog',
-                  'item': 'https://webtoolkit-pro.netlify.app/blog/',
+                  'item': 'https://abusufyan-netizen.github.io/blog/',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 3,
                   'name': post.title,
-                  'item': `https://webtoolkit-pro.netlify.app/blog/${post.slug}/`,
+                  'item': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
                 },
               ],
             }),
