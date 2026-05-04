@@ -3,6 +3,10 @@ import './globals.css'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
+import { Inter } from 'next/font/google'
+import Script from 'next/script'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'WebToolkit Pro - Free Online Developer Tools',
@@ -26,18 +30,18 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        <script
+        {/* AdSense Script using Next.js Script component for better error handling and performance */}
+        <Script
+          id="adsense-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
-      <body className="bg-white text-gray-900 antialiased" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <body className="bg-white text-gray-900 antialiased">
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-grow">{children}</main>
