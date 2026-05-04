@@ -13,12 +13,12 @@ export const metadata = {
   description: 'Free, premium online developer tools and utilities. JSON formatter, password generator, Base64 encoder, color picker, and 10+ more tools for web professionals.',
   keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
   verification: {
-    google: 'FftPyShaOpCI3ca1Cx9epz02Cl9CQ0cCLl87Kc69Iy8',
+    google: 'WoptvfLSD7zyx_FHo65sWstAvRV_FBFiGW6BxmQkXu0',
   },
   openGraph: {
     title: 'WebToolkit Pro - Free Online Developer Tools',
     description: 'Free, premium online developer tools and utilities for web professionals.',
-    url: 'https://webtoolkit-pro.netlify.app',
+    url: 'https://abusufyan-netizen.github.io/webtoolkit_pro',
     siteName: 'WebToolkit Pro',
     type: 'website',
   },
