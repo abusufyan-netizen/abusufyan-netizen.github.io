@@ -1,5 +1,4 @@
 import React from 'react'
-import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
@@ -31,11 +30,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body className="bg-white text-gray-900 antialiased" style={{ fontFamily: 'Inter, sans-serif' }}>
