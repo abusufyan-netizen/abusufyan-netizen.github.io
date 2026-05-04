@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata = {
   title: 'WebToolkit Pro - Free Online Developer Tools',
   description: 'Free online web developer tools and utilities',
+  verification: {
+    google: 'FftPyShaOpCI3ca1Cx9epz02Cl9CQ0cCLl87Kc69Iy8',
+  },
 }
 
 interface RootLayoutProps {
