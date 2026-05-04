@@ -8,6 +8,7 @@ import {
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2
 } from 'lucide-react'
 
+const tools = [
   // Formatters
   { name: 'JSON Formatter', description: 'Clean, format, and validate JSON data instantly', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-700', category: 'Formatters' },
   { name: 'JS Minifier', description: 'Compress JavaScript code for faster loading', icon: Code2, href: '/tools/js-minifier', color: 'from-yellow-500 to-yellow-700', category: 'Formatters' },
