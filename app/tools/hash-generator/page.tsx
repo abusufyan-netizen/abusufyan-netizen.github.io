@@ -47,7 +47,7 @@ export default function HashGenerator() {
             </div>
           )}
         </div>
-        <div className="h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

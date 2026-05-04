@@ -37,7 +37,7 @@ export default function CaseConverter() {
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} {copied ? 'Copied' : 'Copy'}
           </button>
         </div>
-        <div className="h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

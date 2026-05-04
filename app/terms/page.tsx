@@ -16,7 +16,7 @@ export default function TermsPage() {
           <section><h2 className="text-2xl font-bold text-gray-900">5. Advertising</h2><p className="text-gray-600 leading-relaxed">We display advertisements to support the free service. These ads may be provided by third-party services including Google AdSense.</p></section>
           <section><h2 className="text-2xl font-bold text-gray-900">6. Changes</h2><p className="text-gray-600 leading-relaxed">We reserve the right to update these terms at any time. Continued use of the service constitutes acceptance of modified terms.</p></section>
         </div>
-        <div className="mt-12 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-12 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

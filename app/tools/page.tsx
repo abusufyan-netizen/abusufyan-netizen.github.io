@@ -37,10 +37,7 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {/* Ad Placeholder */}
-        <div className="max-w-3xl mx-auto mb-12 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">
-          Ad Space — Leaderboard 728×90
-        </div>
+        <div className="max-w-3xl mx-auto mb-12 h-[90px]">{/* AdSense slot */}</div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tools.map((tool) => (
@@ -61,10 +58,7 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        {/* Bottom Ad */}
-        <div className="max-w-3xl mx-auto mt-16 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">
-          Ad Space — Medium Rectangle 300×250
-        </div>
+        <div className="max-w-3xl mx-auto mt-16 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

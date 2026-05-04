@@ -30,7 +30,7 @@ export default function WordCounter() {
           ))}
         </div>
         <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Start typing or paste your text here..." className="w-full h-72 p-6 font-sans text-base bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none resize-none" />
-        <div className="mt-4 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-4 h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

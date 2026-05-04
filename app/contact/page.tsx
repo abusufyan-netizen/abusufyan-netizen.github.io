@@ -37,7 +37,7 @@ export default function ContactPage() {
           <p className="text-gray-500 flex items-center justify-center gap-2"><Mail className="w-5 h-5" /> contact@webtoolkitpro.com</p>
         </div>
 
-        <div className="mt-12 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-12 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

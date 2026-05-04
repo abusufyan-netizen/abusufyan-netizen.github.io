@@ -46,7 +46,7 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        <div className="mt-12 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-12 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

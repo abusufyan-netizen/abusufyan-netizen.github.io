@@ -36,7 +36,7 @@ export default function MarkdownPreviewer() {
             <button onClick={handleCopy} className="text-sm text-sky-600 flex items-center gap-1">{copied?<Check className="w-4 h-4"/>:<Copy className="w-4 h-4"/>}{copied?'Copied HTML':'Copy HTML'}</button></div>
             <div className="w-full h-[500px] p-6 bg-white border border-gray-200 rounded-2xl overflow-auto prose prose-sm max-w-none" dangerouslySetInnerHTML={{ __html: toHtml(md) }} /></div>
         </div>
-        <div className="mt-8 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-8 h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

@@ -29,7 +29,7 @@ export default function HtmlEncoder() {
             <textarea readOnly value={output} placeholder="Result here..." className="w-full h-64 p-4 font-mono text-sm bg-gray-900 text-gray-100 rounded-2xl outline-none resize-none" />
           </div>
         </div>
-        <div className="mt-8 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-8 h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

@@ -76,7 +76,7 @@ export default function BlogPage() {
         </div>
 
         {/* Ad */}
-        <div className="max-w-3xl mx-auto mb-12 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space — Leaderboard 728×90</div>
+        <div className="max-w-3xl mx-auto mb-12 h-[90px]">{/* AdSense slot */}</div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post) => (
@@ -102,7 +102,7 @@ export default function BlogPage() {
         </div>
 
         {/* Bottom Ad */}
-        <div className="max-w-3xl mx-auto mt-16 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space — Large Rectangle</div>
+        <div className="max-w-3xl mx-auto mt-16 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

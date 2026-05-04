@@ -49,7 +49,7 @@ export default function MetaTagGenerator() {
             <button onClick={handleCopy} className="text-sm text-rose-600 flex items-center gap-1">{copied?<Check className="w-4 h-4"/>:<Copy className="w-4 h-4"/>}{copied?'Copied':'Copy'}</button></div>
             <textarea readOnly value={output} className="w-full h-[380px] p-4 font-mono text-xs bg-gray-900 text-gray-100 rounded-2xl outline-none resize-none" /></div>
         </div>
-        <div className="mt-8 h-[90px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-8 h-[90px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )

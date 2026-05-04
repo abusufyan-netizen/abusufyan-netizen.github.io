@@ -81,11 +81,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Space */}
-      <div className="py-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto h-[90px] bg-white border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">
-          Ad Space — Leaderboard 728×90
-        </div>
+      <div className="py-6">
+        <div className="max-w-3xl mx-auto h-[90px]">{/* AdSense slot */}</div>
       </div>
 
       {/* Featured Tools */}
@@ -123,11 +120,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Space */}
-      <div className="py-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto h-[250px] bg-white border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">
-          Ad Space — Large Rectangle 336×280
-        </div>
+      <div className="py-6">
+        <div className="max-w-3xl mx-auto h-[250px]">{/* AdSense slot */}</div>
       </div>
 
       {/* Why Choose Us */}

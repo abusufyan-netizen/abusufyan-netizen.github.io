@@ -15,7 +15,7 @@ export default function PrivacyPage() {
           <section><h2 className="text-2xl font-bold text-gray-900">4. Data Security</h2><p className="text-gray-600 leading-relaxed">Since all tools process data locally in your browser, your data never leaves your device. We implement HTTPS across our entire platform for secure connections.</p></section>
           <section><h2 className="text-2xl font-bold text-gray-900">5. Contact</h2><p className="text-gray-600 leading-relaxed">If you have questions about this Privacy Policy, please contact us at contact@webtoolkitpro.com.</p></section>
         </div>
-        <div className="mt-12 h-[250px] bg-gray-50 border border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-sm">Ad Space</div>
+        <div className="mt-12 h-[250px]">{/* AdSense slot */}</div>
       </div>
     </div>
   )
