@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, Box, ChevronRight } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -52,9 +53,10 @@ export default function Header() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
+            <ThemeToggle />
             <Link 
               href="/tools" 
-              className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-200 transition-all duration-300"
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-200 dark:hover:shadow-none transition-all duration-300"
             >
               Get Started
             </Link>
@@ -62,7 +64,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2.5 text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-100"
+            className="md:hidden p-2.5 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors border border-gray-100 dark:border-gray-700"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
