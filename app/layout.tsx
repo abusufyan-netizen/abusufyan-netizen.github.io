@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for US enterprise development.',
   keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
   verification: {
-    google: 'WoptvfLSD7zyx_FHo65sWstAvRV_FBFiGW6BxmQkXu0',
+    google: 'mDdN3EPYoUOznSZf30r9MWseEpejEY2n2l18mhlQX1k',
   },
   alternates: {
     canonical: '/',
