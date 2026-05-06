@@ -1,11 +1,11 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { 
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
-  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2
+  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star
 } from 'lucide-react'
 
 const tools = [
