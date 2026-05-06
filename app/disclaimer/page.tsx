@@ -2,54 +2,55 @@ import React from 'react'
 
 export const metadata = {
   title: 'Disclaimer & DMCA - WebToolkit Pro',
-  description: 'Legal disclaimer and DMCA policy for WebToolkit Pro. Learn about our content usage and copyright policies.',
+  description: 'Legal disclaimer and DMCA policy for WebToolkit Pro (wtkpro.site). Learn about our content usage and copyright policies.',
 }
 
 export default function DisclaimerPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300 min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Disclaimer & DMCA</h1>
-        <p className="text-sm text-gray-400 mb-12">Last updated: May 4, 2026</p>
+        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Disclaimer & DMCA</h1>
+        <p className="text-sm text-gray-400 dark:text-slate-500 mb-12">Last updated: May 6, 2026</p>
 
-        <div className="prose prose-gray max-w-none space-y-10">
+        <div className="prose prose-gray dark:prose-invert max-w-none space-y-10">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900">1. General Disclaimer</h2>
-            <p className="text-gray-600 leading-relaxed">
-              The information provided by WebToolkit Pro is for general informational purposes only. All tools and information on the site are provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information or tool on the site.
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. General Disclaimer</h2>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
+              The information provided by WebToolkit Pro (wtkpro.site) is for general informational purposes only. All tools and information on the site are provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information or tool on the site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900">2. External Links Disclaimer</h2>
-            <p className="text-gray-600 leading-relaxed">
-              The site may contain links to other websites or content belonging to or originating from third parties. Such external links are not investigated, monitored, or checked for accuracy by us. We do not warrant, endorse, guarantee, or assume responsibility for the accuracy or reliability of any information offered by third-party websites.
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Professional Disclaimer</h2>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
+              The tools on WebToolkit Pro are intended for developers and technical professionals. They should not be used as a substitute for professional advice in critical systems without independent verification. Use of our tools is strictly at your own risk.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900">3. Errors and Omissions Disclaimer</h2>
-            <p className="text-gray-600 leading-relaxed">
-              While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, WebToolkit Pro is not responsible for any errors or omissions, or for the results obtained from the use of this information.
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. External Links Disclaimer</h2>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
+              The site may contain links to other websites or content belonging to or originating from third parties. We do not warrant, endorse, guarantee, or assume responsibility for the accuracy or reliability of any information offered by third-party websites linked through the site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900">4. DMCA Policy</h2>
-            <p className="text-gray-600 leading-relaxed">
-              WebToolkit Pro respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act ("DMCA"), we will respond promptly to notices of alleged infringement that are reported to us.
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. DMCA Copyright Notice</h2>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
+              WebToolkit Pro respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act ("DMCA"), we will respond promptly to notices of alleged infringement.
             </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible on this site, please notify our copyright agent with the following information:
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed mt-4">
+              If you believe that your copyrighted work has been infringed, please notify our copyright agent at: <strong>hello@wtkpro.site</strong>
             </p>
-            <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-2">
-              <li>A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
-              <li>Identification of the copyrighted work claimed to have been infringed.</li>
-              <li>Identification of the material that is claimed to be infringing.</li>
-              <li>Information reasonably sufficient to permit us to contact you, such as an address, telephone number, and email address.</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              Please send DMCA notices to: <strong>contact@webtoolkitpro.com</strong>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed mt-4">
+              Your notice must include a detailed description of the copyrighted work and the location on our site where the alleged infringement occurs.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. AdSense & Third-Party Content</h2>
+            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
+              wtkpro.site displays third-party advertisements via Google AdSense. We do not personally endorse the products or services advertised. Any interactions with advertisers are solely between you and the third party.
             </p>
           </section>
         </div>

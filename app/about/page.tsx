@@ -9,30 +9,30 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300 min-h-screen">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-bold rounded-full mb-4 border border-blue-100">
+          <span className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-bold rounded-full mb-4 border border-blue-100 dark:border-slate-800">
             Our Story
           </span>
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Empowering US Developers with Enterprise-Grade Tools
+          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight">
+            Empowering US Developers with <span className="text-blue-600 dark:text-blue-400">Enterprise-Grade</span> Tools
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            WebToolkit Pro is a professional suite of high-performance utilities designed for modern web developers. Based in the United States, we focus on providing secure, efficient, and privacy-first tools for the global developer community.
+          <p className="text-xl text-gray-600 dark:text-slate-400 leading-relaxed">
+            WebToolkit Pro (wtkpro.site) is a professional suite of high-performance utilities designed for modern web developers. Based in the United States, we focus on providing secure, efficient, and privacy-first tools for the global developer community.
           </p>
         </div>
 
         {/* Mission Section */}
-        <div className="prose prose-lg max-w-none mb-20 bg-blue-50/50 p-10 rounded-3xl border border-blue-100">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <Sparkles className="text-blue-600 w-8 h-8" /> Our Mission
+        <div className="prose prose-lg max-w-none mb-20 bg-blue-50/50 dark:bg-slate-900/50 p-10 rounded-3xl border border-blue-100 dark:border-slate-800">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+            <Sparkles className="text-blue-600 dark:text-blue-400 w-8 h-8" /> Our Mission
           </h2>
-          <p className="text-gray-700 leading-relaxed text-lg mb-6">
+          <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-lg mb-6">
             WebToolkit Pro was born out of a simple frustration: the internet is full of online tools, but most are cluttered with intrusive ads, require mandatory registration, or process your sensitive data on remote servers.
           </p>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-lg">
             We set out to build a platform that is <strong>clean, fast, and 100% private</strong>. By leveraging modern browser technologies, we ensure that your data stays exactly where it belongs: on your device.
           </p>
         </div>
@@ -61,12 +61,12 @@ export default function AboutPage() {
               desc: 'No fluff. Just the essential tools you need for modern web development, API testing, and design.' 
             },
           ].map((item) => (
-            <div key={item.title} className="group bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:border-blue-100 transition-all duration-300">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <item.icon className="w-6 h-6 text-blue-600" />
+            <div key={item.title} className="group bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-xl dark:hover:shadow-blue-900/10 hover:border-blue-100 dark:hover:border-blue-900 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{item.title}</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -89,14 +89,10 @@ export default function AboutPage() {
 
         {/* CTA */}
         <div className="text-center py-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Want to see our tools in action?</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Want to see our tools in action?</h2>
           <Link href="/tools" className="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
             Get Started for Free →
           </Link>
-        </div>
-
-        <div className="mt-16 py-10 flex justify-center">
-           {/* AdSense slot */}
         </div>
       </div>
     </div>
