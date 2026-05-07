@@ -85,6 +85,7 @@ export default function JsonStudyPage() {
                 </div>
               </div>
             ))}
+          </div>
         </div>
         <AdSlot className="mb-16" />
 
