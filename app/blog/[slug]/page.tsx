@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
     alternates: {
-      canonical: `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
+      canonical: `https://wtkpro.site/blog/${post.slug}/`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
+      url: `https://wtkpro.site/blog/${post.slug}/`,
       siteName: 'WebToolkit Pro',
       type: 'article',
       publishedTime: post.date,
@@ -67,11 +67,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: { [k: string]: string } = {
-  'Tools': 'bg-blue-100 text-blue-700 border-blue-200',
-  'Tutorials': 'bg-purple-100 text-purple-700 border-purple-200',
-  'Security': 'bg-red-100 text-red-700 border-red-200',
-  'SEO': 'bg-green-100 text-green-700 border-green-200',
-  'CSS': 'bg-orange-100 text-orange-700 border-orange-200',
+  'Tools': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+  'Tutorials': 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800',
+  'Security': 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800',
+  'SEO': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
+  'CSS': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800',
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -91,27 +91,27 @@ export default async function BlogPostPage({ params }: Props) {
   })
 
   return (
-    <article className="py-12 px-4 sm:px-6 lg:px-8">
+    <article className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300 min-h-screen">
       <div className="max-w-3xl mx-auto">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-gray-400" itemScope itemType="https://schema.org/BreadcrumbList">
+          <ol className="flex items-center gap-2 text-sm text-gray-400 dark:text-slate-500" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/" className="hover:text-blue-600 transition-colors" itemProp="item">
+              <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" itemProp="item">
                 <span itemProp="name">Home</span>
               </Link>
               <meta itemProp="position" content="1" />
             </li>
-            <li className="text-gray-300">/</li>
+            <li className="text-gray-300 dark:text-slate-700">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/blog/" className="hover:text-blue-600 transition-colors" itemProp="item">
+              <Link href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" itemProp="item">
                 <span itemProp="name">Blog</span>
               </Link>
               <meta itemProp="position" content="2" />
             </li>
-            <li className="text-gray-300">/</li>
+            <li className="text-gray-300 dark:text-slate-700">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-gray-600 font-medium" itemProp="name">{post.title}</span>
+              <span className="text-gray-600 dark:text-slate-300 font-medium" itemProp="name">{post.title}</span>
               <meta itemProp="position" content="3" />
             </li>
           </ol>
@@ -120,21 +120,21 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Post Header */}
         <header className="mb-10">
           <div className="flex items-center gap-3 mb-5">
-            <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${categoryColors[post.category] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+            <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border uppercase tracking-wider ${categoryColors[post.category] || 'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-400 border-gray-200 dark:border-slate-700'}`}>
               {post.category}
             </span>
-            <span className="text-sm text-gray-400">{post.readTime}</span>
+            <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 dark:text-slate-500">{post.readTime}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-5 leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight tracking-tight">
             {post.title}
           </h1>
 
-          <p className="text-lg text-gray-500 leading-relaxed mb-6">
+          <p className="text-lg text-gray-500 dark:text-slate-400 leading-relaxed mb-6">
             {post.description}
           </p>
 
-          <div className="flex items-center gap-4 text-sm text-gray-400 pb-6 border-b border-gray-100">
+          <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-500 pb-6 border-b border-gray-100 dark:border-slate-800">
             <time dateTime={post.date} itemProp="datePublished">
               {formattedDate}
             </time>
@@ -150,43 +150,38 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Article Content */}
         <div
-          className="prose prose-lg prose-gray max-w-none
-            prose-headings:font-bold prose-headings:text-gray-900
+          className="prose prose-lg dark:prose-invert max-w-none
+            prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-5
-            prose-a:text-blue-600 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-gray-900
-            prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-pink-600
-            prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-xl prose-pre:shadow-lg
-            prose-ul:text-gray-600 prose-ol:text-gray-600
+            prose-p:text-gray-600 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-5
+            prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-gray-900 dark:prose-strong:text-white
+            prose-code:bg-gray-100 dark:prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-pink-600 dark:prose-code:text-pink-400
+            prose-pre:bg-gray-900 dark:prose-pre:bg-black prose-pre:text-gray-100 dark:prose-pre:text-slate-200 prose-pre:rounded-xl prose-pre:shadow-lg
+            prose-ul:text-gray-600 dark:prose-ul:text-slate-300 prose-ol:text-gray-600 dark:prose-ol:text-slate-300
             prose-li:mb-2
             prose-table:border-collapse
-            prose-th:bg-gray-50 prose-th:p-3 prose-th:text-left prose-th:font-bold prose-th:border prose-th:border-gray-200
-            prose-td:p-3 prose-td:border prose-td:border-gray-200
-            prose-blockquote:border-l-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1
+            prose-th:bg-gray-50 dark:prose-th:bg-slate-800 prose-th:p-3 prose-th:text-left prose-th:font-bold prose-th:border prose-th:border-gray-200 dark:prose-th:border-slate-700
+            prose-td:p-3 prose-td:border prose-td:border-gray-200 dark:prose-td:border-slate-700
+            prose-blockquote:border-l-blue-500 dark:prose-blockquote:border-l-blue-400 prose-blockquote:bg-blue-50 dark:prose-blockquote:bg-blue-900/10 prose-blockquote:rounded-r-lg prose-blockquote:py-1
             prose-img:rounded-xl prose-img:shadow-md"
           dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
         />
 
         {/* Tags Section */}
-        <div className="mt-12 pt-8 border-t border-gray-100">
-          <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">Tags</h3>
+        <div className="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800">
+          <h3 className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-4">Article Tags</h3>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-sm bg-gray-50 text-gray-600 px-3 py-1.5 rounded-full border border-gray-100 hover:bg-gray-100 transition-colors"
+                className="text-[10px] font-bold uppercase tracking-wider bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 px-3 py-1.5 rounded-full border border-gray-100 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
               >
                 #{tag}
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Keywords (hidden, for SEO) */}
-        <div className="sr-only" aria-hidden="true">
-          <p>Keywords: {post.keywords.join(', ')}</p>
         </div>
 
         {/* Ad Slot - Bottom of Article */}
@@ -196,8 +191,8 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-gray-100" aria-label="Related articles">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Continue Reading</h2>
+          <section className="mt-16 pt-12 border-t border-gray-100 dark:border-slate-800" aria-label="Related articles">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Continue Reading</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
                 <Link
@@ -205,14 +200,14 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${related.slug}/`}
                   className="group block"
                 >
-                  <article className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${categoryColors[related.category] || 'bg-gray-100 text-gray-700'}`}>
+                  <article className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-6 hover:shadow-xl dark:hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 h-full">
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-400'}`}>
                       {related.category}
                     </span>
-                    <h3 className="text-sm font-bold text-gray-900 mt-3 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-3 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
                       {related.title}
                     </h3>
-                    <span className="text-xs text-gray-400">{related.readTime}</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 dark:text-slate-500">{related.readTime}</span>
                   </article>
                 </Link>
               ))}
@@ -224,7 +219,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-12 text-center">
           <Link
             href="/blog/"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold hover:gap-3 transition-all"
           >
             ← Back to All Articles
           </Link>
@@ -244,21 +239,21 @@ export default async function BlogPostPage({ params }: Props) {
               'author': {
                 '@type': 'Organization',
                 'name': post.author,
-                'url': 'https://abusufyan-netizen.github.io',
+                'url': 'https://wtkpro.site',
               },
               'publisher': {
                 '@type': 'Organization',
                 'name': 'WebToolkit Pro',
-                'url': 'https://abusufyan-netizen.github.io',
+                'url': 'https://wtkpro.site',
               },
               'mainEntityOfPage': {
                 '@type': 'WebPage',
-                '@id': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
+                '@id': `https://wtkpro.site/blog/${post.slug}/`,
               },
               'keywords': post.keywords.join(', '),
               'articleSection': post.category,
               'inLanguage': 'en-US',
-              'url': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
+              'url': `https://wtkpro.site/blog/${post.slug}/`,
             }),
           }}
         />
@@ -275,19 +270,19 @@ export default async function BlogPostPage({ params }: Props) {
                   '@type': 'ListItem',
                   'position': 1,
                   'name': 'Home',
-                  'item': 'https://abusufyan-netizen.github.io',
+                  'item': 'https://wtkpro.site',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 2,
                   'name': 'Blog',
-                  'item': 'https://abusufyan-netizen.github.io/blog/',
+                  'item': 'https://wtkpro.site/blog/',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 3,
                   'name': post.title,
-                  'item': `https://abusufyan-netizen.github.io/blog/${post.slug}/`,
+                  'item': `https://wtkpro.site/blog/${post.slug}/`,
                 },
               ],
             }),

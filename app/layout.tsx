@@ -120,7 +120,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           `}
         </Script>
       </head>
-      <body className="bg-white text-gray-900 antialiased">
+      <body className="bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased transition-colors duration-300">
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-grow">{children}</main>
