@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, Box, ChevronRight } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 
@@ -33,11 +34,12 @@ export default function Header() {
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img 
+            <Image 
               src="/logo-full.png" 
               alt="WebToolkit Pro" 
               width={200}
               height={50}
+              priority
               className="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>

@@ -24,9 +24,9 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 py-24 lg:py-32">
         {/* Animated background blobs */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 8s ease-in-out infinite'}} />
-          <div className="absolute top-40 right-10 w-96 h-96 bg-purple-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 10s ease-in-out infinite reverse'}} />
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-200 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 12s ease-in-out infinite'}} />
+          <div className="hero-blob absolute top-20 left-10 w-72 h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 8s ease-in-out infinite'}} />
+          <div className="hero-blob absolute top-40 right-10 w-96 h-96 bg-purple-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 10s ease-in-out infinite reverse'}} />
+          <div className="hero-blob absolute bottom-20 left-1/3 w-80 h-80 bg-pink-200 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-30 dark:opacity-20" style={{animation: 'float 12s ease-in-out infinite'}} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

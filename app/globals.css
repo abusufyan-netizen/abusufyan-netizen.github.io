@@ -11,7 +11,17 @@
 /* Animations for homepage */
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
+  50% { transform: translateY(-15px) scale(1.02); }
+}
+
+@media (max-width: 768px) {
+  .hero-blob {
+    animation: none !important;
+  }
+}
+
+.hero-blob {
+  will-change: transform;
 }
 
 :root {
