@@ -101,19 +101,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
               'url': 'https://wtkpro.site',
-              'logo': 'https://wtkpro.site/favicon.svg',
+              'logo': 'https://wtkpro.site/logo-full.png',
               'sameAs': [
-                'https://github.com/abusufyan-netizen/webtoolkit_pro'
+                'https://github.com/abusufyan-netizen/webtoolkitpro'
               ],
               'address': {
                 '@type': 'PostalAddress',
-                'streetAddress': '1600 Amphitheatre Parkway',
-                'addressLocality': 'Mountain View',
-                'addressRegion': 'CA',
-                'postalCode': '94043',
+                'addressLocality': 'New York',
+                'addressRegion': 'NY',
                 'addressCountry': 'US'
               },
-              'description': 'Professional developer tools and technical guides for enterprise web development.'
+              'description': 'Premium developer tools and technical guides for enterprise web development.'
             }),
           }}
         />
