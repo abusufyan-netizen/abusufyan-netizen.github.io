@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { CheckCircle2, Circle, ClipboardList, Download, Share2, Search, Zap, Shield, Smartphone, Globe, FileCode, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 const checklistData = [
   {
@@ -111,6 +112,7 @@ export default function SeoAuditChecklist() {
             <span>{copied ? 'Markdown Copied' : 'Copy as Markdown'}</span>
           </button>
         </div>
+        <AdSlot className="mb-12" />
 
         {/* Progress Bar */}
         <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-gray-100 dark:border-slate-800 mb-12 shadow-sm">
@@ -167,6 +169,7 @@ export default function SeoAuditChecklist() {
         <div className="mt-16 text-center text-gray-400 dark:text-slate-600 text-sm">
           <p>This checklist is designed for technical SEO audits in 2026. Regularly updated based on Google Search algorithm changes.</p>
         </div>
+        <AdSlot className="mt-16" />
       </div>
     </div>
   )

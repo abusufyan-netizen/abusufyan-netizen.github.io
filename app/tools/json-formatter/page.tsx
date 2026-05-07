@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { FileJson, Copy, Trash2, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function JsonFormatter() {
   const [input, setInput] = useState('')
@@ -120,9 +121,7 @@ export default function JsonFormatter() {
           </button>
         </div>
         
-        <div className="mt-16 h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
-        </div>
+        <AdSlot className="mt-8" />
       </div>
     </div>
   )

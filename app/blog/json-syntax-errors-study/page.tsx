@@ -3,6 +3,7 @@
 import React from 'react'
 import { FileJson, AlertTriangle, CheckCircle2, TrendingUp, BookOpen, Share2, Download, ArrowRight, BarChart } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 const errorData = [
   { label: 'Trailing Commas', value: 42, color: 'bg-red-500', detail: 'Adding a comma after the last item in an object or array.' },
@@ -84,8 +85,8 @@ export default function JsonStudyPage() {
                 </div>
               </div>
             ))}
-          </div>
         </div>
+        <AdSlot className="mb-16" />
 
         {/* Deep Dive Content */}
         <div className="prose prose-lg dark:prose-invert max-w-none mb-20">
@@ -113,6 +114,7 @@ export default function JsonStudyPage() {
           </div>
         </div>
 
+        <AdSlot className="mb-12" />
         {/* Share & Download Footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 py-12 border-t border-gray-100 dark:border-slate-800">
           <div className="flex items-center gap-4 text-gray-500 dark:text-slate-400 text-sm font-bold uppercase tracking-widest">

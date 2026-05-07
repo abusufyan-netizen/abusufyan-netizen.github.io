@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Hash, Copy, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function WordCounter() {
   const [text, setText] = useState('')
@@ -44,9 +45,7 @@ export default function WordCounter() {
           placeholder="Start typing or paste your text here..." 
           className="w-full h-80 p-8 font-sans text-lg bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl shadow-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none resize-none dark:text-white transition-all" 
         />
-        <div className="mt-8 h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
-        </div>
+        <AdSlot className="mt-12" />
       </div>
     </div>
   )

@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import { DollarSign, TrendingDown, Clock, MousePointer2, AlertCircle, Info, ArrowRight, TrendingUp } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function ApiLatencyCalculator() {
   const [monthlyRevenue, setMonthlyRevenue] = useState(10000)
@@ -167,9 +168,7 @@ export default function ApiLatencyCalculator() {
         </div>
 
         {/* Footer Ad Slot */}
-        <div className="mt-16 min-h-[250px] bg-gray-50 dark:bg-slate-900/50 rounded-3xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
-        </div>
+        <AdSlot className="mt-16" />
       </div>
     </div>
   )

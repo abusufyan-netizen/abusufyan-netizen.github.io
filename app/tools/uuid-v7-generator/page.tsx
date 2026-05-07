@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Zap, Copy, Check, RefreshCw, Info } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function UuidV7Generator() {
   const [uuids, setUuids] = useState<string[]>([])
@@ -178,9 +179,7 @@ export default function UuidV7Generator() {
               </ul>
             </div>
             
-            <div className="min-h-[250px] bg-gray-50 dark:bg-slate-900/50 rounded-3xl flex items-center justify-center border border-dashed border-gray-200 dark:border-slate-800">
-              <span className="text-xs text-gray-400 uppercase tracking-widest font-bold">Ad Placement</span>
-            </div>
+            <AdSlot className="min-h-[250px]" />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import { DollarSign, BarChart3, PieChart, Users, Target, Info, TrendingUp, Sparkles } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 const niches = [
   { name: 'Technology', avgCpc: 1.20, avgCtr: 1.5, color: 'text-blue-500' },
@@ -166,9 +167,7 @@ export default function AdSenseCalculator() {
         </div>
 
         {/* AdSense slot for the tool itself */}
-        <div className="mt-16 min-h-[90px] flex items-center justify-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-gray-200 dark:border-slate-800">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
-        </div>
+        <AdSlot className="mt-16" />
       </div>
     </div>
   )
