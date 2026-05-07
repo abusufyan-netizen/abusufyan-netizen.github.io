@@ -1,7 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Code2, Copy, Trash2, Check, Zap } from 'lucide-react'
+import { Code2, Copy, Trash2, Check, Zap, ArrowRight, ShieldCheck } from 'lucide-react'
+import Link from 'next/link'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function JsMinifier() {
   const [input, setInput] = useState('')
@@ -33,120 +36,103 @@ export default function JsMinifier() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        {/* Tool Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
-          <div className="flex items-center gap-4">
-            <div className="p-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl shadow-lg">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <BreadcrumbSchema name="JavaScript Minifier" slug="tools/js-minifier" />
+      
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+          <div className="flex items-center gap-4 text-left">
+            <div className="p-4 bg-yellow-500 rounded-2xl shadow-lg shadow-yellow-500/20">
               <Code2 className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 tracking-tight">JavaScript Minifier</h1>
-              <p className="text-gray-600">Compress your JS code by removing comments and whitespace</p>
+              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">JavaScript Minifier</h1>
+              <p className="text-gray-500 dark:text-slate-400">Optimize production payloads by stripping comments and redundant whitespace</p>
             </div>
           </div>
-          <div className="flex gap-3">
-             <button 
-              onClick={clearAll}
-              className="px-4 py-2 text-sm font-bold text-red-600 bg-white border border-red-100 rounded-xl hover:bg-red-50 transition-all flex items-center gap-2"
-            >
-              <Trash2 className="w-4 h-4" /> Clear All
-            </button>
-          </div>
+          
+          <button 
+            onClick={clearAll}
+            className="flex items-center gap-2 px-6 py-3 bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 rounded-xl font-bold text-sm hover:bg-red-100 dark:hover:bg-red-900/20 transition-all border border-red-100 dark:border-red-900/30"
+          >
+            <Trash2 className="w-4 h-4" /> Clear All
+          </button>
         </div>
 
-        {/* Ad Slot */}
-        <div className="mb-10 min-h-[90px] flex items-center justify-center">
-           {/* AdSense In-Article Top */}
-        </div>
-
-        {/* Main Editor Interface */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Input Panel */}
           <div className="space-y-4">
             <div className="flex items-center justify-between px-2">
-              <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Source Code (JS)</label>
-              <span className="text-xs text-gray-400 font-mono">{input.length} chars</span>
+              <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest px-1">Source Code (JS)</label>
+              <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-widest">{input.length} chars</span>
             </div>
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="function welcome() { console.log('Hello World'); }"
-              className="w-full h-[450px] p-6 font-mono text-sm bg-white border border-gray-200 rounded-3xl shadow-sm focus:ring-4 focus:ring-yellow-500/10 focus:border-yellow-500 outline-none resize-none transition-all"
+              placeholder="function enterpriseApp() { console.log('Optimizing...'); }"
+              className="w-full h-96 p-6 font-mono text-sm bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-[2.5rem] focus:ring-2 focus:ring-yellow-500 outline-none resize-none dark:text-white shadow-sm transition-all"
             />
           </div>
 
           {/* Output Panel */}
           <div className="space-y-4">
             <div className="flex items-center justify-between px-2">
-              <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Minified Result</label>
+              <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">Minified Payload</label>
               <div className="flex items-center gap-4">
-                <span className="text-xs text-gray-400 font-mono">{output.length} chars</span>
+                <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-widest">{output.length} chars</span>
                 {output && (
                   <button 
                     onClick={handleCopy}
-                    className="text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold text-yellow-600 dark:text-yellow-400 flex items-center gap-2 px-4 py-2 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg hover:bg-yellow-100 transition-all"
                   >
                     {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    {copied ? 'Copied!' : 'Copy Results'}
+                    {copied ? 'Copied' : 'Copy Output'}
                   </button>
                 )}
               </div>
             </div>
-            <div className="relative group">
-              <textarea
-                readOnly
-                value={output}
-                placeholder="Compressed code will appear here..."
-                className="w-full h-[450px] p-6 font-mono text-sm bg-gray-900 text-yellow-400 border border-gray-800 rounded-3xl shadow-2xl outline-none resize-none"
-              />
-            </div>
+            <textarea
+              readOnly
+              value={output}
+              placeholder="Compressed code will appear here..."
+              className="w-full h-96 p-6 font-mono text-sm bg-gray-900 dark:bg-slate-950 text-yellow-400 border border-gray-800 dark:border-slate-800 rounded-[2.5rem] outline-none resize-none shadow-2xl shadow-yellow-900/5 transition-all"
+            />
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex justify-center">
+        {/* Action Button */}
+        <div className="flex justify-center mb-16">
           <button
             onClick={minifyJs}
             disabled={!input.trim()}
-            className="group relative px-10 py-5 bg-gray-900 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-yellow-500/20 hover:-translate-y-1 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="group relative px-12 py-5 bg-gray-900 dark:bg-yellow-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-yellow-500/20 hover:-translate-y-1 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-widest text-xs"
           >
             <span className="flex items-center gap-3">
-              Minify JavaScript <Zap className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              Compress Script <Zap className="w-5 h-5 fill-white dark:fill-white text-white" />
             </span>
           </button>
         </div>
 
-        {/* Ad Slot */}
-        <div className="mt-16 min-h-[250px] flex items-center justify-center">
-           {/* AdSense In-Article Bottom */}
-        </div>
-
-        {/* Tool Info / SEO Section */}
-        <div className="mt-20 prose prose-gray max-w-none bg-white p-10 rounded-3xl border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">About JavaScript Minifier</h2>
-          <p>
-            Our JavaScript Minifier is a free online tool that helps you compress your JS code by removing unnecessary characters like comments, extra spaces, and newlines. This reduces file size, which leads to faster page load times and better performance for your web applications.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Why minify JS?</h3>
-              <ul className="list-disc pl-5 space-y-2 text-sm">
-                <li>Faster Download: Smaller files download more quickly.</li>
-                <li>Bandwidth Savings: Reduces data transfer costs for you and your users.</li>
-                <li>Improved SEO: Faster sites rank higher on search engines.</li>
-                <li>Obfuscation: Makes code slightly harder to read at a glance.</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Privacy First</h3>
-              <p className="text-sm">
-                Like all tools on WebToolkit Pro, minification happens 100% in your browser. Your code is never sent to our servers, ensuring your intellectual property stays private and secure.
+        {/* Technical SEO Footer */}
+        <div className="bg-yellow-600 rounded-[3rem] p-10 text-white relative overflow-hidden group mb-16 shadow-xl shadow-yellow-500/20">
+          <ShieldCheck className="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:scale-110 transition-transform" />
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+            <div className="max-w-xl">
+              <h3 className="text-2xl font-bold mb-4">Core Web Vitals Mastery</h3>
+              <p className="text-yellow-100 text-sm leading-relaxed">
+                Minifying your JavaScript is a critical step in reducing Total Blocking Time (TBT) and improving your Largest Contentful Paint (LCP) score. Optimize your performance budget for maximum authority.
               </p>
             </div>
+            <Link 
+              href="/tools/core-web-vitals-guide/"
+              className="inline-flex items-center gap-2 bg-white text-yellow-600 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all hover:-translate-y-1 whitespace-nowrap"
+            >
+              Learn Optimization <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
+
+        <AdSlot />
       </div>
     </div>
   )

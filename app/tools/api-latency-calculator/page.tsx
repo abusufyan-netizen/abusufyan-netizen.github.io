@@ -76,7 +76,12 @@ export default function ApiLatencyCalculator() {
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">Daily API Requests</label>
-                    <span className="text-sm font-black text-red-600 dark:text-red-400">{requests.toLocaleString()}</span>
+                    <input 
+                      type="number"
+                      value={requests}
+                      onChange={(e) => setRequests(parseInt(e.target.value) || 0)}
+                      className="w-24 px-2 py-1 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-right font-black text-red-600 dark:text-red-400 text-xs focus:ring-1 focus:ring-red-500 outline-none"
+                    />
                   </div>
                   <input
                     type="range"
@@ -92,7 +97,12 @@ export default function ApiLatencyCalculator() {
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">Average Latency (ms)</label>
-                    <span className="text-sm font-black text-red-600 dark:text-red-400">{latency} ms</span>
+                    <input 
+                      type="number"
+                      value={latency}
+                      onChange={(e) => setLatency(parseInt(e.target.value) || 0)}
+                      className="w-24 px-2 py-1 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-right font-black text-red-600 dark:text-red-400 text-xs focus:ring-1 focus:ring-red-500 outline-none"
+                    />
                   </div>
                   <input
                     type="range"

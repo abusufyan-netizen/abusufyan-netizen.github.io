@@ -1,7 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Code, Copy, CheckCircle2, RefreshCw } from 'lucide-react'
+import { Code, Copy, CheckCircle2, RefreshCw, Trash2, ArrowRight, Database } from 'lucide-react'
+import Link from 'next/link'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function SchemaGenerator() {
   const [type, setType] = useState('Organization')
@@ -27,90 +30,141 @@ export default function SchemaGenerator() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const clearAll = () => {
+    setName('')
+    setUrl('')
+    setDescription('')
+  }
+
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center p-3 bg-emerald-100 rounded-2xl mb-4">
-            <Code className="w-8 h-8 text-emerald-600" />
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <BreadcrumbSchema name="JSON-LD Schema Generator" slug="tools/schema-generator" />
+      
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+          <div className="flex items-center gap-4 text-left">
+            <div className="p-4 bg-emerald-600 rounded-2xl shadow-lg shadow-emerald-600/20">
+              <Code className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">JSON-LD Schema Generator</h1>
+              <p className="text-gray-500 dark:text-slate-400">Earn rich snippets and enhance search visibility with structured data</p>
+            </div>
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-            JSON-LD Schema Generator
-          </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Generate high-value structured data to help your site earn rich snippets in Google search results.
-          </p>
+          
+          <button 
+            onClick={clearAll}
+            className="flex items-center gap-2 px-6 py-3 bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 rounded-xl font-bold text-sm hover:bg-red-100 dark:hover:bg-red-900/20 transition-all border border-red-100 dark:border-red-900/30"
+          >
+            <Trash2 className="w-4 h-4" /> Clear All
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <RefreshCw className="w-5 h-5 text-emerald-500" />
-              Configure Schema
-            </h2>
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Schema Type</label>
-                <select 
-                  value={type}
-                  onChange={(e) => setType(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none"
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          {/* Configuration */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-sm">
+              <h2 className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-8 flex items-center gap-2">
+                <RefreshCw className="w-4 h-4" /> Schema Parameters
+              </h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase mb-3 px-1">Schema Type</label>
+                  <select 
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-transparent rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all dark:text-white font-bold"
+                  >
+                    <option>Organization</option>
+                    <option>WebSite</option>
+                    <option>LocalBusiness</option>
+                    <option>Person</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase mb-3 px-1">Entity Name</label>
+                  <input 
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="e.g., WebToolkit Pro"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-transparent rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase mb-3 px-1">Primary URL</label>
+                  <input 
+                    type="text"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    placeholder="https://wtkpro.site"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-transparent rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase mb-3 px-1">Meta Description</label>
+                  <textarea 
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Technical overview of your organization..."
+                    rows={3}
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-transparent rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all dark:text-white resize-none"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-emerald-50 dark:bg-emerald-900/10 p-6 rounded-3xl border border-emerald-100 dark:border-emerald-900/30">
+              <p className="text-xs text-emerald-700 dark:text-emerald-400 leading-relaxed italic">
+                <strong>Pro Tip:</strong> Google uses JSON-LD to understand the context of your site. Adding this code to your <code>&lt;head&gt;</code> can result in high-authority rich snippets.
+              </p>
+            </div>
+          </div>
+
+          {/* Output Area */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-emerald-900/5 p-8 h-full flex flex-col">
+              <div className="flex justify-between items-center mb-6 px-2">
+                <h2 className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">JSON-LD Script Block</h2>
+                <button
+                  onClick={copyToClipboard}
+                  className="flex items-center gap-2 px-5 py-2 bg-emerald-600 text-white rounded-xl font-bold text-xs hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-500/20"
                 >
-                  <option>Organization</option>
-                  <option>WebSite</option>
-                  <option>LocalBusiness</option>
-                  <option>Person</option>
-                </select>
+                  {copied ? <CheckCircle2 className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copied ? 'Copied' : 'Copy Block'}
+                </button>
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
-                <input 
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g., WebToolkit Pro"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">URL</label>
-                <input 
-                  type="text"
-                  value={url}
-                  onChange={(e) => setUrl(e.target.value)}
-                  placeholder="https://example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
-                <textarea 
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Short description of your site..."
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none"
-                />
-              </div>
+              <pre className="flex-grow p-6 bg-gray-900 dark:bg-slate-950 rounded-3xl border border-gray-800 dark:border-slate-800 text-xs font-mono text-emerald-400 overflow-auto shadow-inner">
+                {generateSchema()}
+              </pre>
             </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm flex flex-col">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-bold text-gray-900">JSON-LD Output</h2>
-              <button
-                onClick={copyToClipboard}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
-              >
-                {copied ? <CheckCircle2 className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? 'Copied!' : 'Copy Schema'}
-              </button>
-            </div>
-            <pre className="flex-grow p-4 bg-gray-50 rounded-xl border border-gray-100 text-xs font-mono text-gray-700 overflow-auto">
-              {generateSchema()}
-            </pre>
           </div>
         </div>
+
+        {/* Data Insight Footer */}
+        <div className="bg-emerald-600 rounded-[3rem] p-10 text-white relative overflow-hidden group mb-16 shadow-xl shadow-emerald-500/20">
+          <Database className="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:scale-110 transition-transform" />
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+            <div className="max-w-xl">
+              <h3 className="text-2xl font-bold mb-4">Semantic Web Authority</h3>
+              <p className="text-emerald-100 text-sm leading-relaxed">
+                Structured data is the bridge between your content and AI search engines. Implementing robust Schema Markup ensures your technical assets are correctly indexed by LLMs and search crawlers.
+              </p>
+            </div>
+            <Link 
+              href="/tools/sitemap-validator/"
+              className="inline-flex items-center gap-2 bg-white text-emerald-600 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all hover:-translate-y-1 whitespace-nowrap"
+            >
+              Validate Sitemap <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+
+        <AdSlot />
       </div>
     </div>
   )

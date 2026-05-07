@@ -53,9 +53,14 @@ export default function AdSenseCalculator() {
               
               <div className="space-y-8">
                 <div>
-                  <div className="flex justify-between mb-4">
+                  <div className="flex justify-between items-center mb-4">
                     <label className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Daily Page Views</label>
-                    <span className="text-sm font-black text-emerald-600 dark:text-emerald-400">{dailyViews.toLocaleString()}</span>
+                    <input 
+                      type="number"
+                      value={dailyViews}
+                      onChange={(e) => setDailyViews(parseInt(e.target.value) || 0)}
+                      className="w-24 px-2 py-1 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-right font-black text-emerald-600 dark:text-emerald-400 text-sm focus:ring-1 focus:ring-emerald-500 outline-none"
+                    />
                   </div>
                   <input 
                     type="range" 
