@@ -8,6 +8,7 @@ import {
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
   DollarSign, ClipboardList, TrendingDown
 } from 'lucide-react'
+import AdSlot from '@/components/ads/AdSlot'
 
 const tools = [
   // Formatters
@@ -93,51 +94,57 @@ export default function ToolsPage() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+        <div className="text-center mb-16 relative">
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
+          <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-slate-500">
             Developer Toolkit
           </h1>
-          <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            A comprehensive suite of {tools.length} free, high-performance tools built for modern web professionals.
+          <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+            A comprehensive suite of <span className="text-blue-600 dark:text-blue-400 font-bold">{tools.length}</span> free, high-performance tools built for the next generation of web professionals.
           </p>
         </div>
 
         {/* Search and Filter Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="relative flex-grow">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+        <div className="max-w-5xl mx-auto mb-20">
+          <div className="bg-white dark:bg-slate-900 p-2 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-2xl shadow-blue-900/5 dark:shadow-none flex flex-col md:flex-row items-center gap-2">
+            <div className="relative flex-grow w-full">
+              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400" />
               </div>
               <input
                 type="text"
                 placeholder="Search for a tool (e.g., JSON, Password, Encoder)..."
-                className="block w-full pl-11 pr-4 py-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white"
+                className="block w-full pl-14 pr-6 py-5 bg-transparent border-none focus:ring-0 outline-none text-lg font-medium dark:text-white placeholder:text-gray-400 dark:placeholder:text-slate-600"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-4 rounded-2xl font-bold whitespace-nowrap transition-all duration-300 ${activeCategory === cat
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 dark:shadow-none'
-                    : 'bg-white dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-100 dark:border-slate-800'
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            
+            <div className="w-px h-10 bg-gray-100 dark:bg-slate-800 hidden md:block mx-2" />
+
+            <div className="relative group/nav w-full md:w-auto overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+              
+              <div className="flex gap-2 overflow-x-auto py-2 px-6 no-scrollbar mask-fade-edges">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-6 py-3 rounded-2xl font-bold whitespace-nowrap transition-all duration-300 text-sm uppercase tracking-widest ${activeCategory === cat
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
+                      : 'bg-gray-50 dark:bg-slate-800/50 text-gray-500 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 border border-transparent'
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* AdSense Slot */}
-        <div className="max-w-3xl mx-auto mb-12 min-h-[90px] flex items-center justify-center">
-          {/* AdSense Leaderboard */}
-        </div>
+        <AdSlot className="mb-12" />
 
         {/* Favorites Section */}
         {favoriteTools.length > 0 && search === '' && activeCategory === 'All' && (
@@ -232,10 +239,7 @@ export default function ToolsPage() {
           </div>
         )}
 
-        {/* AdSense Slot */}
-        <div className="max-w-3xl mx-auto mt-20 min-h-[250px] flex items-center justify-center">
-          {/* AdSense Rectangle */}
-        </div>
+        <AdSlot className="mt-20" />
       </div>
     </div>
   )
