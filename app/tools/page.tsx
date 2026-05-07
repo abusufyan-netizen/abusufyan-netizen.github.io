@@ -15,6 +15,7 @@ const tools = [
 
   // Generators
   { name: 'Secure Password Generator', description: 'US-standard cryptographically secure password generation tool', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-700', category: 'Generators' },
+  { name: 'UUID v7 Generator', description: 'Next-gen time-ordered unique identifiers (RFC 9562)', icon: Zap, href: '/tools/uuid-v7-generator', color: 'from-lime-500 to-lime-700', category: 'Generators' },
   { name: 'UUID/GUID Generator', description: 'Instant RFC-compliant unique identifier generation', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-800', category: 'Generators' },
   { name: 'Lorem Ipsum Generator', description: 'Professional placeholder text for designers and developers', icon: AlignLeft, href: '/tools/lorem-ipsum', color: 'from-orange-500 to-orange-700', category: 'Generators' },
   { name: 'SEO Meta Tag Generator', description: 'Create Google-ready meta tags for high search visibility', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators' },
