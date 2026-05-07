@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Hash, Copy, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function WordCounter() {
   const [text, setText] = useState('')
@@ -16,6 +17,7 @@ export default function WordCounter() {
   const handleCopy = () => { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000) }
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Word Counter" slug="word-counter" />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl"><Hash className="w-8 h-8 text-white" /></div>

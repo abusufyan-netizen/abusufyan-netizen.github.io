@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Globe, Copy, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function MetaTagGenerator() {
   const [title, setTitle] = useState('')
@@ -33,6 +34,7 @@ export default function MetaTagGenerator() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Meta Tag Generator" slug="meta-tag-generator" />
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-rose-500 to-rose-700 rounded-xl"><Globe className="w-8 h-8 text-white" /></div>

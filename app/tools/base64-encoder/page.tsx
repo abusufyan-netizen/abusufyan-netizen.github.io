@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { FileText, Copy, ArrowRightLeft, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function Base64Encoder() {
   const [input, setInput] = useState('')
@@ -37,6 +38,7 @@ export default function Base64Encoder() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Base64 Encoder/Decoder" slug="base64-encoder" />
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-purple-600 rounded-xl">
