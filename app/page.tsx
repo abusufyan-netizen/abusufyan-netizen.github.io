@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
-  Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star
+  Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
 
