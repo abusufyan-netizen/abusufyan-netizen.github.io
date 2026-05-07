@@ -125,23 +125,87 @@ export default function Home() {
       </div>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white dark:bg-slate-950 transition-colors duration-300">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Why Developers Love Us</h2>
-          <p className="text-lg text-gray-500 dark:text-slate-400 mb-16 max-w-xl mx-auto">Designed for speed, built for professionals</p>
+      <section className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 border-b border-gray-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Why Professionals Choose WebToolkit Pro</h2>
+          <p className="text-lg text-gray-500 dark:text-slate-400 mb-16 max-w-2xl mx-auto">
+            In an era of cluttered, ad-heavy tool sites, we provide a clean, high-performance environment designed specifically for the modern developer workflow.
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { title: 'Lightning Fast', desc: 'All tools run client-side. Zero server delays. Instant results.', emoji: '⚡' },
-              { title: '100% Free', desc: 'No hidden paywalls, no sign-ups, no usage limits. Ever.', emoji: '🎁' },
-              { title: 'Privacy First', desc: 'Your data never leaves your browser. Nothing is stored or sent.', emoji: '🔒' },
-            ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center group">
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{item.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                <p className="text-gray-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+            <div className="group">
+              <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">⚡</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Lightning Fast Performance</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">
+                Every tool in the WebToolkit Pro suite is engineered for speed. By running complex logic directly in your browser using the latest WebAssembly and Edge technologies, we eliminate server-side latency. Whether you're formatting a 10MB JSON file or generating thousands of UUIDs, your results are instant and uninterrupted.
+              </p>
+            </div>
+            <div className="group">
+              <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">🔒</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Uncompromising Privacy</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">
+                Your data is your business. Unlike other platforms that capture your inputs for "analytics," we operate on a strictly zero-data-leakage policy. Your hashes, passwords, and code never leave your browser. We don't use server-side databases for your tool inputs, ensuring your intellectual property remains 100% secure.
+              </p>
+            </div>
+            <div className="group">
+              <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">🎁</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">100% Free & Open Access</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">
+                We believe the best tools should be accessible to everyone. No hidden paywalls, no aggressive sign-up popups, and no usage limits. Our goal is to empower the global developer community with a premium experience that rivals expensive enterprise software, but without the financial barrier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Tool Ecosystem Deep Dive */}
+      <section className="py-24 bg-gray-50/50 dark:bg-slate-900/50">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">A Comprehensive Ecosystem for Modern Engineering</h2>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-widest">Formatters & Beautifiers</h4>
+                    <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Turn messy, minified data into human-readable masterpieces. Our JSON and JavaScript formatters use advanced AST parsing to ensure syntax integrity while providing multiple indentation styles.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-2 shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-widest">Technical SEO Suite</h4>
+                    <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Master the search engine results pages with our specialized SEO utilities. From Robots.txt templates to JSON-LD Schema generators, we provide the technical edge needed to outrank the competition.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-widest">Security & Cryptography</h4>
+                    <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Generate high-entropy passwords and verify data integrity with industry-standard hashing algorithms including SHA-256 and MD5, all computed securely on your local machine.</p>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-[3rem] border border-gray-100 dark:border-slate-800 shadow-2xl relative">
+              <div className="absolute -top-6 -right-6 w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/20 animate-pulse">26+</div>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h4>
+              <div className="space-y-6">
+                <div>
+                  <div className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-1">Are my data inputs safe?</div>
+                  <p className="text-xs text-gray-500 dark:text-slate-400">Yes. All processing happens locally in your browser. We never transmit your sensitive strings, passwords, or code snippets to any server.</p>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-1">Do I need to create an account?</div>
+                  <p className="text-xs text-gray-500 dark:text-slate-400">Never. WebToolkit Pro is built for speed and anonymity. Use any tool instantly without the friction of a sign-up process.</p>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-1">Can I use these tools commercially?</div>
+                  <p className="text-xs text-gray-500 dark:text-slate-400">Absolutely. All tools and generated assets (passwords, sitemaps, schemas) are yours to use for personal or commercial projects without restriction.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
