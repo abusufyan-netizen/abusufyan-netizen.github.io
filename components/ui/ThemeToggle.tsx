@@ -3,15 +3,18 @@
 import React, { useState, useEffect } from 'react'
 
 export default function ThemeToggle() {
+  const [mounted, setMounted] = useState(false)
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     // On mount, check the theme from localStorage or document class
     const isDarkMode = document.documentElement.classList.contains('dark')
     setIsDark(isDarkMode)
   }, [])
 
   const toggleTheme = () => {
+    if (!mounted) return
     const newTheme = !isDark
     setIsDark(newTheme)
     if (newTheme) {
@@ -21,6 +24,10 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
     }
+  }
+
+  if (!mounted) {
+    return <div className="p-2 rounded-xl bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 w-10 h-10 shadow-sm" />
   }
 
   return (
