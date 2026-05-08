@@ -6,6 +6,7 @@ import CookieConsent from '@/components/ui/CookieConsent'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -198,6 +199,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
           <CookieConsent />
         </div>
+        <Analytics />
       </body>
     </html>
   )
