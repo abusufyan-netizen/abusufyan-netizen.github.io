@@ -18,10 +18,10 @@ The visual language of the web is constantly evolving. In 2026, UI/UX design is 
 Users in the US are increasingly drawn to interfaces that feel personal and intuitive. We are moving away from rigid, boxy layouts toward fluid, organic designs that mirror the real world.
 
 ### 1. Glassmorphism 2.0
-Glassmorphism has evolved. Instead of just "frosted glass," we are now seeing "Depth Realism"—using subtle shadows, blurs, and highlights to create a sense of three-dimensional space in a 2D screen. Our own [Header design](/components/ui/Header/) utilizes these principles to create a premium feel.
+Glassmorphism has evolved. Instead of just "frosted glass," we are now seeing "Depth Realism"—using subtle shadows, blurs, and highlights to create a sense of three-dimensional space in a 2D screen. Our own Header design utilizes these principles to create a premium feel.
 
 ### 2. Micro-Animations and Feedback
-In 2026, static sites feel broken. Users expect micro-animations that respond to their every move. Whether it's a subtle button bounce or a smooth [Cookie Consent](/components/ui/CookieConsent/) transition, these small details make the site feel "alive."
+In 2026, static sites feel broken. Users expect micro-animations that respond to their every move. Whether it's a subtle button bounce or a smooth Cookie Consent transition, these small details make the site feel "alive."
 
 ### 3. Accessible Minimalism
 Minimalism remains king, but it must be accessible. High contrast ratios, clear typography (like our use of the Inter font), and generous spacing are essential for reaching a diverse US audience.

@@ -38,7 +38,7 @@ Your `manifest.json` file defines your app's name, icons, and theme colors. It's
 Service workers act as a proxy between your browser and the network. They handle caching and offline support, ensuring your site remains fast and reliable even on spotty 5G connections in rural US areas.
 
 ### 3. App-Like Navigation
-Use smooth transitions and a mobile-first header (like our [Custom Header](/components/ui/Header/)) to make the user forget they are in a browser.
+Use smooth transitions and a mobile-first header (like our Custom Header) to make the user forget they are in a browser.
 
 ## Performance and CTR Impact
 
