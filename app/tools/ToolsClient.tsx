@@ -11,44 +11,44 @@ import {
 import AdSlot from '@/components/ads/AdSlot'
 
 const tools = [
-  // Formatters
-  { name: 'Professional JSON Formatter', description: 'Enterprise-grade JSON formatting, validation, and beautification', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-700', category: 'Formatters' },
-  { name: 'JS Code Minifier', description: 'High-performance JavaScript compression for production deployment', icon: Code2, href: '/tools/js-minifier', color: 'from-yellow-500 to-yellow-700', category: 'Formatters' },
-
+  // High Priority / New
+  { name: 'Pinterest Board Downloader', description: 'Download high-resolution images and boards from Pinterest in bulk', icon: Download, href: '/tools/pinterest-downloader', color: 'from-red-500 to-red-700', category: 'Utilities', releaseDate: '2026-05-08', priority: 1 },
+  { name: 'Professional JSON Formatter', description: 'Enterprise-grade JSON formatting, validation, and beautification', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-700', category: 'Formatters', priority: 2 },
+  { name: 'JS Code Minifier', description: 'High-performance JavaScript compression for production deployment', icon: Code2, href: '/tools/js-minifier', color: 'from-yellow-500 to-yellow-700', category: 'Formatters', priority: 3 },
+  { name: 'SEO Meta Tag Generator', description: 'Create Google-ready meta tags for high search visibility', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators', priority: 4 },
+  
   // Generators
-  { name: 'Secure Password Generator', description: 'US-standard cryptographically secure password generation tool', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-700', category: 'Generators' },
-  { name: 'UUID v7 Generator', description: 'Next-gen time-ordered unique identifiers (RFC 9562)', icon: Zap, href: '/tools/uuid-v7-generator', color: 'from-lime-500 to-lime-700', category: 'Generators' },
-  { name: 'UUID/GUID Generator', description: 'Instant RFC-compliant unique identifier generation', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-800', category: 'Generators' },
-  { name: 'Lorem Ipsum Generator', description: 'Professional placeholder text for designers and developers', icon: AlignLeft, href: '/tools/lorem-ipsum', color: 'from-orange-500 to-orange-700', category: 'Generators' },
-  { name: 'SEO Meta Tag Generator', description: 'Create Google-ready meta tags for high search visibility', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators' },
-  { name: 'Advanced Robots.txt Generator', description: 'Technical robots.txt creation for enterprise SEO management', icon: FileText, href: '/tools/robots-generator', color: 'from-orange-600 to-orange-800', category: 'Generators', releaseDate: '2026-05-05' },
-  { name: 'Secure Hash Generator', description: 'MD5, SHA-256, and SHA-512 cryptographic hashing tool', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-700', category: 'Generators' },
-  { name: 'Sitemap XML Validator', description: 'Verify XML sitemaps for Google Search Console compliance', icon: Layers, href: '/tools/sitemap-validator', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-06' },
-  { name: 'JSON-LD Schema Generator', description: 'Build structured data schema for Google Rich Results', icon: Code, href: '/tools/schema-generator', color: 'from-emerald-600 to-emerald-800', category: 'SEO', releaseDate: '2026-05-07' },
-  { name: 'API Latency Cost Calculator', description: 'Calculate the financial impact of network latency on your revenue', icon: TrendingDown, href: '/tools/api-latency-calculator', color: 'from-red-600 to-red-800', category: 'SEO' },
-  { name: 'AdSense Revenue Estimator', description: 'Project potential earnings based on traffic, niche, and CPC/CTR', icon: DollarSign, href: '/tools/adsense-calculator', color: 'from-emerald-500 to-emerald-700', category: 'SEO' },
-  { name: 'Technical SEO Audit Checklist', description: 'Interactive checklist for comprehensive search engine optimization', icon: ClipboardList, href: '/tools/seo-audit-checklist', color: 'from-blue-600 to-blue-800', category: 'SEO' },
-  { name: 'Enterprise robots.txt Templates', description: 'Pre-configured, battle-tested robots.txt for Next.js, WP, and E-commerce', icon: FileText, href: '/tools/robots-txt-templates', color: 'from-orange-600 to-orange-800', category: 'SEO', releaseDate: '2026-05-07' },
-  { name: 'Core Web Vitals Expert Guide', description: 'Interactive technical guide to mastering LCP, INP, and CLS performance', icon: Activity, href: '/tools/core-web-vitals-guide', color: 'from-blue-600 to-purple-600', category: 'SEO', releaseDate: '2026-05-07' },
-  { name: 'CDN & Edge Readiness Tester', description: 'Technical verification tool to inspect CDN headers and edge delivery', icon: Server, href: '/tools/cdn-readiness-tester', color: 'from-indigo-600 to-blue-600', category: 'SEO', releaseDate: '2026-05-07' },
-  { name: 'WCAG Color Contrast Checker', description: 'Verify ADA and WCAG 2.1 accessibility compliance', icon: Palette, href: '/tools/color-contrast', color: 'from-pink-500 to-pink-700', category: 'Design', releaseDate: '2026-05-08' },
-  { name: 'Markdown to HTML Converter', description: 'Convert documentation to clean, semantic HTML code', icon: FileCode, href: '/tools/markdown-converter', color: 'from-violet-500 to-violet-700', category: 'Formatters', releaseDate: '2026-05-09' },
+  { name: 'Secure Password Generator', description: 'US-standard cryptographically secure password generation tool', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-700', category: 'Generators', priority: 10 },
+  { name: 'UUID v7 Generator', description: 'Next-gen time-ordered unique identifiers (RFC 9562)', icon: Zap, href: '/tools/uuid-v7-generator', color: 'from-lime-500 to-lime-700', category: 'Generators', priority: 10 },
+  { name: 'UUID/GUID Generator', description: 'Instant RFC-compliant unique identifier generation', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-800', category: 'Generators', priority: 10 },
+  { name: 'Lorem Ipsum Generator', description: 'Professional placeholder text for designers and developers', icon: AlignLeft, href: '/tools/lorem-ipsum', color: 'from-orange-500 to-orange-700', category: 'Generators', priority: 10 },
+  { name: 'Advanced Robots.txt Generator', description: 'Technical robots.txt creation for enterprise SEO management', icon: FileText, href: '/tools/robots-generator', color: 'from-orange-600 to-orange-800', category: 'Generators', releaseDate: '2026-05-05', priority: 10 },
+  { name: 'Secure Hash Generator', description: 'MD5, SHA-256, and SHA-512 cryptographic hashing tool', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-700', category: 'Generators', priority: 10 },
+  
+  // SEO
+  { name: 'Sitemap XML Validator', description: 'Verify XML sitemaps for Google Search Console compliance', icon: Layers, href: '/tools/sitemap-validator', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-06', priority: 5 },
+  { name: 'JSON-LD Schema Generator', description: 'Build structured data schema for Google Rich Results', icon: Code, href: '/tools/schema-generator', color: 'from-emerald-600 to-emerald-800', category: 'SEO', releaseDate: '2026-05-07', priority: 5 },
+  { name: 'API Latency Cost Calculator', description: 'Calculate the financial impact of network latency on your revenue', icon: TrendingDown, href: '/tools/api-latency-calculator', color: 'from-red-600 to-red-800', category: 'SEO', priority: 10 },
+  { name: 'AdSense Revenue Estimator', description: 'Project potential earnings based on traffic, niche, and CPC/CTR', icon: DollarSign, href: '/tools/adsense-calculator', color: 'from-emerald-500 to-emerald-700', category: 'SEO', priority: 10 },
+  { name: 'Technical SEO Audit Checklist', description: 'Interactive checklist for comprehensive search engine optimization', icon: ClipboardList, href: '/tools/seo-audit-checklist', color: 'from-blue-600 to-blue-800', category: 'SEO', priority: 10 },
+  { name: 'Enterprise robots.txt Templates', description: 'Pre-configured, battle-tested robots.txt for Next.js, WP, and E-commerce', icon: FileText, href: '/tools/robots-txt-templates', color: 'from-orange-600 to-orange-800', category: 'SEO', releaseDate: '2026-05-07', priority: 10 },
+  { name: 'Core Web Vitals Expert Guide', description: 'Interactive technical guide to mastering LCP, INP, and CLS performance', icon: Activity, href: '/tools/core-web-vitals-guide', color: 'from-blue-600 to-purple-600', category: 'SEO', releaseDate: '2026-05-07', priority: 10 },
+  { name: 'CDN & Edge Readiness Tester', description: 'Technical verification tool to inspect CDN headers and edge delivery', icon: Server, href: '/tools/cdn-readiness-tester', color: 'from-indigo-600 to-blue-600', category: 'SEO', releaseDate: '2026-05-07', priority: 10 },
+  { name: 'Social Preview Stress Tester', description: 'Real-time simulation of OG tags and Twitter cards for viral sharing optimization', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-07', priority: 5 },
 
-  // Converters
-  { name: 'Base64 Data Converter', description: 'Secure encoding and decoding of Base64 data strings', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-700', category: 'Converters' },
-  { name: 'URL Percent Encoder', description: 'Safe URL encoding for special characters and parameters', icon: LinkIcon, href: '/tools/url-encoder', color: 'from-emerald-500 to-emerald-700', category: 'Converters' },
-  { name: 'Binary Data Converter', description: 'Convert between Binary, Hex, Decimal, and Octal formats', icon: Binary, href: '/tools/binary-converter', color: 'from-red-500 to-red-700', category: 'Converters' },
-  { name: 'Unix Timestamp Converter', description: 'Translate Unix epochs into human-readable UTC dates', icon: Clock, href: '/tools/timestamp-converter', color: 'from-amber-500 to-amber-700', category: 'Converters' },
-  { name: 'CSS Unit Converter Pro', description: 'Calculate px, rem, em, and vh units for responsive design', icon: Ruler, href: '/tools/css-unit-converter', color: 'from-fuchsia-500 to-fuchsia-700', category: 'Converters' },
-  { name: 'Text Case Converter', description: 'Transform text into Uppercase, Lowercase, and Title Case', icon: Type, href: '/tools/case-converter', color: 'from-cyan-500 to-cyan-700', category: 'Converters' },
-  { name: 'HTML Entity Encoder', description: 'Convert special characters into secure HTML entities', icon: Code, href: '/tools/html-encoder', color: 'from-violet-500 to-violet-700', category: 'Converters' },
-
-  // Utilities
-  { name: 'Design Color Picker', description: 'Visual color selection with HEX and RGB export', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-700', category: 'Utilities' },
-  { name: 'Technical Word Counter', description: 'Accurate word, character, and sentence analysis', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-700', category: 'Utilities' },
-  { name: 'Social Preview Stress Tester', description: 'Real-time simulation of OG tags and Twitter cards for viral sharing optimization', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-07' },
-  { name: 'Live Markdown Previewer', description: 'Real-time rendering of Markdown into formatted text', icon: FileCode, href: '/tools/markdown-previewer', color: 'from-sky-500 to-sky-700', category: 'Utilities' },
-  { name: 'Pinterest Board Downloader', description: 'Download high-resolution images and boards from Pinterest in bulk', icon: Download, href: '/tools/pinterest-downloader', color: 'from-red-500 to-red-700', category: 'Utilities', releaseDate: '2026-05-08' },
+  // Design & Utilities
+  { name: 'WCAG Color Contrast Checker', description: 'Verify ADA and WCAG 2.1 accessibility compliance', icon: Palette, href: '/tools/color-contrast', color: 'from-pink-500 to-pink-700', category: 'Design', releaseDate: '2026-05-08', priority: 10 },
+  { name: 'Markdown to HTML Converter', description: 'Convert documentation to clean, semantic HTML code', icon: FileCode, href: '/tools/markdown-converter', color: 'from-violet-500 to-violet-700', category: 'Formatters', releaseDate: '2026-05-09', priority: 10 },
+  { name: 'Base64 Data Converter', description: 'Secure encoding and decoding of Base64 data strings', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-700', category: 'Converters', priority: 10 },
+  { name: 'URL Percent Encoder', description: 'Safe URL encoding for special characters and parameters', icon: LinkIcon, href: '/tools/url-encoder', color: 'from-emerald-500 to-emerald-700', category: 'Converters', priority: 10 },
+  { name: 'Binary Data Converter', description: 'Convert between Binary, Hex, Decimal, and Octal formats', icon: Binary, href: '/tools/binary-converter', color: 'from-red-500 to-red-700', category: 'Converters', priority: 10 },
+  { name: 'Unix Timestamp Converter', description: 'Translate Unix epochs into human-readable UTC dates', icon: Clock, href: '/tools/timestamp-converter', color: 'from-amber-500 to-amber-700', category: 'Converters', priority: 10 },
+  { name: 'CSS Unit Converter Pro', description: 'Calculate px, rem, em, and vh units for responsive design', icon: Ruler, href: '/tools/css-unit-converter', color: 'from-fuchsia-500 to-fuchsia-700', category: 'Converters', priority: 10 },
+  { name: 'Text Case Converter', description: 'Transform text into Uppercase, Lowercase, and Title Case', icon: Type, href: '/tools/case-converter', color: 'from-cyan-500 to-cyan-700', category: 'Converters', priority: 10 },
+  { name: 'HTML Entity Encoder', description: 'Convert special characters into secure HTML entities', icon: Code, href: '/tools/html-encoder', color: 'from-violet-500 to-violet-700', category: 'Converters', priority: 10 },
+  { name: 'Design Color Picker', description: 'Visual color selection with HEX and RGB export', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-700', category: 'Design', priority: 10 },
+  { name: 'Technical Word Counter', description: 'Accurate word, character, and sentence analysis', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-700', category: 'Utilities', priority: 10 },
+  { name: 'Live Markdown Previewer', description: 'Real-time rendering of Markdown into formatted text', icon: FileCode, href: '/tools/markdown-previewer', color: 'from-sky-500 to-sky-700', category: 'Utilities', priority: 10 },
 ]
 
 const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities', 'SEO', 'Design']
@@ -80,6 +80,17 @@ export default function ToolsClient() {
     return (tools as any[]).filter(tool => {
       if (!tool.releaseDate) return true
       return tool.releaseDate <= today
+    }).sort((a, b) => {
+      // Primary sort by priority (lower is higher)
+      if ((a.priority || 10) !== (b.priority || 10)) {
+        return (a.priority || 10) - (b.priority || 10)
+      }
+      // Secondary sort by releaseDate (newer first)
+      if (a.releaseDate && b.releaseDate) {
+        return b.releaseDate.localeCompare(a.releaseDate)
+      }
+      // Tertiary sort by name
+      return a.name.localeCompare(b.name)
     })
   }, [today])
 
