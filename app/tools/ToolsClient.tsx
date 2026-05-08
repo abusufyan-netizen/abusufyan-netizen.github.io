@@ -13,9 +13,10 @@ import AdSlot from '@/components/ads/AdSlot'
 const tools = [
   // High Priority / New
   { name: 'Pinterest Board Downloader', description: 'Download high-resolution images and boards from Pinterest in bulk', icon: Download, href: '/tools/pinterest-downloader', color: 'from-red-500 to-red-700', category: 'Utilities', releaseDate: '2026-05-08', priority: 1 },
-  { name: 'Professional JSON Formatter', description: 'Enterprise-grade JSON formatting, validation, and beautification', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-700', category: 'Formatters', priority: 2 },
-  { name: 'JS Code Minifier', description: 'High-performance JavaScript compression for production deployment', icon: Code2, href: '/tools/js-minifier', color: 'from-yellow-500 to-yellow-700', category: 'Formatters', priority: 3 },
-  { name: 'SEO Meta Tag Generator', description: 'Create Google-ready meta tags for high search visibility', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators', priority: 4 },
+  { name: 'What is my IP Address?', description: 'Instantly find your public IPv4/IPv6, location, and connection audit', icon: Shield, href: '/tools/what-is-my-ip', color: 'from-emerald-500 to-emerald-700', category: 'Utilities', releaseDate: '2026-05-09', priority: 2 },
+  { name: 'Professional JSON Formatter', description: 'Enterprise-grade JSON formatting, validation, and beautification', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-700', category: 'Formatters', priority: 3 },
+  { name: 'JS Code Minifier', description: 'High-performance JavaScript compression for production deployment', icon: Code2, href: '/tools/js-minifier', color: 'from-yellow-500 to-yellow-700', category: 'Formatters', priority: 4 },
+  { name: 'SEO Meta Tag Generator', description: 'Create Google-ready meta tags for high search visibility', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators', priority: 5 },
   
   // Generators
   { name: 'Secure Password Generator', description: 'US-standard cryptographically secure password generation tool', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-700', category: 'Generators', priority: 10 },
@@ -27,6 +28,7 @@ const tools = [
   
   // SEO
   { name: 'Sitemap XML Validator', description: 'Verify XML sitemaps for Google Search Console compliance', icon: Layers, href: '/tools/sitemap-validator', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-06', priority: 5 },
+  { name: 'HTTP Redirect Checker', description: 'Trace full redirect chains (301/302) and audit status codes', icon: LinkIcon, href: '/tools/redirect-checker', color: 'from-indigo-600 to-indigo-800', category: 'SEO', releaseDate: '2026-05-09', priority: 5 },
   { name: 'JSON-LD Schema Generator', description: 'Build structured data schema for Google Rich Results', icon: Code, href: '/tools/schema-generator', color: 'from-emerald-600 to-emerald-800', category: 'SEO', releaseDate: '2026-05-07', priority: 5 },
   { name: 'API Latency Cost Calculator', description: 'Calculate the financial impact of network latency on your revenue', icon: TrendingDown, href: '/tools/api-latency-calculator', color: 'from-red-600 to-red-800', category: 'SEO', priority: 10 },
   { name: 'AdSense Revenue Estimator', description: 'Project potential earnings based on traffic, niche, and CPC/CTR', icon: DollarSign, href: '/tools/adsense-calculator', color: 'from-emerald-500 to-emerald-700', category: 'SEO', priority: 10 },

@@ -31,25 +31,20 @@ export default function SocialPreviewTester() {
     if (!url) return
     setLoading(true)
     try {
-      // Using AllOrigins CORS proxy for static site demo
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
-      const response = await fetch(proxyUrl)
-      const data = await response.json()
+      const target = url.startsWith('http') ? url : `https://${url}`
+      const res = await fetch(`/api/fetch-meta?url=${encodeURIComponent(target)}`)
+      const data = await res.json()
+      if (data.error) throw new Error(data.error)
       
-      const parser = new DOMParser()
-      const doc = parser.parseFromString(data.contents, 'text/html')
-      
-      const fetchedMeta = {
-        title: doc.querySelector('title')?.innerText || doc.querySelector('meta[property="og:title"]')?.getAttribute('content') || '',
-        description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('meta[property="og:description"]')?.getAttribute('content') || '',
-        image: doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '',
-        siteName: doc.querySelector('meta[property="og:site_name"]')?.getAttribute('content') || '',
-        url: url,
-      }
-      
-      setMetadata(fetchedMeta)
-    } catch (error) {
-      console.error('Fetch error:', error)
+      setMetadata({
+        title: data.title || '',
+        description: data.description || '',
+        image: data.image || 'https://wtkpro.site/og-image.png',
+        siteName: data.siteName || new URL(target).hostname,
+        url: target,
+      })
+    } catch (error: any) {
+      alert('Failed to fetch social preview: ' + error.message)
     } finally {
       setLoading(false)
     }
