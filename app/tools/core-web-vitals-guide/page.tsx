@@ -187,6 +187,8 @@ export default function CoreWebVitalsGuide() {
             </div>
             
             <AdSlot />
+          </div>
+        </div>
 
         <ToolInfo 
           title="Core Web Vitals Optimization Guide"

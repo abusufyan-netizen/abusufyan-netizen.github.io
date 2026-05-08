@@ -192,39 +192,41 @@ export default function UuidV7Generator() {
               </ul>
             </div>
             
-        <AdSlot className="min-h-[250px]" />
+            <AdSlot className="min-h-[250px]" />
 
-        <ToolInfo 
-          title="UUID v7 Generator"
-          description="The WebToolkit Pro UUID v7 Generator is an advanced utility for creating time-ordered, lexicographically sortable Universally Unique Identifiers. Unlike version 4 UUIDs, which are entirely random, version 7 UUIDs (defined in RFC 9562) incorporate a 48-bit Unix timestamp. This makes them significantly more efficient for database indexing and distributed systems."
-          howItWorks="Our tool generates UUID v7 by combining a millisecond-precision Unix Epoch timestamp with 74 bits of cryptographically secure randomness. The resulting identifier is sortable by creation time, which reduces database fragmentation and improves write performance in systems like PostgreSQL, MySQL, and MongoDB."
-          features={[
-            "RFC 9562 compliant version 7 generation",
-            "Time-ordered (lexicographically sortable) IDs",
-            "Batch generation of up to 50 UUIDs",
-            "48-bit Unix Epoch timestamp integration",
-            "Hardware-backed entropy via Web Crypto API",
-            "100% Client-side generation for data privacy"
-          ]}
-          faqs={[
-            {
-              q: "What is UUID v7?",
-              a: "UUID v7 is a new version of UUID that is time-ordered, meaning IDs generated later will always be 'greater' than IDs generated earlier. This is crucial for database performance."
-            },
-            {
-              q: "Why is v7 better than v4 for databases?",
-              a: "Random UUID v4s cause 'index fragmentation' because they are inserted into random locations in a B-Tree. UUID v7s are inserted at the end of the index, leading to faster writes and smaller index sizes."
-            },
-            {
-              q: "Is UUID v7 backward compatible?",
-              a: "Yes. UUID v7 follows the same 128-bit structure as previous versions, so it can be stored in any field that supports UUIDs."
-            },
-            {
-              q: "Can I extract the time from a UUID v7?",
-              a: "Yes. Since the first 48 bits represent the Unix timestamp, you can theoretically determine the creation time of a UUID v7 identifier."
-            }
-          ]}
-        />
+            <ToolInfo 
+              title="UUID v7 Generator"
+              description="The WebToolkit Pro UUID v7 Generator is an advanced utility for creating time-ordered, lexicographically sortable Universally Unique Identifiers. Unlike version 4 UUIDs, which are entirely random, version 7 UUIDs (defined in RFC 9562) incorporate a 48-bit Unix timestamp. This makes them significantly more efficient for database indexing and distributed systems."
+              howItWorks="Our tool generates UUID v7 by combining a millisecond-precision Unix Epoch timestamp with 74 bits of cryptographically secure randomness. The resulting identifier is sortable by creation time, which reduces database fragmentation and improves write performance in systems like PostgreSQL, MySQL, and MongoDB."
+              features={[
+                "RFC 9562 compliant version 7 generation",
+                "Time-ordered (lexicographically sortable) IDs",
+                "Batch generation of up to 50 UUIDs",
+                "48-bit Unix Epoch timestamp integration",
+                "Hardware-backed entropy via Web Crypto API",
+                "100% Client-side generation for data privacy"
+              ]}
+              faqs={[
+                {
+                  q: "What is UUID v7?",
+                  a: "UUID v7 is a new version of UUID that is time-ordered, meaning IDs generated later will always be 'greater' than IDs generated earlier. This is crucial for database performance."
+                },
+                {
+                  q: "Why is v7 better than v4 for databases?",
+                  a: "Random UUID v4s cause 'index fragmentation' because they are inserted into random locations in a B-Tree. UUID v7s are inserted at the end of the index, leading to faster writes and smaller index sizes."
+                },
+                {
+                  q: "Is UUID v7 backward compatible?",
+                  a: "Yes. UUID v7 follows the same 128-bit structure as previous versions, so it can be stored in any field that supports UUIDs."
+                },
+                {
+                  q: "Can I extract the time from a UUID v7?",
+                  a: "Yes. Since the first 48 bits represent the Unix timestamp, you can theoretically determine the creation time of a UUID v7 identifier."
+                }
+              ]}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

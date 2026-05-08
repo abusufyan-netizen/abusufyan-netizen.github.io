@@ -138,7 +138,7 @@ export default function HtmlEncoder() {
         <ToolInfo 
           title="HTML Entity Encoder & Decoder"
           description="The WebToolkit Pro HTML Encoder/Decoder is a security-first utility designed for developers and content managers. HTML encoding is the process of converting special characters (like <, >, and &) into their corresponding HTML entities. This ensures that the characters are treated as literal text by the browser rather than executable code."
-          howItWorks="Our encoder uses a robust string replacement algorithm to sanitize the five key characters: ampersand (&), less-than (<), greater-than (>), double quotes (\"), and single quotes ('). The decoder utilizes the browser's native DOM parser to safely re-interpret entities back into their original Unicode characters, providing a reliable way to audit and preview encoded content."
+          howItWorks="Our encoder uses a robust string replacement algorithm to sanitize the five key characters: ampersand (&), less-than (<), greater-than (>), double quotes (\\"), and single quotes ('). The decoder utilizes the browser's native DOM parser to safely re-interpret entities back into their original Unicode characters, providing a reliable way to audit and preview encoded content."
           features={[
             "Instant conversion of special characters to entities",
             "Safe-mode decoding using browser-native DOM parsing",

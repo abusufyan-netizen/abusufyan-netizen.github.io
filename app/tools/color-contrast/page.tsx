@@ -159,9 +159,7 @@ export default function ColorContrast() {
                 <strong>WCAG Standards:</strong> AA is the standard requirement for most business sites. Large text is defined as 18pt+ or 14pt+ bold.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
+            </div>
           </div>
         </div>
 
