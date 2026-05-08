@@ -6,6 +6,7 @@ import { CheckCircle2, HelpCircle, Info } from 'lucide-react'
 interface ToolInfoProps {
   title: string
   description: string
+  howItWorks: string
   features: string[]
   faqs: { q: string; a: string }[]
   technicalSpecs?: { label: string; value: string }[]
