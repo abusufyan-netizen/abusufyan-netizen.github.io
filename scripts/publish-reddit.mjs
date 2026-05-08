@@ -19,9 +19,9 @@ async function publishLatestPost() {
   console.log('🚀 Starting Reddit Auto-Publish...');
 
   // 1. Validate Credentials
-  if (!REDDIT_CLIENT_ID || !REDDIT_CLIENT_SECRET) {
-    console.error('❌ Error: Missing Reddit credentials in .env file!');
-    return;
+  if (!REDDIT_CLIENT_ID || !REDDIT_CLIENT_SECRET || !REDDIT_USERNAME || !REDDIT_PASSWORD) {
+    console.error('❌ Error: Missing Reddit credentials (ID, Secret, Username, or Password)!');
+    process.exit(1);
   }
 
   // 2. Initialize Reddit Client

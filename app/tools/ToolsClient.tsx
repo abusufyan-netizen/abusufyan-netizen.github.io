@@ -6,7 +6,7 @@ import {
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
-  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server
+  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Download
 } from 'lucide-react'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -48,6 +48,7 @@ const tools = [
   { name: 'Technical Word Counter', description: 'Accurate word, character, and sentence analysis', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-700', category: 'Utilities' },
   { name: 'Social Preview Stress Tester', description: 'Real-time simulation of OG tags and Twitter cards for viral sharing optimization', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-07' },
   { name: 'Live Markdown Previewer', description: 'Real-time rendering of Markdown into formatted text', icon: FileCode, href: '/tools/markdown-previewer', color: 'from-sky-500 to-sky-700', category: 'Utilities' },
+  { name: 'Pinterest Board Downloader', description: 'Download high-resolution images and boards from Pinterest in bulk', icon: Download, href: '/tools/pinterest-downloader', color: 'from-red-500 to-red-700', category: 'Utilities', releaseDate: '2026-05-08' },
 ]
 
 const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities', 'SEO', 'Design']
@@ -111,17 +112,21 @@ export default function ToolsClient() {
         {/* Topical Hubs (Semantic Silos) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {[
-            { title: 'Hub A: Developer Tools', desc: 'Formatters, minifiers, and security utilities for engineers.', icon: Code2, tools: ['json-formatter', 'js-minifier', 'hash-generator', 'uuid-generator'], color: 'bg-blue-600' },
-            { title: 'Hub B: Content Tools', desc: 'Text converters, counters, and documentation utilities.', icon: FileText, tools: ['word-counter', 'case-converter', 'lorem-ipsum', 'markdown-converter'], color: 'bg-purple-600' },
-            { title: 'Hub C: SEO Utilities', desc: 'Metadata, sitemaps, and search optimization engines.', icon: Globe, tools: ['meta-tag-generator', 'robots-generator', 'sitemap-validator', 'schema-generator'], color: 'bg-emerald-600' },
+            { title: 'Developer Utilities', desc: 'Professional formatters, minifiers, and security tools for modern engineers.', icon: Code2, tools: ['json-formatter', 'js-minifier', 'hash-generator', 'uuid-generator'], color: 'bg-blue-600', cat: 'Formatters' },
+            { title: 'Content & Writing', desc: 'Accurate text converters, word counters, and documentation utilities.', icon: FileText, tools: ['word-counter', 'case-converter', 'lorem-ipsum', 'markdown-converter'], color: 'bg-purple-600', cat: 'Utilities' },
+            { title: 'Expert SEO Engines', desc: 'High-performance metadata, sitemaps, and search optimization tools.', icon: Globe, tools: ['meta-tag-generator', 'robots-generator', 'sitemap-validator', 'schema-generator'], color: 'bg-emerald-600', cat: 'SEO' },
           ].map((hub) => (
-            <div key={hub.title} className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-all">
-              <div className={`w-12 h-12 ${hub.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10`}>
+            <button 
+              key={hub.title} 
+              onClick={() => setActiveCategory(hub.cat)}
+              className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5 hover:-translate-y-1 hover:border-blue-500/50 transition-all text-left group"
+            >
+              <div className={`w-12 h-12 ${hub.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform`}>
                 <hub.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{hub.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">{hub.title}</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{hub.desc}</p>
-            </div>
+            </button>
           ))}
         </div>
 
