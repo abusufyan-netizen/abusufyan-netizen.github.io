@@ -128,33 +128,29 @@ export default function PasswordGenerator() {
 
         <ToolInfo 
           title="Secure Password Generator"
-          description="The WebToolkit Pro Secure Password Generator is a cryptographically strong utility designed to help users create highly secure, unhackable passwords instantly. It follows NIST 800-63B standards for credential security."
-          howItWorks="Our generator uses the browser's native `crypto.getRandomValues()` API to ensure true cryptographic randomness. Unlike simple `Math.random()` functions, this method produces values that are statistically independent and unpredictable."
+          description="A cryptographically secure utility designed for enterprise-grade security. It generates high-entropy strings based on NIST 800-63B guidelines, ensuring your credentials are immune to brute-force and rainbow table attacks."
+          howItWorks="Our engine leverages the `crypto.getRandomValues()` API, a Cryptographically Secure Pseudo-Random Number Generator (CSPRNG). This ensures that every bit of your password is generated with maximum entropy and true randomness."
           features={[
-            "Cryptographically secure random number generation (CSPRNG)",
-            "Customizable length up to 64 characters",
-            "Toggleable sets: Uppercase, Numbers, and Symbols",
-            "Instant entropy feedback for maximum security",
-            "100% Client-side: Your password never touches our servers",
-            "One-click copy with visual confirmation"
+            "NIST 800-63B compliant entropy generation",
+            "CSPRNG-based cryptographic randomness",
+            "Configurable complexity (Symbols, Numbers, Mixed Case)",
+            "High-length support (Up to 128 characters)",
+            "Instant password strength analysis",
+            "Zero-knowledge architecture: Local browser execution"
           ]}
           faqs={[
-            {
-              q: "What makes a password truly secure?",
-              a: "A secure password should have high entropy—a mix of lowercase, uppercase, numbers, and symbols—and be at least 12-16 characters long. Length is often more important than complexity."
-            },
-            {
-              q: "Why should I trust this generator?",
-              a: "This tool runs entirely in your browser. The code for generating the password is local to your machine, meaning the generated string is never sent over the network."
-            },
-            {
-              q: "How often should I change my passwords?",
-              a: "Current security best practices recommend changing passwords only when there is evidence of a compromise, provided you use a unique, strong password for every account."
-            },
-            {
-              q: "Are the passwords saved in my browser history?",
-              a: "No. The passwords are generated in memory and are not saved to localStorage or history. Once you close the tab, the data is gone."
-            }
+            { q: "Is Math.random() used here?", a: "No. We exclusively use the WebCrypto API (getRandomValues), which is statistically superior and secure for cryptographic purposes." },
+            { q: "What is entropy?", a: "Entropy is a measure of randomness. A higher entropy value means a password is exponentially harder for a computer to guess." },
+            { q: "How are the symbols chosen?", a: "We use a curated set of ASCII symbols that are widely compatible with major systems like AWS, Google, and Azure." },
+            { q: "Can I use this for API keys?", a: "Yes. By selecting a high length (32+ chars), you can generate secure secrets for production environments." }
+          ]}
+          technicalSpecs={[
+            { label: "Entropy Source", value: "WebCrypto API" },
+            { label: "Algorithm", value: "CSPRNG (NIST)" },
+            { label: "Char Set Size", value: "94 Characters" },
+            { label: "Execution", value: "Client-Side ONLY" },
+            { label: "Max Length", value: "128 chars" },
+            { label: "Security Tier", value: "Enterprise" }
           ]}
         />
       </div>

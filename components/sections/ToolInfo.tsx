@@ -8,10 +8,10 @@ interface ToolInfoProps {
   description: string
   features: string[]
   faqs: { q: string; a: string }[]
-  howItWorks: string
+  technicalSpecs?: { label: string; value: string }[]
 }
 
-export default function ToolInfo({ title, description, features, faqs, howItWorks }: ToolInfoProps) {
+export default function ToolInfo({ title, description, features, faqs, howItWorks, technicalSpecs }: ToolInfoProps) {
   return (
     <div className="mt-20 space-y-20">
       {/* Description & Features */}
@@ -64,6 +64,32 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
           ))}
         </div>
       </section>
+
+      {/* Technical Engine Specs (Strategy C: Authority) */}
+      {technicalSpecs && (
+        <section className="max-w-4xl mx-auto">
+          <div className="bg-slate-900 dark:bg-slate-950 p-8 md:p-12 rounded-[2.5rem] border border-slate-800 shadow-2xl overflow-hidden relative group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Info className="w-4 h-4" />
+              </div>
+              Technical Engine Specifications
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+              {technicalSpecs.map((spec, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-slate-800/50">
+                  <span className="text-sm text-slate-400 font-medium">{spec.label}</span>
+                  <span className="text-sm text-blue-400 font-bold font-mono">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-xs text-slate-500 leading-relaxed italic">
+              *All processing occurs locally in your browser. Wtkpro does not transmit, store, or log your input data, ensuring maximum security for enterprise-level JSON and sensitive credentials.
+            </p>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
