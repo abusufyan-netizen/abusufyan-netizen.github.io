@@ -28,8 +28,7 @@ export default function PinterestDownloader() {
     setPins([]);
 
     try {
-      const workerUrl = `https://cloudflare-workers-autoconfig-pinflow.safi4730358.workers.dev/api/fetch.php?url=${encodeURIComponent(url)}`;
-      const res = await fetch(workerUrl);
+      const res = await fetch(`/api/pinterest/fetch?url=${encodeURIComponent(url)}`);
       const data = await res.json();
 
       if (data.error) {
@@ -96,9 +95,7 @@ export default function PinterestDownloader() {
 
       const downloadPromises = pins.map(async (pin, index) => {
         try {
-          // Use the worker proxy for raw image download to bypass CORS
-          const proxyImageUrl = `https://cloudflare-workers-autoconfig-pinflow.safi4730358.workers.dev/api/fetch.php?url=${encodeURIComponent(pin.url)}&raw=true`;
-          const response = await fetch(proxyImageUrl);
+          const response = await fetch(pin.url);
           const blob = await response.blob();
           const fileName = `${pin.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_${index}.jpg`;
           folder?.file(fileName, blob);
