@@ -90,6 +90,7 @@ export default function PinterestDownloader() {
     if (pins.length === 0) return;
     setDownloading(true);
     try {
+      // @ts-ignore - Dynamic import to save initial bundle size
       const JSZipModule: any = await import('jszip');
       const JSZip = JSZipModule.default || JSZipModule;
       const zip = new JSZip();
