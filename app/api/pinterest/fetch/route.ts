@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     const seen = new Set();
 
     // Aggressive Pin Extraction from ALL script tags
-    const scriptMatches = html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g);
+    const scriptMatches = Array.from(html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g));
     
     const deepSearch = (obj: any, depth = 0) => {
       if (!obj || typeof obj !== 'object' || depth > 10) return;
@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
 
     // Fallback: LD+JSON
     if (pins.length < 5) {
-      const ldMatches = html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
+      const ldMatches = Array.from(html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g));
       for (const match of ldMatches) {
         try {
           const data = JSON.parse(match[1]);
@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
     // Final Fallback: Regex for originals
     if (pins.length < 5) {
       const imgRegex = /"(https:\/\/i\.pinimg\.com\/originals\/[a-z0-9\/]+\.jpg)"/gi;
-      const matches = html.matchAll(imgRegex);
+      const matches = Array.from(html.matchAll(imgRegex));
       for (const match of matches) {
         if (!seen.has(match[1])) {
           seen.add(match[1]);
