@@ -20,8 +20,8 @@ export default function Header() {
   const navLinks = [
     { name: 'Tools', href: '/tools/' },
     { name: 'Blog', href: '/blog/' },
-    { name: 'About', href: '/about/' },
     { name: 'Submit Tool', href: '/submit-tool/' },
+    { name: 'About', href: '/about/' },
     { name: 'Contact', href: '/contact/' },
   ]
 
@@ -47,25 +47,27 @@ export default function Header() {
           </Link>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name}
-                href={link.href} 
-                className="text-sm font-black uppercase tracking-widest text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 relative group"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-            <div className="w-px h-6 bg-gray-100 dark:bg-slate-800" />
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isCTA = link.name === 'Submit Tool';
+              return (
+                <Link 
+                  key={link.name}
+                  href={link.href} 
+                  className={isCTA 
+                    ? "text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 border-2 border-blue-600/20 dark:border-blue-400/20 px-5 py-2.5 rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-950 transition-all duration-300"
+                    : "text-xs font-black uppercase tracking-widest text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 relative group"
+                  }
+                >
+                  {link.name}
+                  {!isCTA && (
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                  )}
+                </Link>
+              );
+            })}
+            <div className="w-px h-6 bg-gray-100 dark:bg-slate-800 mx-2" />
             <ThemeToggle />
-            <Link 
-              href="/tools/" 
-              className="btn-primary px-6 py-3 text-xs uppercase tracking-widest"
-            >
-              Get Started
-            </Link>
           </nav>
 
           {/* Mobile Right Section */}
