@@ -21,6 +21,7 @@ export default function PinterestDownloader() {
   const [downloading, setDownloading] = useState(false)
   const [progress, setProgress] = useState({ current: 0, total: 0 })
   const [history, setHistory] = useState<string[]>([])
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
 
   // Load history on mount
   useEffect(() => {
@@ -76,15 +77,17 @@ export default function PinterestDownloader() {
 
       if (data.props?.initialReduxState?.pins) {
         Object.values(data.props.initialReduxState.pins).forEach(processItem);
+      } else if (data.initialReduxState?.pins) {
+        Object.values(data.initialReduxState.pins).forEach(processItem);
       } else if (data.resource_responses?.[0]?.data?.results) {
         data.resource_responses[0].data.results.forEach(processItem);
       } else {
-        const deepSearch = (obj: any) => {
-          if (!obj || typeof obj !== 'object') return;
+        const deepSearch = (obj: any, depth = 0) => {
+          if (!obj || typeof obj !== 'object' || depth > 5) return;
           if (obj.images && (obj.images.orig || obj.images['736x'])) {
             processItem(obj);
           } else {
-            Object.values(obj).forEach(val => deepSearch(val));
+            Object.values(obj).forEach(val => deepSearch(val, depth + 1));
           }
         };
         deepSearch(data);
@@ -97,6 +100,7 @@ export default function PinterestDownloader() {
       }
 
       setPins(uniquePins);
+      setSelectedIds(new Set(uniquePins.map(p => p.id))); // Select all by default
       saveToHistory(targetUrl);
       if (inputUrl) setUrl(inputUrl);
     } catch (err: any) {
@@ -106,10 +110,27 @@ export default function PinterestDownloader() {
     }
   };
 
+  const toggleSelect = (id: string) => {
+    const next = new Set(selectedIds);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    setSelectedIds(next);
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedIds.size === pins.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(pins.map(p => p.id)));
+    }
+  };
+
   const handleDownloadAll = async () => {
-    if (pins.length === 0) return;
+    const selectedPins = pins.filter(p => selectedIds.has(p.id));
+    if (selectedPins.length === 0) return;
+    
     setDownloading(true);
-    setProgress({ current: 0, total: pins.length });
+    setProgress({ current: 0, total: selectedPins.length });
 
     try {
       const JSZipModule: any = await import('jszip');
@@ -119,8 +140,8 @@ export default function PinterestDownloader() {
 
       // Batch processing to prevent browser lockup
       const batchSize = 5;
-      for (let i = 0; i < pins.length; i += batchSize) {
-        const batch = pins.slice(i, i + batchSize);
+      for (let i = 0; i < selectedPins.length; i += batchSize) {
+        const batch = selectedPins.slice(i, i + batchSize);
         await Promise.all(batch.map(async (pin, idx) => {
           try {
             const response = await fetch(`/api/proxy-image?url=${encodeURIComponent(pin.url)}`);
@@ -188,15 +209,24 @@ export default function PinterestDownloader() {
               </div>
             </div>
             
-            <div className="min-h-[60px] flex items-center relative">
+            <div className="min-h-[60px] flex items-center gap-4 relative">
               {pins.length > 0 && !downloading && (
-                <button 
-                  onClick={handleDownloadAll}
-                  className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all group animate-in fade-in zoom-in duration-300"
-                >
-                  <Download className="w-5 h-5 group-hover:bounce" />
-                  <span>{`Download ${pins.length} Images (ZIP)`}</span>
-                </button>
+                <>
+                  <button 
+                    onClick={toggleSelectAll}
+                    className="hidden sm:flex items-center gap-2 px-6 py-4 bg-white dark:bg-slate-900 hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300 font-bold rounded-2xl border-2 border-gray-100 dark:border-slate-800 transition-all"
+                  >
+                    {selectedIds.size === pins.length ? 'Deselect All' : 'Select All'}
+                  </button>
+                  <button 
+                    onClick={handleDownloadAll}
+                    disabled={selectedIds.size === 0}
+                    className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all group animate-in fade-in zoom-in duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Download className="w-5 h-5 group-hover:bounce" />
+                    <span>{`Download ${selectedIds.size} Images (ZIP)`}</span>
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -321,16 +351,27 @@ export default function PinterestDownloader() {
 
         <div className="min-h-[400px]">
           {pins.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
               {pins.map((pin) => (
                 <div key={pin.id} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800">
                   <div className="aspect-[3/4] relative overflow-hidden">
                     <img 
                       src={pin.thumbnail} 
                       alt={pin.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className={`w-full h-full object-cover transition-all duration-500 ${selectedIds.has(pin.id) ? 'scale-100' : 'scale-90 opacity-40 grayscale'} group-hover:scale-110`}
                       loading="lazy"
                     />
+                    
+                    {/* Selection Checkbox */}
+                    <div 
+                      onClick={() => toggleSelect(pin.id)}
+                      className="absolute top-4 left-4 z-20 cursor-pointer"
+                    >
+                      <div className={`w-6 h-6 rounded-lg border-2 transition-all flex items-center justify-center ${selectedIds.has(pin.id) ? 'bg-red-600 border-red-600 shadow-lg shadow-red-600/40' : 'bg-white/20 border-white/40 backdrop-blur-md'}`}>
+                        {selectedIds.has(pin.id) && <Download className="w-3.5 h-3.5 text-white transform rotate-180" />}
+                      </div>
+                    </div>
+
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                       <div className="flex gap-2">
                         <a 
@@ -387,7 +428,7 @@ export default function PinterestDownloader() {
           faqs={[
             {
               q: "How many images can I download at once?",
-              a: "Our tool can handle up to 100 images in a single batch. For larger boards, the process is divided into concurrent chunks to ensure stability."
+              a: "Our tool can handle up to 1,000 pins in a single batch. For larger boards, the process is automatically paginated to ensure stability and completeness."
             },
             {
               q: "Is my search history shared?",

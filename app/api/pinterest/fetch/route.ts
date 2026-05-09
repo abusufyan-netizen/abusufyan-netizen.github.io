@@ -41,11 +41,30 @@ export async function GET(request: NextRequest) {
     }
 
     // Robust Board ID detection
-    const reduxState = initialData.props?.initialReduxState || initialData.initialReduxState || {};
-    const boards = reduxState.boards || {};
-    const boardId = (Object.values(boards).find((b: any) => b.id) as any)?.id || 
-                    initialData.props?.data?.board?.id ||
-                    initialData.page_props?.data?.board?.id;
+    let boardId = '';
+    
+    try {
+      const reduxState = (initialData as any).props?.initialReduxState || (initialData as any).initialReduxState || {};
+      const boards = (reduxState as any).boards || {};
+      const boardObj = Object.values(boards).find((b: any) => b?.id);
+      if (boardObj) boardId = (boardObj as any).id;
+      
+      if (!boardId) {
+        boardId = (initialData as any).props?.data?.board?.id || 
+                  (initialData as any).page_props?.data?.board?.id || 
+                  '';
+      }
+    } catch (e) {
+      console.log('Error parsing initialData for boardId');
+    }
+
+    // 2. Robust Regex Fallback (Matches modern Pinterest SSR)
+    if (!boardId) {
+      const boardIdMatch = html.match(/"board":\{"id":"(\d+)"/) || 
+                          html.match(/"board_id":"(\d+)"/) ||
+                          html.match(/"id":"(\d+)"[^}]*?"type":"board"/);
+      if (boardIdMatch) boardId = boardIdMatch[1];
+    }
     
     if (!boardId) {
        // Fallback: Just return the initial data if we can't find a board ID for bulk fetching
@@ -58,9 +77,52 @@ export async function GET(request: NextRequest) {
     const MAX_PINS = 1000;
     const BATCH_SIZE = 50;
 
-    // First, add pins from initial state
-    const initialPins = initialData.props?.initialReduxState?.pins || {};
-    allPins = Object.values(initialPins);
+    // 3. Extract initial pins from HTML (LD+JSON is more reliable than props)
+    try {
+      const ldJsonMatches = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
+      if (ldJsonMatches) {
+        ldJsonMatches.forEach(match => {
+          try {
+            const content = match.replace(/<script type="application\/ld\+json">|<\/script>/g, '');
+            const parsed = JSON.parse(content);
+            
+            // Pinterest Board LD+JSON usually has 'itemListElement'
+            const items = parsed.itemListElement || (parsed['@graph'] ? parsed['@graph'].find((it: any) => it.itemListElement)?.itemListElement : null);
+            
+            if (items && Array.isArray(items)) {
+              items.forEach((item: any) => {
+                const pinUrl = item.url;
+                const pinId = pinUrl?.match(/pin\/(\d+)/)?.[1];
+                if (pinId) {
+                  allPins.push({
+                    id: pinId,
+                    images: {
+                      '736x': { url: item.image }
+                    },
+                    pinner: { username: 'Pinterest User' },
+                    description: item.name || ''
+                  });
+                }
+              });
+            }
+          } catch (e) {}
+        });
+      }
+    } catch (e) {}
+
+    // 4. Also check initial state for pins (fallback/supplement)
+    try {
+      const reduxState = (initialData as any).props?.initialReduxState || (initialData as any).initialReduxState || {};
+      const initialPins = (reduxState as any).pins || {};
+      const statePins = Object.values(initialPins);
+      
+      // Merge with allPins, avoiding duplicates
+      statePins.forEach((pin: any) => {
+        if (pin?.id && !allPins.find(p => p.id === pin.id)) {
+          allPins.push(pin);
+        }
+      });
+    } catch (e) {}
 
     // Loop to fetch more if needed
     while (allPins.length < MAX_PINS) {
