@@ -11,13 +11,14 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(url, {
+    let finalResponse = await fetch(url, {
+      redirect: 'follow',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
       },
     });
 
-    const html = await response.text();
+    const html = await finalResponse.text();
     const pins: any[] = [];
     const seen = new Set();
 
