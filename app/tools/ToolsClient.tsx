@@ -7,7 +7,7 @@ import {
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
   DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Download,
-  RefreshCw
+  RefreshCw, Heart
 } from 'lucide-react'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -136,6 +136,12 @@ export default function ToolsClient() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredTools.map((tool) => (
           <div key={tool.href} className="relative group">
+            <button 
+              onClick={(e) => toggleFavorite(e, tool.href)}
+              className={`absolute top-6 right-6 p-2 rounded-xl transition-all z-20 ${favorites.includes(tool.href) ? 'bg-rose-50 dark:bg-rose-900/20 text-rose-500' : 'text-gray-300 dark:text-slate-700 hover:text-rose-400'}`}
+            >
+              <Heart className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-rose-500' : ''}`} />
+            </button>
             <Link 
               href={tool.href} 
               className="card-premium flex flex-col h-full p-8"
