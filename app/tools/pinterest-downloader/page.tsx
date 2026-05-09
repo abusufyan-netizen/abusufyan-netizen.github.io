@@ -63,37 +63,7 @@ export default function PinterestDownloader() {
         throw new Error(data.error);
       }
 
-      const extractedPins: Pin[] = [];
-      const processItem = (item: any) => {
-        if (item?.images) {
-          extractedPins.push({
-            id: item.id || Math.random().toString(36).substr(2, 9),
-            title: item.title || item.grid_title || 'Untitled Pin',
-            url: item.images.orig?.url || item.images['736x']?.url || item.images['max']?.url,
-            thumbnail: item.images['236x']?.url || item.images['474x']?.url
-          });
-        }
-      };
-
-      if (data.props?.initialReduxState?.pins) {
-        Object.values(data.props.initialReduxState.pins).forEach(processItem);
-      } else if (data.initialReduxState?.pins) {
-        Object.values(data.initialReduxState.pins).forEach(processItem);
-      } else if (data.resource_responses?.[0]?.data?.results) {
-        data.resource_responses[0].data.results.forEach(processItem);
-      } else {
-        const deepSearch = (obj: any, depth = 0) => {
-          if (!obj || typeof obj !== 'object' || depth > 5) return;
-          if (obj.images && (obj.images.orig || obj.images['736x'])) {
-            processItem(obj);
-          } else {
-            Object.values(obj).forEach(val => deepSearch(val, depth + 1));
-          }
-        };
-        deepSearch(data);
-      }
-
-      const uniquePins = Array.from(new Map(extractedPins.filter(p => p.url).map(p => [p.url, p])).values());
+      const uniquePins: Pin[] = data.pins || [];
       
       if (uniquePins.length === 0) {
         throw new Error('No public images found. Make sure the link is public.');

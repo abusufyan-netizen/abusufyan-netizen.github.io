@@ -11,157 +11,120 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(url, {
+    let finalResponse = await fetch(url, {
+      redirect: 'follow',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
       },
     });
 
-    const html = await response.text();
+    const finalUrl = finalResponse.url;
+    const html = await finalResponse.text();
     
-    // Extract Board ID and Initial Data from multiple possible script tags
-    const patterns = [
-      /<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/,
-      /<script id="__PWS_INITIAL_PROPS__" type="application\/json">([\s\S]*?)<\/script>/
-    ];
+    // 1. Unified Pin Extraction Helper
+    const extractPins = (data: any) => {
+      const pins: any[] = [];
+      const seen = new Set();
 
-    let initialData: any = null;
-    for (const pattern of patterns) {
-      const match = html.match(pattern);
-      if (match && match[1]) {
-        try {
-          initialData = JSON.parse(match[1]);
-          break;
-        } catch (e) {}
-      }
-    }
+      const process = (item: any) => {
+        if (!item || typeof item !== 'object') return;
+        if (item.images && (item.images.orig || item.images['736x'])) {
+          const id = item.id || Math.random().toString(36).substr(2, 9);
+          const url = item.images.orig?.url || item.images['736x']?.url;
+          if (url && !seen.has(url)) {
+            seen.add(url);
+            pins.push({
+              id,
+              title: item.title || item.grid_title || item.description || 'Untitled Pin',
+              url,
+              thumbnail: item.images['236x']?.url || item.images['474x']?.url || url
+            });
+          }
+        }
+      };
 
-    if (!initialData) {
-      return NextResponse.json({ error: 'Could not find board data. The link might be private or invalid.' }, { status: 404 });
-    }
+      const traverse = (obj: any, depth = 0) => {
+        if (!obj || typeof obj !== 'object' || depth > 10) return;
+        process(obj);
+        Object.values(obj).forEach(val => traverse(val, depth + 1));
+      };
 
-    // Robust Board ID detection
+      traverse(data);
+      return pins;
+    };
+
+    // 2. Extract Board ID for mass fetching if possible
     let boardId = '';
-    
-    try {
-      const reduxState = (initialData as any).props?.initialReduxState || (initialData as any).initialReduxState || {};
-      const boards = (reduxState as any).boards || {};
-      const boardObj = Object.values(boards).find((b: any) => b?.id);
-      if (boardObj) boardId = (boardObj as any).id;
-      
-      if (!boardId) {
-        boardId = (initialData as any).props?.data?.board?.id || 
-                  (initialData as any).page_props?.data?.board?.id || 
-                  '';
-      }
-    } catch (e) {
-      console.log('Error parsing initialData for boardId');
+    const boardIdMatch = html.match(/"board":\{"id":"(\d+)"/) || 
+                        html.match(/"board_id":"(\d+)"/) ||
+                        html.match(/"id":"(\d+)"[^}]*?"type":"board"/);
+    if (boardIdMatch) boardId = boardIdMatch[1];
+
+    // 3. Extract Initial Data
+    let initialData: any = {};
+    const dataPattern = /<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/;
+    const dataMatch = html.match(dataPattern);
+    if (dataMatch) {
+      try { initialData = JSON.parse(dataMatch[1]); } catch (e) {}
     }
 
-    // 2. Robust Regex Fallback (Matches modern Pinterest SSR)
-    if (!boardId) {
-      const boardIdMatch = html.match(/"board":\{"id":"(\d+)"/) || 
-                          html.match(/"board_id":"(\d+)"/) ||
-                          html.match(/"id":"(\d+)"[^}]*?"type":"board"/);
-      if (boardIdMatch) boardId = boardIdMatch[1];
-    }
-    
-    if (!boardId) {
-       // Fallback: Just return the initial data if we can't find a board ID for bulk fetching
-       return NextResponse.json(initialData);
-    }
-
-    // Now we have the board ID, let's fetch in bulk using Pinterest API
-    let allPins: any[] = [];
-    let bookmark = '';
-    const MAX_PINS = 1000;
-    const BATCH_SIZE = 50;
-
-    // 3. Extract initial pins from HTML (LD+JSON is more reliable than props)
-    try {
-      const ldJsonMatches = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
-      if (ldJsonMatches) {
-        ldJsonMatches.forEach(match => {
-          try {
-            const content = match.replace(/<script type="application\/ld\+json">|<\/script>/g, '');
-            const parsed = JSON.parse(content);
-            
-            // Pinterest Board LD+JSON usually has 'itemListElement'
-            const items = parsed.itemListElement || (parsed['@graph'] ? parsed['@graph'].find((it: any) => it.itemListElement)?.itemListElement : null);
-            
-            if (items && Array.isArray(items)) {
-              items.forEach((item: any) => {
-                const pinUrl = item.url;
-                const pinId = pinUrl?.match(/pin\/(\d+)/)?.[1];
-                if (pinId) {
-                  allPins.push({
-                    id: pinId,
-                    images: {
-                      '736x': { url: item.image }
-                    },
-                    pinner: { username: 'Pinterest User' },
-                    description: item.name || ''
-                  });
-                }
+    // 4. Also check LD+JSON for initial pins
+    const ldJsonMatches = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
+    let ldPins: any[] = [];
+    if (ldJsonMatches) {
+      ldJsonMatches.forEach(match => {
+        try {
+          const content = match.replace(/<script type="application\/ld\+json">|<\/script>/g, '');
+          const parsed = JSON.parse(content);
+          const items = parsed.itemListElement || (parsed['@graph'] ? parsed['@graph'].find((it: any) => it.itemListElement)?.itemListElement : null);
+          if (items && Array.isArray(items)) {
+            items.forEach((item: any) => {
+              ldPins.push({
+                images: { '736x': { url: item.image } },
+                title: item.name,
+                url: item.url
               });
-            }
-          } catch (e) {}
-        });
-      }
-    } catch (e) {}
-
-    // 4. Also check initial state for pins (fallback/supplement)
-    try {
-      const reduxState = (initialData as any).props?.initialReduxState || (initialData as any).initialReduxState || {};
-      const initialPins = (reduxState as any).pins || {};
-      const statePins = Object.values(initialPins);
-      
-      // Merge with allPins, avoiding duplicates
-      statePins.forEach((pin: any) => {
-        if (pin?.id && !allPins.find(p => p.id === pin.id)) {
-          allPins.push(pin);
-        }
+            });
+          }
+        } catch (e) {}
       });
-    } catch (e) {}
-
-    // Loop to fetch more if needed
-    while (allPins.length < MAX_PINS) {
-      const resourceUrl = `https://www.pinterest.com/resource/BoardFeedResource/get/?source_url=${encodeURIComponent(url)}&data=${encodeURIComponent(JSON.stringify({
-        options: {
-          board_id: boardId,
-          page_size: BATCH_SIZE,
-          bookmarks: bookmark ? [bookmark] : []
-        },
-        context: {}
-      }))}&_=${Date.now()}`;
-
-      const res = await fetch(resourceUrl, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
-          'X-Requested-With': 'XMLHttpRequest',
-          'Accept': 'application/json'
-        }
-      });
-
-      if (!res.ok) break;
-
-      const batchData = await res.json();
-      const newPins = batchData.resource_response?.data || [];
-      if (newPins.length === 0) break;
-
-      allPins = [...allPins, ...newPins];
-      bookmark = batchData.resource_response?.bookmark;
-      
-      if (!bookmark) break;
     }
 
-    return NextResponse.json({ 
-      props: { 
-        initialReduxState: { 
-          pins: allPins.reduce((acc, pin) => ({ ...acc, [pin.id]: pin }), {}) 
-        } 
-      } 
-    });
+    // Combine initial sources
+    let allPins = [...extractPins(initialData), ...extractPins({ items: ldPins })];
+
+    // 5. Bulk Fetching if it's a board
+    if (boardId && allPins.length > 1) {
+      let bookmark = '';
+      const MAX_PINS = 1000;
+      const BATCH_SIZE = 50;
+
+      while (allPins.length < MAX_PINS) {
+        const resourceUrl = `https://www.pinterest.com/resource/BoardFeedResource/get/?source_url=${encodeURIComponent(finalUrl)}&data=${encodeURIComponent(JSON.stringify({
+          options: { board_id: boardId, page_size: BATCH_SIZE, bookmarks: bookmark ? [bookmark] : [] },
+          context: {}
+        }))}&_=${Date.now()}`;
+
+        try {
+          const res = await fetch(resourceUrl, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+              'X-Requested-With': 'XMLHttpRequest',
+              'Accept': 'application/json'
+            }
+          });
+          if (!res.ok) break;
+          const batchData = await res.json();
+          const newBatchPins = extractPins(batchData);
+          if (newBatchPins.length === 0) break;
+          allPins = [...allPins, ...newBatchPins];
+          bookmark = batchData.resource_response?.bookmark;
+          if (!bookmark) break;
+        } catch (e) { break; }
+      }
+    }
+
+    return NextResponse.json({ pins: allPins });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
