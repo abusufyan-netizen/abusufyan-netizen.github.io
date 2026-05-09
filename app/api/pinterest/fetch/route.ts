@@ -22,53 +22,75 @@ export async function GET(request: NextRequest) {
     const pins: any[] = [];
     const seen = new Set();
 
-    // 1. Extract the large JSON blob (contains all pins on the page)
-    const jsonPattern = /<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/;
-    const match = html.match(jsonPattern);
+    // Aggressive Pin Extraction from ALL script tags
+    const scriptMatches = html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g);
     
-    if (match && match[1]) {
+    const deepSearch = (obj: any, depth = 0) => {
+      if (!obj || typeof obj !== 'object' || depth > 10) return;
+      
+      if (obj.images && (obj.images.orig || obj.images['736x'])) {
+        const imgUrl = obj.images.orig?.url || obj.images['736x']?.url;
+        if (imgUrl && !seen.has(imgUrl)) {
+          seen.add(imgUrl);
+          pins.push({
+            id: obj.id || `pin_${pins.length}`,
+            title: obj.title || obj.grid_title || 'Pinterest Image',
+            url: imgUrl,
+            thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
+          });
+        }
+      } else {
+        const values = Object.values(obj);
+        for (const val of values) {
+          deepSearch(val, depth + 1);
+        }
+      }
+    };
+
+    for (const match of scriptMatches) {
       try {
         const data = JSON.parse(match[1]);
-        
-        // Use a simple deep search for pin objects in the JSON
-        const deepSearch = (obj: any, depth = 0) => {
-          if (!obj || typeof obj !== 'object' || depth > 10) return;
-          
-          if (obj.images && (obj.images.orig || obj.images['736x'])) {
-            const imgUrl = obj.images.orig?.url || obj.images['736x']?.url;
-            if (imgUrl && !seen.has(imgUrl)) {
-              seen.add(imgUrl);
-              pins.push({
-                id: obj.id || `pin_${pins.length}`,
-                title: obj.title || obj.grid_title || 'Pinterest Image',
-                url: imgUrl,
-                thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
-              });
-            }
-          } else {
-            Object.values(obj).forEach(val => deepSearch(val, depth + 1));
-          }
-        };
-        
         deepSearch(data);
       } catch (e) {}
     }
 
-    // 2. Fallback: If JSON search missed everything, use Regex on HTML
-    if (pins.length === 0) {
+    // Fallback: LD+JSON
+    if (pins.length < 5) {
+      const ldMatches = html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
+      for (const match of ldMatches) {
+        try {
+          const data = JSON.parse(match[1]);
+          const items = data.itemListElement || [];
+          items.forEach((item: any) => {
+            if (item.image && !seen.has(item.image)) {
+              seen.add(item.image);
+              pins.push({
+                id: `ld_${pins.length}`,
+                title: item.name || 'Pinterest Image',
+                url: item.image,
+                thumbnail: item.image
+              });
+            }
+          });
+        } catch (e) {}
+      }
+    }
+
+    // Final Fallback: Regex for originals
+    if (pins.length < 5) {
       const imgRegex = /"(https:\/\/i\.pinimg\.com\/originals\/[a-z0-9\/]+\.jpg)"/gi;
-      const originals = Array.from(html.matchAll(imgRegex)).map(m => m[1]);
-      originals.forEach((origUrl, index) => {
-        if (!seen.has(origUrl)) {
-          seen.add(origUrl);
+      const matches = html.matchAll(imgRegex);
+      for (const match of matches) {
+        if (!seen.has(match[1])) {
+          seen.add(match[1]);
           pins.push({
-            id: `reg_${index}`,
-            title: `Image ${index + 1}`,
-            url: origUrl,
-            thumbnail: origUrl
+            id: `reg_${pins.length}`,
+            title: `Image ${pins.length + 1}`,
+            url: match[1],
+            thumbnail: match[1]
           });
         }
-      });
+      }
     }
 
     if (pins.length === 0) {

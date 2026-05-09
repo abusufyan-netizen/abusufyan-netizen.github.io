@@ -22,6 +22,7 @@ export default function PinterestDownloader() {
   const [progress, setProgress] = useState({ current: 0, total: 0 })
   const [history, setHistory] = useState<string[]>([])
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [showAll, setShowAll] = useState(false)
 
   // Load history on mount
   useEffect(() => {
@@ -71,6 +72,7 @@ export default function PinterestDownloader() {
 
       setPins(uniquePins);
       setSelectedIds(new Set(uniquePins.map(p => p.id))); // Select all by default
+      setShowAll(false); // Reset preview
       saveToHistory(targetUrl);
       if (inputUrl) setUrl(inputUrl);
     } catch (err: any) {
@@ -321,55 +323,68 @@ export default function PinterestDownloader() {
 
         <div className="min-h-[400px]">
           {pins.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              {pins.map((pin) => (
-                <div key={pin.id} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800">
-                  <div className="aspect-[3/4] relative overflow-hidden">
-                    <img 
-                      src={pin.thumbnail} 
-                      alt={pin.title} 
-                      className={`w-full h-full object-cover transition-all duration-500 ${selectedIds.has(pin.id) ? 'scale-100' : 'scale-90 opacity-40 grayscale'} group-hover:scale-110`}
-                      loading="lazy"
-                    />
-                    
-                    {/* Selection Checkbox */}
-                    <div 
-                      onClick={() => toggleSelect(pin.id)}
-                      className="absolute top-4 left-4 z-20 cursor-pointer"
-                    >
-                      <div className={`w-6 h-6 rounded-lg border-2 transition-all flex items-center justify-center ${selectedIds.has(pin.id) ? 'bg-red-600 border-red-600 shadow-lg shadow-red-600/40' : 'bg-white/20 border-white/40 backdrop-blur-md'}`}>
-                        {selectedIds.has(pin.id) && <Download className="w-3.5 h-3.5 text-white transform rotate-180" />}
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {(showAll ? pins : pins.slice(0, 12)).map((pin) => (
+                  <div key={pin.id} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800">
+                    <div className="aspect-[3/4] relative overflow-hidden">
+                      <img 
+                        src={pin.thumbnail} 
+                        alt={pin.title} 
+                        className={`w-full h-full object-cover transition-all duration-500 ${selectedIds.has(pin.id) ? 'scale-100' : 'scale-90 opacity-40 grayscale'} group-hover:scale-110`}
+                        loading="lazy"
+                      />
+                      
+                      {/* Selection Checkbox */}
+                      <div 
+                        onClick={() => toggleSelect(pin.id)}
+                        className="absolute top-4 left-4 z-20 cursor-pointer"
+                      >
+                        <div className={`w-6 h-6 rounded-lg border-2 transition-all flex items-center justify-center ${selectedIds.has(pin.id) ? 'bg-red-600 border-red-600 shadow-lg shadow-red-600/40' : 'bg-white/20 border-white/40 backdrop-blur-md'}`}>
+                          {selectedIds.has(pin.id) && <Download className="w-3.5 h-3.5 text-white transform rotate-180" />}
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
-                      <div className="flex gap-2">
-                        <a 
-                          href={pin.url} 
-                          download 
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex-1 py-2 bg-white text-gray-900 text-xs font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
-                        >
-                          <Download className="w-3 h-3" /> Save
-                        </a>
-                        <a 
-                          href={`https://pinterest.com/pin/${pin.id}`} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="w-10 h-10 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <div className="flex gap-2">
+                          <a 
+                            href={pin.url} 
+                            download 
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex-1 py-2 bg-white text-gray-900 text-xs font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                          >
+                            <Download className="w-3 h-3" /> Save
+                          </a>
+                          <a 
+                            href={`https://pinterest.com/pin/${pin.id}`} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="w-10 h-10 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </div>
                       </div>
                     </div>
+                    <div className="p-4">
+                      <p className="text-xs font-bold text-gray-900 dark:text-white truncate">{pin.title}</p>
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <p className="text-xs font-bold text-gray-900 dark:text-white truncate">{pin.title}</p>
-                  </div>
+                ))}
+              </div>
+              
+              {!showAll && pins.length > 12 && (
+                <div className="mt-12 text-center">
+                  <button 
+                    onClick={() => setShowAll(true)}
+                    className="px-12 py-4 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 text-gray-900 dark:text-white font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-slate-800 transition-all shadow-xl"
+                  >
+                    {`Show all ${pins.length} images`}
+                  </button>
                 </div>
-              ))}
-            </div>
+              )}
+            </>
           ) : !loading && (
             <div className="py-20 flex flex-col items-center justify-center border-2 border-dashed border-gray-200 dark:border-slate-800 rounded-[3rem]">
               <div className="p-6 bg-gray-100 dark:bg-slate-900 rounded-full mb-4">
