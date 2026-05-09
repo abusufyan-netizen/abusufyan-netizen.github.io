@@ -27,7 +27,7 @@ export default function CodeFormatter({ language, title, placeholder }: CodeForm
       } else if (language === 'css') {
         formatted = beautify.css(input, { indent_size: indentSize })
       } else if (language === 'sql') {
-        formatted = formatSql(input, { indentStyle: 'tabularUppercase' })
+        formatted = formatSql(input, { indentStyle: 'tabularLeft' })
       }
       setOutput(formatted)
       triggerQuickSuccess()
