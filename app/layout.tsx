@@ -155,13 +155,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* AdSense Script - Optimized for Revenue & Speed */}
-        <Script
-          id="adsense-init"
+        {/* AdSense Script - Standard tag to avoid data-nscript attribute issues */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         
         {/* Google Analytics 4 - Standard high-performance loading */}
