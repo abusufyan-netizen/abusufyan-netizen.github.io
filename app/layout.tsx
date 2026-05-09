@@ -157,10 +157,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* AdSense Script - Using lazyOnload to ensure 0% impact on FCP/LCP */}
+        {/* AdSense Script - afterInteractive captures impressions fast without blocking FCP */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
         
