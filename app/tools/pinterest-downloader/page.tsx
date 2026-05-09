@@ -74,11 +74,10 @@ export default function PinterestDownloader() {
         }
       };
 
-      const boardItems = data.resource_responses?.[0]?.data?.results || data.page_props?.data?.board?.pins?.items;
-      if (Array.isArray(boardItems)) {
-        boardItems.forEach(processItem);
-      } else if (data.page_props?.data?.pin) {
-        processItem(data.page_props.data.pin);
+      if (data.props?.initialReduxState?.pins) {
+        Object.values(data.props.initialReduxState.pins).forEach(processItem);
+      } else if (data.resource_responses?.[0]?.data?.results) {
+        data.resource_responses[0].data.results.forEach(processItem);
       } else {
         const deepSearch = (obj: any) => {
           if (!obj || typeof obj !== 'object') return;
@@ -161,7 +160,7 @@ export default function PinterestDownloader() {
         description="Download high-resolution images and entire boards from Pinterest instantly. Featuring batch ZIP downloads and persistent user history."
         slug="pinterest-downloader"
         features={[
-          "Bulk Board Downloading with real-time progress",
+          "Bulk Board Downloading (Up to 1,000 pins)",
           "Recent Searches History (Private & Local)",
           "Automatic Original Resolution detection",
           "Concurrent Batch Fetching for maximum speed",
@@ -204,7 +203,7 @@ export default function PinterestDownloader() {
 
           {/* Full Screen Engaging Download Overlay */}
           {downloading && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-md animate-in fade-in duration-300">
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl animate-in fade-in duration-500">
               <div className="max-w-md w-full p-12 text-center">
                 <div className="relative w-48 h-48 mx-auto mb-8">
                   {/* Pulsing Outer Ring */}

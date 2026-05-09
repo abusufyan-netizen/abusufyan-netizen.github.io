@@ -136,12 +136,6 @@ export default function ToolsClient() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredTools.map((tool) => (
           <div key={tool.href} className="relative group">
-            <button 
-              onClick={(e) => toggleFavorite(e, tool.href)}
-              className={`absolute top-6 right-6 p-2 rounded-xl transition-all z-20 ${favorites.includes(tool.href) ? 'bg-rose-50 dark:bg-rose-900/20 text-rose-500' : 'text-gray-300 dark:text-slate-700 hover:text-rose-400'}`}
-            >
-              <Star className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-rose-500' : ''}`} />
-            </button>
             <Link 
               href={tool.href} 
               className="card-premium flex flex-col h-full p-8"
@@ -155,9 +149,6 @@ export default function ToolsClient() {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {tool.name}
                   </h3>
-                  {tool.priority <= 5 && (
-                    <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0" />
-                  )}
                 </div>
                 <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4">
                   {tool.description}
