@@ -117,7 +117,7 @@ export default function SubmitToolPage() {
 
         <div className="mt-16 text-center">
           <p className="text-gray-400 text-sm italic">
-            *Submitted ideas are reviewed by our engineering team. If we choose to build your tool, we'll reach out to offer you early access and a permanent contributor credit on the page.
+            *Submitted ideas are reviewed by our engineering team. If we choose to build your tool, we'll reach out to offer you early access and a permanent contributor credit on the page. Contact us directly at safi4730358@gmail.com for collaboration.
           </p>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function ContactPage() {
           </div>
           <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tight">Message Sent!</h2>
           <p className="text-gray-500 dark:text-slate-400 mb-8 font-medium">
-            Thanks for reaching out. Our engineering team will get back to you within 24 hours.
+            Thanks for reaching out. Our engineering team (safi4730358@gmail.com) will get back to you within 24 hours.
           </p>
           <button 
             onClick={() => setStatus('idle')}
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-500 dark:text-slate-400 flex items-center justify-center gap-2 font-medium">
-            <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" /> hello@wtkpro.site
+            <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" /> safi4730358@gmail.com
           </p>
         </div>
       </div>
