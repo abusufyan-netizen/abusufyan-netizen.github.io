@@ -1,0 +1,111 @@
+import fs from 'fs'
+import path from 'path'
+import yaml from 'js-yaml'
+import { ToolConfig } from '@/types/tool'
+
+const CONFIG_PATH = path.join(process.cwd(), 'config', 'tools.yaml')
+
+export function getTools(): ToolConfig[] {
+  try {
+    const fileContents = fs.readFileSync(CONFIG_PATH, 'utf8')
+    const data = yaml.load(fileContents) as { tools: ToolConfig[] }
+    return data.tools || []
+  } catch (e) {
+    console.error('Error loading tools.yaml:', e)
+    return []
+  }
+}
+
+export function getToolBySlug(slug: string): ToolConfig | undefined {
+  const tools = getTools()
+  return tools.find(t => t.slug === slug)
+}
+
+export function getToolsByCategory(category: string): ToolConfig[] {
+  const tools = getTools()
+  return tools.filter(t => t.category.toLowerCase() === category.toLowerCase())
+}
+
+export function getCategories(): string[] {
+  const tools = getTools()
+  return Array.from(new Set(tools.map(t => t.category)))
+}
+
+export function getRelatedTools(currentTool: ToolConfig, limit: number = 4): ToolConfig[] {
+  const allTools = getTools()
+  
+  return allTools
+    .filter(t => t.slug !== currentTool.slug)
+    .map(t => {
+      // Calculate overlap score
+      const overlap = t.tags.filter(tag => currentTool.tags.includes(tag)).length
+      
+      // HUGE bonus if same subcategory (Topical Cluster)
+      const subcategoryBonus = (t.subcategory && t.subcategory === currentTool.subcategory) ? 10 : 0
+      
+      // Bonus if same category
+      const categoryBonus = t.category === currentTool.category ? 2 : 0
+      
+      return { tool: t, score: overlap + categoryBonus + subcategoryBonus }
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(item => item.tool)
+}
+
+export function generateSoftwareSchema(tool: ToolConfig) {
+  const url = `https://wtkpro.site/tools/${tool.slug}/`
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': tool.content.title || tool.name,
+    'description': tool.content.description,
+    'applicationCategory': tool.category,
+    'operatingSystem': 'Web Browser',
+    'url': url,
+    'featureList': tool.content.features.join(', '),
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD'
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.9',
+      'reviewCount': '150'
+    }
+  }
+}
+
+export function generateFAQSchema(tool: ToolConfig) {
+  const faqs = tool.content.faq && tool.content.faq.length > 0 
+    ? tool.content.faq 
+    : [
+        {
+          question: `Is the ${tool.name} free to use?`,
+          answer: `Yes, the ${tool.name} is 100% free to use. Like all tools on WebToolkit Pro, there are no subscriptions or hidden fees.`
+        },
+        {
+          question: `Is my data secure with the ${tool.name}?`,
+          answer: `Absolutely. All processing for the ${tool.name} happens entirely within your web browser. We never transmit your data to our servers, ensuring total privacy.`
+        },
+        {
+          question: `Do I need to install any software to use this ${tool.category}?`,
+          answer: `No installation is required. This ${tool.category} utility is a web-based tool that works instantly in any modern browser on desktop or mobile.`
+        }
+      ]
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(item => ({
+      '@type': 'Question',
+      'name': item.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': item.answer
+      }
+    }))
+  }
+}

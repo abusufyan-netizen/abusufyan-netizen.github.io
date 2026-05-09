@@ -11,6 +11,9 @@ const TOOL_LINKS = [
   { keyword: 'format JSON', url: '/tools/json-formatter/' },
   { keyword: 'What is my IP', url: '/tools/what-is-my-ip/' },
   { keyword: 'Redirect Checker', url: '/tools/redirect-checker/' },
+  { keyword: 'Password Generator', url: '/tools/password-generator/' },
+  { keyword: 'secure passwords', url: '/tools/password-generator/' },
+  { keyword: 'strong passwords', url: '/tools/password-generator/' },
   { keyword: 'developer tools', url: '/tools/' },
 ]
 
@@ -42,6 +45,7 @@ export interface BlogPost {
   tags: string[]
   keywords: string[]
   readTime: string
+  tldr?: string
   author: string
   image: string
   imageAlt: string
@@ -72,6 +76,7 @@ export function getAllPosts(): BlogPost[] {
       tags: data.tags || [],
       keywords: data.keywords || [],
       readTime: data.readTime || '5 min read',
+      tldr: data.tldr || '',
       author: data.author || 'WebToolkit Pro Team',
       image: data.image || '',
       imageAlt: data.imageAlt || data.title || '',
@@ -117,6 +122,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     tags: data.tags || [],
     keywords: data.keywords || [],
     readTime: data.readTime || '5 min read',
+    tldr: data.tldr || '',
     author: data.author || 'WebToolkit Pro Team',
     image: data.image || '',
     imageAlt: data.imageAlt || data.title || '',

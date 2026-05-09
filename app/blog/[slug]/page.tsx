@@ -158,6 +158,23 @@ export default async function BlogPostPage({ params }: Props) {
             <span>•</span>
             <span itemProp="author">{post.author}</span>
           </div>
+
+          {/* TL;DR Hook Section */}
+          {post.tldr && (
+            <div className="mb-12 p-1 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-in fade-in slide-in-from-top-4 duration-1000 shadow-xl shadow-blue-500/10">
+              <div className="bg-white dark:bg-slate-900 rounded-[calc(1.5rem-1px)] p-6 md:p-8 flex items-start gap-6">
+                <div className="w-12 h-12 shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-blue-600 animate-pulse" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-2">TL;DR / Quick Summary</div>
+                  <p className="text-xl font-bold text-gray-900 dark:text-white leading-tight italic">
+                    "{post.tldr}"
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* Ad Slot - Top of Article */}

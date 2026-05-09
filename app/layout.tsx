@@ -181,7 +181,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased transition-colors duration-300">
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow animate-in fade-in duration-700">{children}</main>
           <Footer />
           <CookieConsent />
         </div>

@@ -1,10 +1,11 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import ToolsClient from './ToolsClient'
+import { getTools } from '@/lib/tools'
 
 export const metadata: Metadata = {
   title: 'Professional Developer Tools & Secure Utilities | WebToolkit Pro',
-  description: 'Access 65+ free, high-performance developer tools for modern web professionals. Secure, fast, and optimized for enterprise engineering.',
+  description: 'Access 33+ free, high-performance developer tools for modern web professionals. Secure, fast, and optimized for enterprise engineering.',
   keywords: 'professional developer tools, secure web utilities, enterprise coding tools, JSON formatter pro, secure password generator US',
   alternates: {
     canonical: 'https://wtkpro.site/tools/',
@@ -20,5 +21,6 @@ export const metadata: Metadata = {
 }
 
 export default function ToolsPage() {
-  return <ToolsClient />
+  const tools = getTools()
+  return <ToolsClient initialTools={tools} />
 }

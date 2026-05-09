@@ -12,6 +12,7 @@ import {
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
+import StatsDashboard from '@/components/sections/StatsDashboard'
 
 const featuredTools = [
   { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
@@ -38,7 +39,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-blue-100 dark:border-slate-800 rounded-full px-5 py-2 mb-8 text-[var(--font-size-base)] font-medium text-blue-700 dark:text-blue-400 shadow-sm animate-in fade-in slide-in-from-top-4 duration-700">
             <Sparkles className="w-4 h-4 shrink-0" />
-            26+ Free Developer Tools — No Login Required
+            33+ Free Developer Tools — No Login Required
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-black text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
@@ -71,22 +72,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-[var(--space-md)] bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { label: 'Free Tools', value: '26+', icon: Zap },
-            { label: 'Monthly Users', value: '5K+', icon: Users },
-            { label: 'Star Rating', value: '4.9', icon: Star },
-            { label: 'Lines of Code', value: '10K+', icon: Code },
-          ].map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center group">
-              <stat.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 mb-2 transition-transform group-hover:scale-110" />
-              <div className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white leading-none mb-1">{stat.value}</div>
-              <div className="text-[10px] uppercase tracking-widest text-gray-400 dark:text-slate-500 font-bold">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <StatsDashboard />
 
       {/* Featured Tools */}
       <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950">
@@ -116,7 +102,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
-              View All 26+ Tools <ArrowRight className="w-4 h-4" />
+              View All 33+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
