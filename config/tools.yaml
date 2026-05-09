@@ -1062,6 +1062,8 @@ tools:
     slug: "html-beautifier"
     category: "Formatters"
     icon: "FileCode"
+    subcategory: "code-formatting"
+    tags: ["html", "beautifier", "formatter", "code-cleaner", "web-dev"]
     priority: 16
     releaseDate: "2026-05-10"
     content:
@@ -1070,18 +1072,26 @@ tools:
       tldr: "Transform compressed or messy HTML into perfectly indented, readable code with one click."
       entity_definition: "HTML Beautifier is a professional web engineering utility designed to standardize the structure and indentation of HTML5 source code. It handles complex nested structures, attributes, and inline elements, ensuring your markup follows W3C standards and maintains high readability for both developers and search engines."
       how_it_works: "The tool uses the js-beautify engine to parse and reconstruct the HTML DOM tree, applying your preferred indentation and line-wrapping rules in real-time."
-      use_cases:
-        - "Cleaning up minified production HTML"
-        - "Standardizing code before a pull request"
-        - "Formatting machine-generated markup"
+      features:
+        - "One-click beautification"
+        - "Customizable indentation"
+        - "Minification support"
+        - "Zero-latency processing"
       faq:
         - question: "Does it support HTML5?"
-        - answer: "Yes, it fully supports all modern HTML5 tags, including custom elements and data attributes."
+          answer: "Yes, it fully supports all modern HTML5 tags, including custom elements and data attributes."
+      technical_specs:
+        - label: "Engine"
+          value: "js-beautify"
+        - label: "Standards"
+          value: "W3C Compliant"
 
   - name: "CSS Formatter"
     slug: "css-formatter"
     category: "Formatters"
     icon: "Palette"
+    subcategory: "style-formatting"
+    tags: ["css", "formatter", "beautifier", "styles", "frontend"]
     priority: 17
     releaseDate: "2026-05-10"
     content:
@@ -1094,14 +1104,26 @@ tools:
         - "Beautifying legacy stylesheets"
         - "Formatting CSS output from preprocessors"
         - "Improving code review efficiency"
+      features:
+        - "Variable support"
+        - "Media query formatting"
+        - "Instant minification"
+        - "Syntax validation"
       faq:
         - question: "Does it work with CSS variables?"
-        - answer: "Absolutely. It fully supports CSS3 variables, media queries, and nested rules."
+          answer: "Absolutely. It fully supports CSS3 variables, media queries, and nested rules."
+      technical_specs:
+        - label: "Engine"
+          value: "js-beautify"
+        - label: "Compatibility"
+          value: "CSS3+"
 
   - name: "SQL Formatter"
     slug: "sql-formatter"
     category: "Formatters"
     icon: "Database"
+    subcategory: "database-utilities"
+    tags: ["sql", "formatter", "database", "query-beautifier", "backend"]
     priority: 18
     releaseDate: "2026-05-10"
     content:
@@ -1114,6 +1136,16 @@ tools:
         - "Formatting complex JOIN queries for documentation"
         - "Auditing machine-generated SQL from ORMs"
         - "Sharing readable queries in Slack or Jira"
+      features:
+        - "Dialect detection"
+        - "Keyword capitalization"
+        - "Tabular indentation"
+        - "DDL/DML support"
       faq:
         - question: "Which SQL dialects are supported?"
-        - answer: "It supports Standard SQL, MySQL, PostgreSQL, and many other common database dialects."
+          answer: "It supports Standard SQL, MySQL, PostgreSQL, and many other common database dialects."
+      technical_specs:
+        - label: "Engine"
+          value: "sql-formatter v15"
+        - label: "Style"
+          value: "Tabular Left"
