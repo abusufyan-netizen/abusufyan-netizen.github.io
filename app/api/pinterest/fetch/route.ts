@@ -21,55 +21,61 @@ export async function GET(request: NextRequest) {
     const pins: any[] = [];
     const seen = new Set();
 
-    // 1. Simple Regex Extraction (Works for both Pins and Boards)
-    // Matches the common pattern for Pinterest image objects in SSR data
-    const imgRegex = /"(https:\/\/i\.pinimg\.com\/originals\/[a-z0-9\/]+\.jpg)"/gi;
-    const thumbRegex = /"(https:\/\/i\.pinimg\.com\/236x\/[a-z0-9\/]+\.jpg)"/gi;
+    // 1. Extract the large JSON blob (contains all pins on the page)
+    const jsonPattern = /<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/;
+    const match = html.match(jsonPattern);
     
-    const originals = Array.from(html.matchAll(imgRegex)).map(m => m[1]);
-    const thumbnails = Array.from(html.matchAll(thumbRegex)).map(m => m[1]);
-
-    // Pair them up or just take unique originals
-    originals.forEach((origUrl, index) => {
-      if (!seen.has(origUrl)) {
-        seen.add(origUrl);
-        pins.push({
-          id: `pin_${index}_${Math.random().toString(36).substr(2, 5)}`,
-          title: `Pinterest Image ${index + 1}`,
-          url: origUrl,
-          thumbnail: thumbnails[index] || origUrl
-        });
-      }
-    });
-
-    // 2. Fallback to common JSON-LD pattern if regex missed everything
-    if (pins.length === 0) {
-      const ldMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
-      if (ldMatch) {
-        try {
-          const data = JSON.parse(ldMatch[1]);
-          const items = data.itemListElement || [];
-          items.forEach((item: any, i: number) => {
-            if (item.image && !seen.has(item.image)) {
-              seen.add(item.image);
+    if (match && match[1]) {
+      try {
+        const data = JSON.parse(match[1]);
+        
+        // Use a simple deep search for pin objects in the JSON
+        const deepSearch = (obj: any, depth = 0) => {
+          if (!obj || typeof obj !== 'object' || depth > 10) return;
+          
+          if (obj.images && (obj.images.orig || obj.images['736x'])) {
+            const imgUrl = obj.images.orig?.url || obj.images['736x']?.url;
+            if (imgUrl && !seen.has(imgUrl)) {
+              seen.add(imgUrl);
               pins.push({
-                id: `ld_${i}`,
-                title: item.name || 'Pinterest Image',
-                url: item.image,
-                thumbnail: item.image
+                id: obj.id || `pin_${pins.length}`,
+                title: obj.title || obj.grid_title || 'Pinterest Image',
+                url: imgUrl,
+                thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
               });
             }
+          } else {
+            Object.values(obj).forEach(val => deepSearch(val, depth + 1));
+          }
+        };
+        
+        deepSearch(data);
+      } catch (e) {}
+    }
+
+    // 2. Fallback: If JSON search missed everything, use Regex on HTML
+    if (pins.length === 0) {
+      const imgRegex = /"(https:\/\/i\.pinimg\.com\/originals\/[a-z0-9\/]+\.jpg)"/gi;
+      const originals = Array.from(html.matchAll(imgRegex)).map(m => m[1]);
+      originals.forEach((origUrl, index) => {
+        if (!seen.has(origUrl)) {
+          seen.add(origUrl);
+          pins.push({
+            id: `reg_${index}`,
+            title: `Image ${index + 1}`,
+            url: origUrl,
+            thumbnail: origUrl
           });
-        } catch (e) {}
-      }
+        }
+      });
     }
 
     if (pins.length === 0) {
-      return NextResponse.json({ error: 'No images found. Please ensure the link is public.' }, { status: 404 });
+      return NextResponse.json({ error: 'No images found. Ensure the link is public.' }, { status: 404 });
     }
 
     return NextResponse.json({ pins });
   } catch (error: any) {
-    return NextResponse.json({ error: 'Failed to access the link. Please check the URL.' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to access the link.' }, { status: 500 });
   }
 }
