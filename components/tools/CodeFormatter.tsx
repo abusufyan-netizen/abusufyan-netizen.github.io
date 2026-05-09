@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { Copy, Download, Trash2, Check, Code2, Type, FileCode, Zap, FileJson } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
