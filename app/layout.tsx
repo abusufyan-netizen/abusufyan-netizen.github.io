@@ -157,10 +157,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* AdSense Script - Standard tag to avoid data-nscript attribute issues */}
-        <script
-          async
+        {/* AdSense Script - Using lazyOnload to ensure 0% impact on FCP/LCP */}
+        <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
         />
         

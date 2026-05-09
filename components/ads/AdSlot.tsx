@@ -5,22 +5,19 @@ import React from 'react'
 interface AdSlotProps {
   className?: string
   id?: string
+  minHeight?: string
 }
 
-const AdSlot: React.FC<AdSlotProps> = ({ className = '', id }) => {
+const AdSlot: React.FC<AdSlotProps> = ({ className = '', id, minHeight = '90px' }) => {
   return (
     <div 
-      className={`w-full overflow-hidden flex items-center justify-center transition-all ${className}`}
+      className={`w-full overflow-hidden flex items-center justify-center transition-all bg-gray-50/50 dark:bg-slate-900/50 rounded-xl border border-dashed border-gray-200 dark:border-slate-800 ${className}`}
+      style={{ minHeight }}
       aria-hidden="true"
     >
-      {/* 
-        Google AdSense Placeholder
-        When you are ready to go live, replace the content inside here with your 
-        actual <ins className="adsbygoogle" ...></ins> tags.
-      */}
       <div 
         id={id}
-        className="ads-container w-full min-h-[50px] opacity-0 group-hover:opacity-100 transition-opacity"
+        className="ads-container w-full"
         data-ad-slot-ready="true"
       >
         {/* AdSense will inject content here */}

@@ -5,8 +5,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ToolSchema from '@/components/seo/ToolSchema'
 import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
-// @ts-ignore
-import JSZip from 'jszip'
+// JSZip will be dynamically imported only when needed to save bundle size
 
 interface Pin {
   id: string;
@@ -91,6 +90,7 @@ export default function PinterestDownloader() {
     if (pins.length === 0) return;
     setDownloading(true);
     try {
+      const JSZip = (await import('jszip')).default;
       const zip = new JSZip();
       const folder = zip.folder("pinterest-downloads");
 
@@ -140,10 +140,10 @@ export default function PinterestDownloader() {
       />
 
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 min-h-[80px]">
           <div className="flex items-center gap-4">
-            <div className="p-4 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl shadow-lg shadow-red-500/20">
-              <Download className="w-8 h-8 text-white" />
+            <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
+              <Download className="w-7 h-7 text-white" />
             </div>
             <div>
               <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Pinterest Downloader</h1>
@@ -151,16 +151,18 @@ export default function PinterestDownloader() {
             </div>
           </div>
           
-          {pins.length > 0 && (
-            <button 
-              onClick={handleDownloadAll}
-              disabled={downloading}
-              className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              {downloading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5 group-hover:bounce" />}
-              <span>{downloading ? 'Creating ZIP...' : `Download ${pins.length} Images (ZIP)`}</span>
-            </button>
-          )}
+          <div className="min-h-[60px] flex items-center">
+            {pins.length > 0 && (
+              <button 
+                onClick={handleDownloadAll}
+                disabled={downloading}
+                className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed group animate-in fade-in zoom-in duration-300"
+              >
+                {downloading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5 group-hover:bounce" />}
+                <span>{downloading ? 'Creating ZIP...' : `Download ${pins.length} Images (ZIP)`}</span>
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="mb-12">
@@ -194,56 +196,58 @@ export default function PinterestDownloader() {
           )}
         </div>
 
-        {pins.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            {pins.map((pin) => (
-              <div key={pin.id} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800">
-                <div className="aspect-[3/4] relative overflow-hidden">
-                  <img 
-                    src={pin.thumbnail} 
-                    alt={pin.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
-                    <div className="flex gap-2">
-                      <a 
-                        href={pin.url} 
-                        download 
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 py-2 bg-white text-gray-900 text-xs font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
-                      >
-                        <Download className="w-3 h-3" /> Save
-                      </a>
-                      <a 
-                        href={`https://pinterest.com/pin/${pin.id}`} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="w-10 h-10 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+        <div className="min-h-[400px]">
+          {pins.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              {pins.map((pin) => (
+                <div key={pin.id} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800">
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img 
+                      src={pin.thumbnail} 
+                      alt={pin.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                      <div className="flex gap-2">
+                        <a 
+                          href={pin.url} 
+                          download 
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 py-2 bg-white text-gray-900 text-xs font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                        >
+                          <Download className="w-3 h-3" /> Save
+                        </a>
+                        <a 
+                          href={`https://pinterest.com/pin/${pin.id}`} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          className="w-10 h-10 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
+                  <div className="p-4">
+                    <p className="text-xs font-bold text-gray-900 dark:text-white truncate">{pin.title}</p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-xs font-bold text-gray-900 dark:text-white truncate">{pin.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : !loading && (
-          <div className="py-20 flex flex-col items-center justify-center border-2 border-dashed border-gray-200 dark:border-slate-800 rounded-[3rem]">
-            <div className="p-6 bg-gray-100 dark:bg-slate-900 rounded-full mb-4">
-              <ImageIcon className="w-12 h-12 text-gray-400" />
+              ))}
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Ready to download?</h3>
-            <p className="text-gray-500 dark:text-slate-500 mt-2">Paste a Pinterest link above to see the magic</p>
-          </div>
-        )}
+          ) : !loading && (
+            <div className="py-20 flex flex-col items-center justify-center border-2 border-dashed border-gray-200 dark:border-slate-800 rounded-[3rem]">
+              <div className="p-6 bg-gray-100 dark:bg-slate-900 rounded-full mb-4">
+                <ImageIcon className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Ready to download?</h3>
+              <p className="text-gray-500 dark:text-slate-500 mt-2">Paste a Pinterest link above to see the magic</p>
+            </div>
+          )}
+        </div>
 
-        <AdSlot className="mt-12" />
+        <AdSlot minHeight="280px" className="mt-12" />
 
         <ToolInfo 
           title="Ultimate Pinterest Downloader"

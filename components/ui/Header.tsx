@@ -33,14 +33,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <Link href="/" className="flex items-center group shrink-0">
+          <Link href="/" className="flex items-center group shrink-0" style={{ width: '200px', height: '40px' }}>
             <Image 
               src="/logo-full.png" 
               alt="WebToolkit Pro" 
               width={200}
-              height={50}
+              height={40}
               priority
-              className="h-8 md:h-10 w-auto transition-all group-hover:scale-105"
+              style={{ objectFit: 'contain' }}
+              className="transition-all group-hover:scale-105"
             />
           </Link>
           
