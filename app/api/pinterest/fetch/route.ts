@@ -19,17 +19,36 @@ export async function GET(request: NextRequest) {
 
     const html = await response.text();
     
-    // Extract Board ID and Initial Data
-    const dataMatch = html.match(/<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
-    if (!dataMatch) {
-      return NextResponse.json({ error: 'Could not find board data. Please ensure the link is a public Pinterest board.' }, { status: 404 });
+    // Extract Board ID and Initial Data from multiple possible script tags
+    const patterns = [
+      /<script id="__PWS_DATA__" type="application\/json">([\s\S]*?)<\/script>/,
+      /<script id="__PWS_INITIAL_PROPS__" type="application\/json">([\s\S]*?)<\/script>/
+    ];
+
+    let initialData: any = null;
+    for (const pattern of patterns) {
+      const match = html.match(pattern);
+      if (match && match[1]) {
+        try {
+          initialData = JSON.parse(match[1]);
+          break;
+        } catch (e) {}
+      }
     }
 
-    const initialData = JSON.parse(dataMatch[1]);
-    const boardId = initialData.props?.initialReduxState?.boards?.[Object.keys(initialData.props?.initialReduxState?.boards || {})[0]]?.id;
+    if (!initialData) {
+      return NextResponse.json({ error: 'Could not find board data. The link might be private or invalid.' }, { status: 404 });
+    }
+
+    // Robust Board ID detection
+    const reduxState = initialData.props?.initialReduxState || initialData.initialReduxState || {};
+    const boards = reduxState.boards || {};
+    const boardId = Object.values(boards).find((b: any) => b.id)?.id || 
+                    initialData.props?.data?.board?.id ||
+                    initialData.page_props?.data?.board?.id;
     
     if (!boardId) {
-       // Fallback for individual pins or different layout
+       // Fallback: Just return the initial data if we can't find a board ID for bulk fetching
        return NextResponse.json(initialData);
     }
 
