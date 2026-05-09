@@ -8,6 +8,7 @@ import Script from 'next/script'
 import { Metadata } from 'next'
 // @ts-ignore
 import { Analytics } from '@vercel/analytics/react'
+// @ts-ignore
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })

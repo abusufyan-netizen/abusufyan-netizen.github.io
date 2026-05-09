@@ -5,6 +5,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ToolSchema from '@/components/seo/ToolSchema'
 import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
+// @ts-ignore
 import JSZip from 'jszip'
 
 interface Pin {
