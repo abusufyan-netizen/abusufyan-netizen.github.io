@@ -80,42 +80,81 @@ export default function RedirectChecker() {
         </div>
 
         {results && (
-          <div className="space-y-6 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            {results.chain.map((step: any, index: number) => (
-              <div key={index} className="relative">
-                <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white ${step.status < 300 ? 'bg-green-500' : 'bg-amber-500'}`}>
-                      {step.status}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-1">
-                        {step.status < 300 ? 'Final Destination' : `Redirect #${index + 1}`}
+          <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="relative pl-8 sm:pl-12 py-4">
+              {/* Vertical Connecting Line */}
+              <div className="absolute left-[23px] sm:left-[31px] top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-indigo-300 to-green-500 rounded-full opacity-20" />
+              
+              <div className="space-y-12">
+                {results.chain.map((step: any, index: number) => {
+                  const isLast = index === results.chain.length - 1;
+                  return (
+                    <div key={index} className="relative">
+                      {/* Step Marker (Circle) */}
+                      <div className={`absolute -left-[33px] sm:-left-[41px] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-gray-50 dark:border-slate-950 flex items-center justify-center z-10 shadow-sm ${
+                        isLast ? 'bg-green-500' : 'bg-indigo-500'
+                      }`}>
+                        {isLast ? (
+                          <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                        ) : (
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse" />
+                        )}
                       </div>
-                      <div className="text-sm font-medium text-gray-900 dark:text-white truncate max-w-xl">
-                        {step.url}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-xs font-mono px-3 py-1 bg-gray-50 dark:bg-slate-800 rounded-lg text-gray-500 dark:text-slate-400">
-                    {step.statusText}
-                  </div>
-                </div>
-                {index < results.chain.length - 1 && (
-                  <div className="flex justify-center py-2">
-                    <ArrowRight className="w-6 h-6 text-gray-300 dark:text-slate-700 transform rotate-90" />
-                  </div>
-                )}
-              </div>
-            ))}
 
-            <div className="p-6 bg-indigo-50 dark:bg-indigo-900/10 rounded-3xl border border-indigo-100 dark:border-indigo-900/30">
-              <div className="flex gap-3">
-                <Info className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+                      <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                          <div className="flex-grow min-w-0">
+                            <div className="flex items-center gap-3 mb-2">
+                              <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-2 py-0.5 rounded-md ${
+                                isLast ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400'
+                              }`}>
+                                {isLast ? 'Destination' : `Hop #${index + 1}`}
+                              </span>
+                              <span className="text-[10px] font-mono text-gray-400 dark:text-slate-500">
+                                {step.statusText}
+                              </span>
+                            </div>
+                            <h3 className="text-sm sm:text-base font-bold text-gray-900 dark:text-white truncate group-hover:text-indigo-500 transition-colors">
+                              {step.url}
+                            </h3>
+                          </div>
+
+                          <div className="flex items-center gap-4 shrink-0">
+                            <div className="flex flex-col items-end">
+                              <div className={`text-2xl sm:text-3xl font-black tabular-nums ${
+                                step.status < 300 ? 'text-green-500' : 'text-amber-500'
+                              }`}>
+                                {step.status}
+                              </div>
+                              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">HTTP Status</span>
+                            </div>
+                            <div className="w-12 h-12 bg-gray-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-gray-400 group-hover:text-indigo-500 transition-colors">
+                              {isLast ? <Shield className="w-6 h-6" /> : <ArrowRight className="w-6 h-6" />}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Summary Information */}
+            <div className="mt-12 p-8 bg-indigo-50 dark:bg-indigo-900/10 rounded-[2.5rem] border border-indigo-100 dark:border-indigo-900/30 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                <Info className="w-8 h-8 text-indigo-600" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Redirect Analysis Complete</h4>
                 <p className="text-sm text-indigo-700 dark:text-indigo-400 leading-relaxed font-medium">
                   {results.redirects === 0 
-                    ? 'No redirects detected. This URL loads directly.' 
-                    : `Followed ${results.redirects} redirect(s). This is ${results.redirects > 2 ? 'a long chain' : 'optimal'} for SEO.`}
+                    ? 'Perfect! This URL loads directly without any performance-heavy hops.' 
+                    : `We traced ${results.redirects} redirect hop(s) to reach the destination. ${
+                        results.redirects > 2 
+                        ? 'Warning: Long chains can hurt SEO and increase latency.' 
+                        : 'This chain length is within the optimal range for SEO.'
+                      }`}
                 </p>
               </div>
             </div>
