@@ -1,16 +1,25 @@
 import { MetadataRoute } from 'next'
-import { getTools, getCategories } from '@/lib/tools'
+import { getTools } from '@/lib/tools'
+import { CATEGORY_MAP } from '@/lib/categories'
+import { getAllPosts } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://wtkpro.site'
   const tools = getTools()
-  const categories = getCategories()
-
-  const hubUrls = categories.map((cat) => ({
-    url: `${baseUrl}/tools/hub/${cat.toLowerCase()}/`,
+  const posts = getAllPosts()
+  
+  const categoryUrls = Object.keys(CATEGORY_MAP).map((slug) => ({
+    url: `${baseUrl}/tools/category/${slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
+  }))
+
+  const blogUrls = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}/`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }))
 
   const toolUrls = tools.map((tool) => ({
@@ -47,5 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...staticUrls, ...hubUrls, ...toolUrls]
+  return [...staticUrls, ...categoryUrls, ...blogUrls, ...toolUrls]
 }
