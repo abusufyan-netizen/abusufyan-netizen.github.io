@@ -22,7 +22,7 @@ export default function CookieConsent() {
     const consent = localStorage.getItem('cookie-consent')
     if (!consent) {
       // Small delay to ensure smooth hydration and visibility
-      const timer = setTimeout(() => setVisible(true), 2000)
+      const timer = setTimeout(() => setVisible(true), 4000)
       return () => clearTimeout(timer)
     } else {
       // Re-apply consent if already given
@@ -46,34 +46,32 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[200] p-4 sm:p-6 transition-all duration-500 transform translate-y-0"
+      className="fixed bottom-6 left-6 right-6 sm:left-auto sm:max-w-sm z-[200] transition-all duration-500 transform translate-y-0"
       style={{ animation: 'fadeIn 0.5s ease-out' }}
     >
-      <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 ring-1 ring-black/5">
-        <div className="flex-1">
-          <p className="text-sm text-gray-600 dark:text-slate-400 leading-relaxed">
-            <span className="font-bold text-gray-900 dark:text-white">🍪 Cookie Notice: </span>
-            We use cookies to enhance your experience and serve relevant ads through Google AdSense. 
-            By clicking &quot;Accept&quot;, you consent to the use of cookies. 
-            Read our{' '}
-            <Link href="/privacy/" className="text-blue-600 dark:text-blue-400 font-semibold underline hover:text-blue-800 dark:hover:text-blue-300">
-              Privacy Policy
-            </Link>{' '}
-            for more information.
-          </p>
+      <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-[2rem] shadow-2xl p-6 flex flex-col gap-5 ring-1 ring-black/5">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center shrink-0">
+             <span className="text-xl">🍪</span>
+          </div>
+          <h3 className="font-bold text-gray-900 dark:text-white text-sm uppercase tracking-widest">Privacy Preference</h3>
         </div>
-        <div className="flex gap-3 shrink-0 w-full sm:w-auto">
+        <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed font-medium">
+          We use cookies to enhance your experience and serve relevant ads via Google AdSense. 
+          Read our <Link href="/privacy/" className="text-blue-600 dark:text-blue-400 font-bold underline">Privacy Policy</Link>.
+        </p>
+        <div className="flex gap-3">
           <button
             onClick={decline}
-            className="flex-1 sm:flex-none px-6 py-3 text-sm font-bold text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+            className="flex-1 px-4 py-3 text-xs font-bold text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
           >
             Decline
           </button>
           <button
             onClick={accept}
-            className="flex-1 sm:flex-none px-6 py-3 text-sm font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 dark:shadow-none active:scale-95"
+            className="flex-1 px-4 py-3 text-xs font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20 active:scale-95"
           >
-            Accept All
+            Accept
           </button>
         </div>
       </div>

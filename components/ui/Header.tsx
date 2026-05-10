@@ -44,6 +44,7 @@ export default function Header() {
               priority
               fetchPriority="high"
               decoding="async"
+              sizes="200px"
               style={{ objectFit: 'contain' }}
               className="transition-all group-hover:scale-105"
             />
