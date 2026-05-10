@@ -103,8 +103,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         {/* Performance & Resource Hints */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://wtkpro.site/api" />
         <link rel="dns-prefetch" href="https://wtkpro.site/api" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
@@ -154,7 +152,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             }),
           }}
         />
-        <Script id="google-consent-default" strategy="beforeInteractive">
+        <Script id="google-consent-default" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -168,16 +166,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Script>
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
         />
         
         {/* Google Analytics 4 - Standard high-performance loading */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1QB54ZRCS5"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
