@@ -4,7 +4,7 @@
 tools:
   - name: "JSON Formatter & Validator"
     slug: "json-formatter"
-    category: "Formatters"
+    category: "Developer Tools"
     icon: "FileJson"
     subcategory: "json-tools"
     tags: ["json", "formatter", "validator", "beautifier", "minifier", "developer-tools"]
@@ -23,8 +23,8 @@ tools:
       library: "V8-Optimized AST"
       
     content:
-      title: "Professional JSON Formatter & Validator"
-      description: "Clean, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
+      title: "JSON Formatter & Validator - Free Online Format and validate JSON data"
+      description: "Beautify, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using V8-optimized AST parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
       how_it_works: "Our engine uses an Abstract Syntax Tree (AST) approach to parse your input. It identifies structural errors in real-time, providing exact line-number feedback for common issues like trailing commas or unquoted keys."
@@ -103,7 +103,7 @@ tools:
 
   - name: "Pinterest Board Downloader"
     slug: "pinterest-downloader"
-    category: "Utilities"
+    category: "Social Media Tools"
     icon: "Download"
     tags: ["pinterest", "downloader", "image-extraction", "bulk-download", "creators"]
     priority: 1
@@ -139,7 +139,7 @@ tools:
 
   - name: "What is my IP Address?"
     slug: "what-is-my-ip"
-    category: "Utilities"
+    category: "Network & Performance"
     icon: "Globe"
     tags: ["ip", "networking", "security", "location", "privacy"]
     priority: 2
@@ -171,7 +171,7 @@ tools:
 
   - name: "JS Code Minifier"
     slug: "js-minifier"
-    category: "Formatters"
+    category: "Developer Tools"
     icon: "Zap"
     tags: ["javascript", "minifier", "compressor", "optimization", "performance"]
     priority: 4
@@ -183,6 +183,7 @@ tools:
       output_formats: ["js", "txt"]
       processing: "client-side"
     content:
+      title: "JS Code Minifier - Free Online High-performance JavaScript compression for production deployment"
       description: "Compress and optimize your JavaScript code for production. Remove comments, spaces, and reduce payload size for faster website performance."
       entity_definition: "JS Code Minifier is a frontend optimization utility that strips unnecessary characters from JavaScript source code. By removing comments, redundant whitespace, and formatting, it significantly reduces file size, leading to faster download times and improved Core Web Vitals (LCP, TBT). It is a vital tool for preparing production-ready web assets."
       how_it_works: "Our minifier uses advanced regex-based logic to strip single-line and multi-line comments, collapse redundant whitespace, and remove unnecessary semicolons or brackets where possible."
@@ -203,7 +204,7 @@ tools:
 
   - name: "SEO Meta Tag Generator"
     slug: "meta-tag-generator"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "Search"
     tags: ["seo", "meta-tags", "open-graph", "twitter-cards", "visibility"]
     priority: 5
@@ -215,8 +216,8 @@ tools:
       output_formats: ["html"]
       processing: "client-side"
     content:
+      title: "SEO Meta Tag Generator - Free Online Create Google-ready meta tags for high search visibility"
       description: "Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance."
-      entity_definition: "SEO Meta Tag Generator is a professional marketing utility designed to create standardized HTML meta tags. It generates Primary SEO tags, Open Graph (OG) protocol tags, and Twitter Cards to ensure websites appear correctly in search engines and social media feeds. This tool is essential for improving Click-Through Rates (CTR) and social sharing engagement."
       how_it_works: "Our tool generates a comprehensive set of meta tags. These tags ensure that your content looks professional and engaging when shared across all platforms."
       use_cases:
         - "Optimizing website SEO for Google"
@@ -293,7 +294,7 @@ tools:
 
   - name: "Lorem Ipsum Generator"
     slug: "lorem-ipsum"
-    category: "Design"
+    category: "Design Tools"
     icon: "Type"
     tags: ["lorem-ipsum", "placeholder", "design", "mockup", "copywriting"]
     priority: 10
@@ -322,7 +323,7 @@ tools:
 
   - name: "Advanced Robots.txt Generator"
     slug: "robots-generator"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "Settings"
     tags: ["seo", "robots-txt", "crawler", "indexing", "googlebot"]
     priority: 10
@@ -334,6 +335,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "Advanced Robots.txt Generator - Free Online Technical robots.txt creation for enterprise SEO management"
       description: "Control search engine crawler access and optimize your website's crawl budget with a perfectly formatted robots.txt file."
       entity_definition: "Advanced Robots.txt Generator is an SEO governance utility that creates the robots.txt file for web servers. It directs search engine bots on which directories to index and which to ignore, ensuring optimal crawl budget utilization and protecting sensitive paths."
       how_it_works: "The tool generates REP-compliant directives (Allow, Disallow, Sitemap) based on user configuration."
@@ -380,7 +382,7 @@ tools:
 
   - name: "Sitemap XML Validator"
     slug: "sitemap-validator"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "CheckCircle"
     tags: ["seo", "sitemap", "validator", "indexing", "google-search-console"]
     priority: 10
@@ -392,6 +394,7 @@ tools:
       output_formats: ["txt"]
       processing: "server-side"
     content:
+      title: "Sitemap XML Validator - Free Online Verify XML sitemap health and indexing compatibility"
       description: "Validate your website's XML sitemap for structure, accessibility, and SEO best practices to ensure optimal Google indexing."
       entity_definition: "Sitemap XML Validator is a technical SEO utility that audits sitemap files against the sitemap.org protocol. It identifies XML syntax errors, broken URLs, and security issues that could prevent search engines from correctly crawling a website."
       how_it_works: "Our tool fetches the provided sitemap URL and performs a structural analysis, checking for schema compliance and link health."
@@ -409,7 +412,7 @@ tools:
 
   - name: "HTTP Redirect Checker"
     slug: "redirect-checker"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "ArrowRightLeft"
     tags: ["seo", "redirect", "trace", "301", "302"]
     priority: 10
@@ -421,6 +424,7 @@ tools:
       output_formats: ["json"]
       processing: "server-side"
     content:
+      title: "HTTP Redirect Checker - Free Online Trace URL redirect chains and HTTP status codes"
       description: "Trace the full path of any URL redirect. Audit 301 and 302 redirect chains to optimize SEO and fix redirect loops."
       entity_definition: "HTTP Redirect Checker is a diagnostic tool that follows the path of a URL to its final destination. It records each 'hop' (301, 302, etc.), allowing developers to identify performance-draining chains or infinite loops."
       how_it_works: "Our server follows the HTTP 'Location' headers step-by-step, recording status codes and URLs until it reaches a terminal 200 OK status."
@@ -438,7 +442,7 @@ tools:
 
   - name: "JSON-LD Schema Generator"
     slug: "schema-generator"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "Code"
     tags: ["seo", "schema", "json-ld", "structured-data", "rich-snippets"]
     priority: 10
@@ -450,6 +454,7 @@ tools:
       output_formats: ["json"]
       processing: "client-side"
     content:
+      title: "JSON-LD Schema Generator - Free Online Create Google-ready structured data in JSON-LD format"
       description: "Generate structured data for your website using JSON-LD. Improve search visibility, rich snippets, and SEO rankings."
       entity_definition: "JSON-LD Schema Generator is a no-code utility for creating structured data script blocks. It supports various schema types (Organization, WebSite, etc.) to help websites earn rich results in search engines."
       how_it_works: "It formats user-provided entity data into a valid JSON-LD script that can be embedded in a webpage's HTML."
@@ -467,7 +472,7 @@ tools:
 
   - name: "API Latency Cost Calculator"
     slug: "api-latency-calculator"
-    category: "Utilities"
+    category: "Network & Performance"
     icon: "Activity"
     tags: ["performance", "roi", "latency", "revenue", "business"]
     priority: 10
@@ -479,6 +484,7 @@ tools:
       output_formats: ["currency"]
       processing: "client-side"
     content:
+      title: "API Latency Cost Calculator - Free Online Analyze the financial impact of network latency on revenue"
       description: "Analyze the financial cost of network latency on your business. Calculate conversion drops and revenue loss caused by slow API responses."
       entity_definition: "API Latency Cost Calculator is a business ROI utility that translates network performance metrics into financial data. It uses industry benchmarks to show how every 100ms of delay impacts conversion rates and bottom-line revenue."
       how_it_works: "It applies established performance-to-revenue models to your specific traffic and transaction data to estimate opportunity loss."
@@ -496,7 +502,7 @@ tools:
 
   - name: "AdSense Revenue Estimator"
     slug: "adsense-calculator"
-    category: "Utilities"
+    category: "Revenue & Analytics"
     icon: "DollarSign"
     tags: ["adsense", "revenue", "calculator", "monetization", "traffic"]
     priority: 10
@@ -508,6 +514,7 @@ tools:
       output_formats: ["currency"]
       processing: "client-side"
     content:
+      title: "AdSense Revenue Estimator - Free Online Estimate website earnings from Google AdSense"
       description: "Estimate your potential website earnings from Google AdSense. Calculate revenue based on daily views, CTR, and CPC across different niches."
       entity_definition: "AdSense Revenue Estimator is a financial modeling tool for digital publishers. It uses niche-specific CPC and CTR benchmarks to help creators project potential advertising income based on their traffic volume."
       how_it_works: "It calculates earnings using the standard formula (Views x CTR x CPC) with adjustable variables for different sectors."
@@ -525,7 +532,7 @@ tools:
 
   - name: "Base64 Encoder/Decoder"
     slug: "base64-encoder"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "FileText"
     tags: ["development", "base64", "encoding", "binary", "utility"]
     priority: 10
@@ -537,6 +544,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "Base64 Encoder/Decoder - Free Online Encode and decode data to/from Base64 format"
       description: "Quickly encode text to Base64 or decode Base64 strings back to plain text. Ideal for binary data transmission and API debugging."
       entity_definition: "Base64 Encoder/Decoder is a developer utility that converts binary data into an ASCII string format. It is essential for embedding images in CSS, handling API payloads, and ensuring safe data transmission across text-based protocols."
       how_it_works: "It uses standard binary-to-text algorithms to represent data in a radix-64 representation, ensuring compatibility with all web systems."
@@ -554,7 +562,7 @@ tools:
 
   - name: "Binary Converter"
     slug: "binary-converter"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "Binary"
     tags: ["math", "binary", "hex", "decimal", "conversion"]
     priority: 10
@@ -566,6 +574,7 @@ tools:
       output_formats: ["number"]
       processing: "client-side"
     content:
+      title: "Binary Converter - Free Online Convert numbers between binary, decimal, and hex"
       description: "Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science and low-level programming."
       entity_definition: "Binary Converter is a mathematical utility for translating integers between different base systems. It supports Base 2 (Binary), Base 8 (Octal), Base 10 (Decimal), and Base 16 (Hexadecimal) for technical analysis."
       how_it_works: "The tool parses the input based on the source base and recalculates the equivalent representation in all other target bases."
@@ -583,7 +592,7 @@ tools:
 
   - name: "Case Converter"
     slug: "case-converter"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "AlignLeft"
     tags: ["text", "formatting", "case", "seo", "utility"]
     priority: 10
@@ -595,6 +604,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "Case Converter - Free Online Transform text between various capitalization formats"
       description: "Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly."
       entity_definition: "Case Converter is a text manipulation utility that adjusts the capitalization of strings. It supports standard linguistic formats and developer-specific formats like kebab-case (slugs) for technical documentation."
       how_it_works: "It applies string transformation functions to reformat the input according to the selected case style."
@@ -612,7 +622,7 @@ tools:
 
   - name: "CSS Unit Converter"
     slug: "css-unit-converter"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "Ruler"
     tags: ["css", "frontend", "responsive", "units", "conversion"]
     priority: 10
@@ -641,7 +651,7 @@ tools:
 
   - name: "URL Encoder/Decoder"
     slug: "url-encoder"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "Link"
     tags: ["development", "url", "encoding", "uri", "seo"]
     priority: 10
@@ -670,7 +680,7 @@ tools:
 
   - name: "CDN & Edge Readiness Tester"
     slug: "cdn-readiness-tester"
-    category: "Utilities"
+    category: "Network & Performance"
     icon: "Zap"
     tags: ["performance", "cdn", "edge", "caching", "optimization"]
     priority: 10
@@ -682,6 +692,7 @@ tools:
       output_formats: ["json"]
       processing: "server-side"
     content:
+      title: "CDN & Edge Readiness Tester - Free Online Verify CDN presence and edge performance status"
       description: "Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache status."
       entity_definition: "CDN & Edge Readiness Tester is a diagnostic tool for auditing edge network performance. It analyzes HTTP headers to detect CDN providers (Cloudflare, Fastly, etc.) and verifies the efficiency of caching and compression strategies."
       how_it_works: "It performs a global header analysis of the provided URL, checking for cache HIT/MISS statuses and supported compression algorithms."
@@ -699,7 +710,7 @@ tools:
 
   - name: "WCAG Color Contrast Checker"
     slug: "color-contrast"
-    category: "Design"
+    category: "Design Tools"
     icon: "Layers"
     tags: ["design", "accessibility", "wcag", "colors", "compliance"]
     priority: 10
@@ -728,7 +739,7 @@ tools:
 
   - name: "Universal Color Picker"
     slug: "color-picker"
-    category: "Design"
+    category: "Design Tools"
     icon: "Palette"
     tags: ["design", "colors", "hex", "rgb", "hsl"]
     priority: 10
@@ -757,7 +768,7 @@ tools:
 
   - name: "HTML Entity Encoder"
     slug: "html-encoder"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "Code2"
     tags: ["security", "html", "encoding", "xss", "sanitization"]
     priority: 10
@@ -769,6 +780,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "HTML Entity Encoder - Free Online Encode and decode HTML entities for web security"
       description: "Encode or decode HTML entities to prevent XSS attacks and ensure proper character rendering in web browsers."
       entity_definition: "HTML Entity Encoder is a security utility that converts special characters into their HTML entity equivalents (e.g., < becomes &lt;). This process is vital for preventing cross-site scripting (XSS) and ensuring characters are rendered correctly."
       how_it_works: "It identifies reserved HTML characters and replaces them with standardized entities, or reverts them during decoding."
@@ -786,7 +798,7 @@ tools:
 
   - name: "Unix Timestamp Converter"
     slug: "timestamp-converter"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "Clock"
     tags: ["development", "time", "epoch", "timestamp", "utility"]
     priority: 10
@@ -798,6 +810,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "Unix Timestamp Converter - Free Online Convert between Unix timestamps and human dates"
       description: "Convert between Unix timestamps (seconds or milliseconds) and human-readable dates in Local, UTC, and ISO formats."
       entity_definition: "Unix Timestamp Converter is a time-management utility for developers. it translates 'epoch time' (seconds since 1970) into readable date strings and back, supporting both 10-digit (seconds) and 13-digit (milliseconds) formats."
       how_it_works: "It uses the JavaScript Date engine to parse timestamps and generate standardized ISO, UTC, and Local time strings."
@@ -815,7 +828,7 @@ tools:
 
   - name: "Core Web Vitals Guide"
     slug: "core-web-vitals-guide"
-    category: "Utilities"
+    category: "SEO Tools"
     icon: "Star"
     tags: ["seo", "performance", "technical", "cwv", "guide"]
     priority: 10
@@ -825,6 +838,7 @@ tools:
     technical:
       processing: "client-side"
     content:
+      title: "Core Web Vitals Guide - Free Online Technical guide for mastering Core Web Vitals"
       description: "Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to optimize for better rankings."
       entity_definition: "Core Web Vitals Guide is a technical resource for understanding and optimizing Google's key user experience metrics. It covers LCP (Loading), INP (Interactivity), and CLS (Visual Stability) with 2026-compliant benchmarks."
       how_it_works: "The guide provides interactive threshold visualizations and actionable engineering strategies for improving each metric."
@@ -842,7 +856,7 @@ tools:
 
   - name: "Markdown to HTML Converter"
     slug: "markdown-converter"
-    category: "Converters"
+    category: "Developer Tools"
     icon: "FileCode"
     tags: ["markdown", "html", "converter", "content", "utility"]
     priority: 10
@@ -854,6 +868,7 @@ tools:
       output_formats: ["html"]
       processing: "client-side"
     content:
+      title: "Markdown to HTML Converter - Free Online Convert Markdown text to semantic HTML code"
       description: "Convert Markdown text to clean, semantic HTML instantly. Perfect for technical writers and developers."
       entity_definition: "Markdown to HTML Converter is a formatting utility that translates Markdown syntax into valid HTML5 code. It ensures that headers, lists, and formatting are correctly mapped to semantic web tags."
       how_it_works: "It uses a real-time parsing engine to identify Markdown patterns and generate the corresponding HTML output."
@@ -871,7 +886,7 @@ tools:
 
   - name: "Markdown Previewer"
     slug: "markdown-previewer"
-    category: "Design"
+    category: "Design Tools"
     icon: "Layout"
     tags: ["markdown", "preview", "editor", "documentation", "utility"]
     priority: 10
@@ -900,7 +915,7 @@ tools:
 
   - name: "Robots.txt Templates"
     slug: "robots-txt-templates"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "ClipboardList"
     tags: ["seo", "robots", "technical", "crawler", "templates"]
     priority: 10
@@ -910,6 +925,7 @@ tools:
     technical:
       processing: "client-side"
     content:
+      title: "Robots.txt Templates - Free Online Access battle-tested robots.txt configurations"
       description: "Access battle-tested robots.txt templates for Next.js, WordPress, and E-commerce. Optimize your crawl budget and manage AI bot access."
       entity_definition: "Robots.txt Templates is a collection of expert-level configurations for the Robots Exclusion Protocol. It provides standardized rules for directing search engine crawlers and protecting site resources."
       how_it_works: "Users select a platform-specific template which can be customized and copied directly into their site root."
@@ -927,7 +943,7 @@ tools:
 
   - name: "SEO Audit Checklist"
     slug: "seo-audit-checklist"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "CheckCircle"
     tags: ["seo", "audit", "technical", "checklist", "compliance"]
     priority: 10
@@ -937,6 +953,7 @@ tools:
     technical:
       processing: "client-side"
     content:
+      title: "SEO Audit Checklist - Free Online Interactive technical SEO health audit"
       description: "A comprehensive, interactive checklist for auditing your website's SEO health. Covers crawlability, indexing, speed, and content structure."
       entity_definition: "SEO Audit Checklist is an interactive utility for systemizing website audits. It tracks progress across 20+ technical ranking factors, including indexing, speed, and security."
       how_it_works: "It uses browser local storage to save audit progress and allows exporting results as Markdown."
@@ -954,7 +971,7 @@ tools:
 
   - name: "Social Preview Tester"
     slug: "social-preview-tester"
-    category: "SEO"
+    category: "Content Utilities"
     icon: "Share2"
     tags: ["seo", "social", "og-tags", "preview", "marketing"]
     priority: 10
@@ -966,6 +983,7 @@ tools:
       output_formats: ["preview"]
       processing: "server-side"
     content:
+      title: "Social Preview Tester - Free Online Visualize and test social media meta tags"
       description: "Verify how your website looks on Facebook, Twitter, LinkedIn, and Google Search. Test and optimize your Open Graph tags and meta descriptions."
       entity_definition: "Social Preview Tester is a simulator for web metadata. It fetches and displays how a URL will appear when shared across social networks, allowing for real-time optimization of titles and images."
       how_it_works: "It extracts Open Graph and Twitter Card tags from a URL and renders them in simulated platform feeds."
@@ -983,7 +1001,7 @@ tools:
 
   - name: "Word Counter"
     slug: "word-counter"
-    category: "Converters"
+    category: "Content Utilities"
     icon: "Type"
     tags: ["text", "writing", "counter", "content", "seo"]
     priority: 10
@@ -995,6 +1013,7 @@ tools:
       output_formats: ["stats"]
       processing: "client-side"
     content:
+      title: "Word Counter - Free Online Real-time word, character, and sentence counting"
       description: "Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content."
       entity_definition: "Word Counter is a writing utility for analyzing text volume and complexity. It provides instant metrics for words, characters, and reading time, essential for meeting content length requirements."
       how_it_works: "It uses regex-based processing to identify word and sentence boundaries in the input text."
@@ -1012,7 +1031,7 @@ tools:
 
   - name: "Question Explorer (Reddit Insights)"
     slug: "question-explorer"
-    category: "SEO"
+    category: "SEO Tools"
     icon: "Search"
     subcategory: "keyword-research"
     tags: ["seo", "keywords", "reddit", "questions", "content-strategy"]
@@ -1060,7 +1079,7 @@ tools:
 
   - name: "HTML Beautifier"
     slug: "html-beautifier"
-    category: "Formatters"
+    category: "Developer Tools"
     icon: "FileCode"
     subcategory: "code-formatting"
     tags: ["html", "beautifier", "formatter", "code-cleaner", "web-dev"]
@@ -1091,7 +1110,7 @@ tools:
 
   - name: "CSS Formatter"
     slug: "css-formatter"
-    category: "Formatters"
+    category: "Developer Tools"
     icon: "Palette"
     subcategory: "style-formatting"
     tags: ["css", "formatter", "beautifier", "styles", "frontend"]
@@ -1126,7 +1145,7 @@ tools:
 
   - name: "SQL Formatter"
     slug: "sql-formatter"
-    category: "Formatters"
+    category: "Developer Tools"
     icon: "Database"
     subcategory: "database-utilities"
     tags: ["sql", "formatter", "database", "query-beautifier", "backend"]

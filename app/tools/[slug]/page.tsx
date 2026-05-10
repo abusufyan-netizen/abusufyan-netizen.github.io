@@ -10,6 +10,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
 import AdSlot from '@/components/ads/AdSlot'
+import { CATEGORY_MAP } from '@/lib/categories'
 import * as Icons from 'lucide-react'
 
 interface ToolPageProps {
@@ -60,6 +61,8 @@ export default function ToolPage({ params }: ToolPageProps) {
   // Dynamic icon selection
   const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
 
+  const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name={tool.name} slug={tool.slug} category={tool.category} />
@@ -92,7 +95,7 @@ export default function ToolPage({ params }: ToolPageProps) {
                 <p className="text-gray-500 dark:text-slate-400">
                   {tool.function.primary} {tool.function.secondary ? `• ${tool.function.secondary}` : ''}
                 </p>
-                <Link href={`/tools/hub/${tool.category.toLowerCase()}`} className="inline-flex items-center gap-1.5 text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-2 hover:underline">
+                <Link href={`/tools/category/${categorySlug}`} className="inline-flex items-center gap-1.5 text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-2 hover:underline">
                   Part of the {tool.category} Suite <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>

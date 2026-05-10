@@ -13,7 +13,17 @@ import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
 import * as Icons from 'lucide-react'
 
-const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities', 'SEO', 'Design']
+const categories = [
+  'All', 
+  'Developer Tools', 
+  'SEO Tools', 
+  'Design Tools', 
+  'Generators', 
+  'Network & Performance', 
+  'Content Utilities', 
+  'Revenue & Analytics', 
+  'Social Media Tools'
+]
 
 interface ToolsClientProps {
   initialTools: ToolConfig[]
@@ -122,11 +132,14 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
         {filteredTools.map((tool) => {
           const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
           const toolColor = 
-            tool.category === 'Formatters' ? 'from-blue-500 to-blue-700' : 
+            tool.category === 'Developer Tools' ? 'from-blue-500 to-blue-700' : 
             tool.category === 'Generators' ? 'from-indigo-500 to-indigo-700' : 
-            tool.category === 'SEO' ? 'from-blue-600 to-blue-800' :
-            tool.category === 'Converters' ? 'from-purple-500 to-purple-700' :
-            tool.category === 'Design' ? 'from-pink-500 to-pink-700' :
+            tool.category === 'SEO Tools' ? 'from-cyan-500 to-cyan-700' :
+            tool.category === 'Design Tools' ? 'from-pink-500 to-pink-700' :
+            tool.category === 'Network & Performance' ? 'from-emerald-500 to-emerald-700' :
+            tool.category === 'Revenue & Analytics' ? 'from-amber-500 to-amber-700' :
+            tool.category === 'Social Media Tools' ? 'from-rose-500 to-rose-700' :
+            tool.category === 'Content Utilities' ? 'from-violet-500 to-violet-700' :
             'from-slate-500 to-slate-700'
           
           const href = `/tools/${tool.slug}`
