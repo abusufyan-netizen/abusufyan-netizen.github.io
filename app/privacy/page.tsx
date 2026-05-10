@@ -44,7 +44,7 @@ export default function PrivacyPage() {
                 Google, as a third-party vendor, uses cookies to serve ads on WebToolkit Pro. We have implemented <strong>Google Consent Mode v2</strong> to respect your privacy preferences while enabling ad measurement.
               </p>
               <p className="text-blue-800 dark:text-slate-400 text-sm leading-relaxed">
-                Users may opt out of personalized advertising by visiting the Google ad and content network privacy policy at: <a href="https://www.google.com/privacy_ads.html" className="underline text-blue-600 dark:text-blue-400">https://www.google.com/privacy_ads.html</a>
+                Users may opt out of personalized advertising by visiting the <a href="https://www.google.com/privacy_ads.html" className="underline text-blue-600 dark:text-blue-400">Google ad and content network privacy policy</a>.
               </p>
             </div>
           </section>

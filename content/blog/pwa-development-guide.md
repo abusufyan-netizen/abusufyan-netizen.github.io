@@ -1,5 +1,5 @@
 ---
-title: "Building Progressive Web Apps (PWA): The Future of Mobile in 2026"
+title: "Building PWAs: Future of Mobile 2026"
 description: "Learn how to turn your Next.js site into a high-performance Progressive Web App (PWA) with offline support, push notifications, and app-like experience."
 date: "2026-05-10"
 category: "Tutorials"

@@ -1,5 +1,5 @@
 ---
-title: "Next.js vs. Vite: Choosing the Right Build Tool for 2026"
+title: "Next.js vs. Vite: 2026 Comparison"
 description: "A deep dive comparison between Next.js and Vite. Learn which tool is best for your next project based on performance, SEO requirements, and developer experience."
 date: "2026-05-04"
 category: "Tutorials"

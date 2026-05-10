@@ -27,9 +27,11 @@ const categories = [
 
 interface ToolsClientProps {
   initialTools: ToolConfig[]
+  title?: string
+  isSubPage?: boolean
 }
 
-export default function ToolsClient({ initialTools }: ToolsClientProps) {
+export default function ToolsClient({ initialTools, title, isSubPage }: ToolsClientProps) {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
   const [favorites, setFavorites] = useState<string[]>([])
@@ -89,9 +91,15 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
-          Professional Developer Tools
-        </h1>
+        {isSubPage ? (
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight uppercase">
+            {title || 'Explore Our Tools'}
+          </h2>
+        ) : (
+          <h1 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+            {title || 'Professional Developer Tools'}
+          </h1>
+        )}
         <p className="text-xl text-gray-500 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
           Secure, high-performance web utilities for modern engineering and technical SEO.
         </p>

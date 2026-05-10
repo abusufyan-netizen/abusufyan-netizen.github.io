@@ -1,5 +1,5 @@
 ---
-title: "Modern CSS Architecture: Scaling Styles for Enterprise Projects"
+title: "Modern CSS Architecture for Enterprise"
 description: "Discover how to build a scalable, maintainable CSS architecture for large-scale web projects using CSS Modules, Tailwind CSS, and Design Systems."
 date: "2026-05-04"
 category: "CSS"

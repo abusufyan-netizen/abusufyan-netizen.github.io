@@ -1,5 +1,5 @@
 ---
-title: "Mastering JWT Authentication: A Security-First Approach"
+title: "Mastering JWT Authentication"
 description: "Learn how to implement JSON Web Tokens (JWT) securely in your web applications. Avoid common pitfalls like weak signing keys and insecure storage."
 date: "2026-05-04"
 category: "Security"

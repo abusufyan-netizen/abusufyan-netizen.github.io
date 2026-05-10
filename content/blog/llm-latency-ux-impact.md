@@ -1,5 +1,5 @@
 ---
-title: "The Silent Conversion Killer: How LLM Latency Affects Technical User Retention"
+title: "Impact of LLM Latency on User Retention"
 description: "A data-driven study on how milliseconds of delay in AI-generated responses can lead to massive drops in user engagement and conversion rates."
 date: "2026-05-09"
 category: "Research"

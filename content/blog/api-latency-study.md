@@ -1,5 +1,5 @@
 ---
-title: "The Cost of 100ms: A 2026 Study on API Latency and Revenue Loss"
+title: "API Latency Study: The Cost of 100ms"
 description: "Original research on how millisecond-level API latency impacts e-commerce conversion rates and user retention in the US market."
 date: "2026-05-10"
 category: "Research"

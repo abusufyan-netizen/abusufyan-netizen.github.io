@@ -1,5 +1,5 @@
 ---
-title: "The Future of Serverless Computing: Scaling Enterprise Apps in 2026"
+title: "Future of Serverless Computing 2026"
 description: "Explore the evolution of serverless architecture, from edge functions to stateful serverless, and how it's transforming modern web development for US enterprises."
 date: "2026-05-06"
 category: "Tutorials"

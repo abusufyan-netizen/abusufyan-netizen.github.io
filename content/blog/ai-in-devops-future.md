@@ -1,5 +1,5 @@
 ---
-title: "The Role of AI in Modern DevOps Workflows: A 2026 Perspective"
+title: "AI in Modern DevOps: 2026 Perspective"
 description: "Explore how Artificial Intelligence is transforming DevOps. From automated bug fixing to AI-driven deployment strategies for US enterprise teams."
 date: "2026-05-10"
 category: "Security"

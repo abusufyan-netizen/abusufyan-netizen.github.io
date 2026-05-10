@@ -40,7 +40,11 @@ export default function CategoryPillarPage({ params }: Props) {
         </p>
       </div>
 
-      <ToolsClient initialTools={tools} />
+      <ToolsClient 
+        initialTools={tools} 
+        isSubPage={true} 
+        title={`${categoryName} Utilities`} 
+      />
     </main>
   )
 }

@@ -1,5 +1,5 @@
 ---
-title: "Choosing the Best JavaScript Framework for Enterprise Applications"
+title: "Enterprise JS Frameworks: 2026 Guide"
 description: "A comprehensive analysis of React, Angular, and Vue for enterprise-scale projects in 2026. Learn about scalability, ecosystem support, and performance."
 date: "2026-05-09"
 category: "Tutorials"

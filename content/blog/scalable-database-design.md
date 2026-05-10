@@ -1,5 +1,5 @@
 ---
-title: "Scalable Database Design for High-Traffic Enterprise Applications"
+title: "Scalable Database Design for Enterprise"
 description: "Master the art of database architecture. Learn about sharding, indexing, and choosing between SQL and NoSQL for global, high-traffic US applications."
 date: "2026-05-10"
 category: "Tutorials"

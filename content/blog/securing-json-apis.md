@@ -1,5 +1,5 @@
 ---
-title: "Securing JSON APIs: Data Validation & Encryption Best Practices"
+title: "Securing JSON APIs: Best Practices"
 description: "Discover the essential security protocols for JSON-based APIs, including schema validation, JWT security, and best practices for protecting sensitive data in transit."
 date: "2026-05-04"
 category: "Tutorials"

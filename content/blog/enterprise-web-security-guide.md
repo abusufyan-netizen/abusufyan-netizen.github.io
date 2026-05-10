@@ -1,5 +1,5 @@
 ---
-title: "Enterprise Web Application Security: The 2026 Developer Guide"
+title: "Enterprise Web Security: 2026 Guide"
 description: "Master web application security with our comprehensive guide on OWASP Top 10, data encryption, and secure coding practices for enterprise-grade applications."
 date: "2026-05-04"
 category: "Security"

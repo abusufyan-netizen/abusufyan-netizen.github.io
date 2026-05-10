@@ -1,5 +1,5 @@
 ---
-title: "The Evolution of Semantic Web: Implementing JSON-LD v2.0 in 2026"
+title: "Implementing JSON-LD v2.0 in 2026"
 description: "JSON-LD has evolved far beyond basic SEO metadata. Discover how to use modern schema definitions for decentralized identity and AI reasoning."
 date: "2026-05-09"
 category: "Tutorials"

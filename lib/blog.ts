@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-const TOOL_LINKS = [
+const INTERNAL_LINKS = [
   { keyword: 'Pinterest Downloader', url: '/tools/pinterest-downloader/' },
   { keyword: 'Pinterest image downloader', url: '/tools/pinterest-downloader/' },
   { keyword: 'JSON Formatter', url: '/tools/json-formatter/' },
@@ -15,14 +15,20 @@ const TOOL_LINKS = [
   { keyword: 'secure passwords', url: '/tools/password-generator/' },
   { keyword: 'strong passwords', url: '/tools/password-generator/' },
   { keyword: 'developer tools', url: '/tools/' },
+  { keyword: 'Edge Computing', url: '/blog/edge-computing-guide/' },
+  { keyword: 'Edge Functions', url: '/blog/edge-computing-guide/' },
+  { keyword: 'JSON formatting', url: '/blog/json-formatting-best-practices/' },
+  { keyword: 'database design', url: '/blog/scalable-database-design/' },
+  { keyword: 'serverless computing', url: '/blog/serverless-computing-future/' },
+  { keyword: 'JS Frameworks', url: '/blog/enterprise-js-frameworks/' },
+  { keyword: 'technical SEO', url: '/blog/ai-seo-optimization-2026/' },
+  { keyword: 'structured data', url: '/blog/seo-meta-tags-complete-guide/' },
 ]
 
 function applySmartLinks(htmlString: string): string {
-  // Use a simple but effective regex approach to avoid complexity of JSDOM in small scripts
-  // However, we must be careful not to replace keywords inside <a> tags or attributes
   let processedHtml = htmlString;
   
-  TOOL_LINKS.forEach(({ keyword, url }) => {
+  INTERNAL_LINKS.forEach(({ keyword, url }) => {
     // Regex explanation:
     // (?<!href=")(?<!">) - Negative lookbehind to ensure it's not part of an existing link tag or attribute
     // (?![^<]*<\/a>) - Negative lookahead to ensure it's not inside an <a>...</a> block

@@ -1,5 +1,5 @@
 ---
-title: "Top 10 Free Developer Tools You Need in 2026"
+title: "Top 10 Developer Tools for 2026"
 description: "Discover the 10 most essential free online developer tools for 2026. From JSON formatters to password generators, these free web development utilities will supercharge your productivity."
 date: "2026-05-04"
 category: "Tools"

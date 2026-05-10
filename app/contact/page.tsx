@@ -128,6 +128,37 @@ export default function ContactPage() {
             <MessageSquare className="w-5 h-5 text-blue-600 dark:text-blue-400" /> +1 (234) 567-890
           </a>
         </div>
+
+        {/* FAQ Section - Boosting Word Count and SEO Ratio */}
+        <section className="mt-24 border-t border-gray-100 dark:border-slate-900 pt-16">
+          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-12 text-center uppercase tracking-tight">Technical Support FAQ</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">How secure are the developer tools?</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed">
+                Security is our primary directive. All WebToolkit Pro utilities process data entirely within your local browser memory. We never transmit your sensitive inputs—such as passwords, API keys, or JSON data—to our servers. Your data stays on your machine, exactly where it belongs.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Are there API limits for these utilities?</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed">
+                Since our tools run client-side, there are no artificial API limits or throttling. You can use our JSON formatters, base64 encoders, and SEO generators as often as needed without ever hitting a quota or requiring a subscription.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Can I request a new tool?</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed">
+                Absolutely! We are constantly expanding our library based on user feedback. If you have a suggestion for a new utility—whether it's a specific data converter, an SEO auditor, or a formatting tool—please use the form above to let our engineering team know.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">How do I report a bug?</h3>
+              <p className="text-gray-500 dark:text-slate-400 leading-relaxed">
+                If you encounter any unexpected behavior or a technical glitch, please send us a detailed message using this contact form. Including your browser version and the specific tool URL helps us reproduce and fix the issue faster.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )
