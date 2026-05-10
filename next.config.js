@@ -4,6 +4,20 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure long-term caching for static assets
+  async headers() {
+    return [
+      {
+        source: '/(.*).(webp|png|jpg|ico|svg|json|txt|xml)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ]
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
