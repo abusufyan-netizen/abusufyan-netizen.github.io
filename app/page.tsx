@@ -203,79 +203,134 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Global Resource Hub - Massive Content Boost for SEO */}
-      <section className="py-[var(--space-lg)] bg-gray-50/30 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white mb-6 uppercase tracking-tight">The Global Standard for Web Utilities</h2>
-            <p className="text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
-              WebToolkit Pro isn't just a collection of tools; it's an engineering ecosystem designed to handle the most demanding technical workflows. Every utility on our platform undergoes rigorous performance testing to ensure it meets the sub-3ms execution standard expected by modern software engineers.
+      {/* Technical Authority & Deep-Dive Sections */}
+      <section className="py-[var(--space-xl)] bg-gray-50/30 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-800 relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 blur-[100px] rounded-full -z-10" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 blur-[100px] rounded-full -z-10" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white mb-6 tracking-tight uppercase">
+              The Global Standard for <span className="text-blue-600 dark:text-blue-400">Web Utilities</span>
+            </h2>
+            <p className="text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
+              WebToolkit Pro isn't just a collection of tools; it's an engineering ecosystem designed to handle the most demanding technical workflows with a <span className="text-gray-900 dark:text-white font-bold">sub-3ms execution standard</span>.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm font-medium text-gray-500 dark:text-slate-400 leading-relaxed">
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Precision JSON Formatting & Validation</h3>
-              <p className="mb-4">
-                Our JSON Formatter uses a custom-built AST (Abstract Syntax Tree) parser to ensure that even the most complex, multi-megabyte payloads are beautified without losing structural integrity. We support various indentation styles and provide real-time validation against RFC 8259 standards. For developers working with large datasets, our validator highlights syntax errors with line-by-line precision, saving hours of manual debugging.
-              </p>
-              <p>
-                Unlike other online formatters, WebToolkit Pro processes all JSON data entirely within your browser's local memory. This means your sensitive API keys, database credentials, and proprietary configurations never touch our servers, providing a "Zero-Trust" environment that is compliant with enterprise security audits.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* JSON Formatter Deep-Dive */}
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div className="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center mb-8 border border-blue-600/20 group-hover:scale-110 transition-transform">
+                <FileJson className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Precision JSON <br/>Formatting</h3>
+              <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
+                <p>
+                  Utilizing a custom-built <span className="text-blue-600 font-bold uppercase text-[10px] tracking-widest">AST Parser</span> to beautify multi-megabyte payloads without losing structural integrity. 
+                </p>
+                <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
+                <p>
+                  Compliant with <span className="text-gray-900 dark:text-white">RFC 8259</span> standards with line-by-line syntax highlighting for instant debugging.
+                </p>
+                <p className="pt-4 text-xs italic opacity-70">
+                  "Zero-Trust" local memory processing ensuring API keys and credentials never touch our servers.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Cryptographically Secure Password Generation</h3>
-              <p className="mb-4">
-                Security is at the heart of everything we build. Our Password Generator utilizes the browser's native Crypto API to produce high-entropy strings that are resistant to brute-force attacks. Whether you need a simple 12-character alphanumeric password or a complex 64-character hex key for server authentication, our generator provides the randomness required for professional-grade security.
-              </p>
-              <p>
-                We also offer advanced hashing utilities, including MD5, SHA-1, and SHA-256, allowing you to verify file integrity and generate checksums instantly. By offloading these computations to client-side Web Workers, we ensure that your browser remains responsive even when processing large binary blobs or performing iterative hashing.
-              </p>
+
+            {/* Cryptography Deep-Dive */}
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div className="w-14 h-14 bg-emerald-600/10 rounded-2xl flex items-center justify-center mb-8 border border-emerald-600/20 group-hover:scale-110 transition-transform">
+                <Shield className="w-7 h-7 text-emerald-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Enterprise-Grade <br/>Security</h3>
+              <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
+                <p>
+                  High-entropy generation via the browser's native <span className="text-emerald-600 font-bold uppercase text-[10px] tracking-widest">Web Crypto API</span> for brute-force resistance.
+                </p>
+                <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
+                <p>
+                  Instant <span className="text-gray-900 dark:text-white">SHA-256 & MD5</span> hashing offloaded to Client-Side Web Workers to maintain UI responsiveness.
+                </p>
+                <p className="pt-4 text-xs italic opacity-70">
+                  Randomness required for professional server authentication and credential management.
+                </p>
+              </div>
             </div>
-            <div className="md:col-span-2 mt-8 text-center border-t border-gray-100 dark:border-slate-800 pt-12">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Technical SEO & Content Optimization</h3>
-              <p className="max-w-3xl mx-auto">
-                In the era of AI-driven search engines, technical SEO has become more complex than ever. WebToolkit Pro provides the utilities necessary to master modern indexing requirements. Our Sitemap Validator and Robots.txt Generator help you communicate effectively with Googlebot and Bingbot, while our JSON-LD Schema generators ensure your content is structured for rich results and LLM discovery. We stay at the forefront of the "Agentic Web," providing the tools you need to optimize for the future of search.
-              </p>
+
+            {/* SEO Deep-Dive */}
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div className="w-14 h-14 bg-purple-600/10 rounded-2xl flex items-center justify-center mb-8 border border-purple-600/20 group-hover:scale-110 transition-transform">
+                <Zap className="w-7 h-7 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Technical SEO <br/>Optimization</h3>
+              <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
+                <p>
+                  Master modern indexing with <span className="text-purple-600 font-bold uppercase text-[10px] tracking-widest">JSON-LD Schema</span> generators built for SGE and LLM discovery.
+                </p>
+                <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
+                <p>
+                  Advanced <span className="text-gray-900 dark:text-white">Robots.txt & Sitemap</span> validation to communicate effectively with the next generation of search bots.
+                </p>
+                <p className="pt-4 text-xs italic opacity-70">
+                  Stay at the forefront of the "Agentic Web" and AI-driven search trends.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Engineering Excellence - SEO Content Boost */}
-      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950">
+      {/* Engineering Excellence Section */}
+      <section className="py-[var(--space-xl)] bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">
-                Engineered for the Modern Web
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
+                Engineering Excellence
+              </div>
+              <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
+                Engineered for the <br/>
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Modern Web Ecosystem</span>
               </h2>
-              <div className="prose dark:prose-invert max-w-none text-gray-500 dark:text-slate-400 space-y-6 text-sm font-medium leading-relaxed">
+              
+              <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  At WebToolkit Pro, we believe that professional developer tools should be fast, private, and accessible. Our platform is built on a "Zero-Knowledge" architecture, meaning every byte of data you process—whether it's a sensitive JSON payload, a high-entropy password, or a complex CSS configuration—is handled entirely within your browser's memory. No data is ever transmitted to a server, ensuring 100% privacy and compliance with global security standards like GDPR, HIPAA, and SOC2.
+                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built on a "Zero-Knowledge" architecture, ensuring 100% compliance with GDPR, HIPAA, and SOC2.
                 </p>
                 <p>
-                  Our suite of 65+ premium utilities is designed to bridge the gap between simple browser extensions and complex enterprise software. From the advanced Pinterest Board Downloader to our cryptographically secure UUID generators, every tool is optimized for the V8 engine, delivering sub-1ms execution times. We prioritize Core Web Vitals (LCP, CLS, and INP) to ensure that your workflow remains uninterrupted by slow load times or layout shifts.
+                  From the advanced Pinterest Board Downloader to our cryptographically secure UUID generators, every tool is optimized for the <span className="text-blue-600 dark:text-blue-400 underline decoration-2 underline-offset-4">V8 engine</span>, delivering sub-1ms execution times without any layout shifts.
                 </p>
                 <p>
-                  Beyond simple utilities, WebToolkit Pro serves as a comprehensive technical research hub. Our engineering team regularly publishes deep-dive studies into the "Agentic Web," 3ms TTFB standards, and the evolution of JSON-LD schema for AI-driven search engines like SGE and Perplexity. We don't just provide the tools; we provide the knowledge necessary to master the modern web ecosystem and build resilient, high-performance applications.
-                </p>
-                <p>
-                  Our commitment to engineering excellence extends to our infrastructure. By utilizing an edge-first delivery strategy, we ensure that WebToolkit Pro is accessible from anywhere in the world with minimal latency. We utilize modern browser APIs like Web Workers and SharedArrayBuffer to offload heavy computations, keeping the UI responsive even during complex data transformations. This professional-grade approach makes us the preferred choice for senior engineers and security researchers.
+                  Beyond utilities, we serve as a technical research hub, publishing deep-dive studies into the <span className="text-gray-900 dark:text-white font-bold">"Agentic Web"</span> and 3ms TTFB standards to help you master the future of search.
                 </p>
               </div>
+
+              <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
+                <div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">65+</div>
+                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">1ms</div>
+                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Execution Speed</div>
+                </div>
+              </div>
             </div>
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+
+            <div className="grid grid-cols-2 gap-4">
               {[
-                { label: 'Client-Side Only', desc: 'JS Workers processing', icon: Zap },
-                { label: 'RFC Compliant', desc: 'Industry standards', icon: CheckCircle },
-                { label: 'No Tracking', desc: 'Zero data retention', icon: Shield },
-                { label: 'Cloud Native', desc: 'Edge delivery network', icon: Server },
+                { label: 'Client-Side Only', desc: 'JS Workers processing', icon: Zap, color: 'text-blue-600' },
+                { label: 'RFC Compliant', desc: 'Industry standards', icon: CheckCircle, color: 'text-emerald-600' },
+                { label: 'No Tracking', desc: 'Zero data retention', icon: Shield, color: 'text-purple-600' },
+                { label: 'Cloud Native', desc: 'Edge delivery network', icon: Server, color: 'text-amber-600' },
               ].map((feature) => (
-                <div key={feature.label} className="p-6 bg-gray-50 dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 hover:shadow-xl transition-all group">
-                  <feature.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{feature.label}</div>
-                  <div className="text-[10px] text-gray-400 dark:text-slate-500 font-bold uppercase tracking-widest">{feature.desc}</div>
+                <div key={feature.label} className="p-8 bg-gray-50 dark:bg-slate-900/50 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl transition-all group">
+                  <feature.icon className={`w-10 h-10 ${feature.color} mb-6 group-hover:scale-110 transition-transform`} />
+                  <div className="font-bold text-gray-900 dark:text-white text-lg mb-2 tracking-tight">{feature.label}</div>
+                  <div className="text-[10px] text-gray-400 dark:text-slate-500 font-black uppercase tracking-widest">{feature.desc}</div>
                 </div>
               ))}
             </div>
