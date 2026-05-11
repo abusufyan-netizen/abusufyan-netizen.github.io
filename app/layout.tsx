@@ -21,9 +21,10 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
   alternates: {
+    canonical: 'https://wtkpro.site/',
   },
-  title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
-  description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON and master SEO.',
+  title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
+  description: 'Access 65+ free premium developer tools in our secure web toolkit online. Professional utilities for JSON formatting, SEO auditing, and enterprise engineering.',
   keywords: 'WebToolkit Pro, developer platform, engineering utilities, secure web tools, technical documentation, developer ecosystem',
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -53,8 +54,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
-    description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON, generate passwords, and master SEO.',
+    title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
+    description: 'Access 65+ free premium developer tools in our secure web toolkit online. Professional utilities for JSON formatting, SEO auditing, and enterprise engineering.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [

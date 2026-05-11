@@ -4,6 +4,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.wtkpro.site' }],
+        destination: 'https://wtkpro.site/:path*',
+        permanent: true,
+      },
+    ]
+  },
   // Ensure long-term caching for static assets
   async headers() {
     return [

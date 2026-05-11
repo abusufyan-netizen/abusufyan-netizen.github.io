@@ -132,7 +132,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#8A9BBE]">
-            © {new Date().getFullYear()} WebToolkit Pro • Built by <Link href="/author/" className="text-white hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
+            © {new Date().getFullYear()} WebToolkit Pro • Premium <Link href="/" className="text-white hover:text-[#00D4B4] transition-colors">Web Toolkit Online</Link> • Built by <Link href="/author/" className="text-white hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
           </p>
         </div>
       </div>
