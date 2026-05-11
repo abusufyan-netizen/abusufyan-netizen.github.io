@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Box, Github, Twitter, Mail } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
+import Logo from './Logo'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -42,10 +43,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-8">
-              <span className="text-2xl font-black text-white tracking-tighter">
-                WebToolkit<span className="text-blue-500">Pro</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2 mb-8 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
+              <Logo />
             </Link>
             <p className="text-sm leading-relaxed font-medium mb-6">
               Premium online tools for web developers and designers. 

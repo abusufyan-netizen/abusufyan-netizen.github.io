@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Box, ChevronRight } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import Logo from './Logo'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,34 +21,23 @@ export default function Header() {
   const navLinks = [
     { name: 'Tools', href: '/tools/' },
     { name: 'Blog', href: '/blog/' },
-    { name: 'Submit Tool', href: '/submit-tool/' },
     { name: 'About', href: '/about/' },
     { name: 'Contact', href: '/contact/' },
+    { name: 'Submit Tool', href: '/contact/' },
   ]
 
   return (
     <header 
-      className={`bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 sticky top-0 z-[100] h-20 transition-all duration-300 ${
+      className={`bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 sticky top-0 z-[100] h-20 transition-all duration-300 ${
         scrolled ? 'shadow-md' : ''
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <Link href="/" className="flex items-center group shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg" style={{ width: '200px', height: '40px' }}>
+          <Link href="/" className="flex items-center group shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
             <span className="sr-only">WebToolkit Pro Home</span>
-            <Image 
-              src="/logo-optimized.webp" 
-              alt="WebToolkit Pro" 
-              width={200}
-              height={40}
-              priority
-              fetchPriority="high"
-              decoding="async"
-              sizes="200px"
-              style={{ objectFit: 'contain' }}
-              className="transition-all group-hover:scale-105"
-            />
+            <Logo className="transition-all group-hover:scale-105" />
           </Link>
           
           {/* Desktop Nav */}
