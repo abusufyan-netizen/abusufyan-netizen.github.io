@@ -1,44 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { Github, Twitter, Mail } from 'lucide-react'
-import { triggerQuickSuccess } from '@/lib/effects'
 import Logo from './Logo'
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    
-    try {
-      const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
-        method: 'POST',
-        body: JSON.stringify({ email }),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      })
-      
-      if (response.ok) {
-        setStatus('success')
-        triggerQuickSuccess()
-        setEmail('')
-      } else {
-        throw new Error('Subscription failed')
-      }
-    } catch (err) {
-      console.error('Footer subscribe error:', err)
-      setStatus('success') // UX fallback
-      triggerQuickSuccess()
-      setEmail('')
-    }
-  }
-
   return (
     <footer className="bg-[#0B1120] text-[#8A9BBE] pt-20 pb-8 border-t border-[#1E2D47]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,30 +51,6 @@ export default function Footer() {
               <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Personal Portfolio</a></li>
               <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors text-xs">Partner With Us</Link></li>
             </ul>
-          </div>
-
-          <div className="bg-[#0D1526] p-8 rounded-[12px] border border-[#1E2D47]">
-            <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-[10px] font-mono">Developer Newsletter</h3>
-            <p className="text-xs text-[#8A9BBE] mb-6 leading-relaxed font-medium">
-              Get the latest tools and technical SEO updates in your inbox.
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input 
-                type="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="engineering@company.com" 
-                required
-                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-4 py-3 text-xs text-white placeholder-[#8A9BBE] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
-              />
-              <button 
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold py-3 rounded-[12px] text-xs uppercase tracking-widest transition-all hover:shadow-lg hover:shadow-blue-500/10 active:scale-95 disabled:opacity-50"
-              >
-                {status === 'loading' ? 'Joining...' : status === 'success' ? 'Welcome Aboard!' : 'Subscribe Now'}
-              </button>
-            </form>
           </div>
         </div>
 
