@@ -152,12 +152,12 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 dark:border-[#1E2D47]/50">
-                  <span className="badge-pill bg-gray-50 dark:bg-[#0B1120] text-gray-500 dark:text-[#8A9BBE] border border-gray-200 dark:border-[#1E2D47] text-[9px]">
+                <div className="flex items-center justify-between gap-4 flex-wrap mt-auto pt-6 border-t border-gray-100 dark:border-[#1E2D47]/50">
+                  <span className="px-4 py-2 bg-gray-50 dark:bg-[#0B1120] text-gray-500 dark:text-[#8A9BBE] border border-gray-200 dark:border-[#1E2D47] text-[9px] rounded-full font-bold uppercase tracking-widest leading-tight">
                     {tool.category}
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-widest">
-                    Launch <Zap className="w-3 h-3 fill-current" />
+                  <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest shrink-0">
+                    Launch <Zap className="w-3.5 h-3.5 fill-current" />
                   </span>
                 </div>
               </Link>
