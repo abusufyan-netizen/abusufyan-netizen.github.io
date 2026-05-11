@@ -115,197 +115,168 @@ export default async function BlogPostPage({ params }: Props) {
   })
 
   return (
-    <article className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300 min-h-screen">
-      <div className="max-w-3xl mx-auto">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-gray-400 dark:text-slate-500" itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" itemProp="item">
-                <span itemProp="name">Home</span>
-              </Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li className="text-gray-300 dark:text-slate-700">/</li>
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" itemProp="item">
-                <span itemProp="name">Blog</span>
-              </Link>
-              <meta itemProp="position" content="2" />
-            </li>
-            <li className="text-gray-300 dark:text-slate-700">/</li>
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-gray-600 dark:text-slate-300 font-medium" itemProp="name">{post.title}</span>
-              <meta itemProp="position" content="3" />
-            </li>
-          </ol>
-        </nav>
+    <article className="dynamic-padding max-w-4xl mx-auto min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <nav aria-label="Breadcrumb" className="mb-12 pt-12">
+        <ol className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-[#4A6080]" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
+              <span itemProp="name">Root</span>
+            </Link>
+            <meta itemProp="position" content="1" />
+          </li>
+          <li className="text-[#1E2D47]">/</li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link href="/blog/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
+              <span itemProp="name">Journal</span>
+            </Link>
+            <meta itemProp="position" content="2" />
+          </li>
+          <li className="text-[#1E2D47]">/</li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span className="text-[#8A9BBE]" itemProp="name">Entry</span>
+            <meta itemProp="position" content="3" />
+          </li>
+        </ol>
+      </nav>
 
-        {/* Post Header */}
-        <header className="mb-10">
-          <div className="flex items-center gap-3 mb-5">
-            <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border uppercase tracking-wider ${categoryColors[post.category] || 'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-400 border-gray-200 dark:border-slate-700'}`}>
-              {post.category}
-            </span>
-            <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 dark:text-slate-500">{post.readTime}</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight tracking-tight">
-            {post.title}
-          </h1>
-
-          <p className="text-lg text-gray-500 dark:text-slate-400 leading-relaxed mb-8">
-            {post.description}
-          </p>
-
-          <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-500 pb-6 border-b border-gray-100 dark:border-slate-800 mb-10">
-            <time dateTime={post.date} itemProp="datePublished">
-              {formattedDate}
-            </time>
-            <span>•</span>
-            <span itemProp="author">{post.author}</span>
-          </div>
-
-          {/* TL;DR Hook Section */}
-          {post.tldr && (
-            <div className="mb-12 p-1 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-in fade-in slide-in-from-top-4 duration-1000 shadow-xl shadow-blue-500/10">
-              <div className="bg-white dark:bg-slate-900 rounded-[calc(1.5rem-1px)] p-6 md:p-8 flex items-start gap-6">
-                <div className="w-12 h-12 shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6 text-blue-600 animate-pulse" />
-                </div>
-                <div>
-                  <div className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-2">TL;DR / Quick Summary</div>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white leading-tight italic">
-                    "{post.tldr}"
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </header>
-
-        {/* Ad Slot - Top of Article */}
-        <AdSlot minHeight="90px" className="mb-10" />
-
-        {/* Article Content */}
-        <div
-          className="prose prose-lg dark:prose-invert max-w-none
-            prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white
-            prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-            prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-gray-600 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-5
-            prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-gray-900 dark:prose-strong:text-white
-            prose-code:bg-gray-100 dark:prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-pink-600 dark:prose-code:text-pink-400
-            prose-pre:bg-gray-900 dark:prose-pre:bg-black prose-pre:text-gray-100 dark:prose-pre:text-slate-200 prose-pre:rounded-xl prose-pre:shadow-lg
-            prose-ul:text-gray-600 dark:prose-ul:text-slate-300 prose-ol:text-gray-600 dark:prose-ol:text-slate-300
-            prose-li:mb-2
-            prose-table:border-collapse
-            prose-th:bg-gray-50 dark:prose-th:bg-slate-800 prose-th:p-3 prose-th:text-left prose-th:font-bold prose-th:border prose-th:border-gray-200 dark:prose-th:border-slate-700
-            prose-td:p-3 prose-td:border prose-td:border-gray-200 dark:prose-td:border-slate-700
-            prose-blockquote:border-l-blue-500 dark:prose-blockquote:border-l-blue-400 prose-blockquote:bg-blue-50 dark:prose-blockquote:bg-blue-900/10 prose-blockquote:rounded-r-lg prose-blockquote:py-1
-            prose-img:rounded-xl prose-img:shadow-md"
-          dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
-        />
-
-        {/* Tags Section */}
-        <div className="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800">
-          <h3 className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-4">Article Tags</h3>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] font-bold uppercase tracking-wider bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 px-3 py-1.5 rounded-full border border-gray-100 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
+      {/* Post Header */}
+      <header className="mb-12">
+        <div className="flex items-center gap-4 mb-6">
+          <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-[#0D1526] text-[#8A9BBE] border-[#1E2D47]'}`}>
+            {post.category}
+          </span>
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#4A6080] font-mono">{post.readTime}</span>
         </div>
 
-        {/* Social & Engineering Lab Section */}
-        <div className="mt-12 p-8 bg-gray-50 dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full" />
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter">
+          {post.title}
+        </h1>
+
+        <p className="text-xl text-[#8A9BBE] leading-relaxed mb-10 max-w-3xl">
+          {post.description}
+        </p>
+
+        <div className="flex items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-[#4A6080] pb-8 border-b border-[#1E2D47] mb-12">
+          <time dateTime={post.date} itemProp="datePublished">
+            {formattedDate}
+          </time>
+          <span className="text-[#1E2D47]">•</span>
+          <span itemProp="author" className="text-[#8A9BBE]">{post.author}</span>
+        </div>
+
+        {/* TL;DR Section */}
+        {post.tldr && (
+          <div className="mb-16 p-[1px] rounded-[12px] bg-gradient-to-r from-[#00D4B4] via-[#0094FF] to-indigo-600 shadow-2xl shadow-blue-500/10">
+            <div className="bg-[#0B1120] rounded-[11px] p-8 md:p-10 flex items-start gap-8">
+              <div className="w-14 h-14 shrink-0 bg-[#00D4B4]/10 rounded-[10px] flex items-center justify-center border border-[#00D4B4]/20">
+                <ShieldCheck className="w-7 h-7 text-[#00D4B4]" />
+              </div>
+              <div>
+                <div className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 font-mono">Executive Summary</div>
+                <p className="text-xl font-bold text-white leading-tight italic opacity-90">
+                  "{post.tldr}"
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Ad Slot - Top */}
+      <AdSlot minHeight="90px" className="mb-12" />
+
+      {/* Article Content */}
+      <div
+        className="prose prose-lg dark:prose-invert max-w-none
+          prose-headings:font-bold prose-headings:text-white prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-8 prose-h2:border-t prose-h2:border-[#1E2D47]/50
+          prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
+          prose-p:text-[#8A9BBE] prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-[#00D4B4] prose-a:font-bold prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-white
+          prose-code:bg-[#0D1526] prose-code:px-2 prose-code:py-0.5 prose-code:rounded-[4px] prose-code:text-sm prose-code:text-[#00D4B4] prose-code:before:content-none prose-code:after:content-none
+          prose-pre:bg-[#0B1120] prose-pre:text-white prose-pre:rounded-[12px] prose-pre:border prose-pre:border-[#1E2D47] prose-pre:p-6
+          prose-ul:text-[#8A9BBE] prose-ol:text-[#8A9BBE]
+          prose-li:mb-2
+          prose-blockquote:border-l-[#00D4B4] prose-blockquote:bg-[#00D4B4]/5 prose-blockquote:rounded-r-[12px] prose-blockquote:py-2 prose-blockquote:italic
+          prose-img:rounded-[12px] prose-img:border prose-img:border-[#1E2D47]"
+        dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
+      />
+
+      {/* Footer Meta */}
+      <div className="mt-20 pt-12 border-t border-[#1E2D47]">
+        <div className="flex flex-wrap gap-3 mb-12">
+          {post.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-[10px] font-bold font-mono uppercase tracking-wider bg-[#0D1526] text-[#8A9BBE] px-4 py-2 rounded-full border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-colors"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="p-8 bg-[#0D1526] rounded-[12px] border border-[#1E2D47] relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">WTK Engineering Lab</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400 max-w-md font-medium leading-relaxed">
-                This research was conducted at our lab. For technical feedback or research inquiries, contact our lead engineer.
+              <h3 className="text-xl font-bold text-white mb-2">WTK Engineering Journal</h3>
+              <p className="text-sm text-[#8A9BBE] max-w-md font-medium leading-relaxed">
+                Peer-reviewed technical research from our core engineering lab. For research inquiries or feedback.
               </p>
-              <div className="flex items-center justify-center md:justify-start gap-4 mt-4">
-                <a 
-                  href="mailto:safi4730358@gmail.com" 
-                  className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline uppercase tracking-widest flex items-center gap-1.5"
-                >
-                  <Mail className="w-3.5 h-3.5" /> safi4730358@gmail.com
+              <div className="flex items-center justify-center md:justify-start gap-6 mt-6">
+                <a href="mailto:contact@wtkpro.site" className="text-[10px] font-mono font-bold text-[#00D4B4] hover:underline uppercase tracking-widest flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5" /> contact@wtkpro.site
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://x.com/WebToolkitPro" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-950 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-xl shadow-blue-900/10"
-              >
-                <Twitter className="w-4 h-4" /> Follow on X
-              </a>
-            </div>
+            <a 
+              href="https://x.com/WebToolkitPro" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-4 bg-white text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
+            >
+              <Twitter className="w-4 h-4" /> Follow Feed
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* Legal Disclaimer Section */}
-        <div className="mt-8 p-6 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-2xl">
-          <h3 className="flex items-center gap-2 text-sm font-bold text-amber-800 dark:text-amber-400 mb-2 uppercase tracking-wide">
-            <ShieldCheck className="w-4 h-4" /> Technical & Educational Disclaimer
-          </h3>
-          <p className="text-xs text-amber-700/80 dark:text-amber-500/80 leading-relaxed font-medium">
-            The technical studies, guides, and research provided on WebToolkit Pro are for educational and research purposes only. 
-            While we strive for 100% accuracy, web technologies and search engine algorithms (like Google SGE or Perplexity) evolve rapidly. 
-            Always verify technical implementations in a staging environment before deploying to production. WebToolkit Pro is not 
-            responsible for any third-party search engine ranking fluctuations or security vulnerabilities resulting from 
-            misinterpreted research data.
-          </p>
-        </div>
+      {/* Related Articles */}
+      {relatedPosts.length > 0 && (
+        <section className="mt-24 pt-16 border-t border-[#1E2D47]" aria-label="Related articles">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-2xl font-bold text-white tracking-tight">Further Reading</h2>
+            <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Journal Entries →</Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {relatedPosts.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/blog/${related.slug}/`}
+                className="group block"
+              >
+                <article className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-6 hover:border-[#00D4B4]/30 transition-all h-full">
+                  <span className={`text-[9px] font-bold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-[#0B1120] text-[#8A9BBE]'}`}>
+                    {related.category}
+                  </span>
+                  <h3 className="text-base font-bold text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
+                    {related.title}
+                  </h3>
+                  <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-[#4A6080]">{related.readTime}</span>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
-        {/* Ad Slot - Bottom of Article */}
-        <AdSlot minHeight="250px" className="mt-12" />
-
-        {/* Related Posts */}
-        {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-gray-100 dark:border-slate-800" aria-label="Related articles">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Continue Reading</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {relatedPosts.map((related) => (
-                <Link
-                  key={related.slug}
-                  href={`/blog/${related.slug}/`}
-                  className="group block"
-                >
-                  <article className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-6 hover:shadow-xl dark:hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 h-full">
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-400'}`}>
-                      {related.category}
-                    </span>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-3 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
-                      {related.title}
-                    </h3>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 dark:text-slate-500">{related.readTime}</span>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Back to Blog */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/blog/"
-            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold hover:gap-3 transition-all"
-          >
-            ← Back to All Articles
-          </Link>
-        </div>
+      {/* Ad Slot - Bottom */}
+      <AdSlot minHeight="250px" className="mt-16" />
+    </article>
+  )
+}
 
         {/* JSON-LD Structured Data - BlogPosting */}
         <script
