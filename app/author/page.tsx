@@ -124,7 +124,8 @@ export default function AuthorPage() {
             </Link>
           ))}
         </div>
-      </div>
+      {/* Stats / Badges */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
         {[
           { label: 'Core Tools', val: '65+', icon: Code2 },
           { label: 'Uptime', val: '99.99%', icon: Globe },
