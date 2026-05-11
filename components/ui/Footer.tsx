@@ -9,57 +9,69 @@ export default function Footer() {
   return (
     <footer className="bg-[#0B1120] text-[#8A9BBE] pt-20 pb-8 border-t border-[#1E2D47]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-8 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center gap-2 mb-6 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
               <Logo light />
             </Link>
-            <p className="text-sm leading-relaxed font-medium mb-6">
-              Premium online tools for web developers and designers. 
-              Secure, fast, and professional-grade engineering utilities.
+            <p className="text-[11px] leading-relaxed font-medium mb-6 text-[#4A6080]">
+              The global standard for secure, client-side developer utilities. 
+              Built for sub-3ms performance and zero-knowledge privacy. 
+              WebToolkit Pro empowers engineers with enterprise-grade tools 
+              that never transmit sensitive data.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-[10px] font-mono">Popular Tools</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/tools/pinterest-downloader/" className="hover:text-[#00D4B4] transition-colors text-xs">Pinterest Downloader</Link></li>
-              <li><Link href="/tools/json-formatter/" className="hover:text-[#00D4B4] transition-colors text-xs">JSON Formatter</Link></li>
-              <li><Link href="/tools/password-generator/" className="hover:text-[#00D4B4] transition-colors text-xs">Secure Password Gen</Link></li>
-              <li><Link href="/tools/what-is-my-ip/" className="hover:text-[#00D4B4] transition-colors text-xs">What is my IP?</Link></li>
-              <li><Link href="/tools/redirect-checker/" className="hover:text-[#00D4B4] transition-colors text-xs">Redirect Checker</Link></li>
-              <li><Link href="/tools/category/revenue-analytics/" className="hover:text-[#00D4B4] transition-colors text-xs">Revenue Analytics</Link></li>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">Core Utilities</h3>
+            <ul className="space-y-2 text-[11px] font-medium">
+              <li><Link href="/tools/json-formatter/" className="hover:text-[#00D4B4] transition-colors">JSON Formatter & Validator</Link></li>
+              <li><Link href="/tools/js-minifier/" className="hover:text-[#00D4B4] transition-colors">JS Code Minifier</Link></li>
+              <li><Link href="/tools/regex-tester/" className="hover:text-[#00D4B4] transition-colors">RegEx Tester & AI Explainer</Link></li>
+              <li><Link href="/tools/password-generator/" className="hover:text-[#00D4B4] transition-colors">Secure Password Generator</Link></li>
+              <li><Link href="/tools/jwt-decoder/" className="hover:text-[#00D4B4] transition-colors">Offline JWT Decoder</Link></li>
+              <li><Link href="/tools/hash-generator/" className="hover:text-[#00D4B4] transition-colors">Secure Hash Generator</Link></li>
+              <li><Link href="/tools/base64-encoder/" className="hover:text-[#00D4B4] transition-colors">Base64 Encoder/Decoder</Link></li>
+              <li><Link href="/tools/uuid-v7-generator/" className="hover:text-[#00D4B4] transition-colors">UUID v7 Generator</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-[10px] font-mono">Technical Resources</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-[#00D4B4] transition-colors text-xs">SEO Meta Tags Guide</Link></li>
-              <li><Link href="/blog/geo-optimization-guide/" className="hover:text-[#00D4B4] transition-colors text-xs">GEO Optimization</Link></li>
-              <li><Link href="/blog/llm-latency-ux-impact/" className="hover:text-[#00D4B4] transition-colors text-xs">LLM Latency Study</Link></li>
-              <li><Link href="/about/" className="hover:text-[#00D4B4] transition-colors text-xs">About WTK Pro</Link></li>
-              <li><Link href="/author/" className="hover:text-[#00D4B4] transition-colors text-xs text-[#00D4B4]">Author Profile</Link></li>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">SEO & Technical</h3>
+            <ul className="space-y-2 text-[11px] font-medium">
+              <li><Link href="/tools/meta-tag-generator/" className="hover:text-[#00D4B4] transition-colors">Meta Tag Generator</Link></li>
+              <li><Link href="/tools/schema-generator/" className="hover:text-[#00D4B4] transition-colors">JSON-LD Schema Tool</Link></li>
+              <li><Link href="/tools/robots-generator/" className="hover:text-[#00D4B4] transition-colors">Robots.txt Generator</Link></li>
+              <li><Link href="/tools/sitemap-validator/" className="hover:text-[#00D4B4] transition-colors">XML Sitemap Validator</Link></li>
+              <li><Link href="/tools/redirect-checker/" className="hover:text-[#00D4B4] transition-colors">HTTP Redirect Checker</Link></li>
+              <li><Link href="/tools/what-is-my-ip/" className="hover:text-[#00D4B4] transition-colors">IP Address & Geo Lookup</Link></li>
+              <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-[#00D4B4] transition-colors">Meta Tags Masterclass</Link></li>
+              <li><Link href="/blog/ai-seo-optimization-2026/" className="hover:text-[#00D4B4] transition-colors">AI Optimization (AIO)</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-[10px] font-mono">Our Network</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Severance Calculator</a></li>
-              <li><a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">DEVHUB INDEX</a></li>
-              <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Personal Portfolio</a></li>
-              <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors text-xs">Partner With Us</Link></li>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">Ecosystem</h3>
+            <ul className="space-y-2 text-[11px] font-medium">
+              <li><a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">DEVHUB INDEX</a></li>
+              <li><a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Severance Calculator</a></li>
+              <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Abu Sufyan Portfolio</a></li>
+              <li><Link href="/author/" className="hover:text-[#00D4B4] transition-colors">Engineering Leadership</Link></li>
+              <li><Link href="/about/" className="hover:text-[#00D4B4] transition-colors">Our Philosophy</Link></li>
+              <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors">Partner Program</Link></li>
+              <li><Link href="/contact/" className="hover:text-[#00D4B4] transition-colors">Direct Support</Link></li>
+              <li><Link href="/brand/" className="hover:text-[#00D4B4] transition-colors">Brand Assets</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#1E2D47]/50 gap-6">
-          <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] font-mono">
+          <div className="flex items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] font-mono">
             <Link href="/privacy-policy/" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
             <Link href="/terms-of-service/" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
-            <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">Sitemap</Link>
-            <span className="text-[#8A9BBE]">v1.0.4</span>
+            <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</Link>
+            <Link href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</Link>
+            <span className="text-[#4A6080]">v1.0.8</span>
           </div>
 
           <div className="flex items-center gap-4">
