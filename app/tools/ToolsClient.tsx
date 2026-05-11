@@ -12,6 +12,7 @@ import {
 import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
 import * as Icons from 'lucide-react'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 const categories = [
   'All', 

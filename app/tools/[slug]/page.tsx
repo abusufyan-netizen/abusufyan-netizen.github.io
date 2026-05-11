@@ -127,10 +127,10 @@ export default function ToolPage({ params }: ToolPageProps) {
             <ToolInfo 
               title={tool.name}
               description={tool.content.description}
-              howItWorks={tool.content.usage}
+              howItWorks={tool.content.how_it_works}
               features={tool.content.features}
-              faqs={tool.content.faq}
-              technicalSpecs={tool.content.technicalSpecs}
+              faqs={tool.content.faq.map(f => ({ q: f.question, a: f.answer }))}
+              technicalSpecs={tool.content.technical_specs}
             />
           </div>
 
