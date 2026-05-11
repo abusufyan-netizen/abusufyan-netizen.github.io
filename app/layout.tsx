@@ -105,7 +105,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={dmSans.className} suppressHydrationWarning>
       <head>
         {/* Performance & Resource Hints */}
         <link rel="preconnect" href="https://wtkpro.site/api" />
