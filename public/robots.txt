@@ -10,19 +10,27 @@ Disallow: /admin/
 # Explicitly Allow AI Crawlers
 User-agent: GPTBot
 Allow: /
-Allow: /llms.txt
 
 User-agent: ChatGPT-User
 Allow: /
-Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 User-agent: Google-Extended
 Allow: /
-Allow: /llms.txt
+
+User-agent: Googlebot-Extended
+Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
-Allow: /llms.txt
+
+User-agent: CCBot
+Allow: /
 
 # Host and Sitemap
 Host: https://wtkpro.site
