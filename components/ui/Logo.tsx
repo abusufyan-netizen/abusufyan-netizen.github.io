@@ -6,7 +6,7 @@ interface LogoProps {
   light?: boolean
 }
 
-export default function Logo({ className = '', iconOnly = false }: LogoProps) {
+export default function Logo({ className = '', iconOnly = false, light = false }: LogoProps) {
   return (
     <div className={`flex items-center gap-[12px] ${className}`}>
       <div 
@@ -22,10 +22,10 @@ export default function Logo({ className = '', iconOnly = false }: LogoProps) {
       </div>
       {!iconOnly && (
         <div className="flex flex-col leading-[1]">
-          <span className="text-[22px] font-bold tracking-[-0.025em] text-gray-900 dark:text-white">
+          <span className={`text-[22px] font-bold tracking-[-0.025em] ${light ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
             WebToolkit
           </span>
-          <span className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-blue-600 dark:text-[#00D4B4] mt-[3px]">
+          <span className={`font-mono text-[10px] font-bold tracking-[0.14em] uppercase mt-[3px] ${light ? 'text-[#00D4B4]' : 'text-blue-600 dark:text-[#00D4B4]'}`}>
             PRO
           </span>
         </div>

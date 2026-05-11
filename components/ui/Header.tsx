@@ -23,7 +23,7 @@ export default function Header() {
     { name: 'Blog', href: '/blog/' },
     { name: 'About', href: '/about/' },
     { name: 'Contact', href: '/contact/' },
-    { name: 'Submit Tool', href: '/contact/?subject=Tool%20Submission' },
+    { name: 'Submit Tool', href: '/submit-tool/' },
   ]
 
   return (

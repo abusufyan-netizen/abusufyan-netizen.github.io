@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-8 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
-              <Logo />
+              <Logo light />
             </Link>
             <p className="text-sm leading-relaxed font-medium mb-6">
               Premium online tools for web developers and designers. 
