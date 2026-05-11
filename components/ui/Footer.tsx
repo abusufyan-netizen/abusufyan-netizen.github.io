@@ -88,7 +88,7 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="engineering@company.com" 
                 required
-                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-4 py-3 text-xs text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-4 py-3 text-xs text-white placeholder-[#8A9BBE] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
               />
               <button 
                 type="submit"
@@ -106,7 +106,7 @@ export default function Footer() {
             <Link href="/privacy-policy/" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
             <Link href="/terms-of-service/" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
             <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">Sitemap</Link>
-            <span className="text-[#4A6080]">v1.0.4</span>
+            <span className="text-[#8A9BBE]">v1.0.4</span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -121,7 +121,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#4A6080]">
+          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#8A9BBE]">
             © {new Date().getFullYear()} WebToolkit Pro • Built for Engineers
           </p>
         </div>

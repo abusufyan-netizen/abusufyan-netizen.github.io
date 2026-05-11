@@ -93,13 +93,13 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
         {/* Search & Filter */}
         <div className="flex flex-col md:flex-row gap-4 items-center justify-center max-w-4xl mx-auto">
           <div className="relative flex-grow w-full">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A6080]" strokeWidth={1.5} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8A9BBE]" strokeWidth={1.5} />
             <input 
               type="text"
               placeholder="Search tools (e.g. JSON, SEO, Security...)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+              className="w-full bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#8A9BBE] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
             />
           </div>
           <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
