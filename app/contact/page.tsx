@@ -44,8 +44,8 @@ function ContactForm() {
           <div className="w-20 h-20 bg-[#00D4B4]/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-teal-500/10 border border-[#00D4B4]/20">
             <CheckCircle2 className="w-10 h-10 text-[#00D4B4]" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Message Sent!</h2>
-          <p className="text-[#8A9BBE] mb-8 font-medium">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight uppercase">Message Sent!</h2>
+          <p className="text-gray-600 dark:text-[#8A9BBE] mb-8 font-medium">
             Thanks for reaching out. Our engineering team will get back to you within 24 hours.
           </p>
           <button 
@@ -60,51 +60,51 @@ function ContactForm() {
   }
 
   return (
-    <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-xl shadow-blue-500/5 relative overflow-hidden">
+    <div className="bg-white dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] p-8 md:p-12 shadow-2xl shadow-blue-500/5 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
       
       <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Your Name</label>
+            <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Your Name</label>
             <input 
               required
               name="name"
               type="text" 
               placeholder="John Doe" 
-              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+              className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
             />
           </div>
           <div>
-            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Email Address</label>
+            <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Email Address</label>
             <input 
               required
               name="email"
               type="email" 
               placeholder="john@example.com" 
-              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+              className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
             />
           </div>
         </div>
         <div>
-          <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Subject</label>
+          <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Subject</label>
           <input 
             required
             name="subject"
             type="text" 
             defaultValue={subjectParam}
             placeholder="How can we help?" 
-            className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+            className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
           />
         </div>
         <div>
-          <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Message</label>
+          <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Message</label>
           <textarea 
             required
             name="message"
             rows={6} 
             placeholder="Detailed report or suggestion..." 
-            className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium resize-none" 
+            className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium resize-none" 
           />
         </div>
         <button 

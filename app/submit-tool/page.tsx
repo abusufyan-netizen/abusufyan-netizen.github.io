@@ -111,49 +111,49 @@ export default function SubmitToolPage() {
             { title: 'Open Spec', desc: 'Every tool we build follows strict RFC and NIST security standards.', icon: Code2, color: 'text-indigo-500' },
             { title: 'Security First', desc: 'We only build zero-knowledge, 100% client-side utilities.', icon: ShieldCheck, color: 'text-[#00D4B4]' },
           ].map((item, i) => (
-            <div key={i} className="bg-[#0D1526] p-8 rounded-[12px] border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all duration-300 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-[#0B1120] rounded-[10px] flex items-center justify-center mb-6 shadow-lg border border-[#1E2D47]">
+            <div key={i} className="bg-white dark:bg-[#0D1526] p-8 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all duration-300 flex flex-col items-center text-center shadow-sm">
+              <div className="w-12 h-12 bg-gray-50 dark:bg-[#0B1120] rounded-[10px] flex items-center justify-center mb-6 shadow-lg border border-gray-100 dark:border-[#1E2D47]">
                 <item.icon className={`w-6 h-6 ${item.color}`} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
-              <p className="text-sm text-[#8A9BBE] leading-relaxed font-medium">{item.desc}</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 tracking-tight">{item.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-[#8A9BBE] leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Submission Form */}
-        <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-2xl shadow-blue-900/5 relative overflow-hidden">
+        <div className="bg-white dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] p-8 md:p-12 shadow-2xl shadow-blue-500/5 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
           
           <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Your Name</label>
+                <label className="text-[10px] font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Your Name</label>
                 <input 
                   required
                   name="name"
                   type="text" 
-                  className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-4 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+                  className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
                   placeholder="John Doe"
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Email Address</label>
+                <label className="text-[10px] font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Email Address</label>
                 <input 
                   required
                   name="email"
                   type="email" 
-                  className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-4 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+                  className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
                   placeholder="john@example.com"
                 />
               </div>
             </div>
             <div className="space-y-3">
-              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Tool Concept / Idea</label>
+              <label className="text-[10px] font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Tool Concept / Idea</label>
               <textarea 
                 required
                 name="idea"
-                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-6 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium min-h-[150px] resize-none"
+                className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-6 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium min-h-[150px] resize-none"
                 placeholder="Tell us about the tool... (e.g., 'A CSS-in-JS performance profiler' or 'A JWT debugger')"
               />
             </div>

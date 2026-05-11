@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0B1120] py-[var(--space-lg)] lg:py-[var(--space-xl)]">
+      <section className="relative overflow-hidden bg-white dark:bg-[#0B1120] py-[var(--space-lg)] lg:py-[var(--space-xl)] transition-colors duration-300">
         {/* Animated background blobs - Refined for brand precision */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
@@ -44,14 +44,14 @@ export default function Home() {
             Brand Guidelines v1.0 • 65+ Free Developer Tools
           </div>
 
-          <h1 className="text-[var(--font-size-4xl)] font-bold text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
             Build Faster with<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
               WebToolkit Pro
             </span>
           </h1>
 
-          <p className="text-[var(--font-size-lg)] text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+          <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
             Format JSON. Generate passwords. Encode data. All client-side.<br />
             Premium utilities for modern engineering workflows. No login required.
           </p>
@@ -129,9 +129,9 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-[var(--space-lg)] bg-[#0B1120]">
+      <section className="py-[var(--space-lg)] bg-gray-50 dark:bg-[#0B1120] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-[var(--font-size-3xl)] font-bold text-white mb-16 tracking-tight">Designed for Professionals</h2>
+          <h2 className="text-[var(--font-size-3xl)] font-bold text-gray-900 dark:text-white mb-16 tracking-tight">Designed for Professionals</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[

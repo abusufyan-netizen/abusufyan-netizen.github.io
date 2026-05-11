@@ -27,11 +27,11 @@ export default function AboutPage() {
       </div>
 
       {/* Mission Section */}
-      <div className="p-8 bg-[#0D1526] rounded-[12px] border border-[#1E2D47] mb-20 relative overflow-hidden group">
+      <div className="p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] mb-20 relative overflow-hidden group">
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
         <div className="relative z-10">
-          <h2 className="text-2xl font-bold text-white mb-4 tracking-tight">Our Mission</h2>
-          <p className="text-gray-400 leading-relaxed font-medium">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Our Mission</h2>
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
             To eliminate the friction of modern web development by providing a suite of professional-grade, private, and lightning-fast tools that live where you work—in the browser.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             desc: 'No fluff. Just the essential tools you need for modern web development, API testing, and design.' 
           },
         ].map((pill) => (
-          <div key={pill.title} className="group bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300">
+          <div key={pill.title} className="group bg-white dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 shadow-sm">
             <div className="w-12 h-12 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[10px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/10">
               <pill.icon className="w-6 h-6 text-[#0B1120]" strokeWidth={1.5} />
             </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </div>
 
       {/* Why Free Section */}
-      <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-10 mb-20 relative overflow-hidden">
+      <div className="bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] p-10 mb-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
