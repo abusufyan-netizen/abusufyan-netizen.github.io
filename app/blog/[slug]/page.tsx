@@ -262,7 +262,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <span className={`text-[9px] font-bold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-[#0B1120] text-[#8A9BBE]'}`}>
                       {related.category}
                     </span>
-                    <h3 className="text-base font-bold text-[#1E2D47] dark:text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
+                    <h3 className="text-base font-bold text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
                       {related.title}
                     </h3>
                     <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-[#4A6080]">{related.readTime}</span>

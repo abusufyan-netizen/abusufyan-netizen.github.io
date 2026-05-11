@@ -83,18 +83,18 @@ export default function BlogPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
+                <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
                   {post.title}
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-8 flex-grow relative z-10">
+                <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow relative z-10">
                   {post.description}
                 </p>
 
                 {/* Footer */}
                 <div className="flex justify-between items-center pt-6 border-t border-[#1E2D47]/50 relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#4A6080] uppercase tracking-widest">
+                  <span className="text-[10px] font-mono font-bold text-[#8A9BBE] uppercase tracking-widest">
                     {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'short',
