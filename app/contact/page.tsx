@@ -1,10 +1,13 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
 
-export default function ContactPage() {
+function ContactForm() {
+  const searchParams = useSearchParams()
+  const subjectParam = searchParams.get('subject') || ''
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,6 +60,68 @@ export default function ContactPage() {
   }
 
   return (
+    <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-xl shadow-blue-500/5 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
+      
+      <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Your Name</label>
+            <input 
+              required
+              name="name"
+              type="text" 
+              placeholder="John Doe" 
+              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+            />
+          </div>
+          <div>
+            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Email Address</label>
+            <input 
+              required
+              name="email"
+              type="email" 
+              placeholder="john@example.com" 
+              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+            />
+          </div>
+        </div>
+        <div>
+          <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Subject</label>
+          <input 
+            required
+            name="subject"
+            type="text" 
+            defaultValue={subjectParam}
+            placeholder="How can we help?" 
+            className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
+          />
+        </div>
+        <div>
+          <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Message</label>
+          <textarea 
+            required
+            name="message"
+            rows={6} 
+            placeholder="Detailed report or suggestion..." 
+            className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium resize-none" 
+          />
+        </div>
+        <button 
+          type="submit" 
+          disabled={status === 'submitting'}
+          className="w-full py-4 bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+        >
+          <Send className={`w-4 h-4 ${status === 'submitting' ? 'animate-bounce' : ''}`} /> 
+          {status === 'submitting' ? 'Transmitting...' : 'Send Message'}
+        </button>
+      </form>
+    </div>
+  )
+}
+
+export default function ContactPage() {
+  return (
     <div className="dynamic-padding max-w-4xl mx-auto min-h-screen">
       <div className="text-center mb-16 pt-12">
         <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
@@ -67,62 +132,9 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-xl shadow-blue-500/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
-        
-        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Your Name</label>
-              <input 
-                required
-                name="name"
-                type="text" 
-                placeholder="John Doe" 
-                className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
-              />
-            </div>
-            <div>
-              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Email Address</label>
-              <input 
-                required
-                name="email"
-                type="email" 
-                placeholder="john@example.com" 
-                className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
-              />
-            </div>
-          </div>
-          <div>
-            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Subject</label>
-            <input 
-              required
-              name="subject"
-              type="text" 
-              placeholder="How can we help?" 
-              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium" 
-            />
-          </div>
-          <div>
-            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Message</label>
-            <textarea 
-              required
-              name="message"
-              rows={6} 
-              placeholder="Detailed report or suggestion..." 
-              className="w-full p-4 bg-[#0B1120] border border-[#1E2D47] rounded-[12px] text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium resize-none" 
-            />
-          </div>
-          <button 
-            type="submit" 
-            disabled={status === 'submitting'}
-            className="w-full py-4 bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
-          >
-            <Send className={`w-4 h-4 ${status === 'submitting' ? 'animate-bounce' : ''}`} /> 
-            {status === 'submitting' ? 'Transmitting...' : 'Send Message'}
-          </button>
-        </form>
-      </div>
+      <Suspense fallback={<div className="h-[400px] bg-[#0D1526] rounded-[12px] animate-pulse" />}>
+        <ContactForm />
+      </Suspense>
 
       <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-12 border-t border-[#1E2D47] pt-12">
         <a href="mailto:contact@wtkpro.site" className="text-[#8A9BBE] hover:text-[#00D4B4] flex items-center gap-3 font-medium transition-colors">
