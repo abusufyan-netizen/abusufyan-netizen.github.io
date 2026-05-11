@@ -145,9 +145,6 @@ export function getAllPosts(): BlogPost[] {
       imageAlt: data.imageAlt || data.title || '',
       content,
     } as BlogPost
-  }).filter(post => {
-    const postDate = new Date(post.date);
-    return postDate <= now; // Hide future posts
   });
 
   // Safe sort with date validation
@@ -164,10 +161,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
-
-  // Hide future posts
-  const postDate = new Date(data.date);
-  if (postDate > new Date()) return null;
 
   // Use remark to convert markdown to HTML string
   const processedContent = await remark()

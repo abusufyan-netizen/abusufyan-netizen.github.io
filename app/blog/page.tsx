@@ -63,51 +63,59 @@ export default function BlogPage() {
         <AdSlot minHeight="90px" className="mb-12" />
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}/`}
-              id={`blog-card-${post.slug}`}
-              className="group block h-full"
-            >
-              <article className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-                
-                {/* Category & Read Time */}
-                <div className="flex items-center gap-3 mb-6 relative z-10">
-                  <span className={`text-[10px] font-bold px-3 py-1 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-[#0B1120] text-[#8A9BBE] border-[#1E2D47]'}`}>
-                    {post.category}
-                  </span>
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#4A6080] font-mono">{post.readTime}</span>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {posts.map((post) => {
+            const isUpcoming = new Date(post.date) > new Date();
+            
+            return (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}/`}
+                id={`blog-card-${post.slug}`}
+                className="group block h-full"
+              >
+                <article className={`bg-[#0D1526] rounded-[16px] border ${isUpcoming ? 'border-dashed border-[#00D4B4]/40' : 'border-[#1E2D47]'} p-6 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
+                  
+                  {/* Category & Read Time */}
+                  <div className="flex items-center justify-between mb-4 relative z-10">
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-[#0B1120] text-[#8A9BBE] border-[#1E2D47]'}`}>
+                      {post.category}
+                    </span>
+                    {isUpcoming && (
+                      <span className="text-[9px] bg-[#00D4B4]/10 text-[#00D4B4] border border-[#00D4B4]/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-widest animate-pulse">
+                        Upcoming
+                      </span>
+                    )}
+                  </div>
 
-                {/* Title */}
-                <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
-                  {post.title}
-                </h2>
+                  {/* Title */}
+                  <h2 className="text-lg font-bold text-white mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug relative z-10">
+                    {post.title}
+                  </h2>
 
-                {/* Description */}
-                <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow relative z-10">
-                  {post.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-xs text-[#8A9BBE] leading-relaxed mb-6 flex-grow line-clamp-3 relative z-10 font-medium">
+                    {post.description}
+                  </p>
 
-                {/* Footer */}
-                <div className="flex justify-between items-center pt-6 border-t border-[#1E2D47]/50 relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-[#8A9BBE] uppercase tracking-widest">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
-                  <span className="text-xs font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest">
-                    Read Article <Zap className="w-3 h-3 fill-current" />
-                  </span>
-                </div>
-              </article>
-            </Link>
-          ))}
+                  {/* Footer */}
+                  <div className="flex justify-between items-center pt-4 border-t border-[#1E2D47]/30 relative z-10">
+                    <span className="text-[9px] font-mono font-bold text-[#4A6080] uppercase tracking-widest">
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                    <span className="text-[9px] font-bold text-[#00D4B4] flex items-center gap-1.5 transition-all uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0">
+                      Read <Zap className="w-2.5 h-2.5 fill-current" />
+                    </span>
+                  </div>
+                </article>
+              </Link>
+            );
+          })}
         </div>
         
         {/* Engineering Hubs Section */}
