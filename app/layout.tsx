@@ -3,7 +3,7 @@ import './globals.css'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
-import { Inter } from 'next/font/google'
+import { DM_Sans, Space_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { Metadata } from 'next'
 // @ts-ignore
@@ -11,7 +11,12 @@ import { Analytics } from '@vercel/analytics/react'
 // @ts-ignore
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-const inter = Inter({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
+const spaceMono = Space_Mono({ 
+  subsets: ['latin'], 
+  weight: ['400', '700'],
+  variable: '--font-space-mono' 
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
@@ -184,7 +189,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           `}
         </Script>
       </head>
-      <body className="bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased transition-colors duration-300">
+      <body className={`${dmSans.variable} ${spaceMono.variable} font-sans bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased transition-colors duration-300`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-grow animate-in fade-in duration-700">{children}</main>

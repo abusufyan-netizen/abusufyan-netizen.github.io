@@ -32,41 +32,40 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 py-[var(--space-lg)] lg:py-[var(--space-xl)]">
-        {/* Animated background blobs - Hidden on mobile for performance */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none hidden sm:block">
-          <div className="hero-blob absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-20 dark:opacity-10 animate-[float_8s_ease-in-out_infinite]" />
-          <div className="hero-blob absolute top-40 right-10 w-64 h-64 md:w-96 md:h-96 bg-purple-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-20 dark:opacity-10 animate-[float_10s_ease-in-out_infinite_reverse]" />
+      <section className="relative overflow-hidden bg-[#0B1120] py-[var(--space-lg)] lg:py-[var(--space-xl)]">
+        {/* Animated background blobs - Refined for brand precision */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-blue-100 dark:border-slate-800 rounded-full px-5 py-2 mb-8 text-[var(--font-size-base)] font-medium text-blue-700 dark:text-blue-400 shadow-sm animate-in fade-in slide-in-from-top-4 duration-700">
+          <div className="inline-flex items-center gap-2 bg-[#0D1526] border border-[#1E2D47] rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest animate-in fade-in slide-in-from-top-4 duration-700">
             <Sparkles className="w-4 h-4 shrink-0" />
-            33+ Free Developer Tools — No Login Required
+            Brand Guidelines v1.0 • 65+ Free Developer Tools
           </div>
 
-          <h1 className="text-[var(--font-size-4xl)] font-black text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 className="text-[var(--font-size-4xl)] font-bold text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
             Build Faster with<br />
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
               WebToolkit Pro
             </span>
           </h1>
 
-          <p className="text-[var(--font-size-lg)] text-gray-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-            Premium online tools for web professionals. 
-            Format JSON, generate passwords, encode data, and master SEO — all in one place.
+          <p className="text-[var(--font-size-lg)] text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+            Format JSON. Generate passwords. Encode data. All client-side.<br />
+            Premium utilities for modern engineering workflows. No login required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
             <Link 
               href="/tools/"
-              className="btn-primary px-10 py-5 text-lg"
+              className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
             >
-              Explore All Tools <ArrowRight className="w-5 h-5 ml-1" />
+              Explore All Tools <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link 
               href="/blog/"
-              className="btn px-10 py-5 text-lg bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 hover:shadow-lg transition-all"
+              className="bg-[#0D1526] text-white border border-[#1E2D47] font-bold px-10 py-5 rounded-2xl hover:bg-[#152035] transition-all"
             >
               Read Our Blog
             </Link>

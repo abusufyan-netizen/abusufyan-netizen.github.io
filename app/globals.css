@@ -27,10 +27,15 @@
     --teal: #00D4B4;
     --blue: #0094FF;
     --brand-grad: linear-gradient(135deg, #00D4B4 0%, #0094FF 100%);
+    
+    /* Font Variables from Layout */
+    --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+    --font-mono: var(--font-space-mono), monospace;
   }
 
   html {
     scroll-behavior: smooth;
+    font-family: var(--font-sans);
     font-size: var(--font-size-base);
   }
 

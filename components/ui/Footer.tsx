@@ -126,6 +126,7 @@ export default function Footer() {
             <Link href="/privacy/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Privacy Policy</Link>
             <Link href="/terms/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Terms of Service</Link>
             <Link href="/disclaimer/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Legal Disclaimer</Link>
+            <Link href="/brand/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Brand Guidelines</Link>
           </div>
           <div className="flex gap-8">
             <Link 
