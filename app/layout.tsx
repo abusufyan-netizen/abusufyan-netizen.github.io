@@ -10,6 +10,8 @@ import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 // @ts-ignore
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { getLatestTool } from '@/lib/tools'
+import NewContentNotification from '@/components/ui/NewContentNotification'
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 const spaceMono = Space_Mono({ 
@@ -122,6 +124,14 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const latestTool = getLatestTool()
+  const latestItem = latestTool ? {
+    name: latestTool.name,
+    slug: latestTool.slug,
+    type: 'tool' as const,
+    date: latestTool.releaseDate || ''
+  } : null
+
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <body className="font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300">
@@ -145,6 +155,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <main className="flex-grow animate-in fade-in duration-700">{children}</main>
         <Footer />
         <CookieConsent />
+        <NewContentNotification latestItem={latestItem} />
       </div>
       
       {/* Global SEO & Trust Signals */}

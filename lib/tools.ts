@@ -116,3 +116,12 @@ export function generateFAQSchema(tool: ToolConfig) {
     }))
   }
 }
+
+export function getLatestTool(): ToolConfig | undefined {
+  const tools = getTools()
+  return [...tools].sort((a, b) => {
+    const dateA = new Date(a.releaseDate || '2000-01-01').getTime()
+    const dateB = new Date(b.releaseDate || '2000-01-01').getTime()
+    return dateB - dateA
+  })[0]
+}
