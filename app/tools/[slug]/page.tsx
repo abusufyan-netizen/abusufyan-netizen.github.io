@@ -104,46 +104,42 @@ export default function ToolPage({ params }: ToolPageProps) {
               </div>
             </div>
 
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Entity Definition Block (GEO Optimization) */}
-            <div className="mb-12 p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-              <p className="text-lg text-gray-600 dark:text-slate-300 leading-relaxed font-medium relative z-10">
-                {tool.content.entity_definition}
+            {/* Entity Definition Block */}
+            <div className="mb-12 p-8 bg-[#0D1526] rounded-[12px] border border-[#1E2D47] shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
+              <p className="text-lg text-[#F0F6FF] leading-relaxed font-medium relative z-10">
+                {tool.content.description}
               </p>
             </div>
 
-            {/* Tool UI */}
-            <div className="mb-20">
-              {ToolComponent ? <ToolComponent /> : <div className="p-12 text-center bg-yellow-50 rounded-3xl text-yellow-700">Tool interface coming soon...</div>}
+            {/* Tool UI Container */}
+            <div className="bg-[#0D1526] border border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-20">
+              {ToolComponent ? <ToolComponent /> : (
+                <div className="p-12 text-center bg-[#0B1120] rounded-[12px] border border-[#1E2D47] text-[#8A9BBE]">
+                  Tool interface coming soon...
+                </div>
+              )}
             </div>
 
             <AdSlot />
 
-            {/* Compounding Info Section */}
-            <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
-              <ToolInfo 
-                title={tool.name}
-                description={tool.content.description}
-                howItWorks={tool.content.how_it_works}
-                features={tool.content.features}
-                faqs={tool.content.faq.map(f => ({ q: f.question, a: f.answer }))}
-                technicalSpecs={tool.content.technical_specs}
-              />
-            </div>
+            {/* Detailed Info */}
+            <ToolInfo 
+              title={tool.name}
+              description={tool.content.description}
+              howItWorks={tool.content.usage}
+              features={tool.content.features}
+              faqs={tool.content.faq}
+              technicalSpecs={tool.content.technicalSpecs}
+            />
           </div>
 
           {/* Sidebar Area */}
           <aside className="w-full lg:w-80 shrink-0 space-y-8">
             <RelatedToolsSidebar relatedTools={relatedTools} />
-            <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl text-white shadow-xl shadow-blue-500/20">
-              <h3 className="font-bold mb-2 text-sm">Did you know?</h3>
-              <p className="text-xs text-blue-100 leading-relaxed">
+            <div className="p-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[12px] text-[#0B1120] shadow-xl shadow-blue-500/10">
+              <h3 className="font-bold mb-3 text-sm uppercase tracking-wider">Privacy First</h3>
+              <p className="text-sm font-medium leading-relaxed">
                 All processing happens locally in your browser. Your data never leaves your device.
               </p>
             </div>
