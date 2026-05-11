@@ -131,6 +131,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             <div key={tool.slug} className="relative group">
               <button 
                 onClick={(e) => toggleFavorite(e, href)}
+                aria-label={favorites.includes(href) ? `Remove ${tool.name} from favorites` : `Add ${tool.name} to favorites`}
                 className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/10 dark:bg-[#0B1120]/50 text-gray-900 dark:text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
               >
                 <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : ''}`} strokeWidth={1.5} />
