@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: 'https://wtkpro.site/',
   },
   title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
-  description: 'Access 65+ free premium developer tools in our secure web toolkit online. Professional utilities for JSON formatting, SEO auditing, and enterprise engineering.',
+  description: 'Access 65+ free premium developer tools in our secure web toolkit. Utilities for JSON formatting, SEO auditing, and enterprise engineering.',
   keywords: 'WebToolkit Pro, developer platform, engineering utilities, secure web tools, technical documentation, developer ecosystem',
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
-    description: 'Access 65+ free premium developer tools in our secure web toolkit online. Professional utilities for JSON formatting, SEO auditing, and enterprise engineering.',
+    description: 'Access 65+ free premium developer tools in our secure web toolkit. Utilities for JSON formatting, SEO auditing, and enterprise engineering.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [
