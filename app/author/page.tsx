@@ -76,24 +76,19 @@ export default function AuthorPage() {
           <div className="bg-gray-50 dark:bg-[#0D1526] p-8 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm">
             <h3 className="text-[10px] font-bold text-gray-400 dark:text-[#8A9BBE] uppercase tracking-widest font-mono mb-6">Network Contributions</h3>
             <div className="space-y-6">
-              <a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
-                  Severance Calc <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
-                </div>
-                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Global Labor Law Engine</p>
-              </a>
-              <a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
-                  DEVHUB INDEX <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
-                </div>
-                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Enterprise Authority Hub</p>
-              </a>
-              <a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
-                  Personal Portfolio <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
-                </div>
-                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Engineering Showcase</p>
-              </a>
+              {[
+                { name: 'TradeConvert', desc: 'Trade Engineering Unit Lab', href: 'https://tradeconvert.pro' },
+                { name: 'Severance Calc', desc: 'Global Labor Law Engine', href: 'https://www.severancecalculator.xyz/' },
+                { name: 'DEVHUB INDEX', desc: 'Enterprise Authority Hub', href: 'https://devhubindex.vercel.app/' },
+                { name: 'Personal Portfolio', desc: 'Engineering Showcase', href: 'https://abusufyan.xyz' },
+              ].map((site) => (
+                <a key={site.href} href={site.href} target="_blank" rel="noopener noreferrer" className="group block">
+                  <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
+                    {site.name} <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">{site.desc}</p>
+                </a>
+              ))}
             </div>
           </div>
         </div>
