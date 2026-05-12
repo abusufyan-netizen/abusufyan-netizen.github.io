@@ -121,7 +121,6 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             ))}
           </div>
         </div>
-      </div>
 
       <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Directory' : `${activeCategory} Suite`} className="mb-12" />
 
