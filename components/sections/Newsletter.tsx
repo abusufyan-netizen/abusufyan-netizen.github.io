@@ -55,7 +55,7 @@ export default function Newsletter() {
             Get the Weekly Developer Toolkit
           </h2>
           <p className="text-xl text-blue-50 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join our early-access community. Get new tools, SEO tips, and technical guides handcrafted by our team of 2 developers. No spam, ever.
+            Join our early-access community. Get new tools, SEO tips, and technical guides handcrafted by our team of developers. No spam, ever.
           </p>
 
           {status === 'success' ? (

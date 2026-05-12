@@ -81,7 +81,7 @@ export default function Home() {
             >
               <img 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light&t=1778387824061" 
-                alt="WebToolkit Pro - 20+ premium developer tools with a perfect 100 speed score | Product Hunt" 
+                alt="WebToolkit Pro - 40+ premium developer tools with a perfect 100 speed score | Product Hunt" 
                 width="250" 
                 height="54" 
                 className="dark:brightness-90 dark:contrast-125"
