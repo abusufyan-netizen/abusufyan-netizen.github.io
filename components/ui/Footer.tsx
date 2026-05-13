@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Github, Twitter, Mail } from 'lucide-react'
+import { Github, Twitter, Mail, Terminal, Rocket } from 'lucide-react'
 import Logo from './Logo'
 
 export default function Footer() {
@@ -81,6 +81,12 @@ export default function Footer() {
             </a>
             <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to">
+              <Terminal className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt">
+              <Rocket className="w-4 h-4" strokeWidth={1.5} />
             </a>
             <a href="mailto:safi4730358@gmail.com" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />

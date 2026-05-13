@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShieldCheck, Twitter, Mail } from 'lucide-react'
+import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
             <li className="text-[#1E2D47]">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link href="/blog/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
-                <span itemProp="name">Journal</span>
+                <span itemProp="name">Knowledge Center</span>
               </Link>
               <meta itemProp="position" content="2" />
             </li>
@@ -190,6 +190,33 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </div>
           )}
+
+          {/* Latest 30 Posts Scroller */}
+          <div className="mb-16">
+            <div className="flex items-center justify-between mb-4 px-2">
+              <h3 className="text-[10px] font-bold text-[#4A6080] uppercase tracking-[0.2em] font-mono">Up-to-date Feed</h3>
+              <Link href="/blog/" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
+            </div>
+            <div className="flex gap-4 overflow-x-auto pb-6 no-scrollbar snap-x">
+              {allPosts.slice(0, 30).map((p) => (
+                <Link 
+                  key={p.slug} 
+                  href={`/blog/${p.slug}/`}
+                  className={`flex-shrink-0 w-[280px] p-5 rounded-[16px] border snap-start transition-all ${
+                    p.slug === post.slug 
+                      ? 'bg-[#00D4B4]/10 border-[#00D4B4]/40' 
+                      : 'bg-[#0D1526] border-[#1E2D47] hover:border-[#00D4B4]/30'
+                  }`}
+                >
+                  <div className="text-[8px] font-bold text-[#4A6080] uppercase tracking-widest mb-2 font-mono">{p.category}</div>
+                  <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 mb-3">{p.title}</h4>
+                  <div className="flex items-center gap-2 text-[8px] font-bold text-[#00D4B4] uppercase tracking-widest">
+                    Read Now <ChevronRight className="w-2 h-2" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </header>
 
         {/* Ad Slot - Top */}
@@ -277,20 +304,33 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="text-sm text-gray-600 dark:text-[#8A9BBE] max-w-md font-medium leading-relaxed">
                   Peer-reviewed technical research from our core engineering lab. For research inquiries or feedback.
                 </p>
-                <div className="flex items-center justify-center md:justify-start gap-6 mt-6">
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 mt-6">
                   <a href="mailto:contact@wtkpro.site" className="text-[10px] font-mono font-bold text-[#00D4B4] hover:underline uppercase tracking-widest flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5" /> contact@wtkpro.site
                   </a>
+                  <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer" className="text-[10px] font-mono font-bold text-[#8A9BBE] hover:text-[#00D4B4] uppercase tracking-widest flex items-center gap-2 transition-colors">
+                    <Terminal className="w-3.5 h-3.5" /> Dev.to/WebToolkitPro
+                  </a>
                 </div>
               </div>
-              <a 
-                href="https://x.com/WebToolkitPro" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-white text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
-              >
-                <Twitter className="w-4 h-4" /> Follow Feed
-              </a>
+              <div className="flex flex-col gap-3">
+                <a 
+                  href="https://x.com/WebToolkitPro" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-8 py-3 bg-white text-[#0B1120] rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
+                >
+                  <Twitter className="w-3.5 h-3.5" /> Follow Twitter
+                </a>
+                <a 
+                  href="https://www.producthunt.com/posts/webtoolkit-pro" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-8 py-3 bg-[#FF6154] text-white rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
+                >
+                  <Rocket className="w-3.5 h-3.5" /> Upvote on PH
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import gfm from 'remark-gfm'
 
 const INTERNAL_LINKS = [
   { keyword: 'Pinterest Downloader', url: '/tools/pinterest-downloader/' },
@@ -47,7 +48,15 @@ function applySmartLinks(htmlString: string): string {
       return `<a href="${url}" class="text-blue-600 dark:text-blue-400 font-bold hover:underline transition-all decoration-blue-500/30">${match}</a>`;
     });
   });
-  
+  // Tool Path Auto-Linker
+  // Matches /tools/slug/ and converts to a styled link
+  const toolRegex = /(?<!href=")\/tools\/([a-z0-9-]+)\/(?![^<]*<\/a>)/gi;
+  processedHtml = processedHtml.replace(toolRegex, (match, slug) => {
+    // Format the slug into a readable name (e.g., json-formatter -> Json Formatter)
+    const name = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return `<a href="${match}" class="text-[#00D4B4] font-bold hover:underline transition-all decoration-[#00D4B4]/30">${name}</a>`;
+  });
+
   return processedHtml;
 }
 
@@ -117,6 +126,7 @@ export interface BlogPost {
   htmlContent?: string
   faqs?: { q: string; a: string }[]
   expertTips?: string[]
+  type: 'blog' | 'journal'
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
@@ -149,6 +159,7 @@ export function getAllPosts(): BlogPost[] {
       content,
       faqs: data.faqs || [],
       expertTips: data.expertTips || [],
+      type: ['Research', 'Engineering'].includes(data.category) ? 'journal' : 'blog',
     } as BlogPost
   });
 
@@ -169,6 +180,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
   // Use remark to convert markdown to HTML string
   const processedContent = await remark()
+    .use(gfm)
     .use(html)
     .process(content)
   const rawHtml = processedContent.toString()
@@ -193,6 +205,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     htmlContent,
     faqs: data.faqs || [],
     expertTips: data.expertTips || [],
+    type: ['Research', 'Engineering'].includes(data.category) ? 'journal' : 'blog',
   }
 }
 
