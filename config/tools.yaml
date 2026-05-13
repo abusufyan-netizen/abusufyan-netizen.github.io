@@ -1343,3 +1343,212 @@ tools:
           value: "llms.txt Protocol"
         - label: "Processing"
           value: "100% Client-Side"
+
+  - name: "Regex Tester"
+    slug: "regex-tester"
+    category: "Developer Tools"
+    icon: "Code"
+    subcategory: "code-utilities"
+    tags: ["regex", "regexp", "tester", "debug", "javascript", "pcre"]
+    priority: 15
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Test and debug regular expressions with real-time matching"
+      secondary: "Explain regex patterns and visualize match groups"
+    content:
+      title: "Regex Tester - Free Online Regular Expression Debugger"
+      description: "Test your regular expressions in real-time with our visual regex debugger. Supports JavaScript flavor with detailed match explanations and group highlighting."
+      tldr: "Validate and debug regex patterns instantly with real-time highlighting, match counts, and detailed group information."
+      entity_definition: "Regex Tester is a specialized utility for developers to compose, test, and debug regular expressions. It provides a real-time execution environment where users can enter a pattern and test string, receiving immediate feedback on matches, capture groups, and potential errors. It is essential for validating complex validation logic and data extraction patterns."
+      how_it_works: "The tool executes the regex pattern against the test string using the browser's native JavaScript engine. It identifies all matches and capture groups, displaying them with distinct visual highlighting."
+      use_cases:
+        - "Validating email and URL patterns"
+        - "Testing data extraction logic"
+        - "Debugging complex string replacement rules"
+        - "Learning regex syntax with live feedback"
+      features:
+        - "Real-time regex matching"
+        - "Visual highlighting of match groups"
+        - "Match count and index tracking"
+        - "Support for global and case-insensitive flags"
+        - "Detailed explanation of the regex pattern"
+      faq:
+        - question: "Which regex flavor does this use?"
+          answer: "It uses the native JavaScript (V8) regex engine, which is very similar to PCRE."
+        - question: "Is my test data safe?"
+          answer: "Yes. All processing happens 100% client-side. No data is sent to our servers."
+      technical_specs:
+        - label: "Engine"
+          value: "JavaScript (V8)"
+        - label: "Processing"
+          value: "100% Client-Side"
+        - label: "Flags Supported"
+          value: "g, i, m, s, u, y"
+
+  - name: "JWT Decoder"
+    slug: "jwt-decoder"
+    category: "Security"
+    icon: "ShieldCheck"
+    subcategory: "authentication"
+    tags: ["jwt", "decoder", "auth", "security", "token", "json-web-token"]
+    priority: 16
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Decode and inspect JSON Web Tokens (JWT) safely"
+      secondary: "Visualize header, payload, and signature components"
+    content:
+      title: "JWT Decoder - Free Online JSON Web Token Inspector"
+      description: "Decode and inspect your JSON Web Tokens (JWT) instantly. See the header, payload data, and signature info without sending your token to any server."
+      tldr: "Safely decode and inspect JWT tokens locally in your browser to view claims, expiry, and header metadata."
+      entity_definition: "JWT Decoder is a security-focused utility for developers to inspect the contents of JSON Web Tokens. It breaks down the encoded string into its three constituent parts: Header, Payload, and Signature. It automatically parses timestamps like 'exp' and 'iat' into human-readable dates, making it an essential tool for debugging authentication flows."
+      how_it_works: "The tool splits the JWT string by the '.' delimiter and uses Base64URL decoding on the first two segments to reveal the JSON objects inside."
+      use_cases:
+        - "Inspecting user claims in a token"
+        - "Verifying token expiration (exp)"
+        - "Checking authentication algorithms (alg)"
+        - "Debugging OAuth2 and OpenID Connect flows"
+      features:
+        - "Instant Base64URL decoding"
+        - "Human-readable timestamp conversion"
+        - "Color-coded component separation"
+        - "Automatic JSON formatting"
+        - "100% client-side (Zero-Knowledge)"
+      faq:
+        - question: "Is it safe to paste my production token here?"
+          answer: "Yes, because the decoding happens entirely in your browser. Our server never sees your token."
+        - question: "Does this verify the signature?"
+          answer: "This tool is a decoder. Verification requires your secret key, which should never be pasted into an online tool."
+      technical_specs:
+        - label: "Standard"
+          value: "RFC 7519"
+        - label: "Decoding"
+          value: "Base64URL"
+        - label: "Processing"
+          value: "100% Client-Side"
+
+  - name: "Slug Generator"
+    slug: "slug-generator"
+    category: "SEO Tools"
+    icon: "Link"
+    subcategory: "seo-utilities"
+    tags: ["slug", "url", "seo", "permalink", "generator", "clean-url"]
+    priority: 17
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Create SEO-friendly URL slugs from any text"
+      secondary: "Remove stop words and special characters automatically"
+    content:
+      title: "Slug Generator - Create SEO-Friendly URL Permalinks"
+      description: "Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility."
+      tldr: "Generate clean, hyphenated URL slugs from titles while removing unnecessary words for better SEO."
+      entity_definition: "Slug Generator is an SEO utility that converts natural language titles into URL-safe strings. It normalizes text by converting to lowercase, replacing spaces with hyphens, and stripping non-alphanumeric characters. It includes an optional stop-word filter to keep URLs concise, which is a recognized best practice for search engine optimization."
+      features:
+        - "Real-time slug generation"
+        - "Automatic stop-word removal (optional)"
+        - "Special character stripping"
+        - "Customizable separator (hyphen, underscore)"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Why should I remove stop words from my slugs?"
+          answer: "Shorter URLs are easier for users to read and are preferred by search engines as they keep the keyword density higher."
+      technical_specs:
+        - label: "Format"
+          value: "URL-Safe String"
+        - label: "Processing"
+          value: "100% Client-Side"
+
+  - name: "Htaccess Redirect Generator"
+    slug: "htaccess-generator"
+    category: "SEO Tools"
+    icon: "FileCode"
+    subcategory: "server-utilities"
+    tags: ["htaccess", "apache", "redirect", "seo", "301-redirect", "server"]
+    priority: 18
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Generate Apache .htaccess redirect rules visually"
+      secondary: "Create 301, 302 redirects and security rules"
+    content:
+      title: "Htaccess Generator - Free Apache Redirect & Security Tool"
+      description: "Build complex .htaccess redirect rules and security headers without touching code. Generate 301 redirects, force HTTPS, and block IP addresses easily."
+      tldr: "Generate production-ready .htaccess code for redirects, HTTPS enforcement, and basic security hardening."
+      entity_definition: "Htaccess Generator is a server-side configuration utility that simplifies the creation of Apache .htaccess files. It provides a visual interface for common tasks like 301/302 redirects, forcing HTTPS, and implementing security headers. It helps prevent syntax errors that can lead to 500 Internal Server Errors on Apache web servers."
+      features:
+        - "301 and 302 redirect builder"
+        - "Force HTTPS / Force WWW rules"
+        - "IP blocking and directory index toggle"
+        - "Security header generation"
+        - "Instant code output"
+      faq:
+        - question: "Where do I put the .htaccess file?"
+          answer: "It should be placed in the root directory of your website (usually public_html or /var/www/html)."
+      technical_specs:
+        - label: "Server"
+          value: "Apache / Litespeed"
+        - label: "Output"
+          value: "Apache Rewrite Rules"
+        - label: "Processing"
+          value: "100% Client-Side"
+
+  - name: "JSON to CSV Converter"
+    slug: "json-to-csv"
+    category: "Developer Tools"
+    icon: "FileSpreadsheet"
+    subcategory: "data-utilities"
+    tags: ["json", "csv", "converter", "data", "export", "excel"]
+    priority: 19
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Convert JSON arrays and objects to CSV format"
+      secondary: "Flatten nested JSON for spreadsheet compatibility"
+    content:
+      title: "JSON to CSV Converter - Free Online Data Export Tool"
+      description: "Convert your JSON data into clean CSV files for Excel or Google Sheets. Supports nested objects and automatic flattening for complex data structures."
+      tldr: "Transform complex JSON data into flat CSV tables ready for spreadsheet analysis."
+      entity_definition: "JSON to CSV Converter is a data transformation utility that maps structured JSON objects into a flat tabular format. It automatically handles nested objects using dot-notation flattening and converts arrays into delimited strings. This makes it possible to analyze API responses or document database exports in tools like Microsoft Excel or Google Sheets."
+      features:
+        - "Automatic nested object flattening"
+        - "CSV preview and download"
+        - "Support for large JSON arrays"
+        - "Custom delimiter support"
+        - "100% client-side (Data Privacy)"
+      faq:
+        - question: "How are nested objects handled?"
+          answer: "They are flattened using dot notation. For example, { 'user': { 'name': 'Bob' } } becomes a column named 'user.name'."
+      technical_specs:
+        - label: "Max File Size"
+          value: "5MB"
+        - label: "Processing"
+          value: "100% Client-Side"
+
+  - name: "Favicon Generator"
+    slug: "favicon-generator"
+    category: "Design Tools"
+    icon: "Image"
+    subcategory: "design-utilities"
+    tags: ["favicon", "generator", "pwa", "icon", "design", "app-icon"]
+    priority: 20
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Generate professional favicons and app icons"
+      secondary: "Create PWA-ready manifest icons from text or emoji"
+    content:
+      title: "Favicon Generator - Create PWA Icons and Browser Favicons"
+      description: "Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji and get all required sizes for modern browsers and mobile devices."
+      tldr: "Create and download a full set of favicon sizes for your website or PWA instantly."
+      entity_definition: "Favicon Generator is a design utility that simplifies the creation of website icons. It can generate icons from simple text or emojis, producing a comprehensive set of PNG files in various sizes (16x16 to 512x512). It also provides the necessary HTML snippets and manifest.json code to ensure your site looks professional on all devices and platforms."
+      features:
+        - "Text and Emoji based icon generation"
+        - "All standard sizes (16, 32, 180, 192, 512)"
+        - "PWA manifest.json snippet generation"
+        - "Custom background and text colors"
+        - "Live preview in browser tab simulation"
+      faq:
+        - question: "What sizes are included?"
+          answer: "It generates 16x16, 32x32, 180x180 (Apple), 192x192, and 512x512 PNGs."
+      technical_specs:
+        - label: "Format"
+          value: "PNG"
+        - label: "Processing"
+          value: "100% Client-Side"
+

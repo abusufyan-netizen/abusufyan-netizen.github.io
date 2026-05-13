@@ -45,4 +45,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'diff-checker': dynamic(() => import('@/components/tools/instances/DiffChecker'), { loading: () => <ToolSkeleton />, ssr: false }),
   'css-gradient-generator': dynamic(() => import('@/components/tools/instances/CssGradientGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'llms-txt-generator': dynamic(() => import('@/components/tools/instances/LlmsTxtGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'slug-generator': dynamic(() => import('@/components/tools/instances/SlugGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'htaccess-generator': dynamic(() => import('@/components/tools/instances/HtaccessGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'json-to-csv': dynamic(() => import('@/components/tools/instances/JsonToCsv'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'favicon-generator': dynamic(() => import('@/components/tools/instances/FaviconGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
