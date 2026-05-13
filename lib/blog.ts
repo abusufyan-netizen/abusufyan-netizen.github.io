@@ -1,8 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 import gfm from 'remark-gfm'
 
 const INTERNAL_LINKS = [
@@ -178,10 +180,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
 
-  // Use remark to convert markdown to HTML string
-  const processedContent = await remark()
+  // Use unified to convert markdown to HTML string
+  const processedContent = await unified()
+    .use(remarkParse)
     .use(gfm)
-    .use(html)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
   const rawHtml = processedContent.toString()
   const step1 = applySmartLinks(rawHtml)
