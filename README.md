@@ -13,14 +13,13 @@
 WebToolkit Pro is a high-performance, privacy-first platform engineered by **Abu Sufyan**. It features a **Compounding SEO Engine** designed to dominate search results through technical excellence and high-intent content strategy.
 
 ## 🧠 The "Question-First" Strategy
-Our platform isn't just a blog; it's a knowledge hub. We've overhauled all **32+ technical articles** into a "Question-First" format:
+Our platform isn't just a blog; it's a knowledge hub. We've overhauled all **technical articles** into a "Question-First" format:
 - **TL;DR Hooks**: Immediate value delivery for maximum user retention.
 - **Intent-Led Headings**: Headers refactored into high-volume user questions to capture AI "Answer Boxes."
 - **Entity Mapping**: Advanced JSON-LD structures for SGE (Search Generative Experience) and Perplexity readability.
 
-## 🌟 Professional Tool Registry (33+ Utilities)
-We've migrated to a **Dynamic Tool Registry** system that ensures 100/100 Core Web Vitals scores for every utility:
-*   🔥 **[Pinterest Downloader](https://wtkpro.site/tools/pinterest-downloader/)** - Bulk high-res asset retrieval.
+## 🌟 Professional Tool Registry (40+ Utilities)
+We've migrated to a **Dynamic Tool Registry** system that ensures maximum performance for every utility:
 *   💎 **[JSON Formatter](https://wtkpro.site/tools/json-formatter/)** - Zero-knowledge client-side data cleaning.
 *   🔒 **[Password Lab](https://wtkpro.site/tools/password-generator/)** - Cryptographically secure credential generation.
 *   📡 **[Redirect Checker](https://wtkpro.site/tools/redirect-checker/)** - Enterprise-grade header and hop analysis.
@@ -31,10 +30,10 @@ We've migrated to a **Dynamic Tool Registry** system that ensures 100/100 Core W
 *   **Next.js 14 App Router**: Utilizing Server Components for lightning-fast TTFB.
 *   **Dynamic [Slug] Routing**: Optimized bundle sizes via `next/dynamic` and code-splitting.
 *   **Privacy-by-Design**: All sensitive data processing (passwords, JSON, hashes) happens **100% Client-Side** via Web Workers.
-*   **Global Performance**: Sub-50ms interaction times through localized Edge processing.
+*   **Global Performance**: Fast interaction times through localized Edge processing.
 
 ## 📖 Key Research & Documentation
-*   [**The 3ms TTFB Standard**](https://wtkpro.site/blog/3ms-ttfb-performance-study/) - Why millisecond performance is the primary revenue driver.
+*   [**Performance Study**](https://wtkpro.site/blog/3ms-ttfb-performance-study/) - Why millisecond performance is the primary revenue driver.
 *   [**AI Latency & UX Study**](https://wtkpro.site/blog/llm-latency-ux-impact/) - Data on user abandonment thresholds in AI applications.
 *   [**PWA Development Guide**](https://wtkpro.site/blog/pwa-development-guide/) - Building native-grade experiences on the open web.
 

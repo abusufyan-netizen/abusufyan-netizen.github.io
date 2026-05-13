@@ -6,7 +6,7 @@ category: "Tutorials"
 tags: ["JSON-LD", "Semantic-Web", "Web3", "Data-Science", "JSON"]
 keywords: ["JSON-LD v2.0", "Structured Data", "Semantic Web 2026", "Schema.org updates", "Data Modeling"]
 readTime: "7 min read"
-tldr: "JSON-LD v2.0 is the foundational language of the 'Agentic Web.' In 2026, developers must move beyond basic meta tags to 'Multi-Layered Graphs' that enable AI agents to verify identity and extract facts without hallucination."
+tldr: "JSON-LD v2.0 is the foundational language of the modern semantic web. In 2026, developers must move beyond basic meta tags to 'Multi-Layered Graphs' that enable AI engines to verify identity and extract facts without hallucination."
 author: "Abu Sufyan"
 image: "/blog/json-ld-study.png"
 ---

@@ -5,7 +5,6 @@ import ToolSkeleton from '@/components/tools/ToolSkeleton'
 export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'json-formatter': dynamic(() => import('@/components/tools/instances/JsonFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
   'password-generator': dynamic(() => import('@/components/tools/instances/PasswordGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
-  'pinterest-downloader': dynamic(() => import('@/components/tools/instances/PinterestDownloader'), { loading: () => <ToolSkeleton />, ssr: false }),
   'what-is-my-ip': dynamic(() => import('@/components/tools/instances/WhatIsMyIP'), { loading: () => <ToolSkeleton />, ssr: false }),
   'js-minifier': dynamic(() => import('@/components/tools/instances/JsMinifier'), { loading: () => <ToolSkeleton />, ssr: false }),
   'meta-tag-generator': dynamic(() => import('@/components/tools/instances/MetaTagGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),

@@ -20,20 +20,20 @@ tools:
       output_formats: ["json", "txt"]
       max_file_size_mb: 10
       processing: "client-side"
-      library: "V8-Optimized AST"
+      library: "Native Browser Parser"
       
     content:
       title: "JSON Formatter & Validator - Free Online Format and validate JSON data"
       description: "Beautify, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
-      entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using V8-optimized AST parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
-      how_it_works: "Our engine uses an Abstract Syntax Tree (AST) approach to parse your input. It identifies structural errors in real-time, providing exact line-number feedback for common issues like trailing commas or unquoted keys."
+      entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using high-performance parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
+      how_it_works: "Our engine uses a high-performance approach to parse your input. It identifies structural errors in real-time, providing exact line-number feedback for common issues like trailing commas or unquoted keys."
       use_cases: 
         - "Debugging API responses"
         - "Formatting minified JSON for readability"
         - "Validating JSON before deployment"
       features:
-        - "Real-time AST-based JSON validation"
+        - "Real-time high-performance JSON validation"
         - "One-click beautification with custom indentation"
         - "Aggressive JSON minification for payload optimization"
         - "RFC 8259 compliance verification"
@@ -52,11 +52,11 @@ tools:
           answer: "Yes. By selecting a high length (32+ chars), you can generate secure secrets for production environments."
       technical_specs:
         - label: "Parser Engine"
-          value: "V8-Optimized AST"
+          value: "High-Performance"
         - label: "Max Payload"
           value: "10MB (Local)"
         - label: "Execution Time"
-          value: "<1ms"
+          value: "Instant"
         - label: "Compliance"
           value: "RFC 8259"
         - label: "Encryption"
@@ -100,42 +100,6 @@ tools:
           answer: "No. All generation happens locally in your browser. We have no access to the generated passwords."
         - question: "How random are these passwords?"
           answer: "We use the window.crypto API, which provides cryptographically secure randomness suitable for high-security environments."
-
-  - name: "Pinterest Board Downloader"
-    slug: "pinterest-downloader"
-    category: "Social Media Tools"
-    icon: "Download"
-    tags: ["pinterest", "downloader", "image-extraction", "bulk-download", "creators"]
-    priority: 1
-    releaseDate: "2026-05-08"
-    function:
-      primary: "Download high-resolution images and boards from Pinterest"
-      secondary: "Bulk extraction and ZIP packaging"
-    technical:
-      input_formats: ["url"]
-      output_formats: ["jpg", "zip"]
-      processing: "client-side"
-      library: "JSZip"
-    content:
-      description: "Download Pinterest boards, pins, and videos in high-resolution. The most powerful Pinterest scraper for web professionals."
-      tldr: "Batch download high-resolution Pinterest boards and videos directly to your device."
-      entity_definition: "Pinterest Board Downloader is an advanced media extraction tool designed for web professionals and designers. It allows for bulk downloading of high-resolution pins, including 4K images and HD videos, while maintaining metadata integrity. Our engine bypasses common scraper blocks to provide a seamless batch-download experience."
-      how_it_works: "We use a high-speed proxy engine to scan Pinterest metadata. Our batch processing system ensures that even large boards are packaged into a ZIP file without compromising browser performance."
-      use_cases:
-        - "Researching mood boards for design projects"
-        - "Backing up your own Pinterest collections"
-        - "Offline viewing of high-res inspiration"
-      features:
-        - "Bulk Board Downloading (Up to 1,000 pins)"
-        - "Recent Searches History (Private & Local)"
-        - "Automatic Original Resolution detection"
-        - "Concurrent Batch Fetching for maximum speed"
-        - "ZIP Packaging for easy organization"
-      faq:
-        - question: "How many images can I download at once?"
-          answer: "Our tool can handle up to 1,000 pins in a single batch. For larger boards, the process is automatically paginated."
-        - question: "Is my search history shared?"
-          answer: "No. Your recent searches are stored locally in your browser's localStorage."
 
   - name: "What is my IP Address?"
     slug: "what-is-my-ip"

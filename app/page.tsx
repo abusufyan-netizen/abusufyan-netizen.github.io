@@ -178,7 +178,7 @@ export default function Home() {
               <div className="space-y-8 text-left">
                 <div>
                   <div className="text-[var(--font-size-base)] font-bold text-blue-600 dark:text-blue-400 mb-2">Are my data inputs safe?</div>
-                  <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed font-medium">Yes. All processing happens locally in your browser. We never transmit your sensitive strings, passwords, or code snippets to any server.</p>
+                  <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed font-medium">Yes. All processing happens locally in your browser. We never transmit your strings, passwords, or code snippets to any server.</p>
                 </div>
                 <div>
                   <div className="text-[var(--font-size-base)] font-bold text-blue-600 dark:text-blue-400 mb-2">Do I need an account?</div>
@@ -229,7 +229,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Precision JSON <br/>Formatting</h3>
               <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  Utilizing a custom-built <span className="text-blue-600 font-bold uppercase text-[10px] tracking-widest">AST Parser</span> to beautify multi-megabyte payloads without losing structural integrity. 
+                  Utilizing high-performance parsing to beautify multi-megabyte payloads without losing structural integrity. 
                 </p>
                 <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
                 <p>
@@ -249,7 +249,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Enterprise-Grade <br/>Security</h3>
               <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  High-entropy generation via the browser's native <span className="text-emerald-600 font-bold uppercase text-[10px] tracking-widest">Web Crypto API</span> for brute-force resistance.
+                  Secure generation via the browser's native <span className="text-emerald-600 font-bold uppercase text-[10px] tracking-widest">Web Crypto API</span> for brute-force resistance.
                 </p>
                 <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
                 <p>
@@ -299,10 +299,10 @@ export default function Home() {
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built on a privacy-first architecture, designed for maximum security.
+                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built for maximum security and local-first processing.
                 </p>
                 <p>
-                  From advanced SEO utilities to our cryptographically secure UUID generators, every tool is optimized for the <span className="text-blue-600 dark:text-blue-400 underline decoration-2 underline-offset-4">V8 engine</span>, delivering instant execution times.
+                  From advanced SEO utilities to our secure UUID generators, every tool is optimized for performance, delivering instant execution.
                 </p>
                 <p>
                   Beyond utilities, we serve as a technical research hub, publishing deep-dive studies into web performance and modern search standards to help you master the future of the web.
@@ -315,8 +315,8 @@ export default function Home() {
                   <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">1ms</div>
-                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Execution Speed</div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Instant</div>
+                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Execution</div>
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ export default function Home() {
                 <Star className="w-6 h-6 text-amber-500" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Severance Pay Lab</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed">Official global calculator for end-of-service and redundancy benefits across 40+ countries.</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed">Official global calculator for end-of-service and redundancy benefits across 8+ countries.</p>
               <div className="text-amber-500 font-black text-xs uppercase tracking-widest flex items-center gap-2">
                 Visit Partner <ArrowRight className="w-4 h-4" />
               </div>
