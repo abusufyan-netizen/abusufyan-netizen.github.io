@@ -32,7 +32,7 @@ export default function ToolSchema({ name, description, slug, steps = [], featur
       '@type': 'Organization',
       'name': 'WebToolkit Pro',
       'url': 'https://wtkpro.site'
-
+    }
   }
 
   const howToSchema = steps.length > 0 ? {
