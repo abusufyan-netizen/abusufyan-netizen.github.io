@@ -23,7 +23,7 @@ tools:
       library: "Native Browser Parser"
       
     content:
-      title: "Best Free Online Hash Generator 2026 - SHA-256, MD5 & More"
+      title: "Free JSON Formatter & Validator Online — Instant Results"
       description: "Generate secure hashes instantly including MD5, SHA-256, and SHA-512. Create unhackable password hashes locally in your browser for maximum privacy."
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using high-performance parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
@@ -181,7 +181,7 @@ tools:
       output_formats: ["html"]
       processing: "client-side"
     content:
-      title: "SEO Meta Tag Generator - Free Online Create Google-ready meta tags for high search visibility"
+      title: "Free Meta Tag Generator for SEO — Preview in Google & Social"
       description: "Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance."
       how_it_works: "Our tool generates a comprehensive set of meta tags. These tags ensure that your content looks professional and engaging when shared across all platforms."
       use_cases:
@@ -303,7 +303,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
-      title: "Advanced Robots.txt Generator - Free Online Technical robots.txt creation for enterprise SEO management"
+      title: "Robots.txt Generator for WordPress & Any Site — Free Tool"
       description: "Control search engine crawler access and optimize your website's crawl budget with a perfectly formatted robots.txt file."
       entity_definition: "Advanced Robots.txt Generator is an SEO governance utility that creates the robots.txt file for web servers. It directs search engine bots on which directories to index and which to ignore, ensuring optimal crawl budget utilization and protecting sensitive paths."
       how_it_works: "The tool generates REP-compliant directives (Allow, Disallow, Sitemap) based on user configuration."
@@ -423,7 +423,7 @@ tools:
       output_formats: ["json"]
       processing: "client-side"
     content:
-      title: "JSON-LD Schema Generator - Free Online Create Google-ready structured data in JSON-LD format"
+      title: "Free Schema Markup Generator — JSON-LD for SEO & AI Search"
       description: "Generate structured data for your website using JSON-LD. Improve search visibility, rich snippets, and SEO rankings."
       entity_definition: "JSON-LD Schema Generator is a no-code utility for creating structured data script blocks. It supports various schema types (Organization, WebSite, etc.) to help websites earn rich results in search engines."
       how_it_works: "It formats user-provided entity data into a valid JSON-LD script that can be embedded in a webpage's HTML."
@@ -513,7 +513,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
-      title: "Base64 Encoder/Decoder - Free Online Encode and decode data to/from Base64 format"
+      title: "Base64 Encoder & Decoder — Encode Images, Text & URLs Free"
       description: "Quickly encode text to Base64 or decode Base64 strings back to plain text. Ideal for binary data transmission and API debugging."
       entity_definition: "Base64 Encoder/Decoder is a developer utility that converts binary data into an ASCII string format. It is essential for embedding images in CSS, handling API payloads, and ensuring safe data transmission across text-based protocols."
       how_it_works: "It uses standard binary-to-text algorithms to represent data in a radix-64 representation, ensuring compatibility with all web systems."
