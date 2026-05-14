@@ -152,7 +152,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow animate-in fade-in duration-700">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <CookieConsent />
         <NewContentNotification latestItem={latestItem} />

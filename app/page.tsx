@@ -40,24 +40,24 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#0D1526] border border-[#1E2D47] rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest animate-in fade-in slide-in-from-top-4 duration-700">
+          <div className="inline-flex items-center gap-2 bg-[#0D1526] border border-[#1E2D47] rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest">
             <Sparkles className="w-4 h-4 shrink-0" />
             Brand Guidelines v1.0 • 40+ Free Developer Tools
           </div>
 
-          <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter">
             Build Faster with the Ultimate<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
               Web Toolkit
             </span>
           </h1>
 
-          <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+          <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed">
             Format JSON. Generate passwords. Encode data. All client-side.<br />
             Premium utilities in our web toolkit for modern engineering workflows. No login required.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/tools/"
               className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           {/* Product Hunt Badge */}
-          <div className="mt-12 flex justify-center animate-in fade-in zoom-in duration-1000 delay-500">
+          <div className="mt-12 flex justify-center">
             <a 
               href="https://www.producthunt.com/products/webtoolkit-pro?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
               target="_blank" 

@@ -5,16 +5,22 @@ import { ToolConfig } from '@/types/tool'
 
 const CONFIG_PATH = path.join(process.cwd(), 'config', 'tools.yaml')
 
+let cachedTools: ToolConfig[] | null = null
+
 export function getTools(): ToolConfig[] {
+  if (cachedTools) return cachedTools
+
   try {
     const fileContents = fs.readFileSync(CONFIG_PATH, 'utf8')
     const data = yaml.load(fileContents) as { tools: ToolConfig[] }
-    return data.tools || []
+    cachedTools = data.tools || []
+    return cachedTools
   } catch (e) {
     console.error('Error loading tools.yaml:', e)
     return []
   }
 }
+
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {
   const tools = getTools()

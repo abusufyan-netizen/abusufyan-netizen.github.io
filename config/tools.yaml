@@ -1751,3 +1751,46 @@ tools:
         - label: "Output"
           value: "PNG / Canvas"
 
+  - name: "Professional Image Resizer"
+    slug: "image-resizer"
+    category: "Design Tools"
+    icon: "Image"
+    tags: ["image", "resizer", "compressor", "pixel", "kb", "optimization"]
+    priority: 8
+    releaseDate: "2026-05-14"
+    function:
+      primary: "Resize images by pixels, percentage, or target file size (KB)"
+    technical:
+      input_formats: ["jpg", "png", "webp", "gif"]
+      output_formats: ["jpg", "png", "webp"]
+      processing: "client-side"
+    meta:
+      title: "Image Resizer by KB & Pixel — Free Online Optimization 2026"
+    content:
+      title: "Image Resizer — Resize by Pixel, Percentage or Target KB"
+      description: "Professional online image resizer. Resize your images by exact pixel dimensions (e.g., 1000x400) or reduce file size to a specific KB limit while maintaining quality. 100% private."
+      keywords: ["image resizer by kb", "resize image pixels online", "compress image to 100kb", "image dimension changer", "bulk image resizer free", "photo resizer by resolution"]
+      tldr: "Instantly resize images by resolution or target file size locally in your browser for total privacy."
+      entity_definition: "Professional Image Resizer is a high-performance visual utility that modifies the spatial dimensions and data volume of image files. It allows for precise control over pixel width/height and utilizes advanced compression algorithms to hit specific target file sizes (KB). This tool is essential for web optimization and meeting strict upload requirements."
+      how_it_works: "Our engine utilizes the Canvas API to perform hardware-accelerated resizing. For KB-based resizing, it uses a recursive quality-estimation algorithm to find the optimal compression level that fits your target size."
+      features:
+        - "Resize by exact Pixel Dimensions (WxH)"
+        - "Target File Size optimization (KB/MB)"
+        - "Aspect Ratio locking for perfect scaling"
+        - "Multiple format support (JPG, PNG, WebP)"
+        - "High-performance Canvas-based processing"
+        - "100% Client-side privacy protection"
+      faq:
+        - question: "How does 'Resize by KB' work?"
+          answer: "Our algorithm iteratively adjusts the image quality and compression parameters until the output file size is as close as possible to your target KB limit without exceeding it."
+        - question: "Is my image uploaded to a server?"
+          answer: "No. All resizing happens locally in your browser. Your images never leave your device."
+        - question: "Can I resize to a specific resolution like 1000x400?"
+          answer: "Yes, you can enter exact pixel dimensions and choose whether to maintain the aspect ratio or stretch the image."
+      technical_specs:
+        - label: "Engine"
+          value: "HTML5 Canvas"
+        - label: "Max File Size"
+          value: "20MB"
+        - label: "Privacy"
+          value: "100% Local"
