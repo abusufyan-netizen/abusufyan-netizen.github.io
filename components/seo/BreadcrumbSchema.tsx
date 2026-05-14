@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { CATEGORY_MAP } from '@/lib/categories'
 
 interface BreadcrumbSchemaProps {
   name: string
@@ -21,16 +22,17 @@ export default function BreadcrumbSchema({ name, slug, category }: BreadcrumbSch
       '@type': 'ListItem',
       'position': 2,
       'name': 'Tools',
-      'item': 'https://wtkpro.site/tools'
+      'item': 'https://wtkpro.site/tools/'
     }
   ]
 
   if (category) {
+    const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === category) || 'developer-tools'
     itemListElement.push({
       '@type': 'ListItem',
       'position': 3,
       'name': category,
-      'item': `https://wtkpro.site/tools/?category=${encodeURIComponent(category)}`
+      'item': `https://wtkpro.site/tools/category/${categorySlug}/`
     })
   }
 
