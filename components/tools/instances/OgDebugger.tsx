@@ -94,16 +94,16 @@ export default function OgDebugger() {
         </div>
         <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-2xl border border-gray-100 dark:border-[#1E2D47] space-y-2 overflow-x-auto">
           <code className="text-[11px] font-mono text-blue-600 dark:text-[#00D4B4] block whitespace-nowrap">
-            &lt;meta property="og:title" content="{title}" /&gt;
+            &lt;meta property=&quot;og:title&quot; content=&quot;{`{title}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-blue-600 dark:text-[#00D4B4] block whitespace-nowrap">
-            &lt;meta property="og:description" content="{description}" /&gt;
+            &lt;meta property=&quot;og:description&quot; content=&quot;{`{description}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-blue-600 dark:text-[#00D4B4] block whitespace-nowrap">
-            &lt;meta property="og:image" content="{image}" /&gt;
+            &lt;meta property=&quot;og:image&quot; content=&quot;{`{image}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-blue-600 dark:text-[#00D4B4] block whitespace-nowrap">
-            &lt;meta property="og:type" content="website" /&gt;
+            &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
           </code>
         </div>
       </div>

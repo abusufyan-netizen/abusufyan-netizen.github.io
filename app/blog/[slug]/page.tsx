@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div>
                   <div className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 font-mono">Executive Summary</div>
                   <p className="text-xl font-bold text-white leading-tight italic opacity-90">
-                    "{post.tldr}"
+                  &quot;{post.tldr}&quot;
                   </p>
                 </div>
               </div>

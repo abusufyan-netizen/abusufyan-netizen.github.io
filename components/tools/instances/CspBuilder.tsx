@@ -114,7 +114,7 @@ export default function CspBuilder() {
         <div className="mt-6 p-4 bg-blue-500/5 rounded-xl border border-blue-500/10 flex gap-3">
           <Info className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
           <p className="text-[10px] text-gray-500 dark:text-[#8A9BBE] leading-relaxed font-medium">
-            Copy this policy and add it to your server's <span className="font-mono bg-blue-500/10 px-1 rounded">Content-Security-Policy</span> header or a <span className="font-mono bg-blue-500/10 px-1 rounded">&lt;meta&gt;</span> tag to protect your site against XSS and data injection attacks.
+            Copy this policy and add it to your server&apos;s <span className="font-mono bg-blue-500/10 px-1 rounded">Content-Security-Policy</span> header or a <span className="font-mono bg-blue-500/10 px-1 rounded">&lt;meta&gt;</span> tag to protect your site against XSS and data injection attacks.
           </p>
         </div>
       </div>

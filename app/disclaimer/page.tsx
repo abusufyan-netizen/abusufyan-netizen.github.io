@@ -40,7 +40,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. DMCA Copyright Notice</h2>
             <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
-              WebToolkit Pro respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act ("DMCA"), we will respond promptly to notices of alleged infringement.
+              WebToolkit Pro respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act (&quot;DMCA&quot;), we will respond promptly to notices of alleged infringement.
             </p>
             <p className="text-gray-600 dark:text-slate-400 leading-relaxed mt-4">
               If you believe that your copyrighted work has been infringed, please notify our copyright agent at: <strong>hello@wtkpro.site</strong>

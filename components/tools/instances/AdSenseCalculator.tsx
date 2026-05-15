@@ -83,7 +83,7 @@ export default function AdSenseCalculator() {
           <div className="bg-emerald-600 rounded-3xl p-10 text-white shadow-2xl relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-xl font-bold tracking-tight mb-4">Projection Analysis</h3>
-              <p className="leading-relaxed mb-8 max-w-2xl opacity-90">Based on your views, you're on track to generate **${earnings.yearly.toLocaleString(undefined, { maximumFractionDigits: 0 })}/year**. Target high-intent niches like Finance to maximize CPC.</p>
+              <p className="leading-relaxed mb-8 max-w-2xl opacity-90">Based on your views, you&apos;re on track to generate **${earnings.yearly.toLocaleString(undefined, { maximumFractionDigits: 0 })}/year**. Target high-intent niches like Finance to maximize CPC.</p>
               <div className="flex flex-wrap gap-4">
                 <div className="px-4 py-2 bg-white/10 rounded-xl border border-white/10 text-center min-w-[100px]"><span className="block text-[10px] uppercase font-bold opacity-60">CPC</span><span className="text-lg font-bold">${cpc.toFixed(2)}</span></div>
                 <div className="px-4 py-2 bg-white/10 rounded-xl border border-white/10 text-center min-w-[100px]"><span className="block text-[10px] uppercase font-bold opacity-60">CTR</span><span className="text-lg font-bold">{ctr}%</span></div>

@@ -40,7 +40,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Limitation of Liability</h2>
             <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
-              WebToolkit Pro is provided "as is" without any warranties. We are not responsible for any data loss, damages, or issues arising from the use of our tools. Users are encouraged to verify results for critical production applications.
+              WebToolkit Pro is provided &quot;as is&quot; without any warranties. We are not responsible for any data loss, damages, or issues arising from the use of our tools. Users are encouraged to verify results for critical production applications.
             </p>
           </section>
 

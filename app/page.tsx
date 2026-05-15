@@ -218,7 +218,7 @@ export default function Home() {
               The Global Standard for <span className="text-blue-600 dark:text-blue-400">Web Utilities</span>
             </h2>
             <p className="text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
-              Our web toolkit isn't just a collection of tools; it's an engineering ecosystem designed to handle demanding technical workflows with <span className="text-gray-900 dark:text-white font-bold">high-performance processing</span>. Compared to other web toolkits, it stands out for its privacy.
+              Our web toolkit isn&apos;t just a collection of tools; it&apos;s an engineering ecosystem designed to handle demanding technical workflows with <span className="text-gray-900 dark:text-white font-bold">high-performance processing</span>. Compared to other web toolkits, it stands out for its privacy.
             </p>
           </div>
 
@@ -251,7 +251,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Enterprise-Grade <br/>Security</h3>
               <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  Secure generation via the browser's native <span className="text-emerald-600 font-bold uppercase text-[10px] tracking-widest">Web Crypto API</span> for brute-force resistance.
+                  Secure generation via the browser&apos;s native <span className="text-emerald-600 font-bold uppercase text-[10px] tracking-widest">Web Crypto API</span> for brute-force resistance.
                 </p>
                 <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
                 <p>
@@ -376,7 +376,7 @@ export default function Home() {
               <div className="p-12 bg-white dark:bg-slate-900 rounded-[3rem] border border-gray-100 dark:border-slate-800 shadow-2xl">
                 <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-6 uppercase">Why Content-Code Ratio Matters?</h3>
                 <p className="text-gray-500 dark:text-slate-400 leading-relaxed mb-6">
-                  In 2026, search engine algorithms prioritize "Information Gain." Sites with a healthy balance of technical utility and descriptive content rank higher because they provide both the tool and the context needed to use it effectively.
+                  In 2026, search engine algorithms prioritize &quot;Information Gain.&quot; Sites with a healthy balance of technical utility and descriptive content rank higher because they provide both the tool and the context needed to use it effectively.
                 </p>
                 <ul className="space-y-4">
                   {[
@@ -415,11 +415,11 @@ export default function Home() {
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to use ajax toolkit in asp.net web application?</h3>
-              <p className="text-gray-600 dark:text-slate-400">Many developers ask how to add ajax toolkit reference in web.config or use it in ASP.NET. While we don't host ASP.NET components, our web toolkit can help format and validate the JSON, XML, or base64 data your AJAX calls rely on.</p>
+              <p className="text-gray-600 dark:text-slate-400">Many developers ask how to add ajax toolkit reference in web.config or use it in ASP.NET. While we don&apos;t host ASP.NET components, our web toolkit can help format and validate the JSON, XML, or base64 data your AJAX calls rely on.</p>
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to install web experience toolkit?</h3>
-              <p className="text-gray-600 dark:text-slate-400">You don't need to install anything. Unlike finding out how to install google web toolkit developer plugin for chrome or how to give attribution for google web toolkit, our web toolkit is instantly available online.</p>
+              <p className="text-gray-600 dark:text-slate-400">You don&apos;t need to install anything. Unlike finding out how to install google web toolkit developer plugin for chrome or how to give attribution for google web toolkit, our web toolkit is instantly available online.</p>
             </div>
           </div>
         </div>

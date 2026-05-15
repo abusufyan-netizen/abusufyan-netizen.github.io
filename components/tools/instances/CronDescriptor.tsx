@@ -54,7 +54,7 @@ export default function CronDescriptor() {
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm text-center">
         <div className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-4">Human Readable Schedule</div>
         <div className="text-2xl font-black text-gray-900 dark:text-white leading-tight">
-          "{desc}"
+          &quot;{desc}&quot;
         </div>
       </div>
 

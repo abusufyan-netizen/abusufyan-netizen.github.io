@@ -96,9 +96,9 @@ export default function JsonStudyPage() {
             The most frequent error, accounting for **42% of failures**, is the inclusion of a trailing comma. While modern JavaScript allows trailing commas in objects and arrays, the JSON specification (RFC 8259) is strictly against it.
           </p>
           <div className="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/30 mb-8 font-mono text-sm">
-            <span className="text-red-600 dark:text-red-400 font-bold mb-2 block">// INVALID JSON</span>
+            <span className="text-red-600 dark:text-red-400 font-bold mb-2 block">{`// INVALID JSON`}</span>
             <span className="text-gray-900 dark:text-slate-300">
-              {'{'} "id": 1, "status": "active", {'}'}
+              {'{'} &quot;id&quot;: 1, &quot;status&quot;: &quot;active&quot;, {'}'}
             </span>
           </div>
 
@@ -108,7 +108,7 @@ export default function JsonStudyPage() {
           </p>
           
           <div className="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/30 mb-8 font-mono text-sm">
-            <span className="text-amber-600 dark:text-amber-400 font-bold mb-2 block">// FIX IT INSTANTLY</span>
+            <span className="text-amber-600 dark:text-amber-400 font-bold mb-2 block">{`// FIX IT INSTANTLY`}</span>
             <span className="text-gray-900 dark:text-slate-300">
               Use the <a href="/tools/json-formatter" className="text-blue-600 underline font-bold">WebToolkit Pro JSON Formatter</a> to automatically convert quotes and fix commas.
             </span>

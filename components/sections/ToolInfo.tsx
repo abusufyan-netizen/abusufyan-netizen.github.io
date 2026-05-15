@@ -73,7 +73,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
               ))}
             </div>
             <p className="mt-10 text-[10px] font-mono text-gray-400 dark:text-[#4A6080] leading-relaxed uppercase tracking-widest">
-              // All processing occurs locally in your browser. WebToolkit Pro does not transmit, store, or log your input data.
+              {"// All processing occurs locally in your browser. WebToolkit Pro does not transmit, store, or log your input data."}
             </p>
           </div>
         </section>

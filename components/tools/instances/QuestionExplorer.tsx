@@ -98,7 +98,7 @@ export default function QuestionExplorer() {
             </div>
             <div className="text-center">
               <h3 className="text-xl font-bold dark:text-white mb-2">Scanning Reddit Discussions...</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400">Mapping user intent and common pain points for "{keyword}"</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400">Mapping user intent and common pain points for &quot;{keyword}&quot;</p>
             </div>
           </div>
         ) : questions.length > 0 ? (
@@ -165,7 +165,7 @@ export default function QuestionExplorer() {
            <div className="space-y-4">
               <h4 className="text-2xl font-black uppercase tracking-tight">How to use these insights?</h4>
               <p className="text-slate-300 leading-relaxed max-w-2xl">
-                Real questions found on social platforms are the "Holy Grail" of SEO. Use these as <strong>H2 or H3 headers</strong> in your blog posts, or create dedicated FAQ sections to win the Google "People Also Ask" snippet.
+                Real questions found on social platforms are the &quot;Holy Grail&quot; of SEO. Use these as <strong>H2 or H3 headers</strong> in your blog posts, or create dedicated FAQ sections to win the Google &quot;People Also Ask&quot; snippet.
               </p>
            </div>
         </div>

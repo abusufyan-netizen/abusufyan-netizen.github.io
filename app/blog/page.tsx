@@ -181,7 +181,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
-                  <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10 font-medium italic">"{post.description}"</p>
+                  <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10 font-medium italic">&quot;{post.description}&quot;</p>
                   <div className="flex items-center justify-between pt-6 border-t border-[#1E2D47]/30 relative z-10">
                     <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest">View Full Paper</span>
                     <span className="text-[10px] uppercase font-bold tracking-widest text-[#4A6080] font-mono">{post.readTime}</span>

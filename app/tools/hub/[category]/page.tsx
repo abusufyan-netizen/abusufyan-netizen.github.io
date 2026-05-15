@@ -134,7 +134,7 @@ export default function HubPage({ params }: HubPageProps) {
               </div>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800">
                  <h3 className="font-bold text-lg mb-2 dark:text-white">Are there any limits on file size?</h3>
-                 <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">Most tools in this hub support up to 10MB of text data, processed locally via your browser's memory for maximum speed.</p>
+                 <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">Most tools in this hub support up to 10MB of text data, processed locally via your browser&apos;s memory for maximum speed.</p>
               </div>
            </div>
         </div>

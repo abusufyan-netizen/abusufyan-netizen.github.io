@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Cookies and Google Consent Mode v2</h2>
             <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
-              We use cookies to store information about visitors' preferences. 
+              We use cookies to store information about visitors&apos; preferences. 
             </p>
             <div className="bg-blue-50 dark:bg-slate-900 p-6 rounded-xl border border-blue-100 dark:border-slate-800 mt-4">
               <h3 className="text-lg font-bold text-blue-900 dark:text-blue-400 mb-2">Google Ads & Consent Mode</h3>

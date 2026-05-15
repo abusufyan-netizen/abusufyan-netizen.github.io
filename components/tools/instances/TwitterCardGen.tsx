@@ -116,19 +116,19 @@ export default function TwitterCardGen() {
         </div>
         <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-2xl border border-gray-100 dark:border-[#1E2D47] space-y-2 overflow-x-auto">
           <code className="text-[11px] font-mono text-[#1DA1F2] block whitespace-nowrap">
-            &lt;meta name="twitter:card" content="{cardType}" /&gt;
+            &lt;meta name=&quot;twitter:card&quot; content=&quot;{`{cardType}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-[#1DA1F2] block whitespace-nowrap">
-            &lt;meta name="twitter:site" content="{handle || '@yourhandle'}" /&gt;
+            &lt;meta name=&quot;twitter:site&quot; content=&quot;{`{handle || '@yourhandle'}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-[#1DA1F2] block whitespace-nowrap">
-            &lt;meta name="twitter:title" content="{title}" /&gt;
+            &lt;meta name=&quot;twitter:title&quot; content=&quot;{`{title}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-[#1DA1F2] block whitespace-nowrap">
-            &lt;meta name="twitter:description" content="{description}" /&gt;
+            &lt;meta name=&quot;twitter:description&quot; content=&quot;{`{description}`}&quot; /&gt;
           </code>
           <code className="text-[11px] font-mono text-[#1DA1F2] block whitespace-nowrap">
-            &lt;meta name="twitter:image" content="{image}" /&gt;
+            &lt;meta name=&quot;twitter:image&quot; content=&quot;{`{image}`}&quot; /&gt;
           </code>
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function Newsletter() {
           {status === 'success' ? (
             <div className="flex flex-col items-center gap-4 animate-bounce">
               <CheckCircle2 className="w-16 h-16 text-green-400" />
-              <p className="text-2xl font-bold text-white">You're on the list! Welcome aboard.</p>
+              <p className="text-2xl font-bold text-white">You&apos;re on the list! Welcome aboard.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
