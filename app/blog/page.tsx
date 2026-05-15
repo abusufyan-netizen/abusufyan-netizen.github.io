@@ -4,26 +4,40 @@ import { Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
 
-export const metadata = {
-  title: 'Engineering Blog: Technical Guides & Tutorials | WebToolkit Pro',
-  description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
-  keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
-  alternates: {
-    canonical: 'https://wtkpro.site/blog',
-  },
-  openGraph: {
-    title: 'Developer Blog - WebToolkit Pro',
-    description: 'Expert web development tips, tutorials, and guides for modern developers.',
-    url: 'https://wtkpro.site/blog',
-    siteName: 'WebToolkit Pro',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Developer Blog - WebToolkit Pro',
-    description: 'Expert web development tips, tutorials, and guides for modern developers.',
-  },
+export async function generateMetadata({ searchParams }: { searchParams: { page?: string, jpage?: string } }) {
+  const page = searchParams.page || '1'
+  const jpage = searchParams.jpage || '1'
+  
+  let url = 'https://wtkpro.site/blog'
+  const params = []
+  if (page !== '1') params.push(`page=${page}`)
+  if (jpage !== '1') params.push(`jpage=${jpage}`)
+  
+  if (params.length > 0) {
+    url += `?${params.join('&')}`
+  }
+
+  return {
+    title: 'Developer Blog: Guides, Tutorials & Performance Research',
+    description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
+    keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: 'Developer Blog - WebToolkit Pro',
+      description: 'Expert web development tips, tutorials, and guides for modern developers.',
+      url: url,
+      siteName: 'WebToolkit Pro',
+      type: 'website',
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Developer Blog - WebToolkit Pro',
+      description: 'Expert web development tips, tutorials, and guides for modern developers.',
+    },
+  }
 }
 
 const categoryColors: { [k: string]: string } = {

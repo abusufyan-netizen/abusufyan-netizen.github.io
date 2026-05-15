@@ -1,5 +1,6 @@
 ---
 title: "JWT Decoder Tools Compared: jwt.io vs SuperTokens vs Client-Side Only"
+seoTitle: "JWT Decoder Tools Compared: Why Client-Side is Safest"
 description: "A security-focused comparison of the top JWT decoder tools. We examine what data each tool sends to a server and why client-side decoding is the safest option."
 date: "2026-05-13"
 category: "Security"

@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const brandSuffix = ' | WTK Pro'
   let title = baseTitle
   
-  if ((title.length + brandSuffix.length) > 60) {
-    title = title.slice(0, 60 - brandSuffix.length - 3).trim() + '...'
+  if ((title.length + brandSuffix.length) > 58) {
+    title = title.slice(0, 58 - brandSuffix.length - 3).trim() + '...'
   }
   title += brandSuffix
 

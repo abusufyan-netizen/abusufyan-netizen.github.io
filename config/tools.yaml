@@ -29,8 +29,8 @@ tools:
       description: "Format and validate JSON data instantly with line-number error detection. Our professional beautifier and minifier works 100% locally in your browser for total privacy."
       keywords: ["json formatter with line numbers", "validate json online", "beautify json browser", "json validator offline", "fix json syntax errors", "json minifier for production"]
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
-      entity_definition: "The WebToolkit Pro JSON Formatter & Validator is an enterprise-grade utility engineered for high-performance data manipulation. In the modern web ecosystem, JSON (JavaScript Object Notation) has become the universal language for API communication, configuration management, and data storage. However, raw JSON payloads are often minified for network efficiency, making them virtually unreadable for human developers. Our tool solves this by providing an instant, browser-native beautification engine that restores structural clarity with customizable indentation. Beyond simple formatting, this utility performs real-time Abstract Syntax Tree (AST) validation, catching common errors like trailing commas, unquoted keys, and mismatched brackets that would otherwise crash production systems. By operating 100% on the client-side, it provides the ultimate security layer for developers handling sensitive API keys or private user data, ensuring that not a single byte of information ever reaches a third-party server."
-      how_it_works: "Our processing engine utilizes the browser's native V8 parser to provide near-instant results even for large payloads. When you paste your data, the tool immediately attempts to build a valid AST. If parsing fails, our advanced error-mapping logic identifies the exact character offset and line number where the violation occurred. The formatter then applies a recursive pretty-print algorithm to rebuild the structure with consistent spacing and indentation."
+      entity_definition: "The JSON Formatter & Validator is a professional tool for making JSON data readable. JSON is used everywhere for sending data between apps, but it is often hard to read in its raw form. Our tool fixes this by formatting your data with clean spacing and clear structure. It also checks for common errors like missing quotes or extra commas that can break your code. Because it runs entirely in your browser, your sensitive data is never sent to a server."
+      how_it_works: "Our tool uses your browser's built-in engine to process data instantly. When you paste your JSON, the tool checks the structure for any syntax errors. If it finds a mistake, it shows you exactly where the error is so you can fix it. The formatter then cleans up the spacing and indentation to make the code easy for humans to read."
       use_cases: 
         - "Debugging complex REST or GraphQL API responses in real-time"
         - "Converting minified production JSON into human-readable documentation"
@@ -261,7 +261,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     meta:
-      title: "UUID v7 Generator — Time-Ordered Sortable Identifiers for DBs"
+      title: "UUID v7 Generator — Time-Ordered Sortable Identifiers"
     content:
       title: "UUID v7 Generator — Secure Sortable Time-Ordered Identifiers"
       description: "Generate time-ordered, database-friendly UUID v7 identifiers. Ideal for primary keys, distributed systems, and performance-optimized SQL indexing."
@@ -327,7 +327,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     meta:
-      title: "Lorem Ipsum Generator — Professional Design Placeholder Text"
+      title: "Lorem Ipsum Generator — Design Placeholder Text"
     content:
       title: "Lorem Ipsum Generator — Professional Design Placeholder Text"
       description: "Generate high-quality Latin placeholder text for website mockups, UI/UX designs, and typesetting layouts. Customizable paragraph length and distribution."
@@ -393,7 +393,7 @@ tools:
       output_formats: ["hex"]
       processing: "client-side"
     meta:
-      title: "SHA-256, MD5 & SHA-512 Hash Generator — Secure Checksum Tool"
+      title: "SHA-256 & MD5 Hash Generator — Secure Online Checksum"
     content:
       title: "Secure Hash Generator — SHA-256, MD5 & SHA-512 Online"
       description: "Generate secure cryptographic hashes instantly using SHA-256, MD5, and SHA-512 algorithms. Verify file integrity and create secure checksums 100% locally."
@@ -426,7 +426,7 @@ tools:
       output_formats: ["txt"]
       processing: "server-side"
     meta:
-      title: "Sitemap XML Validator — Check Sitemap Errors for Google Search Console"
+      title: "Sitemap XML Validator — Check Google Search Console Errors"
     content:
       title: "Sitemap XML Validator — Verify Indexing Compatibility"
       description: "Validate your website's XML sitemap for structure, accessibility, and SEO best practices. Ensure optimal Google indexing by catching syntax errors before submission."
@@ -507,7 +507,7 @@ tools:
       output_formats: ["json"]
       processing: "client-side"
     meta:
-      title: "Free Schema Markup Generator — JSON-LD for SEO & AI Search"
+      title: "JSON-LD Schema Generator — Free SEO Markup Tool"
     content:
       title: "JSON-LD Schema Generator — Create Google-Ready Structured Data"
       description: "Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines."
@@ -653,7 +653,7 @@ tools:
       output_formats: ["number"]
       processing: "client-side"
     meta:
-      title: "Binary to Decimal & Hex Converter — Step-by-Step Base Conversion"
+      title: "Binary Converter: Binary, Decimal & Hexadecimal Tool"
     content:
       title: "Binary Converter — Online Base System Translation"
       description: "Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science students and low-level system programming."
@@ -686,7 +686,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     meta:
-      title: "Case Converter — Transform Text to Title Case, Slug & UPPERCASE"
+      title: "Text Case Converter: UPPERCASE, lowercase & Title Case"
     content:
       title: "Text Case Converter — Instant Formatting Tool"
       description: "Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly. Ideal for SEO slugs and clean content formatting."
@@ -752,7 +752,7 @@ tools:
       output_formats: ["url"]
       processing: "client-side"
     meta:
-      title: "URL Encoder & Decoder — Safe URI Component Encoding Online"
+      title: "URL Encoder & Decoder — Safe URI Component Tool"
     content:
       title: "URL Encoder & Decoder — Safe URI Component Tools"
       description: "Encode or decode strings for URI compatibility according to RFC 3986. Safely prepare URL components for web browsers, API requests, and search engine friendly links."
@@ -884,7 +884,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     meta:
-      title: "HTML Entity Encoder & Decoder — Secure XSS Sanitization Tool"
+      title: "HTML Entity Encoder & Decoder — XSS Sanitization"
     content:
       title: "HTML Entity Encoder — Secure Web Sanitization Utility"
       description: "Safely encode and decode HTML entities to prevent XSS attacks and ensure correct browser rendering. Convert special characters into secure HTML entities instantly."
@@ -981,7 +981,7 @@ tools:
       output_formats: ["html"]
       processing: "client-side"
     meta:
-      title: "Markdown to HTML Converter — Semantic Code for Blogs & Docs"
+      title: "Markdown to HTML Converter — Clean Semantic Code"
     content:
       title: "Markdown to HTML Converter — Semantic Code for Blogs & Docs"
       description: "Convert Markdown text to clean, semantic HTML instantly. Perfect for technical writers and developers."
@@ -1076,7 +1076,7 @@ tools:
     technical:
       processing: "client-side"
     meta:
-      title: "Technical SEO Audit Checklist — Site Health & Indexing Review"
+      title: "Technical SEO Audit Checklist: 2026 Ranking Factors"
     content:
       title: "SEO Audit Checklist — Technical Site Health Audit"
       description: "A comprehensive, interactive checklist for auditing your website's SEO health. Covers crawlability, indexing, speed, and content structure."
@@ -1142,7 +1142,7 @@ tools:
       output_formats: ["stats"]
       processing: "client-side"
     meta:
-      title: "Word & Character Counter — Reading Time & Writing Stats Online"
+      title: "Word Counter: Character Count & Reading Time Tool"
     content:
       title: "Word Counter — Real-time Writing Statistics"
       description: "Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content."
@@ -1224,7 +1224,7 @@ tools:
       primary: "Beautify and format HTML5 source code"
       secondary: "Clean up messy or minified markup instantly"
     meta:
-      title: "HTML Beautifier & Formatter — Clean Messy Source Code for SEO"
+      title: "HTML Beautifier: Format & Clean Your Website Markup"
     content:
       title: "HTML Beautifier — Free Online Code Formatter"
       description: "Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability, W3C compliance, and SEO-friendly markup."
@@ -1258,7 +1258,7 @@ tools:
       primary: "Clean and format CSS stylesheets"
       secondary: "Organize selectors and properties for readability"
     meta:
-      title: "CSS Formatter & Beautifier — Organize Stylesheets & Design Tokens"
+      title: "CSS Formatter: Beautify & Organize Your Stylesheets"
     content:
       title: "CSS Formatter — Professional Stylesheet Beautifier"
       description: "Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS optimized for large-scale design systems."
@@ -1416,7 +1416,7 @@ tools:
       primary: "Generate a machine-readable llms.txt file to guide AI crawlers"
       secondary: "Optimize your site for Generative Engine Optimization (GEO)"
     meta:
-      title: "llms.txt Generator — Optimize Your Site for AI & LLM Crawlers"
+      title: "llms.txt Generator: Optimize Your Site for AI Crawlers"
     content:
       title: "llms.txt Generator — AI Crawler Optimization Tool"
       description: "Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. Implement the new robots.txt for the AI era."
@@ -1462,7 +1462,7 @@ tools:
       primary: "Create SEO-friendly URL slugs from any text"
       secondary: "Remove stop words and special characters automatically"
     meta:
-      title: "SEO Slug Generator — Create Clean Hyphenated URL Permalinks"
+      title: "SEO Slug Generator: Create Clean URL Permalinks"
     content:
       title: "SEO Slug Generator — Create Clean URL Permalinks"
       description: "Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility and user readability."
@@ -1530,7 +1530,7 @@ tools:
       primary: "Generate professional favicons and app icons"
       secondary: "Create PWA-ready manifest icons from text or emoji"
     meta:
-      title: "Favicon & PWA Icon Generator — All Sizes for Modern Browsers"
+      title: "Favicon Generator: Create Web & Mobile App Icons"
     content:
       title: "Favicon Generator — PWA & Browser Icon Builder"
       description: "Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji with all required sizes for modern browsers, iOS, and Android."
@@ -1632,7 +1632,7 @@ tools:
       primary: "Generate high-quality QR codes"
       secondary: "Create scanable codes for URLs and text"
     meta:
-      title: "QR Code Generator — Create High-Res Scannable Codes for Free"
+      title: "QR Code Generator: Create High-Res Scannable Codes"
     content:
       title: "QR Code Generator — Create Scannable Codes Online"
       description: "Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads."
@@ -3078,7 +3078,7 @@ tools:
       output_formats: ["http-headers"]
       processing: "client-side"
     meta:
-      title: "HSTS Policy Generator — Secure Your Website with HTTPS Only"
+      title: "HSTS Header Generator — Secure Site HSTS Preload"
     content:
       title: "HSTS Generator — Enforce Permanent HTTPS Security"
       description: "Generate perfectly formatted HSTS (HTTP Strict Transport Security) headers. Protect your users from protocol downgrade attacks and get your domain ready for the HSTS Preload list."
@@ -4677,7 +4677,7 @@ tools:
       output_formats: ["text"]
       processing: "client-side"
     meta:
-      title: "Morse Code & NATO Phonetic Alphabet Converter — Online Tool"
+      title: "Morse Code & NATO Phonetic Converter: Instant Tool"
     content:
       title: "Morse Code & Phonetic Converter — Instant Translation"
       description: "Translate text to Morse code or the NATO phonetic alphabet instantly. A professional utility for radio communication, technical naming, and secure messaging."
@@ -4833,7 +4833,7 @@ tools:
       output_formats: ["html", "txt"]
       processing: "client-side"
     meta:
-      title: "Markdown to HTML Converter — Instant GitHub-Flavored Preview"
+      title: "Markdown to HTML Converter: GitHub-Flavored Preview"
     content:
       title: "Markdown to HTML Converter — Fast Documentation Tool"
       description: "Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation."
@@ -5146,7 +5146,7 @@ tools:
       output_formats: ["html", "txt"]
       processing: "client-side"
     meta:
-      title: "HTML Code Minifier — Compress HTML for 100/100 PageSpeed Score"
+      title: "HTML Minifier: Compress & Optimize Your Website Code"
     content:
       title: "HTML Code Minifier — High-Performance Page Optimization"
       description: "Reduce your website's file size by minifying HTML code. Our professional optimizer removes comments, unnecessary spaces, and redundant code to boost Core Web Vitals and SEO rankings."
@@ -5185,7 +5185,7 @@ tools:
       output_formats: ["css", "txt"]
       processing: "client-side"
     meta:
-      title: "CSS Code Minifier — Compress Stylesheets for Faster Web Performance"
+      title: "CSS Minifier: Compress & Optimize Your Stylesheets"
     content:
       title: "CSS Code Minifier — Professional Stylesheet Compression"
       description: "Compress your CSS files to improve website performance. Our tool removes comments, whitespace, and redundant characters to deliver smaller, faster stylesheets for production."
@@ -5739,8 +5739,8 @@ tools:
       description: "Analyze your website's technical SEO, performance, and accessibility instantly. Get actionable insights to improve Google rankings and Core Web Vitals with our professional auditor."
       keywords: ["site audit pro", "technical seo audit", "website performance analyzer", "core web vitals checker", "lighthouse seo audit online", "technical seo auditor"]
       tldr: "Run a full technical SEO and Core Web Vitals audit instantly."
-      entity_definition: "Site Audit Pro is a comprehensive website analysis utility engineered for professional SEOs and developers. It evaluates mission-critical technical SEO factors, accessibility compliance, and Core Web Vitals performance. By identifying bottlenecks and structural issues, it helps users optimize their sites for better search engine rankings and premium user experience."
-      how_it_works: "Our audit engine uses Lighthouse-inspired metrics and custom edge-based crawlers to analyze the target URL, scoring it against 50+ SEO and performance benchmarks."
+      entity_definition: "Site Audit Pro is a powerful tool for checking your website's health. It looks at important things like Google search settings, page speed, and accessibility. By finding and fixing these issues, you can improve your site's rankings and give your visitors a better experience. It is built for both developers and SEO experts who need fast, accurate data."
+      how_it_works: "Our audit engine scans your URL and tests it against over 50 industry standards. It checks how fast your page loads, how easy it is to use on mobile, and if your technical SEO settings are correct. You get a clear report with actionable steps to help you optimize your site."
       use_cases:
         - "Diagnosing technical SEO directive issues"
         - "Monitoring Core Web Vitals improvements"
@@ -5756,3 +5756,41 @@ tools:
         - question: "Is this audit as detailed as PageSpeed Insights?"
           answer: "Yes, we utilize similar engine components to provide a professional-grade audit focusing on technical SEO and performance."
 
+
+  - name: "Redirect Checker"
+    slug: "redirect-checker"
+    category: "SEO Tools"
+    icon: "RefreshCw"
+    tags: ["seo", "redirect", "301", "302", "http-headers"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Trace URL redirect chains and analyze HTTP status codes"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["json", "txt"]
+      processing: "server-side"
+    meta:
+      title: "Redirect Checker & Header Analyzer — Trace 301/302 Chains"
+    content:
+      title: "Redirect Checker — Full HTTP Redirect Path Tracer"
+      description: "Instantly trace the full path of any URL redirect. Check 301 and 302 status codes, analyze HTTP headers, and identify redirect loops that harm your SEO."
+      keywords: ["redirect checker", "trace 301 redirects", "check redirect chain", "http status code checker", "bulk redirect tester", "find redirect loops"]
+      tldr: "Trace full redirect paths and analyze HTTP status codes for any URL."
+      entity_definition: "Redirect Checker is a technical SEO utility designed to audit the path a browser takes to reach a final destination. In complex site migrations or affiliate marketing, multiple redirects (301, 302, 307) can often chain together, increasing latency and diluting PageRank. Our tool provides a deep-dive analysis of each hop, surfacing HTTP headers, server types, and potential loops that can prevent search engines from indexing your content effectively."
+      how_it_works: "Our engine performs a series of HEAD requests to the target URL. It follows each 'Location' header provided by the server until it reaches a terminal 200 OK or an error. Each step is logged with its specific HTTP status code and latency."
+      use_cases:
+        - "Diagnosing 'Too Many Redirects' errors"
+        - "Verifying 301 permanent redirect implementation"
+        - "Auditing affiliate link destination safety"
+        - "Checking for redirect loops in site migrations"
+      features:
+        - "Complete redirect chain mapping"
+        - "HTTP header analysis (Server, Cache-Control, etc.)"
+        - "Real-time status code verification"
+        - "Mobile vs Desktop user-agent simulation"
+      faq:
+        - question: "What is a redirect chain?"
+          answer: "A redirect chain occurs when there are multiple redirects between the initial URL and the final destination. These should be minimized to improve page load speed and SEO authority."
+        - question: "Does this tool follow meta-refresh redirects?"
+          answer: "Yes, our advanced tracer can identify both server-side (HTTP 3xx) and client-side (HTML Meta Refresh) redirects."

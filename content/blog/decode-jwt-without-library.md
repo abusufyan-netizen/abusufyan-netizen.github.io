@@ -1,5 +1,6 @@
 ---
 title: "How to Decode a JWT Without a Library (And When Not To)"
+seoTitle: "Decoding JWT Without a Library: A Step-by-Step Guide"
 description: "Learn how to decode a JWT token in plain JavaScript using atob(), what the security implications are, and when you need a proper verification library instead."
 date: "2026-05-13"
 category: "Security"

@@ -1,5 +1,6 @@
 ---
 title: "JWT vs PASETO vs Session Tokens: Which Should You Use in 2026?"
+seoTitle: "JWT vs PASETO vs Session Tokens: 2026 Comparison"
 description: "A technical comparison of JWT, PASETO, and traditional session tokens. Understand the tradeoffs in security, scalability, and developer ergonomics."
 date: "2026-05-13"
 category: "Security"

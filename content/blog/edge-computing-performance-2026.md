@@ -1,5 +1,6 @@
 ---
 title: "Edge Computing Guide 2026: Deploy Faster Apps with Sub-50ms Latency"
+seoTitle: "Edge Computing 2026: Deploy Apps with Sub-50ms Latency"
 description: "How edge computing is transforming web performance in 2026. Practical guide for developers using Next.js, Vercel, and Cloudflare with privacy-first tools."
 date: "2026-05-15"
 category: "Engineering"

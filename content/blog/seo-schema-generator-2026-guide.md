@@ -1,5 +1,6 @@
 ---
 title: "SEO Meta Tags and Schema Generator Guide: Boost Rankings in AI Search"
+seoTitle: "SEO Meta & Schema Generator Guide: Boost AI Rankings"
 description: "Free 2026 strategies for meta tags, Open Graph, and JSON-LD schema. Improve visibility in Google and generative AI engines."
 date: "2026-05-15"
 category: "SEO"

@@ -77,19 +77,19 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub Repository" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Github className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter Profile" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to">
+            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to" aria-label="Dev.to Blog">
               <Terminal className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt">
+            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt" aria-label="Product Hunt Page">
               <Rocket className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="mailto:hello@wtkpro.site" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="mailto:hello@wtkpro.site" aria-label="Email Support" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>

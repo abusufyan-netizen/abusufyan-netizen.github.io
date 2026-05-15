@@ -36,15 +36,12 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   if (!tool) return {}
 
   const brandSuffix = ' | WTK Pro'
-  let title = tool.meta?.title || `${tool.name} | Best Online ${tool.category} 2026`
+  let title = tool.meta?.title || `${tool.name} | Professional Online ${tool.category}`
   
-  if (title.length > 60) {
-    if (tool.name.length + brandSuffix.length <= 60) {
-      title = `${tool.name}${brandSuffix}`
-    } else {
-      title = title.slice(0, 57).trim() + '...'
-    }
+  if ((title.length + brandSuffix.length) > 58) {
+    title = title.slice(0, 58 - brandSuffix.length - 3).trim() + '...'
   }
+  title += brandSuffix
 
   let description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
   

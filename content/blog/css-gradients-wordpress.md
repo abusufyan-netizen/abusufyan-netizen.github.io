@@ -1,5 +1,6 @@
 ---
 title: "CSS Gradients for WordPress: How to Add Them Without a Plugin"
+seoTitle: "CSS Gradients for WordPress: Add Without Plugins"
 description: "A complete guide to adding custom CSS gradients to WordPress using Gutenberg, theme.json, and custom CSS — no plugin required."
 date: "2026-05-13"
 category: "Design Tools"

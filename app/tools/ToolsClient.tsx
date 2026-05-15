@@ -278,7 +278,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
 
       {/* SEO Hub Links */}
       <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47]">
-        <SectionHeading number="02" title="Specialized Engineering Hubs" className="mb-12" />
+        <SectionHeading number="02" title="Specialized Engineering Hubs" className="mb-12" as="h3" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {categories.filter(c => c !== 'All').map(category => {
             const slug = category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
@@ -299,7 +299,8 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47] max-w-4xl mx-auto">
         <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] p-12 rounded-[12px] relative overflow-hidden text-center">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full -translate-y-1/2" />
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight relative z-10">Privacy-First Developer Utilities</h2>
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight relative z-10">Privacy-First Developer Utilities</h3>
+
           <p className="text-lg text-[#8A9BBE] leading-relaxed mb-12 relative z-10">
             WebToolkit Pro provides a curated suite of technical utilities designed for modern web developers, SEO specialists, and software architects.
           </p>

@@ -54,8 +54,8 @@ export default function Home() {
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed">
-            Format JSON. Generate passwords. Encode data. All client-side.<br />
-            Premium utilities in our web toolkit for modern engineering workflows. No login required.
+            Format JSON. Generate passwords. Encode data. All in your browser.<br />
+            Free, private tools for your daily coding tasks. No login required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -137,9 +137,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'Lightning Fast', desc: 'All tools run client-side. Zero server delays. Instant results.', icon: Zap },
-              { title: 'Privacy First', desc: 'Your data never leaves your browser. 100% secure processing.', icon: Shield },
-              { title: 'Enterprise Quality', desc: 'Expert-grade utilities for professional engineering workflows.', icon: Star },
+              { title: 'Lightning Fast', desc: 'Tools run in your browser. No server delays. Get instant results.', icon: Zap },
+              { title: '100% Private', desc: 'Your data never leaves your device. We process everything locally.', icon: Shield },
+              { title: 'Built for Pros', desc: 'Reliable, high-quality tools designed for your daily dev work.', icon: Star },
             ].map((item) => (
               <div key={item.title} className="flex flex-col items-center group p-8 rounded-[12px] bg-[#0D1526] border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
