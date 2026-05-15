@@ -64,4 +64,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'sri-hasher': dynamic(() => import('@/components/tools/instances/SriHasher'), { loading: () => <ToolSkeleton />, ssr: false }),
   'csp-builder': dynamic(() => import('@/components/tools/instances/CspBuilder'), { loading: () => <ToolSkeleton />, ssr: false }),
   'permissions-policy': dynamic(() => import('@/components/tools/instances/PermissionsPolicy'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'meta-length-checker': dynamic(() => import('@/components/tools/instances/MetaLengthChecker'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'heading-visualizer': dynamic(() => import('@/components/tools/instances/HeadingVisualizer'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'og-debugger': dynamic(() => import('@/components/tools/instances/OgDebugger'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'twitter-card-gen': dynamic(() => import('@/components/tools/instances/TwitterCardGen'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
