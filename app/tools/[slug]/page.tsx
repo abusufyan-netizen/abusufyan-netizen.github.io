@@ -146,10 +146,26 @@ export default function ToolPage({ params }: ToolPageProps) {
             {(() => {
               const widgetData = RELATED_TOOLS_MAP[tool.slug] || getRelatedToolsForWidget(tool);
               if (!widgetData) return null;
+
+              // If it's a dynamic object from getRelatedToolsForWidget, it has resolveIcon
+              // If it's from the static map, we use the one from getRelatedToolsForWidget(tool)
+              const dynamicHelper = getRelatedToolsForWidget(tool);
+              const resolver = dynamicHelper?.resolveIcon || ((i: string) => i);
+
+              const resolvedFeatured = {
+                ...widgetData.featured,
+                icon: resolver(widgetData.featured.icon, widgetData.featured.href)
+              };
+
+              const resolvedCards = widgetData.cards.map((card: any) => ({
+                ...card,
+                icon: resolver(card.icon, card.href)
+              }));
+
               return (
                 <RelatedToolsWidget 
-                  featured={widgetData.featured}
-                  cards={widgetData.cards}
+                  featured={resolvedFeatured}
+                  cards={resolvedCards}
                   pills={widgetData.pills}
                 />
               );

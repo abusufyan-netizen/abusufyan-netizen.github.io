@@ -133,26 +133,54 @@ export function getLatestTool(): ToolConfig | undefined {
 }
 
 export function getRelatedToolsForWidget(currentTool: ToolConfig) {
+  const allTools = getTools()
   const related = getRelatedTools(currentTool, 10)
   if (related.length === 0) return null
+
+  // Helper to resolve icon from tool slug if possible
+  const getIconForSlug = (slug: string, fallback: string) => {
+    const t = allTools.find(tool => tool.slug === slug)
+    return t?.icon || fallback
+  }
+
+  // Emoji to Lucide mapping for static entries
+  const emojiMap: Record<string, string> = {
+    '📊': 'BarChart3', '🔗': 'Link', '🔐': 'Lock', '🧩': 'Puzzle',
+    '🔑': 'Key', '📄': 'FileText', '⏱️': 'Clock', '🎲': 'Dices',
+    '🆔': 'Fingerprint', '📱': 'Smartphone', '🤖': 'Bot', '🗺️': 'Map',
+    '✅': 'CheckCircle', '📝': 'FileEdit', '🔤': 'Type', '📋': 'Clipboard',
+    '👁️': 'Eye', '🎨': 'Palette', '📏': 'Ruler', '⚡': 'Zap',
+    '🌐': 'Globe', '🏷️': 'Tag'
+  }
+
+  const resolveIcon = (icon: string, href: string) => {
+    if (emojiMap[icon]) return emojiMap[icon]
+    
+    // Try to extract slug from href: /tools/slug/
+    const match = href.match(/\/tools\/([^\/]+)\//)
+    if (match) return getIconForSlug(match[1], icon)
+    
+    return icon
+  }
 
   return {
     featured: {
       name: related[0].name,
       href: `/tools/${related[0].slug}/`,
       desc: related[0].function.primary,
-      icon: related[0].icon || '🛠️',
+      icon: related[0].icon || 'Zap',
       badge: 'Recommended'
     },
     cards: related.slice(1, 4).map(t => ({
       name: t.name,
       href: `/tools/${t.slug}/`,
       desc: t.function.primary,
-      icon: t.icon || '🛠️'
+      icon: t.icon || 'Zap'
     })),
     pills: related.slice(4).map(t => ({
       name: t.name,
       href: `/tools/${t.slug}/`
-    }))
+    })),
+    resolveIcon // Export helper for use in page
   }
 }
