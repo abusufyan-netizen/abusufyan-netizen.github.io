@@ -29,7 +29,7 @@
     --brand-grad: linear-gradient(135deg, #00D4B4 0%, #0094FF 100%);
     
     /* Font Variables from Layout */
-    --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+    --font-sans: var(--font-inter), system-ui, sans-serif;
     --font-mono: var(--font-space-mono), monospace;
   }
 
@@ -41,8 +41,8 @@
 
   h1 { 
     font-size: 40px; 
-    font-weight: 700; 
-    letter-spacing: -0.04em; 
+    font-weight: 800; 
+    letter-spacing: -0.02em; 
     line-height: 1.1;
   }
   h2 { 
@@ -61,6 +61,10 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv05", "cv11";
   }
 }
 
@@ -104,8 +108,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   transition: background-color 0.3s ease, color 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Smooth Interactive Elements */

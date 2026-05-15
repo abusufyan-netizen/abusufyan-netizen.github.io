@@ -3,7 +3,7 @@ import './globals.css'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
-import { DM_Sans, Space_Mono } from 'next/font/google'
+import { Inter, Space_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { Metadata } from 'next'
 // @ts-ignore
@@ -13,7 +13,11 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getLatestTool } from '@/lib/tools'
 import NewContentNotification from '@/components/ui/NewContentNotification'
 
-const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  display: 'swap'
+})
 const spaceMono = Space_Mono({ 
   subsets: ['latin'], 
   weight: ['400', '700'],
@@ -139,7 +143,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   } : null
 
   return (
-    <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <body className="font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300">
         <script
           id="theme-initializer"

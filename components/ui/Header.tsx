@@ -48,7 +48,7 @@ export default function Header() {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className={`text-sm font-bold uppercase tracking-widest transition-all hover:scale-105 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md px-3 py-2 ${
+                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:scale-105 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md px-3 py-2 ${
                     isCTA 
                       ? 'bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-lg px-5 py-2.5 shadow-lg shadow-blue-500/10' 
                       : 'text-gray-600 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4]'

@@ -425,18 +425,22 @@ export default function Home() {
       </section>
 
       {/* Community Insights & Zaraz Integration */}
-      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-10 uppercase tracking-tight">Community Feedback</h2>
-          <div className="bg-gray-50 dark:bg-[#0D1526] p-8 rounded-[3rem] border border-gray-100 dark:border-[#1E2D47] shadow-sm overflow-hidden">
+      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800 relative overflow-hidden">
+        {/* Subtle background glow for the embed */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-video bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-10 uppercase tracking-tighter">Community Feedback</h2>
+          <div className="bg-gray-50/50 dark:bg-[#0D1526]/50 backdrop-blur-sm p-4 md:p-12 rounded-[2.5rem] border border-gray-100 dark:border-[#1E2D47] shadow-2xl overflow-hidden group hover:border-[#00D4B4]/30 transition-all duration-500">
             <div 
+              className="mx-auto max-w-full overflow-x-auto no-scrollbar flex justify-center"
               dangerouslySetInnerHTML={{ 
                 __html: '<!-- Zaraz Twitter Embed --><twitter-post tweet-id="1754336034228171055"></twitter-post>' 
               }} 
             />
           </div>
-          <p className="mt-8 text-sm text-gray-500 dark:text-[#8A9BBE] font-medium italic">
-            Powered by Cloudflare Zaraz for maximum performance and privacy.
+          <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-[#4A6080] font-black">
+            Insight Powered by <span className="text-blue-600 dark:text-blue-400">Cloudflare Zaraz</span>
           </p>
         </div>
       </section>
