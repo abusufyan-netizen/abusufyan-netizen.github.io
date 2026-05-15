@@ -60,4 +60,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'json-to-ts': dynamic(() => import('@/components/tools/instances/JsonToTs'), { loading: () => <ToolSkeleton />, ssr: false }),
   'yaml-to-json': dynamic(() => import('@/components/tools/instances/YamlToJson'), { loading: () => <ToolSkeleton />, ssr: false }),
   'json-to-yaml': dynamic(() => import('@/components/tools/instances/JsonToYaml'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'aes-encryption': dynamic(() => import('@/components/tools/instances/AesEncryption'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'sri-hasher': dynamic(() => import('@/components/tools/instances/SriHasher'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'csp-builder': dynamic(() => import('@/components/tools/instances/CspBuilder'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'permissions-policy': dynamic(() => import('@/components/tools/instances/PermissionsPolicy'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
