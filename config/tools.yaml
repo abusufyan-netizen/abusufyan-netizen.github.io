@@ -5345,41 +5345,437 @@ tools:
         - question: "Can it handle subqueries?"
         - answer: "Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs."
 
-  - name: "XML Formatter & Beautifier"
-    slug: "xml-formatter"
-    category: "Developer Tools"
-    icon: "FileCode"
-    subcategory: "data-formatting"
-    tags: ["xml", "formatter", "beautifier", "markup", "validation"]
-    priority: 7
-    releaseDate: "2026-05-15"
-    function:
-      primary: "Beautify and validate XML markup"
-      secondary: "Structural indentation and syntax highlighting"
-    technical:
-      input_formats: ["xml", "txt"]
-      output_formats: ["xml", "txt"]
-      processing: "client-side"
-    meta:
-      title: "XML Formatter & Beautifier — Clean & Structure XML Data Online"
-    content:
-      title: "XML Formatter — Professional Markup Beautification"
-      description: "Format and structure XML data for better readability. Our secure XML beautifier provides precise indentation and structural validation for soap messages, sitemaps, and config files."
-      keywords: ["xml formatter online", "beautify xml code", "xml beautifier with indentation", "format sitemap xml", "clean xml data", "xml markup optimizer"]
-      tldr: "Instantly structure messy XML strings into clean, human-readable trees with precise hierarchical indentation."
-      entity_definition: "XML Formatter & Beautifier is a markup utility that processes Extensible Markup Language into a structured visual hierarchy. It handles nested tags, attributes, and namespaces, applying consistent indentation to make data structures easily navigable for developers and analysts."
-      how_it_works: "The tool parses the XML DOM and reconstructs the string with uniform spacing, ensuring each level of nesting is clearly visible."
-      use_cases:
-        - "Debugging SOAP or REST API responses"
-        - "Formatting sitemap.xml for manual review"
-        - "Cleaning up exported configuration files"
-      features:
-        - "Adjustable indentation (2 or 4 spaces)"
-        - "Support for CDATA sections"
-        - "Attribute alignment optimization"
-        - "Real-time structural validation"
       faq:
         - question: "Can it handle large XML files?"
         - answer: "Yes, our engine is optimized to process large XML payloads up to 10MB instantly."
         - question: "Does it validate my XML?"
         - answer: "Yes, it will identify basic structural errors like unclosed tags during the formatting process."
+
+  - name: "Title Case Converter (Pro)"
+    slug: "title-case"
+    category: "Content & Writing"
+    icon: "Type"
+    subcategory: "formatting"
+    tags: ["title-case", "blogging", "capitalization", "writing", "copywriting"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert text to professional Title Case"
+      secondary: "Support for AP, APA, and Chicago style guides"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Title Case Converter — Generate Pro Headlines Online"
+    content:
+      title: "Title Case Converter — Professional Headline Formatting"
+      description: "Convert your titles and headlines to professional Title Case. Support for AP, APA, Chicago, and New York Times style guides to ensure your blog posts and articles look professional."
+      keywords: ["convert text to title case online", "title case generator for blogs", "headline capitalization tool free", "ap style title case online", "chicago style title generator", "automatic title case free"]
+      tldr: "Ensure your headlines are perfectly capitalized with our professional Title Case converter."
+      entity_definition: "Title Case Converter (Pro) is a specialized writing utility that applies grammatical capitalization rules to text. Unlike simple uppercase tools, it intelligently identifies small words (like 'and', 'the', 'of') and keeps them lowercase according to specific style guides like AP or APA."
+      how_it_works: "The tool uses a linguistic database of 'small words' and applies style-specific regex patterns to the input string."
+      use_cases:
+        - "Formatting blog post titles"
+        - "Preparing academic paper headlines"
+        - "Standardizing newsletter subject lines"
+      features:
+        - "AP, APA, Chicago, and NYT styles"
+        - "Automatic small-word exclusion"
+        - "One-click copy to clipboard"
+        - "Sentence and Toggle case options"
+      faq:
+        - question: "Which style should I use for my blog?"
+        - answer: "AP Style is the most common for online blogs and journalism."
+        - question: "Does it handle special names?"
+        - answer: "Yes, you can define 'protected words' that should always maintain their original capitalization."
+
+  - name: "PWA Manifest Generator"
+    slug: "pwa-manifest"
+    category: "Developer Tools"
+    icon: "Smartphone"
+    subcategory: "scaffolding"
+    tags: ["pwa", "manifest", "mobile", "app", "json"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate valid manifest.json for PWAs"
+      secondary: "Configure icons, theme colors, and display modes"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["json"]
+      processing: "client-side"
+    meta:
+      title: "PWA Manifest Generator — Create App Manifests Online"
+    content:
+      title: "PWA Manifest Builder — Professional Web App Setup"
+      description: "Generate a valid manifest.json for your Progressive Web App. Configure icons, theme colors, start URLs, and display modes to make your website installable like a native app."
+      keywords: ["generate pwa manifest online", "create manifest.json free", "pwa icon generator tool", "web app manifest builder", "make website installable online", "pwa setup utility free"]
+      tldr: "Turn your website into an installable app by generating a valid PWA manifest in seconds."
+      entity_definition: "PWA Manifest Generator is a developer utility for building Progressive Web Apps. The `manifest.json` file is a standard that tells the browser how your web application should behave when 'installed' on a user's device, including its name, icons, and theme colors."
+      how_it_works: "The tool provides a visual interface for all standard PWA properties and generates a compliant JSON file ready for deployment."
+      use_cases:
+        - "Converting websites to mobile-friendly PWAs"
+        - "Updating app branding and theme colors"
+        - "Setting up 'Add to Home Screen' functionality"
+      features:
+        - "Visual icon preview"
+        - "Theme and Background color picker"
+        - "Display mode selection (Standalone, Minimal, etc.)"
+        - "Instant manifest.json download"
+      faq:
+        - question: "What is a PWA?"
+        - answer: "A Progressive Web App is a website that uses modern web capabilities to provide an app-like experience on mobile and desktop."
+        - question: "Where do I put the manifest file?"
+        - answer: "In the root directory of your site, and link to it in your HTML <head> with a <link rel='manifest'> tag."
+
+  - name: "CSS Box Shadow Generator"
+    slug: "css-shadow-gen"
+    category: "Design Tools"
+    icon: "Layers"
+    subcategory: "css-utilities"
+    tags: ["css", "shadow", "design", "ui", "glassmorphism"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visual generator for CSS box-shadows"
+      secondary: "Support for layered shadows and inset effects"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["css"]
+      processing: "client-side"
+    meta:
+      title: "CSS Box Shadow Generator — Create Modern UI Shadows"
+    content:
+      title: "CSS Shadow Builder — Visual UI Design Utility"
+      description: "Create beautiful, modern CSS box-shadows visually. Support for layered shadows, inset effects, and glassmorphism styles with instant code export for your projects."
+      keywords: ["generate css box shadow online", "css shadow builder visual", "modern ui shadow generator", "glassmorphism shadow tool free", "layered css shadows online", "box-shadow code generator"]
+      tldr: "Design professional UI shadows visually and export the CSS code instantly."
+      entity_definition: "CSS Box Shadow Generator is a visual design utility for frontend developers. It allows users to manipulate the offset, blur, spread, and color of shadows through an interactive UI, providing a real-time preview and clean CSS code output."
+      how_it_works: "The tool uses interactive sliders to update a sample element's CSS properties, reflecting the exact appearance of the shadow."
+      use_cases:
+        - "Designing cards and buttons for web apps"
+        - "Creating soft, layered 'neomorphism' styles"
+        - "Adding depth to modern flat designs"
+      features:
+        - "Layered shadow support (multiple shadows)"
+        - "Inset shadow toggle"
+        - "Color and Opacity control"
+        - "Real-time visual preview"
+      faq:
+        - question: "How do I make shadows look natural?"
+        - answer: "Use multiple layers of shadows with low opacity instead of one single dark shadow."
+        - question: "Is this supported in all browsers?"
+        - answer: "Yes, box-shadow is a standard CSS3 property supported by all modern browsers."
+
+  - name: "Readability Grade Calculator"
+    slug: "readability-checker"
+    category: "Content & Writing"
+    icon: "BookOpen"
+    subcategory: "analysis"
+    tags: ["readability", "seo", "content", "writing", "analysis"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Calculate reading level and readability scores"
+      secondary: "Support for Flesch-Kincaid and Gunning Fog indices"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["readability-report"]
+      processing: "client-side"
+    meta:
+      title: "Readability Grade Calculator — Check Content Level Online"
+    content:
+      title: "Readability Auditor — Optimize Your Content Impact"
+      description: "Calculate the readability and reading level of your text. Audit your content for clarity and impact using industry-standard scores like Flesch-Kincaid and Gunning Fog."
+      keywords: ["calculate flesh-kincaid readability online", "check text reading level free", "readability score calculator online", "gunning fog index tool", "online content clarity auditor", "improve writing readability online"]
+      tldr: "Ensure your content is accessible to your target audience with professional readability scoring."
+      entity_definition: "Readability Grade Calculator is a linguistic utility that analyzes the complexity of a piece of writing. It uses mathematical formulas based on sentence length and syllable count to determine the 'grade level' required to understand the text."
+      how_it_works: "The tool parses the text into sentences, words, and syllables, then applies the Flesch-Kincaid and Gunning Fog formulas to generate a numerical score."
+      use_cases:
+        - "Optimizing blog posts for general audiences"
+        - "Auditing technical documentation for clarity"
+        - "Improving SEO through better content accessibility"
+      features:
+        - "Flesch-Kincaid Grade Level"
+        - "Gunning Fog Index"
+        - "Sentence and Syllable count breakdown"
+        - "Actionable advice for improvement"
+      faq:
+        - question: "What is a good readability score for the web?"
+        - answer: "A Flesch-Kincaid grade level of 6-8 is recommended for general web audiences."
+        - question: "Does this handle different languages?"
+        - answer: "Currently, our formulas are optimized for English-language text analysis."
+
+  - name: "Emoji Unicode Picker"
+    slug: "emoji-picker"
+    category: "Content & Writing"
+    icon: "Smile"
+    subcategory: "formatting"
+    tags: ["emoji", "unicode", "blogging", "design", "formatting"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Find and copy Emoji Unicode characters"
+      secondary: "Search by keyword and category for blog content"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["emoji", "unicode"]
+      processing: "client-side"
+    meta:
+      title: "Emoji Unicode Picker — Find & Copy Emojis for Blogs"
+    content:
+      title: "Emoji Search — Visual Unicode Utility"
+      description: "Find and copy the perfect emojis for your blog posts and social media. Search our comprehensive database by keyword and category with instant Unicode and HTML entity export."
+      keywords: ["find emoji unicode code online", "copy paste emoji for blogs", "online emoji search engine free", "emoji html entity picker", "unicode characters for web", "visual emoji library online"]
+      tldr: "Access the full library of standard emojis and copy their codes or characters instantly."
+      entity_definition: "Emoji Unicode Picker is a visual formatting utility that provides access to the standard set of Unicode emojis. It allows creators to search for specific symbols and copy the character, its Unicode point, or its HTML entity for use in web and document publishing."
+      how_it_works: "The tool utilizes a local database of the Unicode Emoji Standard, providing a fast, searchable interface for thousands of symbols."
+      use_cases:
+        - "Styling blog post headlines"
+        - "Adding emojis to social media metadata"
+        - "Finding specific Unicode codes for development"
+      features:
+        - "Instant search-as-you-type"
+        - "Categorized browsing"
+        - "Unicode and HTML Entity output"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Are these emojis safe for all browsers?"
+        - answer: "Yes, we use standard Unicode emojis which are supported by all modern operating systems and browsers."
+        - question: "How do I use them in HTML?"
+        - answer: "You can either copy the character directly or use the provided HTML entity code (e.g., &#128512;)."
+
+  - name: "CSS Keyframe Generator"
+    slug: "css-keyframes"
+    category: "Design Tools"
+    icon: "Play"
+    subcategory: "css-utilities"
+    tags: ["css", "animation", "keyframes", "ui", "design"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visual generator for CSS @keyframes animations"
+      secondary: "Create smooth transitions and motion effects"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["css"]
+      processing: "client-side"
+    meta:
+      title: "CSS Keyframe Generator — Create Web Animations Online"
+    content:
+      title: "CSS Animation Builder — Visual Keyframe Utility"
+      description: "Create professional CSS @keyframes animations visually. Design smooth transitions, pulsing effects, and complex motion paths with instant code export for your UI projects."
+      keywords: ["generate css keyframes online", "visual css animation builder free", "create @keyframes online tool", "css animation code generator", "online web animation utility", "css motion path builder free"]
+      tldr: "Design and export professional CSS animations with our visual @keyframes builder."
+      entity_definition: "CSS Keyframe Generator is a visual utility for creating web animations. It allows developers to define the state of an element at various points (0% to 100%) through an interactive timeline, generating the corresponding `@keyframes` CSS block."
+      how_it_works: "The tool provides a timeline where users can add keyframes and modify CSS properties (transform, opacity, etc.) for each step."
+      use_cases:
+        - "Creating loading animations"
+        - "Adding hover effects to buttons"
+        - "Designing complex UI transitions"
+      features:
+        - "Interactive animation timeline"
+        - "Real-time preview on a sample element"
+        - "Support for transforms and opacity"
+        - "Clean CSS output with vendor prefixes"
+      faq:
+        - question: "What are @keyframes?"
+        - answer: "They are a CSS directive that defines the intermediate steps in a CSS animation sequence."
+        - question: "Should I use JS for animations instead?"
+        - answer: "CSS animations are often smoother and more performance-efficient for UI transitions than JavaScript-based ones."
+
+  - name: "Color Palette Extractor (CSS)"
+    slug: "css-color-extractor"
+    category: "Design Tools"
+    icon: "Palette"
+    subcategory: "analysis"
+    tags: ["css", "colors", "design", "audit", "branding"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Extract color palettes from CSS files"
+      secondary: "Find brand colors and variables from any stylesheet"
+    technical:
+      input_formats: ["css", "url"]
+      output_formats: ["palette-grid"]
+      processing: "client-side"
+    meta:
+      title: "Color Palette Extractor — Find Brand Colors in CSS"
+    content:
+      title: "CSS Color Extractor — Professional Design Audit"
+      description: "Extract the full color palette from any CSS file or website. Audit your brand consistency by finding every HEX, RGB, and HSL value used in your stylesheets."
+      keywords: ["extract colors from css file online", "find brand colors from stylesheet", "css color palette generator online", "audit website colors free", "extract css variables for design", "online color audit utility"]
+      tldr: "Instantly visualize the color palette of any website or stylesheet by extracting every color code found in its CSS."
+      entity_definition: "Color Palette Extractor (CSS) is a design audit utility that parses CSS source code to identify color declarations. It identifies Hex, RGB, RGBA, HSL, and named colors, presenting them as a visual grid to help designers maintain brand consistency and identify rogue colors."
+      how_it_works: "The tool uses a regex-based parser to scan the CSS text for known color patterns and organizes them into a unique set for visualization."
+      use_cases:
+        - "Auditing brand colors for consistency"
+        - "Extracting palettes from inspiration sites"
+        - "Identifying unused or redundant color codes"
+      features:
+        - "Support for all standard CSS color formats"
+        - "Identification of CSS variables (:root)"
+        - "Visual swatch grid with one-click copy"
+        - "Group colors by frequency"
+      faq:
+        - question: "Can it extract colors from a live URL?"
+        - answer: "Yes, by pasting the URL of a public CSS file, the tool can fetch and parse it instantly."
+        - question: "Does it find colors in inline styles?"
+        - answer: "Yes, if you paste the HTML source, it will scan all style attributes for color codes."
+
+  - name: "Webhook Payload Visualizer"
+    slug: "webhook-visualizer"
+    category: "Developer Tools"
+    icon: "Webhook"
+    subcategory: "api-utilities"
+    tags: ["webhook", "api", "json", "debug", "visualizer"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visualize and debug Webhook payloads"
+      secondary: "Format and inspect incoming JSON from Stripe, GitHub, etc."
+    technical:
+      input_formats: ["json"]
+      output_formats: ["visual-tree"]
+      processing: "client-side"
+    meta:
+      title: "Webhook Payload Visualizer — Debug API Data Online"
+    content:
+      title: "Webhook Visualizer — Professional API Debugging"
+      description: "Visualize and inspect incoming Webhook payloads from services like Stripe, GitHub, and Shopify. A professional utility for debugging complex JSON data structures visually."
+      keywords: ["test webhook payloads online", "visualize incoming webhook data", "debug stripe webhook json free", "webhook inspector online tool", "api data visualization utility", "check webhook payload structure"]
+      tldr: "Stop squinting at raw JSON. Visualize and inspect your webhook payloads with a clear, interactive tree view."
+      entity_definition: "Webhook Payload Visualizer is a diagnostic utility for API development. It takes the raw JSON payload received from a webhook and renders it as an interactive, searchable tree, making it easy to identify nested fields and verify data integrity."
+      how_it_works: "The tool parses the JSON and builds a recursive DOM structure that allows users to expand/collapse nodes and search for specific keys."
+      use_cases:
+        - "Debugging complex Stripe event data"
+        - "Inspecting GitHub pull request payloads"
+        - "Verifying data structures during API integration"
+      features:
+        - "Interactive tree view with collapsible nodes"
+        - "Real-time key search"
+        - "Path-to-key copy (e.g., data.object.id)"
+        - "Automatic type identification"
+      faq:
+        - question: "Can I receive live webhooks here?"
+        - answer: "This tool is for *visualizing* payloads. For a live receiving endpoint, use services like Hookdeck or Webhook.site."
+        - question: "Is my data private?"
+        - answer: "Yes. All visualization happens in your browser; your payload data is never stored on our servers."
+
+  - name: "Browser LocalStorage Auditor"
+    slug: "storage-auditor"
+    category: "Developer Tools"
+    icon: "Database"
+    subcategory: "debug-utilities"
+    tags: ["storage", "localstorage", "debug", "browser", "dev"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Inspect and manage Browser LocalStorage"
+      secondary: "Visualize data usage and clean up web storage"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["table"]
+      processing: "client-side"
+    meta:
+      title: "LocalStorage Auditor — Inspect Browser Data Online"
+    content:
+      title: "Storage Auditor — Professional Web Storage Debugger"
+      description: "Inspect and manage your browser's LocalStorage and SessionStorage. A professional utility for visualizing data usage, debugging web apps, and cleaning up persistent storage."
+      keywords: ["inspect browser local storage online", "debug web storage utility", "check localstorage usage free", "manage sessionstorage online tool", "browser storage auditor free", "clean up web storage online"]
+      tldr: "Gain full visibility into what websites are storing in your browser with our professional storage auditor."
+      entity_definition: "Browser LocalStorage Auditor is a diagnostic utility that provides a user-friendly interface for the `window.localStorage` and `window.sessionStorage` APIs. It allows developers to view, edit, and delete keys, and provides a breakdown of memory usage per domain."
+      how_it_works: "The tool queries the browser's storage APIs and presents the data in a searchable table with size calculations for every entry."
+      use_cases:
+        - "Debugging persistent state in web apps"
+        - "Identifying bloated storage items"
+        - "Privacy auditing of website data"
+      features:
+        - "Searchable table of keys and values"
+        - "Total storage usage calculation"
+        - "One-click key deletion"
+        - "Export storage data as JSON"
+      faq:
+        - question: "Can I see storage for other websites?"
+        - answer: "No. For security reasons, browsers only allow a website to see its own storage (Same-Origin Policy)."
+        - question: "How much data can I store?"
+        - answer: "Most modern browsers allow around 5MB to 10MB of LocalStorage per domain."
+
+  - name: "Browser Feature Compatibility Check"
+    slug: "browser-compat"
+    category: "Developer Tools"
+    icon: "Monitor"
+    subcategory: "debug-utilities"
+    tags: ["browser", "compatibility", "css", "html5", "support"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Check browser support for modern web features"
+      secondary: "Audit CSS, JS, and HTML5 feature compatibility"
+    technical:
+      input_formats: ["none"]
+    output_formats: ["compatibility-report"]
+    processing: "client-side"
+    meta:
+      title: "Browser Compatibility Check — Test Web Feature Support"
+    content:
+      title: "Feature Auditor — Instant Browser Support Test"
+      description: "Check if your browser supports modern web features like CSS Grid, WebGL, and the Web Crypto API. A professional utility for auditing compatibility and debugging cross-browser issues."
+      keywords: ["check browser support for css features", "is grid supported in my browser", "test html5 feature compatibility free", "online browser capability auditor", "check webgl support online", "browser feature test tool"]
+      tldr: "Instantly verify which modern web features are supported by your current browser environment."
+      entity_definition: "Browser Feature Compatibility Check is a diagnostic utility that audits the capabilities of the user's current browser. It tests for the presence of modern APIs and CSS properties, providing a clear 'Supported/Unsupported' report to help developers troubleshoot end-user issues."
+      how_it_works: "The tool runs a series of feature-detection scripts (similar to Modernizr) to verify the availability of various Web APIs and CSS features in real-time."
+      use_cases:
+        - "Debugging why a site looks different for a client"
+        - "Verifying support for new CSS properties"
+        - "Auditing device capabilities for PWAs"
+      features:
+        - "Comprehensive test of CSS, JS, and HTML5 APIs"
+        - "Real-time 'Can I Use' style report"
+        - "Detailed technical strings for support tickets"
+        - "Zero-configuration required"
+      faq:
+        - question: "Is this the same as 'Can I Use'?"
+        - answer: "No. 'Can I Use' tells you general support across all browsers; this tool tells you what is *actually* working in *your* browser right now."
+        - question: "Does it detect mobile features?"
+        - answer: "Yes, it can detect mobile-specific features like Touch Events and Accelerometer support."
+
+  - name: "Text Similarity & Duplicate Scorer"
+    slug: "text-similarity"
+    category: "Content & Writing"
+    icon: "Copy"
+    subcategory: "analysis"
+    tags: ["seo", "content", "plagiarism", "similarity", "analysis"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Calculate similarity between two text blocks"
+      secondary: "Identify duplicate content for SEO and plagiarism checks"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["similarity-score"]
+      processing: "client-side"
+    meta:
+      title: "Text Similarity Scorer — Check for Duplicate Content Online"
+    content:
+      title: "Similarity Auditor — Professional SEO Content Tool"
+      description: "Calculate the mathematical similarity between two pieces of text. Identify duplicate content issues for SEO and verify originality with professional-grade scoring."
+      keywords: ["calculate text similarity online", "check for duplicate content free", "online plagiarism score calculator", "compare text for seo similarity", "content originality checker online", "text overlap percentage tool"]
+      tldr: "Quantify the similarity between two text blocks to avoid SEO penalties and ensure content uniqueness."
+      entity_definition: "Text Similarity & Duplicate Scorer is a linguistic utility for SEOs and editors. It uses algorithms like Levenshtein distance and Jaccard similarity to calculate a percentage of overlap between two texts, helping users identify 'Thin Content' or duplicate descriptions that could harm search rankings."
+      how_it_works: "The tool tokenizes both inputs and calculates the ratio of shared words and phrases, providing a final 'Similarity Score' from 0% to 100%."
+      use_cases:
+        - "Checking for duplicate product descriptions"
+        - "Auditing blog posts for self-plagiarism"
+        - "Comparing version updates for content shifts"
+      features:
+        - "Levenshtein and Jaccard scoring"
+        - "Visual overlap highlighting"
+        - "Phrase-level match detection"
+        - "SEO 'Risk Level' indicator"
+      faq:
+        - question: "What is a 'safe' similarity score?"
+        - answer: "For SEO, keeping content below 30% similarity with other pages is generally recommended."
+        - question: "Is this a plagiarism checker?"
+        - answer: "It is a *similarity* checker. It compares the two texts you provide, but it does not scan the entire internet for matches."
