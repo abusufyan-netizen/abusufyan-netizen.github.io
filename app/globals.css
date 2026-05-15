@@ -70,21 +70,21 @@
   }
 }
 
-/* Base Theme */
+/* Base Theme (Modern IDE Light Palette) */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #2563eb;
-  --primary-foreground: #ffffff;
-  --secondary: #64748b;
-  --muted: #f1f5f9;
-  --muted-foreground: #475569;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
-  --border: #e2e8f0;
-  --ring: #2563eb;
+  --background: #F6F8FA;
+  --foreground: #24292F;
+  --card: #FFFFFF;
+  --card-foreground: #24292F;
+  --primary: #0969DA;
+  --primary-foreground: #FFFFFF;
+  --secondary: #57606A;
+  --muted: #F6F8FA;
+  --muted-foreground: #57606A;
+  --accent: #F6F8FA;
+  --accent-foreground: #24292F;
+  --border: #D0D7DE;
+  --ring: #0969DA;
   --radius: 12px;
 }
 
