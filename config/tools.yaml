@@ -1795,6 +1795,396 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "DNS Propagation Checker"
+    slug: "dns-propagation"
+    category: "Network & Performance"
+    icon: "Globe"
+    subcategory: "dns-utilities"
+    tags: ["dns", "propagation", "networking", "records", "google-dns"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Check DNS propagation status globally"
+      secondary: "Verify A, CNAME, MX, and TXT records across multiple regions"
+    technical:
+      input_formats: ["domain"]
+      output_formats: ["status-map"]
+      processing: "client-side"
+    meta:
+      title: "DNS Propagation Checker — Verify Global DNS Status Online"
+    content:
+      title: "DNS Propagation Checker — Real-Time Global DNS Audit"
+      description: "Check your DNS records propagation across multiple global servers. Verify A, CNAME, MX, and TXT records instantly to ensure your site migration or DNS changes are live."
+      keywords: ["check dns propagation globally online", "verify dns records status", "dns propagation map free", "check mx record propagation", "dns record lookup online", "test dns change global"]
+      tldr: "Verify your DNS changes are live across the globe with our real-time propagation map and multi-record audit tool."
+      entity_definition: "DNS Propagation Checker is a networking utility used to monitor the status of Domain Name System records across various geographic regions. When a DNS record is updated, it takes time for the change to 'propagate' across the internet's recursive servers. This tool queries multiple global nodes to confirm when your changes have reached full visibility."
+      how_it_works: "The tool sends simultaneous DNS queries to a distributed network of public DNS servers (like Google DNS, Cloudflare, and OpenDNS) to compare the results against your expected values."
+      use_cases:
+        - "Verifying site migration completion"
+        - "Checking SSL validation TXT records"
+        - "Troubleshooting email delivery (MX record) issues"
+      features:
+        - "Support for all major record types (A, AAAA, CNAME, MX, TXT, NS)"
+        - "Global server nodes across 5+ continents"
+        - "Visual status indicator (Pass/Fail/Syncing)"
+        - "Real-time refresh capability"
+      faq:
+        - question: "How long does DNS propagation take?"
+        - answer: "It can take anywhere from a few minutes to 48 hours, depending on the TTL (Time to Live) settings of your records."
+        - question: "Why do I see different results in different regions?"
+        - answer: "DNS servers update at different intervals. Some regions may pick up your changes faster than others due to cache expiration."
+
+  - name: "Global Ping Test Online"
+    slug: "ping-test"
+    category: "Network & Performance"
+    icon: "Activity"
+    subcategory: "latency-utilities"
+    tags: ["ping", "latency", "network", "server", "connectivity"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Test website latency from multiple global locations"
+      secondary: "Measure TTFB and response times for server auditing"
+    technical:
+      input_formats: ["domain", "ip"]
+      output_formats: ["data-report"]
+      processing: "client-side"
+    meta:
+      title: "Global Ping Test Online — Measure Website Latency Free"
+    content:
+      title: "Global Ping Test — Monitor Server Response Times"
+      description: "Measure your server's latency from multiple locations around the world. A professional ping tool to audit Time to First Byte (TTFB) and network connectivity for your web applications."
+      keywords: ["test website latency from multiple locations", "global ping tool free", "online ping test for server", "check server response time", "latency monitor for websites", "ping server from usa europe asia"]
+      tldr: "Audit your server's global performance with a high-speed ping test from multiple continents."
+      entity_definition: "Global Ping Test Online is a diagnostic utility that measures the round-trip time (RTT) for data packets sent from various global nodes to a target server. It helps developers and sysadmins identify geographic performance bottlenecks and verify that their server or CDN is responding efficiently to international users."
+      how_it_works: "The tool executes a series of HTTP HEAD or ICMP requests from distributed network nodes, calculating the time elapsed between the request and the arrival of the response."
+      use_cases:
+        - "Identifying regional latency issues"
+        - "Verifying CDN edge node performance"
+        - "Monitoring server uptime and responsiveness"
+      features:
+        - "Multi-region ping simulation"
+        - "Detailed TTFB (Time to First Byte) reporting"
+        - "Average, Min, and Max latency statistics"
+        - "Visual performance charts"
+      faq:
+        - question: "What is a good ping time?"
+        - answer: "For web applications, anything under 100ms is considered good, while under 30ms is excellent."
+        - question: "Does this use ICMP or HTTP?"
+        - answer: "Due to browser security, we use high-precision HTTP timing to simulate real-world web user latency."
+
+  - name: "SSL/TLS Certificate Auditor"
+    slug: "ssl-checker"
+    category: "Security Tools"
+    icon: "Shield"
+    subcategory: "security-audit"
+    tags: ["ssl", "tls", "security", "certificate", "https"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Verify and audit SSL/TLS certificates"
+      secondary: "Check expiration, issuer, and protocol support"
+    technical:
+      input_formats: ["domain"]
+      output_formats: ["audit-report"]
+      processing: "client-side"
+    meta:
+      title: "SSL/TLS Certificate Auditor — Verify Expiration & Security"
+    content:
+      title: "SSL Checker — Audit Your HTTPS Security"
+      description: "Verify your SSL/TLS certificate's expiration date, issuer, and security strength. Ensure your website's encryption is up to date and trusted by all modern browsers."
+      keywords: ["verify ssl certificate expiration online", "check tls version support", "ssl certificate audit tool", "verify https security online", "check ssl issuer and chain", "test website encryption strength"]
+      tldr: "Audit your website's encryption and prevent 'Certificate Expired' errors with our professional SSL/TLS checker."
+      entity_definition: "SSL/TLS Certificate Auditor is a security utility that inspects the digital certificates used to establish HTTPS connections. it identifies the issuing Certificate Authority (CA), validates the expiration window, and checks for support of modern protocols like TLS 1.3, ensuring that user data remains protected during transit."
+      how_it_works: "The tool establishes a secure handshake with the target domain and extracts the public certificate data for analysis."
+      use_cases:
+        - "Preventing accidental SSL expiration"
+        - "Verifying correct certificate installation"
+        - "Auditing security protocol compliance"
+      features:
+        - "Detailed expiration countdown"
+        - "Issuer and Subject info extraction"
+        - "Supported TLS protocol identification"
+        - "Certificate chain validation"
+      faq:
+        - question: "Why is my SSL certificate invalid?"
+        - answer: "Common reasons include expiration, mismatched domain names, or an untrusted issuing authority."
+        - question: "What is the difference between SSL and TLS?"
+        - answer: "TLS is the modern, more secure successor to SSL, though the term 'SSL' is still commonly used to refer to both."
+
+  - name: "HTTP Header Inspector"
+    slug: "header-inspector"
+    category: "Network & Performance"
+    icon: "FileCode"
+    subcategory: "network-audit"
+    tags: ["http", "headers", "networking", "security", "performance"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Inspect and audit HTTP response headers"
+      secondary: "Identify security headers, caching policies, and server info"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["data-table"]
+      processing: "client-side"
+    meta:
+      title: "HTTP Header Inspector — View Response Headers Online"
+    content:
+      title: "HTTP Header Inspector — Audit Your Server Response"
+      description: "Inspect the HTTP response headers of any website. Identify security headers (CSP, HSTS), caching policies, and server information to improve your site's performance and security."
+      keywords: ["view website response headers online", "check security headers report", "inspect http status codes", "audit cache control headers", "check server information headers", "http header analyzer free"]
+      tldr: "Dive deep into your server's communication with an instant audit of all HTTP response headers."
+      entity_definition: "HTTP Header Inspector is a diagnostic networking utility that captures the metadata sent by a web server during an HTTP request. This includes status codes (like 200 OK or 404 Not Found), security directives (like Content-Security-Policy), and performance-related instructions (like Cache-Control)."
+      how_it_works: "The tool makes a server-side request (via proxy) to the target URL and returns the raw and formatted header data for analysis."
+      use_cases:
+        - "Debugging redirect loops and status codes"
+        - "Verifying security header implementation"
+        - "Auditing caching configurations for performance"
+      features:
+        - "Complete list of raw and formatted headers"
+        - "Security header 'Risk Score' assessment"
+        - "Status code explanation and context"
+        - "Identification of server technology and version"
+      faq:
+        - question: "What are security headers?"
+        - answer: "They are HTTP response headers that tell the browser how to behave in terms of security, protecting against XSS and clickjacking."
+        - question: "Why should I hide my server header?"
+        - answer: "Exposing specific server versions can help attackers identify known vulnerabilities; hiding them is a form of 'security by obscurity'."
+
+  - name: "Gzip & Brotli Compression Tester"
+    slug: "compression-test"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "performance-optimization"
+    tags: ["compression", "gzip", "brotli", "performance", "page-speed"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Check if Gzip or Brotli compression is enabled"
+      secondary: "Measure character savings and payload reduction"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["data-report"]
+      processing: "client-side"
+    meta:
+      title: "Gzip & Brotli Compression Tester — Check Page Speed Optimization"
+    content:
+      title: "Compression Tester — Audit Your Content Delivery"
+      description: "Verify if your website is using Gzip or Brotli compression. Measure the exact file size reduction and ensure your server is optimized for high-performance content delivery."
+      keywords: ["check if compression is enabled on website", "test brotli compression online", "gzip compression checker free", "measure website compression savings", "optimize content delivery speed", "check server compression support"]
+      tldr: "Identify if your website is taking advantage of modern compression algorithms to deliver content faster."
+      entity_definition: "Gzip & Brotli Compression Tester is a performance utility that identifies whether a web server is compressing assets before sending them to the client. Modern algorithms like Brotli can reduce text-based files (HTML, CSS, JS) by up to 80%, significantly improving Time to Interactive (TTI) and overall page speed."
+      how_it_works: "The tool requests a target URL with 'Accept-Encoding' headers and checks the 'Content-Encoding' header in the response to verify compression."
+      use_cases:
+        - "Verifying CDN compression settings"
+        - "Optimizing LCP by reducing asset weight"
+        - "Troubleshooting missing compression headers"
+      features:
+        - "Support for Gzip and Brotli identification"
+        - "Calculation of 'Savings Percentage' and file sizes"
+        - "Comparison of compressed vs uncompressed payloads"
+        - "Visual performance optimization tips"
+      faq:
+        - question: "Brotli vs Gzip: which is better?"
+        - answer: "Brotli generally offers better compression ratios for text files, leading to smaller files and faster loads than Gzip."
+        - question: "How do I enable compression?"
+        - answer: "It is usually enabled via server configuration (nginx.conf or .htaccess) or through your CDN provider's settings."
+
+  - name: "DOM Depth & Complexity Analyzer"
+    slug: "dom-analyzer"
+    category: "Network & Performance"
+    icon: "Activity"
+    subcategory: "rendering-optimization"
+    tags: ["dom", "performance", "complexity", "rendering", "optimization"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Audit and visualize DOM tree complexity"
+      secondary: "Identify deep nesting that slows down browser rendering"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["visual-report"]
+      processing: "client-side"
+    meta:
+      title: "DOM Depth & Complexity Analyzer — Audit Rendering Performance"
+    content:
+      title: "DOM Analyzer — Optimize Your Rendering Path"
+      description: "Analyze the complexity of your webpage's DOM structure. Identify deep nesting and excessive nodes that can cause layout shifts and slow down browser rendering performance."
+      keywords: ["visualize dom tree depth", "audit webpage structural complexity", "excessive dom nodes checker", "optimize rendering performance online", "check dom tree for speed", "frontend performance audit tool"]
+      tldr: "Identify and eliminate 'DOM Bloat' to speed up your browser's rendering and improve user interactivity."
+      entity_definition: "DOM Depth & Complexity Analyzer is a frontend performance utility that evaluates the Document Object Model of a page. A large or deeply nested DOM increases memory usage and slows down the browser's style calculations and layout phases, which can negatively impact Core Web Vitals like CLS and FID."
+      how_it_works: "The tool scans the provided HTML, calculates the total node count and maximum nesting depth, and highlights 'complexity hotspots' in the document structure."
+      use_cases:
+        - "Optimizing heavy React or Vue applications"
+        - "Reducing memory consumption for mobile users"
+        - "Identifying unoptimized CMS output"
+      features:
+        - "Total node count calculation"
+        - "Maximum DOM depth identification"
+        - "Visual complexity heatmap"
+        - "Comparison against 'Lighthouse' performance thresholds"
+      faq:
+        - question: "What is a good DOM node count?"
+        - answer: "Lighthouse recommends keeping the total number of DOM nodes below 1,500 and the depth below 32 levels."
+        - question: "Why does a large DOM slow down my site?"
+        - answer: "The browser has to spend more time calculating styles, laying out elements, and re-rendering when anything changes."
+
+  - name: "Critical Path CSS Generator"
+    slug: "critical-css-gen"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "performance-optimization"
+    tags: ["css", "performance", "critical-path", "rendering", "lcp"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Critical Path CSS for above-the-fold content"
+      secondary: "Optimize Largest Contentful Paint (LCP) by inlining styles"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["css", "txt"]
+      processing: "client-side"
+    meta:
+      title: "Critical Path CSS Generator — Optimize Above-the-Fold Rendering"
+    content:
+      title: "Critical CSS Generator — Boost Your LCP Score"
+      description: "Generate the critical CSS needed for your above-the-fold content. Inline these styles to eliminate render-blocking resources and achieve near-instant page loads for better SEO and UX."
+      keywords: ["generate critical css for above the fold", "optimize rendering path tool", "inline critical css generator", "boost lcp score online", "remove render blocking css", "frontend speed optimization helper"]
+      tldr: "Eliminate render-blocking CSS and achieve lightning-fast 'Above-the-Fold' rendering with our critical style generator."
+      entity_definition: "Critical Path CSS Generator is a performance utility that identifies and extracts the minimum CSS required to render the initial viewport of a webpage. By inlining this CSS in the <head> and deferring the rest of the stylesheet, developers can eliminate 'render-blocking' delays and significantly improve the Largest Contentful Paint (LCP) metric."
+      how_it_works: "The tool simulates a viewport-specific render of the page and isolates the CSS rules that affect elements visible on the initial screen load."
+      use_cases:
+        - "Optimizing LCP for high-performance landing pages"
+        - "Improving user experience on slow mobile networks"
+        - "Achieving 100/100 Lighthouse performance scores"
+      features:
+        - "Viewport-specific CSS extraction"
+        - "Support for custom screen dimensions"
+        - "Automatic minification of generated styles"
+        - "Integration guide for inlining styles"
+      faq:
+        - question: "What is 'Above-the-Fold' content?"
+        - answer: "It is the portion of a webpage that is visible to a user without scrolling when the page first loads."
+        - question: "Do I still need my main stylesheet?"
+        - answer: "Yes. You inline the critical CSS and load the main stylesheet asynchronously for the rest of the page content."
+
+  - name: "CDN & Edge node Finder"
+    slug: "cdn-finder"
+    category: "Network & Performance"
+    icon: "Globe"
+    subcategory: "network-audit"
+    tags: ["cdn", "networking", "edge", "infrastructure", "audit"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Identify and audit website CDN providers"
+      secondary: "Detect Cloudflare, Akamai, Fastly, and other edge networks"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["status-report"]
+      processing: "client-side"
+    meta:
+      title: "CDN & Edge node Finder — Identify Website Infrastructure"
+    content:
+      title: "CDN Finder — Audit Global Content Delivery Networks"
+      description: "Identify which Content Delivery Network (CDN) a website is using. Detect providers like Cloudflare, Akamai, and Fastly, and audit edge node locations to understand site infrastructure."
+      keywords: ["identify website cdn provider", "check edge node location", "find website infrastructure online", "detect cloudflare akamai fastly", "cdn audit tool free", "identify reverse proxy server"]
+      tldr: "Uncover the global infrastructure behind any website by identifying its CDN and edge node provider."
+      entity_definition: "CDN & Edge node Finder is a networking utility that analyzes server responses to identify the presence of a Content Delivery Network. It looks for specific HTTP headers, DNS records, and IP ranges associated with major edge providers, giving developers insight into a site's performance and caching architecture."
+      how_it_works: "The tool performs a DNS lookup and inspects HTTP response headers (like 'Server', 'CF-RAY', or 'X-Served-By') to match them against a database of known CDN signatures."
+      use_cases:
+        - "Analyzing competitor infrastructure"
+        - "Verifying your own CDN deployment"
+        - "Troubleshooting edge-level caching issues"
+      features:
+        - "Detection of 20+ major CDN providers"
+        - "Identification of specific edge node locations (when available)"
+        - "Detailed header-based evidence reporting"
+        - "Site infrastructure 'Tech Stack' summary"
+      faq:
+        - question: "Why use a CDN?"
+        - answer: "A CDN reduces latency by serving content from servers physically closer to the user, improving speed and reliability."
+        - question: "Can a site use multiple CDNs?"
+        - answer: "Yes, advanced architectures sometimes use 'Multi-CDN' setups for maximum redundancy and global performance."
+
+  - name: "WHOIS Lookup (Privacy Focus)"
+    slug: "whois-lookup"
+    category: "Network & Performance"
+    icon: "Search"
+    subcategory: "domain-utilities"
+    tags: ["whois", "domain", "privacy", "ownership", "expiry"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Check domain ownership and expiration details"
+      secondary: "Audit domain privacy and registrar information"
+    technical:
+      input_formats: ["domain"]
+      output_formats: ["data-report"]
+      processing: "client-side"
+    meta:
+      title: "WHOIS Lookup — Check Domain Ownership & Expiry Online"
+    content:
+      title: "WHOIS Lookup — Secure Domain Information Audit"
+      description: "Check the ownership, registrar, and expiration details of any domain name. Our privacy-focused WHOIS tool provides instant access to domain registration records without tracking your searches."
+      keywords: ["check domain ownership and expiry", "whois database search online", "domain registrar lookup free", "find domain owner information", "check domain registration date", "secure whois tool for developers"]
+      tldr: "Access global domain registration records instantly with our secure, privacy-focused WHOIS lookup tool."
+      entity_definition: "WHOIS Lookup (Privacy Focus) is a utility for querying the official databases that store information about registered domain names. It provides critical data such as the registration date, the registrar (e.g., GoDaddy, Namecheap), and the current name servers, which is essential for business intelligence and technical troubleshooting."
+      how_it_works: "The tool queries regional WHOIS servers and aggregates the results into a standardized, easy-to-read format."
+      use_cases:
+        - "Checking domain availability for new projects"
+        - "Verifying competitor domain expiration dates"
+        - "Identifying technical contact info for security reports"
+      features:
+        - "Instant registration and expiry dates"
+        - "Detailed Registrar information"
+        - "Name server (NS) identification"
+        - "Privacy-protected record flagging"
+      faq:
+        - question: "What is WHOIS privacy?"
+        - answer: "It is a service that hides a domain owner's personal contact information (like phone and email) from the public WHOIS database."
+        - question: "Why is the owner information missing?"
+        - answer: "Many owners use 'Privacy Protection' or fall under GDPR regulations, which redact personal details from public view."
+
+  - name: "IP Geolocation Finder"
+    slug: "ip-geolocation"
+    category: "Network & Performance"
+    icon: "MapPin"
+    subcategory: "network-audit"
+    tags: ["ip", "geolocation", "network", "server", "map"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Locate IP addresses on a map online"
+      secondary: "Identify server physical location and ISP data"
+    technical:
+      input_formats: ["ip", "domain"]
+      output_formats: ["visual-map"]
+      processing: "client-side"
+    meta:
+      title: "IP Geolocation Finder — Locate Servers on Map Online"
+    content:
+      title: "IP Geolocation — Find Physical Server Locations"
+      description: "Locate any IP address or domain on a global map. Identify the physical server location, ISP provider, and approximate coordinates for any web service or user."
+      keywords: ["locate ip address on map online", "find server physical location", "ip address country and city finder", "check isp of an ip", "visual ip geolocation tool", "find server data center location"]
+      tldr: "Visualize the physical location of any IP address or domain with our precision geolocation and ISP finder."
+      entity_definition: "IP Geolocation Finder is a networking utility that maps an IP address to a geographic location. This data includes the country, city, and approximate latitude/longitude, as well as information about the Internet Service Provider (ISP) and organization that owns the IP block."
+      how_it_works: "The tool queries high-precision geolocation databases to correlate the IP address with known data center and provider locations."
+      use_cases:
+        - "Verifying server data center proximity"
+        - "Investigating suspicious login attempts"
+        - "Understanding user geographic distribution"
+      features:
+        - "Visual map integration"
+        - "Country, City, and Region identification"
+        - "ISP and Organization data extraction"
+        - "Latitude and Longitude coordinates"
+      faq:
+        - question: "How accurate is IP geolocation?"
+        - answer: "It is very accurate at the country level, but the city-level accuracy can vary depending on the provider and IP type."
+        - question: "Does this show my home address?"
+        - answer: "No. IP geolocation usually points to the nearest ISP exchange or data center, not a specific house or building."
+
   - name: "Meta Description Length Checker"
     slug: "meta-length-checker"
     category: "SEO & Search Optimization"
