@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'WebToolkit Pro - Premium Web Toolkit for Modern Engineering',
-  description: 'Access 40+ secure, client-side developer tools in our free WebToolkit Pro. High-performance utilities for JSON formatting, SEO optimization, and enterprise engineering workflows.',
+  title: 'WebToolkit Pro - 150+ Premium Web Toolkit Tools for Engineers',
+  description: 'Access 150+ secure, client-side developer tools in our free WebToolkit Pro. High-performance utilities for JSON formatting, SEO optimization, and enterprise engineering workflows.',
   keywords: ['wtkpro', 'WebToolkit', 'WebToolkit Pro', 'web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
   alternates: {
     canonical: 'https://wtkpro.site',
@@ -124,7 +124,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/tools" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
-              View All 40+ Tools <ArrowRight className="w-4 h-4" />
+              View All 150+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -455,7 +455,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link href="https://www.severancecalculator.xyz/" target="_blank" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
+            <Link 
+              href="https://www.severancecalculator.xyz/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group"
+            >
               <div className="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 border border-amber-500/20 group-hover:scale-110 transition-transform">
                 <Star className="w-6 h-6 text-amber-500" />
               </div>
@@ -466,7 +471,12 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="https://tradeconvert.pro" target="_blank" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
+            <Link 
+              href="https://tradeconvert.pro" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group"
+            >
               <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
                 <RefreshCw className="w-6 h-6 text-emerald-500" />
               </div>

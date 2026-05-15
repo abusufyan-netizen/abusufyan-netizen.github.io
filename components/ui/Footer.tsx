@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
+            <Link href="/" aria-label="WebToolkit Pro Home" className="flex items-center gap-2 mb-6 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
               <Logo light />
             </Link>
             <p className="text-[11px] leading-relaxed font-medium mb-6 text-[#4A6080]">

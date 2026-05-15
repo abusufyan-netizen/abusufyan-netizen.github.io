@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wtkpro.site',
   },
-  title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
-  description: 'Access the complete Web Toolkit online. 50+ free premium developer tools including JSON formatters, XML beautifiers, and SEO utilities.',
+  title: 'WebToolkit Pro (WTK) | 150+ Premium Web Toolkit Online Tools',
+  description: 'Access the complete Web Toolkit online. 150+ free premium developer tools including JSON formatters, XML beautifiers, and SEO utilities.',
   keywords: ['wtk', 'wtkpro', 'Web Toolkit', 'Web Toolkit Online', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools'],
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -61,16 +61,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
-    description: 'Access the most complete Web Toolkit online. 50+ free premium developer tools and engineering journals.',
+    title: 'WebToolkit Pro (WTK) | 150+ Premium Web Toolkit Online Tools',
+    description: 'Access the most complete Web Toolkit online. 150+ free premium developer tools and engineering journals.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [
       {
-        url: 'https://wtkpro.site/og-image.png?v=2',
+        url: 'https://wtkpro.site/og-image.png?v=3',
         width: 1200,
         height: 630,
-        alt: 'WebToolkit Pro - Professional Developer Tools',
+        alt: 'WebToolkit Pro - 150+ Professional Developer Tools',
       },
     ],
     locale: 'en_US',
@@ -78,9 +78,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WebToolkit Pro (WTK) | 50+ Premium Developer Tools',
-    description: 'WebToolkit Pro offers 50+ free premium developer tools. Secure, fast, and optimized for 2026 standards.',
-    images: ['https://wtkpro.site/og-image.png?v=2'],
+    title: 'WebToolkit Pro (WTK) | 150+ Premium Developer Tools',
+    description: 'WebToolkit Pro offers 150+ free premium developer tools. Secure, fast, and optimized for 2026 standards.',
+    images: ['https://wtkpro.site/og-image.png?v=3'],
     creator: '@WebToolKitPro',
   },
   icons: {

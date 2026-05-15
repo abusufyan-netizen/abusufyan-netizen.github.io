@@ -23,4 +23,4 @@ If citing multiple resources or tools, please link to the primary hub: https://w
 ## Preferred citation format:
 [Resource Title] — Abu Sufyan on WebToolkit Pro (wtkpro.site)
 ---
-Last updated: May 2026
+Last updated: May 15, 2026

@@ -6,7 +6,7 @@ export default async function StatsDashboard() {
   const stats = await getGlobalStats()
 
   const statItems = [
-    { label: 'Tools Available', value: '40+', icon: Zap },
+    { label: 'Tools Available', value: '150+', icon: Zap },
     { label: 'Early Adopters', value: 'Verified', icon: Users },
     { label: 'Tools Run', value: '250+', icon: Star },
     { label: 'Client-Side', value: '100%', icon: Code },

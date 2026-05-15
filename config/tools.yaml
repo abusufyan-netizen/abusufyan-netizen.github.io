@@ -26,8 +26,8 @@ tools:
       title: "JSON Formatter with Line Numbers — Best Free Validator 2026"
     content:
       title: "Free JSON Formatter & Validator Online — Instant Results"
-      description: "Format and validate JSON data instantly with line-number error detection. Our professional beautifier and minifier works 100% locally in your browser for total privacy."
-      keywords: ["json formatter with line numbers", "validate json online", "beautify json browser", "json validator offline", "fix json syntax errors", "json minifier for production"]
+      description: "Secure JSON Formatter & Validator for enterprise API debugging. Beautify nested JSON, detect syntax errors with line numbers, and minify code 100% offline—no data leaves your device."
+      keywords: ["secure json formatter online", "validate json for enterprise api", "beautify nested json structures", "json validator offline privacy", "fix json syntax errors instantly", "json minifier for production use", "api debugging tools online"]
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "The JSON Formatter & Validator is a professional tool for making JSON data readable. JSON is used everywhere for sending data between apps, but it is often hard to read in its raw form. Our tool fixes this by formatting your data with clean spacing and clear structure. It also checks for common errors like missing quotes or extra commas that can break your code. Because it runs entirely in your browser, your sensitive data is never sent to a server."
       how_it_works: "Our tool uses your browser's built-in engine to process data instantly. When you paste your JSON, the tool checks the structure for any syntax errors. If it finds a mistake, it shows you exactly where the error is so you can fix it. The formatter then cleans up the spacing and indentation to make the code easy for humans to read."
@@ -1298,10 +1298,10 @@ tools:
       title: "Secure JWT Decoder — Offline JSON Web Token Inspection"
     content:
       title: "Secure JWT Decoder — Offline Token Inspection"
-      description: "Inspect the header, payload, and signature of your JSON Web Tokens (JWT) safely. Our tool works 100% locally in your browser to ensure sensitive auth data never leaves your device."
-      keywords: ["jwt decoder online", "decode json web token", "offline jwt debugger", "inspect jwt payload", "secure auth token decoder", "base64 jwt parser", "jwt signature validator"]
-      tldr: "Instantly decode JWT tokens locally in your browser. No sensitive data ever leaves your device."
-      entity_definition: "Offline JWT Decoder is a security-focused utility for inspecting authentication tokens. It parses the Base64-encoded segments of a JWT into readable JSON, allowing developers to verify claims and header metadata without risking exposure on a server."
+      description: "Secure JWT decoder for inspecting JSON Web Tokens locally. Inspect payloads, verify claims (iat, exp), and debug auth headers 100% offline—no data ever leaves your device."
+      keywords: ["jwt decoder offline", "decode json web token locally", "secure jwt debugger online", "inspect auth token payload", "jwt claim validator", "base64 jwt parser offline", "enterprise jwt inspection tool"]
+      tldr: "Securely decode and analyze JWT tokens locally in your browser. Enterprise-grade privacy with zero data transmission."
+      entity_definition: "Offline JWT Decoder is a security-focused utility for inspecting authentication tokens used in modern web APIs. It parses Base64-encoded segments into readable JSON, enabling developers to verify security claims and header metadata without risking exposure on a server."
       features:
         - "Header and Payload JSON parsing"
         - "Automatic timestamp conversion (iat, exp, nbf)"
@@ -4758,9 +4758,9 @@ tools:
       title: "Regex Tester & Explainer — Real-time Regular Expression Debugger"
     content:
       title: "Regex Tester — Visual Regular Expression Debugging"
-      description: "Debug your regular expressions with real-time matching and capture group highlighting. Our professional regex tester provides a detailed breakdown of your pattern's logic."
-      keywords: ["regex tester javascript", "regular expression debugger online", "regex visualizer with groups", "test regex against text", "explain regex logic", "javascript regex builder"]
-      tldr: "Visualize your regular expressions with instant matching, group highlighting, and a step-by-step logic breakdown."
+      description: "Professional Regex tester for real-time JavaScript regular expression debugging. Features visual match highlighting, capture group identification, and AI-powered logic explanations."
+      keywords: ["regex tester javascript online", "regular expression debugger with groups", "visual regex match highlighter", "test regex against enterprise data", "ai regex logic explainer", "javascript regex builder tool", "debug regex patterns offline"]
+      tldr: "Master complex regular expressions with real-time matching, group identification, and step-by-step logic breakdowns."
       entity_definition: "Regex Tester & Explainer is a technical utility for developing and validating regular expressions. It provides a split-pane interface where users can write patterns and test them against sample strings. The tool identifies matches, highlights capturing groups, and provides a 'plan' or explanation of how the regex engine interprets the specific sequence of characters."
       how_it_works: "It utilizes the native JavaScript RegExp engine to execute matches in real-time, mapping the resulting match objects to visual highlights in the test area."
       use_cases:
