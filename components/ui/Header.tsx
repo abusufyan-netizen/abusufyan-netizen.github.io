@@ -41,25 +41,25 @@ export default function Header() {
           </Link>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-2 lg:gap-10 xl:gap-14">
-            <div className="flex items-center gap-1 lg:gap-4">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-8 xl:gap-16 2xl:gap-24 transition-all duration-500">
+            <div className="flex items-center gap-2 lg:gap-4 xl:gap-6">
               {navLinks.filter(l => l.name !== 'Submit Tool').map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] text-gray-500 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4] transition-all px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5"
+                  className="text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.25em] text-gray-500 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4] transition-all px-4 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
             
-            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47] hidden lg:block" />
+            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47] hidden xl:block opacity-50" />
             
-            <div className="flex items-center gap-4 lg:gap-8">
+            <div className="flex items-center gap-6 xl:gap-10">
               <Link 
                 href="/submit-tool" 
-                className="hidden lg:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-xl px-6 py-3 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 transition-all"
+                className="hidden xl:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-xl px-8 py-3.5 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 hover:shadow-2xl transition-all whitespace-nowrap"
               >
                 Submit Tool
               </Link>
@@ -102,7 +102,7 @@ export default function Header() {
           ))}
           <div className="mt-4 pt-6 border-t border-gray-100 dark:border-[#1E2D47] space-y-4">
             <Link 
-              href="/tools/" 
+              href="/tools" 
               onClick={() => setIsOpen(false)}
               className="w-full py-5 rounded-[12px] text-lg font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] flex items-center justify-center shadow-xl shadow-blue-500/10"
             >

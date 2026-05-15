@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     canonical: 'https://wtkpro.site',
   },
   title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
-  description: 'Access the most complete Web Toolkit online. 50+ free premium developer tools including JSON formatters, XML beautifiers, PHP serializers, and SEO audit utilities.',
+  description: 'Access the complete Web Toolkit online. 50+ free premium developer tools including JSON formatters, XML beautifiers, and SEO utilities.',
   keywords: ['wtk', 'wtkpro', 'Web Toolkit', 'Web Toolkit Online', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools'],
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',

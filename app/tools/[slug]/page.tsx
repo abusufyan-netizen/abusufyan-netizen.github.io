@@ -33,9 +33,14 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const tool = getToolBySlug(params.slug)
   if (!tool) return {}
 
-  const baseTitle = `${tool.name} | Best Free Online ${tool.category} 2026`
+  const baseTitle = `${tool.name} | Best Online ${tool.category} 2026`
   const title = tool.meta?.title || (baseTitle.length <= 60 ? baseTitle : `${tool.name} | WebToolkit Pro`)
-  const description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
+  let description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
+  
+  // Truncate description to 155 chars for safety (SEO pixel limit)
+  if (description.length > 155) {
+    description = description.substring(0, 152) + '...'
+  }
   
   // Use dedicated keywords if available, fallback to tags
   const keywords = tool.content?.keywords 

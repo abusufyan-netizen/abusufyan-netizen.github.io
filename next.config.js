@@ -14,9 +14,30 @@ const nextConfig = {
       },
     ]
   },
-  // Ensure long-term caching for static assets
+  // Ensure long-term caching for static assets and security hardening
   async headers() {
     return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
       {
         // Cache static assets but EXCLUDE robots.txt and sitemap.xml
         // Using a negative lookahead to exclude these critical files

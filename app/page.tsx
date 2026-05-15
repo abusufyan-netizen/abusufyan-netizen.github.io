@@ -59,7 +59,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/tools/"
+              href="/tools"
               className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
             >
               Explore All Tools <ArrowRight className="w-5 h-5 ml-2" />
@@ -122,7 +122,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
+            <Link href="/tools" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
               View All 40+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default function Home() {
           <p className="text-[var(--font-size-lg)] text-blue-50 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
             Join thousands of developers who use WebToolkit Pro every day to build better, faster, and more securely.
           </p>
-          <Link href="/tools/" className="inline-flex items-center gap-3 bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all">
+          <Link href="/tools" className="inline-flex items-center gap-3 bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all">
             Get Started Free <ArrowRight className="w-6 h-6" />
           </Link>
         </div>

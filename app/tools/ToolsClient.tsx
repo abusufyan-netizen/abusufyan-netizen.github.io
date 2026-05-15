@@ -125,7 +125,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
         </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
-        <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Directory' : `${activeCategory} Suite`} className="mb-0" />
+        <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Tools Catalog' : `${activeCategory} Suite Catalog`} className="mb-0" />
         
         <div className="flex items-center gap-2 bg-gray-100 dark:bg-[#0D1526] p-1 rounded-xl border border-gray-200 dark:border-[#1E2D47]">
           <button 
@@ -278,7 +278,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
 
       {/* SEO Hub Links */}
       <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47]">
-        <SectionHeading number="02" title="Engineering Hubs" className="mb-12" />
+        <SectionHeading number="02" title="Specialized Engineering Hubs" className="mb-12" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {categories.filter(c => c !== 'All').map(category => {
             const slug = category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
