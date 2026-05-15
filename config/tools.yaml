@@ -1794,3 +1794,589 @@ tools:
           value: "20MB"
         - label: "Privacy"
           value: "100% Local"
+
+  - name: "Cron Expression Generator"
+    slug: "cron-generator"
+    category: "Developer Tools"
+    icon: "Clock"
+    subcategory: "scheduling-tools"
+    tags: ["cron", "crontab", "linux", "scheduler", "automation"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Build and explain Crontab schedules"
+      secondary: "Visual cron builder for Linux and Cloud jobs"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Cron Expression Generator & Explainer — Human-Readable Crontab"
+    content:
+      title: "Cron Expression Generator — Build Linux Crontab Schedules"
+      description: "Create and explain Crontab expressions with our visual cron builder. Get human-readable descriptions of your task schedules for Linux, AWS, and Google Cloud jobs."
+      keywords: ["cron expression generator online", "crontab builder linux", "cron schedule explainer", "generate cron jobs for aws", "human readable cron expressions", "crontab syntax helper"]
+      tldr: "Turn complex cron syntax into human-readable schedules and generate production-ready crontab strings instantly."
+      entity_definition: "Cron Expression Generator is a specialized utility for defining recurring task schedules in Unix-like operating systems. It translates the five-field crontab syntax (minute, hour, day, month, day-of-week) into clear, plain-English descriptions. This tool is essential for DevOps engineers and system administrators to prevent scheduling errors in production environments."
+      how_it_works: "Our engine parses each field of the cron string, applying standard crontab logic to calculate the next execution times and providing a natural language summary of the schedule."
+      use_cases:
+        - "Setting up automated database backups"
+        - "Scheduling periodic log rotations"
+        - "Configuring cloud function execution intervals"
+      features:
+        - "Visual dropdown-based schedule builder"
+        - "Real-time human-readable explanation"
+        - "Next 5 execution times preview"
+        - "Support for non-standard cron symbols"
+      faq:
+        - question: "What is a Cron job?"
+        - answer: "A cron job is a Linux command used for scheduling tasks to be executed periodically in the background."
+        - question: "Does this support 6-field cron (Quartz)?"
+        - answer: "Currently, we focus on the standard 5-field Linux crontab syntax for maximum compatibility."
+
+  - name: "Regex Tester & Explainer"
+    slug: "regex-tester"
+    category: "Developer Tools"
+    icon: "Search"
+    subcategory: "code-utilities"
+    tags: ["regex", "regular-expression", "tester", "javascript", "parsing"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Test and debug Regular Expressions in real-time"
+      secondary: "Visual regex matching with group capture highlights"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Regex Tester & Explainer — Real-time Regular Expression Debugger"
+    content:
+      title: "Regex Tester — Visual Regular Expression Debugging"
+      description: "Debug your regular expressions with real-time matching and capture group highlighting. Our professional regex tester provides a detailed breakdown of your pattern's logic."
+      keywords: ["regex tester javascript", "regular expression debugger online", "regex visualizer with groups", "test regex against text", "explain regex logic", "javascript regex builder"]
+      tldr: "Visualize your regular expressions with instant matching, group highlighting, and a step-by-step logic breakdown."
+      entity_definition: "Regex Tester & Explainer is a technical utility for developing and validating regular expressions. It provides a split-pane interface where users can write patterns and test them against sample strings. The tool identifies matches, highlights capturing groups, and provides a 'plan' or explanation of how the regex engine interprets the specific sequence of characters."
+      how_it_works: "It utilizes the native JavaScript RegExp engine to execute matches in real-time, mapping the resulting match objects to visual highlights in the test area."
+      use_cases:
+        - "Validating input form patterns"
+        - "Extracting data from log files"
+        - "Refining complex string replacement logic"
+      features:
+        - "Live matching as you type"
+        - "Detailed capture group identification"
+        - "Step-by-step regex logic explanation"
+        - "Support for global and multi-line flags"
+      faq:
+        - question: "Is my data sent to a server?"
+        - answer: "No. All regex matching happens locally in your browser, ensuring your test strings remain private."
+        - question: "Which regex dialect does this use?"
+        - answer: "It uses the standard ECMAScript (JavaScript) regex engine."
+
+  - name: "JWT Debugger & Inspector"
+    slug: "jwt-debugger"
+    category: "Security Tools"
+    icon: "Shield"
+    subcategory: "auth-utilities"
+    tags: ["jwt", "auth", "security", "token", "debugger"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Decode and inspect JSON Web Tokens (JWT)"
+      secondary: "Verify payload and header data 100% locally"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["json"]
+      processing: "client-side"
+    meta:
+      title: "JWT Debugger — Decode & Inspect Tokens Locally"
+    content:
+      title: "JWT Debugger — Inspect JSON Web Tokens Securely"
+      description: "Decode and inspect your JSON Web Tokens (JWT) without sending sensitive data to any server. Verify headers, payloads, and claims 100% locally in your browser."
+      keywords: ["jwt debugger online", "decode jwt locally", "inspect bearer token", "json web token decoder", "verify jwt payload", "secure jwt inspector"]
+      tldr: "Decode and analyze JWT tokens securely in your browser—no data is ever transmitted to a server, keeping your credentials safe."
+      entity_definition: "JWT Debugger & Inspector is a security utility for analyzing JSON Web Tokens used in modern authentication. It splits the encoded Base64 string into its three constituent parts: Header, Payload, and Signature. This allows developers to verify issuer data, expiration times, and custom claims during API development and debugging."
+      how_it_works: "The tool performs a Base64-URL decode on the segments of the token and parses the resulting strings into formatted JSON blocks for easy inspection."
+      use_cases:
+        - "Debugging OAuth2/OpenID Connect integrations"
+        - "Verifying token expiration and claims"
+        - "Identifying token structure issues"
+      features:
+        - "Instant Header and Payload decoding"
+        - "Formatted JSON output with syntax highlighting"
+        - "Automatic claim validation (exp, iat, sub)"
+        - "100% local and private processing"
+      faq:
+        - question: "Can this verify the token signature?"
+        - answer: "It can decode the signature part, but full verification requires the private key, which you should never paste into a web tool."
+        - question: "Is it safe to paste my production tokens?"
+        - answer: "Because we process 100% on the client-side, your token never leaves your device."
+
+  - name: "Markdown to HTML Converter"
+    slug: "markdown-to-html"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "data-conversion"
+    tags: ["markdown", "html", "converter", "documentation", "github-flavored"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert Markdown to production-ready HTML"
+      secondary: "GitHub-flavored markdown support with live preview"
+    technical:
+      input_formats: ["md", "txt"]
+      output_formats: ["html", "txt"]
+      processing: "client-side"
+    meta:
+      title: "Markdown to HTML Converter — Instant GitHub-Flavored Preview"
+    content:
+      title: "Markdown to HTML Converter — Fast Documentation Tool"
+      description: "Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation."
+      keywords: ["markdown to html converter online", "md to html with preview", "convert gfm to html", "markdown documentation builder", "github flavored markdown editor", "online markdown renderer"]
+      tldr: "Convert Markdown to clean HTML with real-time preview and full support for GitHub-flavored syntax."
+      entity_definition: "Markdown to HTML Converter is a content utility that translates lightweight markup into standard web elements. It supports tables, task lists, and syntax highlighting, making it an essential tool for developers preparing README files, blog posts, or technical documentation for web publication."
+      how_it_works: "Our engine uses a high-performance markdown parser that maps GFM syntax to semantic HTML5 tags, ensuring accessibility and structural integrity."
+      use_cases:
+        - "Preparing GitHub READMEs for web publication"
+        - "Converting notes into blog post drafts"
+        - "Rapid prototyping of documentation pages"
+      features:
+        - "Side-by-side live preview"
+        - "GitHub-Flavored Markdown (GFM) support"
+        - "Minified or formatted HTML output"
+        - "Drag-and-drop file support"
+      faq:
+        - question: "What flavor of Markdown is supported?"
+        - answer: "We support CommonMark and the widely used GitHub-Flavored Markdown (GFM)."
+        - question: "Can I use custom CSS for the preview?"
+        - answer: "The preview uses our premium brand design system for a clean, professional look."
+
+  - name: "Curl to Fetch/Axios Converter"
+    slug: "curl-converter"
+    category: "Developer Tools"
+    icon: "ArrowRightLeft"
+    subcategory: "api-tools"
+    tags: ["curl", "fetch", "axios", "api", "javascript"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert Curl commands to JavaScript request code"
+      secondary: "Support for Fetch API and Axios request formats"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["js"]
+      processing: "client-side"
+    meta:
+      title: "Curl to Fetch/Axios Converter — Instant API Request Scaffolding"
+    content:
+      title: "Curl Converter — Convert API Requests to JavaScript"
+      description: "Convert any Curl command into clean, production-ready JavaScript code using the Fetch API or Axios. Save hours of manual API request scaffolding."
+      keywords: ["convert curl command to fetch", "curl to axios online", "curl to javascript converter", "generate api request from curl", "api scaffolding tool", "curl to fetch request generator"]
+      tldr: "Instantly turn your terminal Curl commands into clean, production-ready JavaScript Fetch or Axios requests."
+      entity_definition: "Curl to Fetch/Axios Converter is a developer productivity utility that parses shell commands and generates equivalent high-level language code. It extracts headers, methods, and request bodies, mapping them to the modern syntax used in frontend and Node.js environments."
+      how_it_works: "The tool Tokenizes the curl string, identifies flags (like -H, -X, -d), and reconstructs the logic into a JavaScript object structure."
+      use_cases:
+        - "Moving API tests from terminal to codebase"
+        - "Rapid prototyping of frontend integrations"
+        - "Standardizing API request patterns in teams"
+      features:
+        - "One-click conversion to Fetch or Axios"
+        - "Support for custom headers and auth tokens"
+        - "Handling of complex JSON and form payloads"
+        - "Clean, commented code output"
+      faq:
+        - question: "Does it support all Curl flags?"
+        - answer: "It supports the most common flags used for web APIs, including methods, headers, and data payloads."
+        - question: "Is my API key safe?"
+        - answer: "Yes. All parsing happens locally in your browser. Your keys are never transmitted to our servers."
+
+  - name: "Visual Code Diff Checker"
+    slug: "code-diff"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "code-utilities"
+    tags: ["diff", "compare", "code", "text-comparison", "debugging"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Compare two code snippets visually"
+      secondary: "Identify additions, deletions, and modifications instantly"
+    technical:
+      input_formats: ["text", "code"]
+      output_formats: ["visual"]
+      processing: "client-side"
+    meta:
+      title: "Visual Code Diff Checker — Compare Snippets Side-by-Side"
+    content:
+      title: "Code Diff Checker — Compare Text and Code Snippets"
+      description: "Identify changes between two versions of code or text. Our visual diff tool provides side-by-side comparison with clear highlighting for additions and deletions."
+      keywords: ["visual code diff tool", "compare two code snippets online", "side-by-side text comparison", "find differences in code", "online diff checker free", "code version comparator"]
+      tldr: "Quickly spot the differences between two versions of code or text with our professional, side-by-side visual diff engine."
+      entity_definition: "Visual Code Diff Checker is a diagnostic utility that identifies variances between two text buffers. It uses the Myers diff algorithm to calculate the most efficient path of changes, presenting them in a highly readable format with line-by-line and character-level highlights."
+      how_it_works: "The tool compares the 'Original' and 'Modified' inputs, calculating insertions and deletions to generate a visual delta map."
+      use_cases:
+        - "Reviewing code changes before commit"
+        - "Identifying accidental edits in config files"
+        - "Comparing minified vs beautified versions of code"
+      features:
+        - "Side-by-side and Unified view modes"
+        - "Character-level change highlighting"
+        - "Sync-scrolling for long files"
+        - "Zero-lag processing for large snippets"
+      faq:
+        - question: "Can it compare large files?"
+        - answer: "Yes, our engine is optimized to handle snippets up to 5,000 lines without performance degradation."
+        - question: "Is this safe for proprietary code?"
+        - answer: "Absolutely. Comparison happens 100% locally in your browser."
+
+  - name: "HTML Entity Encoder/Decoder"
+    slug: "html-entities"
+    category: "Developer Tools"
+    icon: "Type"
+    subcategory: "text-formatting"
+    tags: ["html", "entities", "encoder", "escaping", "xss-prevention"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Escape and unescape HTML entities"
+      secondary: "Safe-mode encoding for code display and security"
+    technical:
+      input_formats: ["text", "html"]
+      output_formats: ["text", "html"]
+      processing: "client-side"
+    meta:
+      title: "HTML Entity Encoder/Decoder — Securely Escape Characters"
+    content:
+      title: "HTML Entity Tool — Encode and Decode HTML Characters"
+      description: "Prepare your code for the web by encoding special characters into HTML entities. Our secure tool handles escaping for XSS prevention and documentation snippets."
+      keywords: ["html entity encoder online", "escape html characters", "decode html entities free", "xss prevention tool", "html character reference guide", "encode code for website"]
+      tldr: "Safely encode special characters for web display or decode HTML entities back into plain text with our secure, offline tool."
+      entity_definition: "HTML Entity Encoder/Decoder is a web development utility for managing special characters that have reserved meanings in HTML. It converts symbols like < and > into their safe equivalents (&lt; and &gt;), preventing browser misinterpretation and Cross-Site Scripting (XSS) vulnerabilities."
+      how_it_works: "The tool uses an internal mapping of all standard HTML5 character references to perform bi-directional transformation on the input string."
+      use_cases:
+        - "Displaying code snippets in blog posts"
+        - "Sanitizing user input for security"
+        - "Decoding legacy markup data"
+      features:
+        - "Full HTML5 entity support"
+        - "One-click encoding for XSS safety"
+        - "Bulk processing of text blocks"
+        - "Clean, formatted output"
+      faq:
+        - question: "Why should I encode HTML?"
+        - answer: "To prevent the browser from executing symbols as code and to ensure special characters display correctly."
+        - question: "Does it support Unicode?"
+        - answer: "Yes, it can handle a wide range of Unicode characters and their corresponding entities."
+
+  - name: "Dotenv (.env) Generator"
+    slug: "dotenv-generator"
+    category: "Developer Tools"
+    icon: "Settings"
+    subcategory: "scaffolding-tools"
+    tags: ["dotenv", "env", "configuration", "security", "nodejs"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate secure environment file templates"
+      secondary: "Standardized scaffolding for Node.js, Python, and Go projects"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["env", "txt"]
+      processing: "client-side"
+    meta:
+      title: "Dotenv (.env) File Generator — Secure Project Scaffolding"
+    content:
+      title: "Dotenv Generator — Build Standardized Environment Files"
+      description: "Generate professional .env file templates for your projects. Standardized scaffolding for database credentials, API keys, and server configurations."
+      keywords: ["generate .env file online", "dotenv template builder", "secure env file scaffolding", "nodejs environment config generator", "create .env for production", "dotenv best practices tool"]
+      tldr: "Quickly scaffold professional .env files with best-practice templates for any modern engineering environment."
+      entity_definition: "Dotenv (.env) Generator is a project setup utility that provides templates for environment-specific configurations. It helps developers create standardized, well-commented files for storing secrets and settings, ensuring consistency across development, staging, and production environments."
+      how_it_works: "It provides a selection of common environment variables for different frameworks, allowing users to customize names and values before generating the final text file."
+      use_cases:
+        - "Scaffolding new backend projects"
+        - "Standardizing team environment variables"
+        - "Preparing .env.example files for GitHub"
+      features:
+        - "Presets for major frameworks (Express, Django, etc.)"
+        - "Automatic comment generation for documentation"
+        - "One-click .env file download"
+        - "Private, local generation"
+      faq:
+        - question: "Should I commit .env files to Git?"
+        - answer: "No! Always add .env to your .gitignore. Only commit .env.example files without real secrets."
+        - question: "Are my secrets safe here?"
+        - answer: "Yes. Since this is a client-side tool, your values never leave your browser."
+
+  - name: "Git Command Helper"
+    slug: "git-helper"
+    category: "Developer Tools"
+    icon: "Code"
+    subcategory: "workflow-tools"
+    tags: ["git", "vcs", "command-line", "workflow", "helper"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate and explain common Git commands"
+      secondary: "Workflow-based helper for branching, merging, and fixing errors"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Git Command Helper — Interactive Git Workflow Scaffolding"
+    content:
+      title: "Git Command Helper — Fix Errors & Build Workflows"
+      description: "Find the exact Git commands you need to rename branches, undo commits, and resolve merge conflicts. An interactive helper for mastering version control."
+      keywords: ["git command helper online", "fix git merge conflicts commands", "rename git branch command", "undo last commit git", "git workflow generator", "common git commands guide"]
+      tldr: "Stop searching StackOverflow—instantly find the exact Git commands you need for any branching or troubleshooting scenario."
+      entity_definition: "Git Command Helper is a workflow utility designed to demystify complex Version Control commands. It provides a scenario-based interface where developers can select an objective (e.g., 'Undo a commit') and receive the precise CLI commands and explanations needed to execute it safely."
+      how_it_works: "The tool maps common developer challenges to a curated library of battle-tested Git commands and best-practice workflows."
+      use_cases:
+        - "Troubleshooting broken Git states"
+        - "Learning advanced branching strategies"
+        - "Rapid reference for team lead operations"
+      features:
+        - "Scenario-driven command generation"
+        - "Step-by-step troubleshooting guides"
+        - "Dangerous command warnings (force push, etc.)"
+        - "Copy-ready code snippets"
+      faq:
+        - question: "How do I undo my last commit?"
+        - answer: "Use 'git reset --soft HEAD~1' to keep your changes but undo the commit itself."
+        - question: "Is this compatible with GitHub/GitLab?"
+        - answer: "Yes, these are standard Git commands that work with all remote providers."
+
+  - name: "Docker Compose Scaffolder"
+    slug: "docker-compose-gen"
+    category: "Developer Tools"
+    icon: "Server"
+    subcategory: "devops-tools"
+    tags: ["docker", "compose", "yaml", "devops", "containerization"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate multi-container Docker Compose files"
+      secondary: "Visual scaffolding for Node, Python, and database services"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["yaml", "txt"]
+      processing: "client-side"
+    meta:
+      title: "Docker Compose Generator — Scaffold Service Configurations"
+    content:
+      title: "Docker Compose Scaffolder — Build YAML Configurations"
+      description: "Rapidly scaffold multi-container Docker Compose files for your local development environment. Pre-built templates for Node.js, Python, PostgreSQL, and Redis."
+      keywords: ["docker compose generator online", "scaffold docker-compose yaml", "docker compose for node and postgres", "build docker services tool", "visual docker compose builder", "docker dev environment scaffolding"]
+      tldr: "Generate production-ready Docker Compose YAML files instantly with our visual service scaffolder."
+      entity_definition: "Docker Compose Scaffolder is a DevOps utility for defining multi-container applications. It provides a visual interface to select services, map ports, and define environment variables, generating a valid YAML file that can be used to spin up entire development environments with a single command."
+      how_it_works: "It uses a templating engine to construct valid YAML structures based on user-selected container images and network configurations."
+      use_cases:
+        - "Setting up local development environments"
+        - "Standardizing container configurations across teams"
+        - "Learning Docker Compose syntax through examples"
+      features:
+        - "Presets for common database and app stacks"
+        - "Visual port and volume mapping"
+        - "Environment variable scaffolding"
+        - "Valid YAML output with comments"
+      faq:
+        - question: "What is Docker Compose?"
+        - answer: "It is a tool for defining and running multi-container Docker applications using a YAML file."
+        - question: "Is this YAML file production-ready?"
+        - answer: "It provides a solid foundation, but production environments usually require additional security and scaling configurations."
+
+  - name: "YAML to JSON Converter"
+    slug: "yaml-to-json"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "data-conversion"
+    tags: ["yaml", "json", "converter", "parsing", "developer-tools"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert YAML data to structured JSON format"
+      secondary: "Validate and clean YAML inputs"
+    technical:
+      input_formats: ["yaml", "txt"]
+      output_formats: ["json", "txt"]
+      processing: "client-side"
+      library: "js-yaml"
+    meta:
+      title: "YAML to JSON Converter Online — Fast & Secure Data Parsing"
+    content:
+      title: "YAML to JSON Converter — Instant Data Transformation"
+      description: "Convert your YAML configuration files to valid JSON instantly. Our secure, client-side parser ensures your data never leaves your browser. Perfect for DevOps and frontend developers."
+      keywords: ["yaml to json converter", "convert yaml to json online", "yaml parser browser", "secure yaml conversion", "devops yaml tools", "transform yaml to json"]
+      tldr: "Transform complex YAML configurations into structured JSON strings with real-time validation and zero data transmission."
+      entity_definition: "YAML to JSON Converter is a specialized data transformation utility that translates 'YAML Ain't Markup Language' into 'JavaScript Object Notation'. It handles complex nested structures, comments, and anchors, producing standardized JSON output suitable for API integration and application configuration. Built for high-performance DevOps workflows, it operates entirely in the browser environment."
+      how_it_works: "The tool utilizes a robust YAML parser that reads the key-value structures of your input and maps them to a JavaScript object, which is then serialized into a standard JSON string."
+      use_cases:
+        - "Converting Docker Compose or Kubernetes YAML to JSON"
+        - "Preparing configuration data for JavaScript applications"
+        - "Validating YAML syntax for production environments"
+      features:
+        - "Instant YAML-to-JSON serialization"
+        - "Support for YAML anchors and aliases"
+        - "Real-time syntax highlighting"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Why convert YAML to JSON?"
+        - answer: "While YAML is more human-readable, JSON is the standard for machine communication and API payloads."
+        - question: "Are my secrets safe?"
+        - answer: "Yes. All conversion happens locally in your browser. We never see your data."
+
+  - name: "HTML Code Minifier"
+    slug: "html-minifier"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "performance-optimization"
+    tags: ["html", "minifier", "compressor", "optimization", "page-speed"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Compress HTML source code for faster page loads"
+      secondary: "Remove comments, whitespace, and redundant attributes"
+    technical:
+      input_formats: ["html", "txt"]
+      output_formats: ["html", "txt"]
+      processing: "client-side"
+    meta:
+      title: "HTML Code Minifier — Compress HTML for 100/100 PageSpeed Score"
+    content:
+      title: "HTML Code Minifier — High-Performance Page Optimization"
+      description: "Reduce your website's file size by minifying HTML code. Our professional optimizer removes comments, unnecessary spaces, and redundant code to boost Core Web Vitals and SEO rankings."
+      keywords: ["minify html online", "html compressor", "reduce html file size", "optimize html for speed", "html minifier for seo", "compress web pages"]
+      tldr: "Strip away the bloat from your HTML source code to achieve lightning-fast load times and perfect performance scores."
+      entity_definition: "HTML Code Minifier is a frontend optimization utility designed to reduce the payload size of web documents. It intelligently removes non-functional characters—such as comments, line breaks, and redundant whitespace—without altering the rendered output of the page. This leads to reduced Time to First Byte (TTFB) and improved Largest Contentful Paint (LCP) metrics."
+      how_it_works: "Our minification engine scans your HTML structure, identifying segments that are safe to compress. It handles script tags, style blocks, and standard DOM elements with precision."
+      use_cases:
+        - "Optimizing production web assets"
+        - "Reducing bandwidth costs for high-traffic sites"
+        - "Improving SEO crawl budget efficiency"
+      features:
+        - "Recursive comment and whitespace removal"
+        - "Optional attribute minification"
+        - "Real-time character savings analysis"
+        - "Zero-lag processing for large documents"
+      faq:
+        - question: "Does minification affect SEO?"
+        - answer: "Yes, positively. Faster pages rank better, and minification is a key step in page speed optimization."
+        - question: "Will it break my inline scripts?"
+        - answer: "Our minifier is designed to be safe, but you can toggle script minification if you have complex inline logic."
+
+  - name: "CSS Code Minifier"
+    slug: "css-minifier"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "performance-optimization"
+    tags: ["css", "minifier", "compressor", "optimization", "styles"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Optimize and compress CSS stylesheets"
+      secondary: "Remove redundant selectors and whitespace"
+    technical:
+      input_formats: ["css", "txt"]
+      output_formats: ["css", "txt"]
+      processing: "client-side"
+    meta:
+      title: "CSS Code Minifier — Compress Stylesheets for Faster Web Performance"
+    content:
+      title: "CSS Code Minifier — Professional Stylesheet Compression"
+      description: "Compress your CSS files to improve website performance. Our tool removes comments, whitespace, and redundant characters to deliver smaller, faster stylesheets for production."
+      keywords: ["minify css online", "css compressor", "reduce css file size", "optimize stylesheets for speed", "css minifier for production", "compress css code"]
+      tldr: "Optimize your production styles by removing every unnecessary byte from your CSS bundles."
+      entity_definition: "CSS Code Minifier is a performance utility that optimizes Cascading Style Sheets. By stripping out formatting that humans need for reading but browsers do not need for execution, it reduces the amount of data transferred over the network, directly impacting page render speed and First Contentful Paint (FCP)."
+      how_it_works: "The tool utilizes advanced regex patterns to identify and remove comments, merge redundant whitespace, and collapse empty rules while preserving the functional integrity of your selectors."
+      use_cases:
+        - "Preparing production CSS bundles"
+        - "Reducing Largest Contentful Paint (LCP) delay"
+        - "Cleaning up generated or framework CSS"
+      features:
+        - "Deep comment removal"
+        - "Whitespace and newline collapsing"
+        - "Selector-safe minification"
+        - "Instant savings report"
+      faq:
+        - question: "Should I minify CSS in development?"
+        - answer: "No. Keep your CSS readable during development and only minify during your build or deployment phase."
+        - question: "Is this tool safe for modern CSS (Grid/Flexbox)?"
+        - answer: "Yes, our engine is compatible with all modern CSS3 properties and layouts."
+
+  - name: "SQL Formatter & Beautifier"
+    slug: "sql-formatter"
+    category: "Developer Tools"
+    icon: "Database"
+    subcategory: "data-formatting"
+    tags: ["sql", "formatter", "beautifier", "database", "query-optimizer"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Beautify and structure SQL queries"
+      secondary: "Support for MySQL, PostgreSQL, and SQL Server dialects"
+    technical:
+      input_formats: ["sql", "txt"]
+      output_formats: ["sql", "txt"]
+      processing: "client-side"
+    meta:
+      title: "SQL Formatter & Beautifier — Structure Complex Database Queries"
+    content:
+      title: "SQL Formatter — Professional Query Beautification"
+      description: "Format complex SQL queries instantly for better readability and debugging. Our professional beautifier supports MySQL, PostgreSQL, and standard SQL syntax with custom indentation."
+      keywords: ["sql formatter online", "beautify sql queries", "sql query beautifier", "format mysql code", "postgresql formatter", "database query cleaner"]
+      tldr: "Turn messy, unreadable SQL queries into structured, professional code blocks for better debugging and collaboration."
+      entity_definition: "SQL Formatter & Beautifier is a database utility designed to improve the readability of Structured Query Language. It intelligently indents keywords, aligns clauses (like SELECT, FROM, JOIN), and manages subqueries to make complex database logic easily understandable for humans."
+      how_it_works: "Our parser identifies SQL keywords and structural markers, applying a consistent indentation and line-breaking strategy based on standard database engineering practices."
+      use_cases:
+        - "Debugging complex nested JOINs"
+        - "Formatting SQL for documentation and reports"
+        - "Standardizing query style across engineering teams"
+      features:
+        - "Dialect-aware formatting (MySQL, Postgres, etc.)"
+        - "Customizable indentation levels"
+        - "Keyword capitalization toggling"
+        - "Instant code block generation"
+      faq:
+        - question: "Does this store my database queries?"
+        - answer: "No. All formatting happens locally in your browser. Your sensitive database logic remains private."
+        - question: "Can it handle subqueries?"
+        - answer: "Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs."
+
+  - name: "XML Formatter & Beautifier"
+    slug: "xml-formatter"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "data-formatting"
+    tags: ["xml", "formatter", "beautifier", "markup", "validation"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Beautify and validate XML markup"
+      secondary: "Structural indentation and syntax highlighting"
+    technical:
+      input_formats: ["xml", "txt"]
+      output_formats: ["xml", "txt"]
+      processing: "client-side"
+    meta:
+      title: "XML Formatter & Beautifier — Clean & Structure XML Data Online"
+    content:
+      title: "XML Formatter — Professional Markup Beautification"
+      description: "Format and structure XML data for better readability. Our secure XML beautifier provides precise indentation and structural validation for soap messages, sitemaps, and config files."
+      keywords: ["xml formatter online", "beautify xml code", "xml beautifier with indentation", "format sitemap xml", "clean xml data", "xml markup optimizer"]
+      tldr: "Instantly structure messy XML strings into clean, human-readable trees with precise hierarchical indentation."
+      entity_definition: "XML Formatter & Beautifier is a markup utility that processes Extensible Markup Language into a structured visual hierarchy. It handles nested tags, attributes, and namespaces, applying consistent indentation to make data structures easily navigable for developers and analysts."
+      how_it_works: "The tool parses the XML DOM and reconstructs the string with uniform spacing, ensuring each level of nesting is clearly visible."
+      use_cases:
+        - "Debugging SOAP or REST API responses"
+        - "Formatting sitemap.xml for manual review"
+        - "Cleaning up exported configuration files"
+      features:
+        - "Adjustable indentation (2 or 4 spaces)"
+        - "Support for CDATA sections"
+        - "Attribute alignment optimization"
+        - "Real-time structural validation"
+      faq:
+        - question: "Can it handle large XML files?"
+        - answer: "Yes, our engine is optimized to process large XML payloads up to 10MB instantly."
+        - question: "Does it validate my XML?"
+        - answer: "Yes, it will identify basic structural errors like unclosed tags during the formatting process."
