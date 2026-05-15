@@ -54,4 +54,6 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'qr-code-generator': dynamic(() => import('@/components/tools/instances/QrCodeGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'php-serializer': dynamic(() => import('@/components/tools/instances/PhpSerializer'), { loading: () => <ToolSkeleton />, ssr: false }),
   'image-resizer': dynamic(() => import('@/components/tools/instances/ImageResizer'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'xss-scanner': dynamic(() => import('@/components/tools/instances/XssScanner'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'sql-injection-sanitizer': dynamic(() => import('@/components/tools/instances/SqlSanitizer'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

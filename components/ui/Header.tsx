@@ -41,26 +41,30 @@ export default function Header() {
           </Link>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => {
-              const isCTA = link.name === 'Submit Tool';
-              return (
+          <nav className="hidden md:flex items-center gap-2 lg:gap-10 xl:gap-14">
+            <div className="flex items-center gap-1 lg:gap-4">
+              {navLinks.filter(l => l.name !== 'Submit Tool').map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:scale-105 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md px-3 py-2 ${
-                    isCTA 
-                      ? 'bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-lg px-5 py-2.5 shadow-lg shadow-blue-500/10' 
-                      : 'text-gray-600 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4]'
-                  }`}
+                  className="text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] text-gray-500 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4] transition-all px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5"
                 >
                   {link.name}
                 </Link>
-              )
-            })}
+              ))}
+            </div>
             
-            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47]" />
-            <ThemeToggle />
+            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47] hidden lg:block" />
+            
+            <div className="flex items-center gap-4 lg:gap-8">
+              <Link 
+                href="/submit-tool" 
+                className="hidden lg:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-xl px-6 py-3 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 transition-all"
+              >
+                Submit Tool
+              </Link>
+              <ThemeToggle />
+            </div>
           </nav>
 
           {/* Mobile Toggle */}
