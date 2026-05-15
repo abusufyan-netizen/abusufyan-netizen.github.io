@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Latest 30 Posts Scroller */}
           <div className="mb-16">
             <div className="flex items-center justify-between mb-4 px-2">
-              <h3 className="text-[10px] font-bold text-[#4A6080] uppercase tracking-[0.2em] font-mono">Up-to-date Feed</h3>
+              <h2 className="text-[10px] font-bold text-[#4A6080] uppercase tracking-[0.2em] font-mono">Up-to-date Feed</h2>
               <Link href="/blog" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
             </div>
             <div className="flex gap-4 overflow-x-auto pb-6 no-scrollbar snap-x">
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: Props) {
                   }`}
                 >
                   <div className="text-[8px] font-bold text-[#4A6080] uppercase tracking-widest mb-2 font-mono">{p.category}</div>
-                  <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 mb-3">{p.title}</h4>
+                  <h3 className="text-sm font-bold text-white leading-tight line-clamp-2 mb-3">{p.title}</h3>
                   <div className="flex items-center gap-2 text-[8px] font-bold text-[#00D4B4] uppercase tracking-widest">
                     Read Now <ChevronRight className="w-2 h-2" />
                   </div>
