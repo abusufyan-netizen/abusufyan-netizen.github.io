@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
 import StatsDashboard from '@/components/sections/StatsDashboard'
+import { getAllPosts } from '@/lib/blog'
 
 const featuredTools = [
   { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
@@ -485,6 +486,57 @@ export default function Home() {
               <div className="text-purple-500 font-black text-xs uppercase tracking-widest flex items-center gap-2">
                 Read Studies <ArrowRight className="w-4 h-4" />
               </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights Section */}
+      <section className="py-24 bg-gray-50/30 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-12">
+            <div>
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">Latest Insights</h2>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mt-1">Technical guides and engineering research papers.</p>
+            </div>
+            <Link href="/blog" className="hidden sm:flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+              View All Posts <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getAllPosts().slice(0, 3).map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+                <article className="bg-white dark:bg-[#0D1526] p-8 rounded-[32px] border border-gray-100 dark:border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all h-full flex flex-col relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#00D4B4]/5 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2" />
+                  <div className="flex items-center justify-between mb-6 relative z-10">
+                    <span className="text-[10px] font-bold px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800 rounded-full uppercase tracking-widest">
+                      {post.category}
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-gray-400 dark:text-[#4A6080] uppercase tracking-widest">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10">
+                    {post.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-[#1E2D47]/30 relative z-10">
+                    <span className="text-[10px] font-bold text-blue-600 dark:text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
+                      Read Entry <Zap className="w-3 h-3 fill-current" />
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-gray-300 dark:text-[#1E2D47]" />
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center sm:hidden">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest">
+              View All Posts <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

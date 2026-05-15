@@ -15,6 +15,8 @@ import AdSlot from '@/components/ads/AdSlot'
 import AIOContextButton from '@/components/tools/AIOContextButton'
 import { CATEGORY_MAP } from '@/lib/categories'
 import * as Icons from 'lucide-react'
+import { getRelatedPostsForTool } from '@/lib/blog'
+import FurtherReading from '@/components/sections/FurtherReading'
 
 interface ToolPageProps {
   params: {
@@ -146,6 +148,9 @@ export default function ToolPage({ params }: ToolPageProps) {
               faqs={tool.content.faq.map(f => ({ q: f.question, a: f.answer }))}
               technicalSpecs={tool.content.technical_specs}
             />
+
+            {/* Further Reading Section */}
+            <FurtherReading posts={getRelatedPostsForTool(tool.tags, tool.category)} />
 
             {/* Related Tools Widget */}
             {(() => {

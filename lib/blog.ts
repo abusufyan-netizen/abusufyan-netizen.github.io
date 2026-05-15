@@ -216,3 +216,34 @@ export function getAllSlugs(): string[] {
     .filter((f) => f.endsWith('.md'))
     .map((f) => f.replace(/\.md$/, ''))
 }
+
+export function getRelatedPostsForTool(toolTags: string[], toolCategory: string, limit: number = 3): BlogPost[] {
+  const allPosts = getAllPosts()
+  
+  const related = allPosts.map(post => {
+    let score = 0
+    
+    // Check for tag overlap
+    const tagOverlap = post.tags.filter(tag => toolTags.includes(tag)).length
+    score += tagOverlap * 5
+
+    // Check for category similarity
+    if (post.category.toLowerCase() === toolCategory.toLowerCase()) {
+      score += 10
+    }
+
+    // Check for keyword overlap in title
+    const toolKeywords = toolTags.map(t => t.toLowerCase())
+    const titleWords = post.title.toLowerCase().split(' ')
+    const keywordOverlap = titleWords.filter(word => toolKeywords.includes(word)).length
+    score += keywordOverlap * 2
+
+    return { post, score }
+  })
+  .filter(item => item.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, limit)
+  .map(item => item.post)
+
+  return related
+}
