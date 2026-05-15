@@ -1795,6 +1795,396 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "JSON to TypeScript Interface"
+    slug: "json-to-ts"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["json", "typescript", "interfaces", "conversion", "frontend"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate TypeScript interfaces from JSON data"
+      secondary: "Automate type definitions for frontend development"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["typescript"]
+      processing: "client-side"
+    meta:
+      title: "JSON to TypeScript Interface — Generate Types Online"
+    content:
+      title: "JSON to TS — Professional Interface Generator"
+      description: "Convert your JSON objects into perfectly formatted TypeScript interfaces. Save time on frontend development by automating your type definitions and ensuring type safety."
+      keywords: ["convert json to typescript interface", "json to ts converter online", "generate typescript types from json", "online ts interface builder", "frontend developer utility free", "json to typescript parser online"]
+      tldr: "Speed up your TypeScript development by generating precise interface definitions from your JSON samples."
+      entity_definition: "JSON to TypeScript Interface is a developer utility that bridges the gap between raw data and typed code. It analyzes the structure and data types of a JSON object and generates the equivalent TypeScript 'interface' or 'type' definitions, including nested objects and optional fields."
+      how_it_works: "The tool recursively parses the JSON and maps types (string, number, boolean) to TypeScript primitives, automatically naming nested interfaces for readability."
+      use_cases:
+        - "Defining API response types for React/Vue apps"
+        - "Setting up state management models"
+        - "Ensuring type safety in complex data pipelines"
+      features:
+        - "Support for nested object interfaces"
+        - "Automatic array type detection"
+        - "Interface vs Type alias options"
+        - "One-click copy to IDE"
+      faq:
+        - question: "How are null values handled?"
+        - answer: "The tool identifies them as 'any' or 'null' and marks the field as optional if it's missing in some samples."
+        - question: "Can it handle deep nesting?"
+        - answer: "Yes, it creates separate, named interfaces for every nested level to maintain clean, readable code."
+
+  - name: "XML to CSV Converter"
+    slug: "xml-to-csv"
+    category: "Data Formatters & Parsers"
+    icon: "FileText"
+    subcategory: "converters"
+    tags: ["xml", "csv", "data", "conversion", "import"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert XML documents to flat CSV files"
+      secondary: "Support for flattening hierarchical data for spreadsheets"
+    technical:
+      input_formats: ["xml"]
+      output_formats: ["csv"]
+      processing: "client-side"
+    meta:
+      title: "XML to CSV Converter — Flatten Data for Spreadsheets"
+    content:
+      title: "XML to CSV — Professional Data Flattening"
+      description: "Convert complex XML documents into flat, spreadsheet-ready CSV files. Our precision parser handles hierarchical data and repeating elements for easy import into Excel or Google Sheets."
+      keywords: ["convert xml to csv online", "xml to csv converter free", "flatten xml to spreadsheet", "online xml data extractor", "xml to excel converter free", "export xml to csv online"]
+      tldr: "Flatten complex XML hierarchies into clean CSV rows for easy data analysis."
+      entity_definition: "XML to CSV Converter is a data utility that translates the tag-based hierarchy of XML into the row-and-column format of CSV. This is particularly useful for business analysts and researchers who need to process XML-based reports or data feeds in spreadsheet software."
+      how_it_works: "The tool identifies repeating elements to define rows and uses tag paths as column headers, effectively flattening the XML tree into a 2D grid."
+      use_cases:
+        - "Importing XML data feeds into Excel"
+        - "Analyzing government or financial XML reports"
+        - "Converting legacy data exports for modern analysis"
+      features:
+        - "Automatic detection of repeating nodes"
+        - "Support for custom CSV delimiters"
+        - "Handling of XML attributes as columns"
+        - "Instant file download"
+      faq:
+        - question: "What happens to deep nesting in CSV?"
+        - answer: "The tool uses dot-notation headers (e.g., 'User.Address.City') to preserve the relationship in a flat structure."
+        - question: "Can I choose which tags to export?"
+        - answer: "Yes, our advanced mode allows you to specify the 'Base Node' to focus your CSV export on a specific part of the XML."
+
+  - name: "JSON to Go Struct"
+    slug: "json-to-go"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["json", "golang", "struct", "conversion", "backend"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Go (Golang) structs from JSON"
+      secondary: "Automatic JSON tags and nested struct mapping"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["go"]
+      processing: "client-side"
+    meta:
+      title: "JSON to Go Struct — Generate Golang Models Online"
+    content:
+      title: "JSON to Go — Instant Struct Generation"
+      description: "Convert your JSON data into perfectly formatted Go structs. Save time on backend development by automating your data models with correct JSON tags and nested types."
+      keywords: ["convert json to go struct online", "json to golang converter free", "generate go types from json", "online go struct builder", "golang developer utility free", "json to go parser online"]
+      tldr: "Build backend data models in seconds by generating Go structs directly from your JSON payloads."
+      entity_definition: "JSON to Go Struct is a developer utility for the Go programming language. It converts JSON samples into Go 'struct' definitions, automatically including the `json:\"key\"` tags required for seamless marshaling and unmarshaling of data in Go applications."
+      how_it_works: "The tool analyzes the JSON types and maps them to Go types (string, int64, float64, bool), creating sub-structs for nested objects to ensure idiomatic Go code."
+      use_cases:
+        - "Building API client models in Go"
+        - "Setting up database schemas for NoSQL stores"
+        - "Implementing high-performance microservices"
+      features:
+        - "Automatic JSON tag generation"
+        - "Nested struct flattening or inline support"
+        - "Support for JSON numbers to int/float mapping"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "How does it handle underscores in keys?"
+        - answer: "The tool follows Go naming conventions (PascalCase for exported fields) while preserving the original name in the JSON tag."
+        - question: "Does it support pointers?"
+        - answer: "Yes, you can toggle between value types and pointers for optional fields in the settings."
+
+  - name: "Cron Expression Descriptor"
+    slug: "cron-descriptor"
+    category: "Data Formatters & Parsers"
+    icon: "Clock"
+    subcategory: "parsing-utilities"
+    tags: ["cron", "schedule", "parsing", "devops", "visual"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Describe Cron expressions in plain English"
+      secondary: "Visualize execution schedules and next run times"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text", "visual"]
+      processing: "client-side"
+    meta:
+      title: "Cron Expression Descriptor — Translate Cron to English"
+    content:
+      title: "Cron Descriptor — Human-Readable Schedule Audit"
+      description: "Translate complex Cron expressions into clear, plain English. Visualize your task schedules and verify next run times to ensure your server automation is correct."
+      keywords: ["describe cron expression plain english", "translate cron to text online", "visualize cron schedule free", "check cron job next run time", "online cron expression auditor", "human readable cron tool"]
+      tldr: "Stop guessing what your cron jobs do. Translate complex expressions into clear, plain English instantly."
+      entity_definition: "Cron Expression Descriptor is a diagnostic utility that decodes the cryptic syntax of Crontab files (* * * * *). It provides a human-readable explanation (e.g., 'Every day at 3:00 AM') and a timeline of future execution times, preventing costly errors in server automation and task scheduling."
+      how_it_works: "The tool parses the five (or six) fields of a cron string and uses a linguistics engine to construct a natural language description."
+      use_cases:
+        - "Verifying server backup schedules"
+        - "Documenting automation scripts for teams"
+        - "Troubleshooting misconfigured cron jobs"
+      features:
+        - "Support for Standard and Quartz cron formats"
+        - "Plain English translations"
+        - "Next 5 scheduled run times calculation"
+        - "Visual execution calendar"
+      faq:
+        - question: "What is a Cron expression?"
+        - answer: "It is a string representing a schedule for running tasks at specific times or intervals on Unix-like operating systems."
+        - question: "Does it support special characters like 'L' or 'W'?"
+        - answer: "Yes, our descriptor supports advanced cron characters used in enterprise scheduling systems."
+
+  - name: "Regular Expression Explainer"
+    slug: "regex-explainer"
+    category: "Data Formatters & Parsers"
+    icon: "Code"
+    subcategory: "parsing-utilities"
+    tags: ["regex", "parsing", "explanation", "visual", "dev"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visualize and explain Regular Expressions (Regex)"
+      secondary: "Break down complex patterns into logical steps"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["visual-diagram", "text"]
+      processing: "client-side"
+    meta:
+      title: "Regular Expression Explainer — Visualize Regex Patterns"
+    content:
+      title: "Regex Explainer — Decode Complex Patterns Visually"
+      description: "Break down and visualize complex Regular Expressions. A professional utility for understanding, debugging, and documenting your Regex patterns with clear, step-by-step explanations."
+      keywords: ["visualize regular expressions online", "regex pattern explainer free", "break down regex step by step", "online regex auditor tool", "visualize regex groups and anchors", "regex documentation helper free"]
+      tldr: "Master complex Regex patterns with a visual breakdown and plain-English explanations of every token."
+      entity_definition: "Regular Expression Explainer is an educational and diagnostic utility for Regex. It deconstructs a pattern (e.g., `^([a-z0-9_.-]+)@`) into its constituent parts—anchors, groups, quantifiers, and character classes—explaining the logic of each in plain English."
+      how_it_works: "The tool uses a regex parser to identify every token in the string and generates a hierarchical explanation or a visual railroad diagram."
+      use_cases:
+        - "Learning Regex for the first time"
+        - "Documenting complex patterns for code reviews"
+        - "Debugging unexpected matching behavior"
+      features:
+        - "Step-by-step token breakdown"
+        - "Visual group and anchor identification"
+        - "Support for various flavors (JS, PHP, Python)"
+        - "Real-time explanation updates"
+      faq:
+        - question: "Why is Regex so hard?"
+        - answer: "Because it uses a very dense, non-obvious syntax where every character has a specific (and sometimes overlapping) meaning."
+        - question: "Does this tool test the matches?"
+        - answer: "This tool focuses on *explanation*. For real-time testing against sample strings, use our 'Regex Tester' tool in the sidebar."
+
+  - name: "SQL Query Minifier"
+    slug: "sql-minifier"
+    category: "Data Formatters & Parsers"
+    icon: "Database"
+    subcategory: "parsing-utilities"
+    tags: ["sql", "database", "minifier", "performance", "dev"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Compress and minify SQL queries"
+      secondary: "Remove comments and extra whitespace for production code"
+    technical:
+      input_formats: ["sql"]
+      output_formats: ["sql"]
+      processing: "client-side"
+    meta:
+      title: "SQL Query Minifier — Compress Database Code Online"
+    content:
+      title: "SQL Minifier — Optimize Your Database Queries"
+      description: "Compress and minify your SQL queries for production environments. Remove comments, newlines, and extra whitespace to reduce query string size and improve code portability."
+      keywords: ["minify sql queries online", "compress sql code free", "remove sql comments online", "sql query optimization tool", "minify postgresql mysql queries", "clean sql code for production"]
+      tldr: "Reduce the overhead of your database queries by stripping unnecessary characters while maintaining full functionality."
+      entity_definition: "SQL Query Minifier is a utility for optimizing database code. It takes readable, commented SQL and strips out everything not required for execution—such as comments, newlines, and redundant spaces—resulting in a single line of code that is more efficient for transmission and storage in application code."
+      how_it_works: "The tool parses the SQL string, identifies non-functional characters, and re-assembles the query into a dense block."
+      use_cases:
+        - "Embedding SQL in application source code"
+        - "Reducing payload size for API-based queries"
+        - "Cleaning up exported database scripts"
+      features:
+        - "Comment and whitespace removal"
+        - "Support for MySQL, PostgreSQL, and SQLite"
+        - "One-click copy to clipboard"
+        - "Real-time compression statistics"
+      faq:
+        - question: "Does minifying SQL improve performance?"
+        - answer: "It slightly reduces the amount of data sent to the database server and can marginally speed up initial parsing, but it doesn't affect execution speed on the database engine itself."
+        - question: "Is it safe for complex joins?"
+        - answer: "Yes, the minifier preserves all functional characters and keywords, ensuring your query logic remains identical."
+
+  - name: "JSON to Java Class (POJO)"
+    slug: "json-to-java"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["json", "java", "pojo", "conversion", "backend"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Java POJO classes from JSON data"
+      secondary: "Automatic Jackson/Gson annotations and nested class mapping"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["java"]
+      processing: "client-side"
+    meta:
+      title: "JSON to Java Class — Generate POJOs Online"
+    content:
+      title: "JSON to Java — Professional POJO Generation"
+      description: "Convert your JSON data into clean, professional Java POJO classes. Automate your data models with support for Jackson, GSON, and standard Java getters and setters."
+      keywords: ["convert json to java class online", "json to pojo converter free", "generate java models from json", "online java class builder", "java developer utility free", "json to java parser online"]
+      tldr: "Build your Java data layer in seconds by generating clean POJOs directly from your JSON samples."
+      entity_definition: "JSON to Java Class (POJO) is a backend developer utility that translates JSON structure into Java classes. It handles nested objects by creating static inner classes or separate files and includes standard boilerplate like private fields, getters, setters, and optional JSON annotations for libraries like Jackson or GSON."
+      how_it_works: "The tool analyzes JSON types and maps them to Java equivalents (String, Long, Double, Boolean), ensuring proper casing and type safety for enterprise applications."
+      use_cases:
+        - "Building DTOs (Data Transfer Objects) for Spring Boot apps"
+        - "Setting up Android data models"
+        - "Integrating third-party APIs into Java environments"
+      features:
+        - "Jackson and GSON annotation support"
+        - "Automatic Getter/Setter generation"
+        - "Nested class support"
+        - "Support for Primitive vs Wrapper types"
+      faq:
+        - question: "What is a POJO?"
+        - answer: "A Plain Old Java Object (POJO) is a simple class used to store data, without any complex business logic or framework requirements."
+        - question: "How are dates handled?"
+        - answer: "They are typically mapped to 'String' or 'Date' depending on the format; you can customize the type in the generated code."
+
+  - name: "HTML Table to JSON Extractor"
+    slug: "html-table-to-json"
+    category: "Data Formatters & Parsers"
+    icon: "Table"
+    subcategory: "converters"
+    tags: ["html", "json", "data-extraction", "scraping", "utility"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Extract data from HTML tables to JSON/CSV"
+      secondary: "Automate data scraping from web pages"
+    technical:
+      input_formats: ["html"]
+      output_formats: ["json", "csv"]
+      processing: "client-side"
+    meta:
+      title: "HTML Table to JSON Extractor — Convert Web Tables Online"
+    content:
+      title: "Table Extractor — Convert Web Data to Structured JSON"
+      description: "Extract data from any HTML <table> and convert it into structured JSON or CSV. A professional utility for web scraping and data migration from legacy web pages."
+      keywords: ["convert html table to json online", "extract data from web table free", "html table to csv converter online", "online web scraping utility", "table to json parser free", "convert website data to excel"]
+      tldr: "Instantly turn any HTML table into a clean, structured dataset for analysis or integration."
+      entity_definition: "HTML Table to JSON Extractor is a content scraping utility that parses the <thead> and <tbody> of an HTML table. It uses headers as keys and rows as objects, allowing users to quickly copy data from websites into their own applications or spreadsheets."
+      how_it_works: "The tool utilizes a DOM parser to identify <tr> and <td> tags, sanitizing the text and constructing a JSON array of objects."
+      use_cases:
+        - "Migrating data from legacy intranets"
+        - "Scraping public data tables for research"
+        - "Transforming wiki tables into structured datasets"
+      features:
+        - "Automatic header detection"
+        - "Support for multi-table extraction"
+        - "JSON and CSV output formats"
+        - "Cleaning of HTML tags within cells"
+      faq:
+        - question: "Can it handle merged cells (colspan)?"
+        - answer: "Yes, it intelligently handles colspans and rowspans to maintain data integrity during the extraction."
+        - question: "Does it work with dynamic tables?"
+        - answer: "You need to paste the rendered HTML source of the table for the tool to process it."
+
+  - name: "CSV to XML Converter"
+    slug: "csv-to-xml"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["csv", "xml", "conversion", "data", "parsing"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert CSV files to structured XML"
+      secondary: "Support for custom tag names and attributes"
+    technical:
+      input_formats: ["csv"]
+      output_formats: ["xml"]
+      processing: "client-side"
+    meta:
+      title: "CSV to XML Converter — Transform Spreadsheets Online"
+    content:
+      title: "CSV to XML — Professional Data Serialization"
+      description: "Convert your CSV files and spreadsheets into perfectly formatted XML. Support for custom root elements and repeating tags for easy integration with enterprise systems."
+      keywords: ["convert csv to xml online", "csv to xml converter free", "generate xml from csv online", "online csv to xml parser", "transform spreadsheet data to xml", "csv to soap data builder"]
+      tldr: "Convert flat spreadsheet data into structured XML for enterprise integration and legacy system support."
+      entity_definition: "CSV to XML Converter is a data utility that bridges the gap between simple flat files and complex hierarchical markup. It is essential for developers who need to feed spreadsheet data into XML-based APIs or enterprise resource planning (ERP) systems."
+      how_it_works: "The tool iterates through each CSV row, creating a new XML element for each, with columns mapped to child tags or attributes based on user settings."
+      use_cases:
+        - "Uploading inventory data to XML-based ERPs"
+        - "Generating SOAP request payloads from spreadsheets"
+        - "Migrating legacy data to XML databases"
+      features:
+        - "Custom Root and Row tag naming"
+        - "Attribute vs Element mapping options"
+        - "Pretty-print XML formatting"
+        - "Support for large datasets"
+      faq:
+        - question: "Can I use spaces in tag names?"
+        - answer: "No. XML tag names cannot contain spaces; the tool automatically converts spaces to underscores for validity."
+        - question: "Does it handle special characters?"
+        - answer: "Yes, it automatically escapes characters like '&' and '<' to ensure the output is valid XML."
+
+  - name: "XML to YAML Converter"
+    slug: "xml-to-yaml"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["xml", "yaml", "config", "conversion", "devops"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert XML data to human-readable YAML"
+      secondary: "Simplify complex XML hierarchies for configuration files"
+    technical:
+      input_formats: ["xml"]
+      output_formats: ["yaml"]
+      processing: "client-side"
+    meta:
+      title: "XML to YAML Converter — Optimize Data Readability Online"
+    content:
+      title: "XML to YAML — Modernize Your Configuration Files"
+      description: "Transform complex XML documents into clean, elegant YAML. Perfect for simplifying legacy configuration files and making hierarchical data easier to read and maintain."
+      keywords: ["convert xml to yaml online", "xml to yaml converter free", "online xml to yml parser", "transform xml data to yaml", "simplify legacy xml configs", "xml to devops config tool"]
+      tldr: "Modernize your workflow by converting dense XML documents into readable, human-friendly YAML."
+      entity_definition: "XML to YAML Converter is a DevOps-oriented utility that simplifies data representation. It parses the tag-heavy structure of XML and re-serializes it into the indentation-based YAML format, which is much easier for humans to read, edit, and manage in version control systems."
+      how_it_works: "The tool first converts the XML to an intermediate JSON object and then serializes that object into a clean YAML block, preserving the original hierarchy."
+      use_cases:
+        - "Modernizing legacy application configurations"
+        - "Reading complex XML data feeds in a clean format"
+        - "Preparing XML data for use in YAML-based CI/CD pipelines"
+      features:
+        - "Preservation of hierarchical structure"
+        - "Clean, indentation-based output"
+        - "Support for XML attributes and namespaces"
+        - "Real-time parsing and validation"
+      faq:
+        - question: "Is YAML better than XML?"
+        - answer: "For configuration and human readability, YAML is generally preferred. XML is better for strictly defined data schemas and document-centric data."
+        - question: "Does it support XML namespaces?"
+        - answer: "Yes, our converter can handle namespaces by optionally prefixing keys to maintain data uniqueness."
+
   - name: "CSV to JSON Converter"
     slug: "csv-to-json"
     category: "Data Formatters & Parsers"
