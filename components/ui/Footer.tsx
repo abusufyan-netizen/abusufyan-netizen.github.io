@@ -7,14 +7,14 @@ import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B1120] text-[#8A9BBE] pt-20 pb-8 border-t border-[#1E2D47]">
+    <footer className="bg-background text-muted-foreground pt-20 pb-8 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" aria-label="WebToolkit Pro Home" className="flex items-center gap-2 mb-6 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
               <Logo light />
             </Link>
-            <p className="text-[11px] leading-relaxed font-medium mb-6 text-[#4A6080]">
+            <p className="text-[11px] leading-relaxed font-medium mb-6 text-muted-foreground/80">
               The global standard for secure, client-side developer utilities.
               Built for high-speed performance and privacy-first design.
               WebToolkit Pro empowers engineers with enterprise-grade tools
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">Core Utilities</h3>
+            <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">Core Utilities</h3>
             <ul className="space-y-2 text-[11px] font-medium">
               <li><Link href="/tools/json-formatter" className="hover:text-[#00D4B4] transition-colors">JSON Formatter & Validator</Link></li>
               <li><Link href="/tools/js-minifier" className="hover:text-[#00D4B4] transition-colors">JS Code Minifier</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">SEO & Technical</h3>
+            <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">SEO & Technical</h3>
             <ul className="space-y-2 text-[11px] font-medium">
               <li><Link href="/tools/meta-tag-generator" className="hover:text-[#00D4B4] transition-colors">Meta Tag Generator</Link></li>
               <li><Link href="/tools/schema-generator" className="hover:text-[#00D4B4] transition-colors">JSON-LD Schema Tool</Link></li>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">Ecosystem</h3>
+            <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">Ecosystem</h3>
             <ul className="space-y-2 text-[11px] font-medium">
               <li><a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">TradeConvert</a></li>
               <li><a href="https://devhubindex.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">DEVHUB INDEX</a></li>
@@ -67,35 +67,35 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#1E2D47]/50 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-6">
           <div className="flex items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] font-mono">
             <Link href="/privacy" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
             <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</Link>
             <Link href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</Link>
-            <span className="text-[#4A6080]">v1.0.8</span>
+            <span className="text-muted-foreground/50">v1.0.8</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub Repository" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub Repository" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Github className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter Profile" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter Profile" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to" aria-label="Dev.to Blog">
+            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to" aria-label="Dev.to Blog">
               <Terminal className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt" aria-label="Product Hunt Page">
+            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt" aria-label="Product Hunt Page">
               <Rocket className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="mailto:hello@wtkpro.site" aria-label="Email Support" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="mailto:hello@wtkpro.site" aria-label="Email Support" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>
 
-          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#8A9BBE]">
-            © {new Date().getFullYear()} WebToolkit Pro • Premium <Link href="/" className="text-white hover:text-[#00D4B4] transition-colors">Web Toolkit Online</Link> • Built by <Link href="/author" className="text-white hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
+          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground">
+            © {new Date().getFullYear()} WebToolkit Pro • Premium <Link href="/" className="text-foreground hover:text-[#00D4B4] transition-colors">Web Toolkit Online</Link> • Built by <Link href="/author" className="text-foreground hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
           </p>
         </div>
       </div>

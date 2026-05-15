@@ -85,6 +85,7 @@
   --accent-foreground: #24292F;
   --border: #D0D7DE;
   --ring: #0969DA;
+  --elevated: #F6F8FA;
   --radius: 12px;
 }
 
@@ -101,6 +102,7 @@
   --accent: var(--elevated);
   --accent-foreground: var(--text-primary);
   --border: var(--border-color);
+  --elevated: #21262D;
   --ring: var(--blue);
   --radius: 12px;
 }

@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <header 
-      className={`bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-md border-b border-gray-100 dark:border-[#1E2D47] sticky top-0 z-[100] h-20 transition-all duration-300 ${
+      className={`bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-[100] h-20 transition-all duration-300 ${
         scrolled ? 'shadow-md shadow-blue-500/5' : ''
       }`}
     >
@@ -47,19 +47,19 @@ export default function Header() {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.25em] text-gray-500 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4] transition-all px-4 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 whitespace-nowrap"
+                  className="text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.25em] text-muted-foreground hover:text-blue-600 dark:hover:text-[#00D4B4] transition-all px-4 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
             
-            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47] hidden xl:block opacity-50" />
+            <div className="h-6 w-px bg-border hidden xl:block opacity-50" />
             
             <div className="flex items-center gap-6 xl:gap-10">
               <Link 
                 href="/submit-tool" 
-                className="hidden xl:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-xl px-8 py-3.5 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 hover:shadow-2xl transition-all whitespace-nowrap"
+                className="hidden xl:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] rounded-xl px-8 py-3.5 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 hover:shadow-2xl transition-all whitespace-nowrap"
               >
                 Submit Tool
               </Link>
@@ -72,7 +72,7 @@ export default function Header() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-600 dark:text-[#8A9BBE] hover:bg-gray-100 dark:hover:bg-[#0D1526] focus:outline-none focus:ring-2 focus:ring-[#00D4B4] transition-all"
+              className="p-2 rounded-lg text-muted-foreground hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#00D4B4] transition-all"
               aria-expanded={isOpen}
               aria-label="Toggle Navigation Menu"
             >
@@ -84,7 +84,7 @@ export default function Header() {
 
       {/* Mobile Nav Overlay */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B1120] border-b border-gray-100 dark:border-[#1E2D47] shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 w-full bg-background border-b border-border shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
           isOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >
@@ -94,17 +94,17 @@ export default function Header() {
               key={link.name}
               href={link.href} 
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-between text-lg font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] p-5 rounded-[12px] hover:bg-gray-50 dark:hover:bg-[#0B1120] transition-all"
+              className="flex items-center justify-between text-lg font-bold text-foreground hover:text-blue-600 dark:hover:text-[#00D4B4] p-5 rounded-[12px] hover:bg-black/5 dark:hover:bg-white/5 transition-all"
             >
               {link.name}
-              <ChevronRight className="w-6 h-6 text-gray-300 dark:text-[#4A6080]" strokeWidth={1.5} />
+              <ChevronRight className="w-6 h-6 text-muted-foreground/30" strokeWidth={1.5} />
             </Link>
           ))}
-          <div className="mt-4 pt-6 border-t border-gray-100 dark:border-[#1E2D47] space-y-4">
+          <div className="mt-4 pt-6 border-t border-border space-y-4">
             <Link 
               href="/tools" 
               onClick={() => setIsOpen(false)}
-              className="w-full py-5 rounded-[12px] text-lg font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] flex items-center justify-center shadow-xl shadow-blue-500/10"
+              className="w-full py-5 rounded-[12px] text-lg font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] flex items-center justify-center shadow-xl shadow-blue-500/10"
             >
               Explore All Tools
             </Link>

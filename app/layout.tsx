@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'WebToolkit Pro',
-    'theme-color': '#0B1120',
+    'theme-color': '#0D1117',
     'color-scheme': 'light dark',
     'preconnect': [
       'https://wtkpro.site/api',
@@ -122,8 +122,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0B1120' },
+    { media: '(prefers-color-scheme: light)', color: '#F6F8FA' },
+    { media: '(prefers-color-scheme: dark)', color: '#0D1117' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -145,7 +145,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
-      <body className="font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300">
+      <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{
