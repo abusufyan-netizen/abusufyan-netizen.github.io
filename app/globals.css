@@ -133,7 +133,7 @@ button, a, .transition-all {
   }
   
   .btn-primary {
-    @apply btn text-[#0B1120] shadow-lg shadow-blue-500/10;
+    @apply btn text-[#0D1117] shadow-lg shadow-blue-500/10;
     background: var(--brand-grad);
   }
   
