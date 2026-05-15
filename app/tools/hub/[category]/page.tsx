@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: HubPageProps): Promise<Metada
     title,
     description,
     alternates: {
-      canonical: `https://wtkpro.site/tools/hub/${params.category}/`,
+      canonical: `https://wtkpro.site/tools/hub/${params.category}`,
     }
   }
 }

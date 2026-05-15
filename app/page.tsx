@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Access 40+ secure, client-side developer tools in our free WebToolkit Pro. High-performance utilities for JSON formatting, SEO optimization, and enterprise engineering workflows.',
   keywords: ['wtkpro', 'WebToolkit', 'WebToolkit Pro', 'web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
   alternates: {
-    canonical: 'https://wtkpro.site/',
+    canonical: 'https://wtkpro.site',
   },
 }
 import { 

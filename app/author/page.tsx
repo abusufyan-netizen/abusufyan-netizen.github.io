@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Abu Sufyan - Lead Engineer & Author | WebToolkit Pro',
   description: 'Meet Abu Sufyan, the lead architect behind WebToolkit Pro. Discover his research on Edge performance, technical SEO, and modern web infrastructure.',
   alternates: {
-    canonical: 'https://wtkpro.site/author/',
+    canonical: 'https://wtkpro.site/author',
   },
 }
 
