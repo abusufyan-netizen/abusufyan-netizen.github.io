@@ -77,7 +77,7 @@ export default function Home() {
             <a 
               href="https://www.producthunt.com/products/webtoolkit-pro?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="hover:scale-105 transition-transform duration-300"
             >
               <img 
