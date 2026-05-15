@@ -1795,6 +1795,396 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "Sitemap.xml Generator"
+    slug: "sitemap-generator"
+    category: "SEO & Search Optimization"
+    icon: "Map"
+    subcategory: "indexing-tools"
+    tags: ["sitemap", "seo", "xml", "google", "indexing"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate XML sitemaps for search engines"
+      secondary: "Automated crawling simulation for site structure"
+    technical:
+      input_formats: ["url-list", "text"]
+      output_formats: ["xml", "txt"]
+      processing: "client-side"
+    meta:
+      title: "Sitemap.xml Generator — Create Google Sitemaps Online Free"
+    content:
+      title: "Sitemap.xml Generator — Boost Your Search Indexing"
+      description: "Create perfectly formatted XML sitemaps for Google, Bing, and Yandex. Our free sitemap builder helps search engines crawl and index your website more efficiently."
+      keywords: ["create google sitemap online free", "xml sitemap builder for large sites", "generate sitemap for seo", "sitemap xml creator browser", "index website faster tool", "free sitemap generator for small sites"]
+      tldr: "Generate a perfectly structured XML sitemap to help search engines discover and index every page on your website."
+      entity_definition: "Sitemap.xml Generator is an SEO utility for creating machine-readable maps of a website's content. It lists all URLs that are eligible for indexing, along with metadata such as last modification time and priority, ensuring that search engine bots like Googlebot can navigate the site efficiently."
+      how_it_works: "The tool processes a list of URLs or crawls a provided domain (simulated) to build a structured XML document that adheres to the sitemaps.org protocol."
+      use_cases:
+        - "Submitting new sites to Google Search Console"
+        - "Updating search engines after major content changes"
+        - "Ensuring deep pages are discovered by crawlers"
+      features:
+        - "Support for 500+ URLs per generation"
+        - "Customizable priority and frequency tags"
+        - "Automatic XML syntax validation"
+        - "One-click download for sitemap.xml"
+      faq:
+        - question: "Why do I need a sitemap?"
+        - answer: "A sitemap acts as a roadmap for search engines, helping them find all your pages, even those without many internal links."
+        - question: "How often should I update it?"
+        - answer: "Whenever you add new content or change your site structure significantly."
+
+  - name: "Canonical URL Checker"
+    slug: "canonical-checker"
+    category: "SEO & Search Optimization"
+    icon: "Link"
+    subcategory: "on-page-seo"
+    tags: ["canonical", "seo", "duplicate-content", "tags", "audit"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Verify and audit Canonical URL tags"
+      secondary: "Identify duplicate content risks and tag mismatches"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["status-report"]
+      processing: "client-side"
+    meta:
+      title: "Canonical URL Checker — Verify SEO Canonical Tags Online"
+    content:
+      title: "Canonical Checker — Audit Your SEO Link Integrity"
+      description: "Verify your canonical tags to prevent duplicate content issues. Our professional checker ensures your site communicates the 'master version' of every page to search engines correctly."
+      keywords: ["verify canonical tags online", "find duplicate content with canonicals", "check rel=canonical tag", "seo canonical audit tool", "canonical url validation online", "fix duplicate content seo"]
+      tldr: "Audit your canonical tags instantly to ensure search engines are indexing the correct version of your pages."
+      entity_definition: "Canonical URL Checker is a diagnostic SEO utility that inspects the <link rel='canonical'> attribute in a page's HTML. It confirms that the declared canonical URL matches the intended target, helping to consolidate ranking signals and prevent search engines from penalizing a site for perceived duplicate content."
+      how_it_works: "The tool scans the provided HTML or URL for the presence of canonical tags and cross-references them with the current page environment."
+      use_cases:
+        - "Auditing site migrations for link integrity"
+        - "Fixing 'Duplicate without user-selected canonical' errors in GSC"
+        - "Verifying correct tag implementation in CMS templates"
+      features:
+        - "Instant tag identification and extraction"
+        - "Verification of absolute vs relative URLs"
+        - "Cross-domain canonical detection"
+        - "Visual success/warning indicators"
+      faq:
+        - question: "What is a canonical tag?"
+        - answer: "It is an HTML element that tells search engines which version of a URL is the original one."
+        - question: "Can I have multiple canonicals on one page?"
+        - answer: "No. Having more than one canonical tag can confuse search engines and lead to them ignoring both."
+
+  - name: "Hreflang Tag Generator"
+    slug: "hreflang-generator"
+    category: "SEO & Search Optimization"
+    icon: "Globe"
+    subcategory: "international-seo"
+    tags: ["hreflang", "international-seo", "multi-language", "tags", "google"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate multi-language hreflang tags"
+      secondary: "International SEO builder for multi-regional sites"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["html", "xml"]
+      processing: "client-side"
+    meta:
+      title: "Hreflang Tag Generator — Multi-Language SEO Tag Builder"
+    content:
+      title: "Hreflang Generator — Optimize International SEO"
+      description: "Generate perfectly formatted hreflang tags for your multi-language website. Ensure Google serves the correct language version of your site to the right audience."
+      keywords: ["generate multi-language seo tags", "hreflang builder for international sites", "create hreflang tags for google", "international seo tag generator", "hreflang xml sitemap builder", "multi-regional seo tool"]
+      tldr: "Scale your international presence with perfectly formatted hreflang tags for every language and region."
+      entity_definition: "Hreflang Tag Generator is an international SEO utility that creates the rel='alternate' hreflang='x' attributes needed for multi-regional sites. These tags tell search engines the relationship between pages in different languages, preventing duplicate content issues and ensuring users land on the version of the site tailored to their locale."
+      how_it_works: "Users select languages and regions from a standardized list and provide the corresponding URLs; the tool then generates the exact HTML or XML syntax required."
+      use_cases:
+        - "Managing localized versions of an e-commerce site"
+        - "Setting up international content hubs"
+        - "Ensuring correct language targeting in global markets"
+      features:
+        - "Support for all ISO 639-1 language codes"
+        - "Regional targeting (ISO 3166-1 Alpha-2)"
+        - "HTML head and XML sitemap output modes"
+        - "X-default tag support for fallback regions"
+      faq:
+        - question: "What is 'x-default'?"
+        - answer: "The x-default hreflang attribute is used for pages that don't target a specific language or region, acting as a global fallback."
+        - question: "Do I need hreflang if I only have one language?"
+        - answer: "No. Hreflang is only necessary if you have content translated or localized for different regions."
+
+  - name: "Google Snippet Previewer"
+    slug: "snippet-preview"
+    category: "SEO & Search Optimization"
+    icon: "Search"
+    subcategory: "content-optimization"
+    tags: ["meta-tags", "google", "preview", "ctr", "snippet"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Preview and optimize search engine results (SERP)"
+      secondary: "Real-time character count and pixel-width validation"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["visual-preview"]
+      processing: "client-side"
+    meta:
+      title: "Google Snippet Previewer — Optimize Meta Lengths for SEO"
+    content:
+      title: "Google Snippet Preview — Visual SERP Optimizer"
+      description: "Visualize how your page will appear in Google search results. Optimize your titles and meta descriptions with real-time character and pixel-width limits to maximize CTR."
+      keywords: ["google snippet preview tool", "optimize meta description length for seo", "serp preview online free", "meta title length checker", "visualize search results", "boost seo click through rate"]
+      tldr: "Visualize your Google search appearance and optimize your meta tags for maximum click-through rates."
+      entity_definition: "Google Snippet Previewer is a conversion-focused SEO utility that simulates a Search Engine Results Page (SERP). It allows content creators to see exactly where their titles and descriptions will be truncated by Google's pixel-width limits, ensuring critical keywords and calls-to-action remain visible to searchers."
+      how_it_works: "The tool uses a CSS-based replica of the Google desktop and mobile search interface, applying real-time length validation based on current SERP standards."
+      use_cases:
+        - "Drafting high-CTR meta descriptions"
+        - "Ensuring brand names aren't cut off in titles"
+        - "Visualizing rich snippet potential"
+      features:
+        - "Desktop and Mobile preview toggle"
+        - "Character and Pixel-width counters"
+        - "Real-time truncation alerts"
+        - "Bold keyword simulation"
+      faq:
+        - question: "How long should a meta title be?"
+        - answer: "Generally, keep it under 60 characters or 580 pixels to avoid truncation."
+        - question: "What is the best meta description length?"
+        - answer: "Aim for 150-160 characters (920 pixels) to ensure your message is fully displayed."
+
+  - name: "Heading Structure Visualizer"
+    slug: "heading-visualizer"
+    category: "SEO & Search Optimization"
+    icon: "List"
+    subcategory: "on-page-seo"
+    tags: ["headings", "h1-h6", "structure", "accessibility", "audit"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Audit and visualize page heading hierarchy"
+      secondary: "Check for skipped levels and multiple H1 tags"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["visual-tree"]
+      processing: "client-side"
+    meta:
+      title: "Heading Structure Visualizer — Audit H1-H6 Hierarchy Online"
+    content:
+      title: "Heading Visualizer — Audit Your Content Hierarchy"
+      description: "Visualize your page's H1-H6 heading structure to ensure a logical hierarchy for SEO and accessibility. Find skipped levels and duplicate H1 tags instantly."
+      keywords: ["visualize h1-h6 hierarchy", "check heading tags online", "seo heading structure audit", "find missing h1 tags", "hierarchy checker for accessibility", "on-page seo heading tool"]
+      tldr: "Visualize your content's skeletal structure to ensure a perfect heading hierarchy for search engines and screen readers."
+      entity_definition: "Heading Structure Visualizer is an on-page SEO utility that extracts and displays the hierarchical relationship between H1, H2, H3, and subsequent tags. A clean, logical heading structure is vital for search engine understanding (topical relevance) and web accessibility (screen reader navigation)."
+      how_it_works: "The tool scans the DOM or provided HTML, identifies all heading elements, and renders them in a nested tree format that highlights any structural inconsistencies."
+      use_cases:
+        - "Auditing long-form blog posts for readability"
+        - "Ensuring CMS templates follow SEO best practices"
+        - "Improving accessibility scores for WCAG compliance"
+      features:
+        - "Visual tree map of all headings"
+        - "Detection of multiple H1 tags"
+        - "Highlighting of skipped heading levels (e.g., H1 to H3)"
+        - "Text-only 'outline' export"
+      faq:
+        - question: "Can I have more than one H1 tag?"
+        - answer: "Technically yes in HTML5, but for SEO best practices, it's recommended to have only one clear H1 per page."
+        - question: "Why are skipped levels bad?"
+        - answer: "They confuse search engines about the relationship between topics and break the navigation experience for screen reader users."
+
+  - name: "Open Graph (OG) Debugger"
+    slug: "og-debugger"
+    category: "SEO & Search Optimization"
+    icon: "Share2"
+    subcategory: "social-seo"
+    tags: ["open-graph", "og-tags", "social-media", "facebook", "preview"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Preview and debug Open Graph meta tags"
+      secondary: "Social media link preview simulation for Facebook and LinkedIn"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["visual-preview"]
+      processing: "client-side"
+    meta:
+      title: "Open Graph (OG) Debugger — Test Social Media Meta Tags"
+    content:
+      title: "Open Graph Debugger — Optimize Your Social Links"
+      description: "Preview how your website looks when shared on Facebook, LinkedIn, and Slack. Debug your Open Graph (OG) tags to ensure images and titles display perfectly."
+      keywords: ["facebook link preview debugger", "test social media meta tags", "open graph previewer online", "debug og:image tag", "social sharing preview tool", "check linkedin link appearance"]
+      tldr: "Ensure your website looks stunning when shared on social media with our real-time Open Graph debugger."
+      entity_definition: "Open Graph (OG) Debugger is a social SEO utility that simulates how a URL will be rendered by social media crawlers. It extracts og:title, og:description, and og:image tags, allowing developers to catch common issues like broken image paths or unoptimized sharing descriptions before they go live."
+      how_it_works: "The tool parses the metadata in the page header and renders a visual card that mimics the sharing interface of major social platforms."
+      use_cases:
+        - "Ensuring blog posts have correct sharing images"
+        - "Debugging 'No preview available' errors on LinkedIn"
+        - "Optimizing viral potential for social campaigns"
+      features:
+        - "Real-time card preview simulation"
+        - "Missing tag identification and alerts"
+        - "Image aspect ratio validation"
+        - "Support for custom og:type and og:site_name"
+      faq:
+        - question: "What is the best size for og:image?"
+        - answer: "The recommended size is 1200 x 630 pixels for a perfect display on most platforms."
+        - question: "Why isn't my image showing up?"
+        - answer: "Common reasons include absolute vs relative paths, file size limits, or the crawler being blocked by robots.txt."
+
+  - name: "Twitter Card Generator"
+    slug: "twitter-card-gen"
+    category: "SEO & Search Optimization"
+    icon: "Twitter"
+    subcategory: "social-seo"
+    tags: ["twitter", "meta-tags", "social-media", "cards", "preview"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate and preview Twitter Card meta tags"
+      secondary: "Support for Summary and Large Image card formats"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["html"]
+      processing: "client-side"
+    meta:
+      title: "Twitter Card Generator — Preview Twitter Meta Tags Online"
+    content:
+      title: "Twitter Card Generator — Optimize Your Viral Reach"
+      description: "Generate and preview Twitter Card meta tags for your website. Choose between summary or large image cards to maximize engagement and clicks on X (Twitter)."
+      keywords: ["twitter summary card preview online", "generate twitter meta tags", "twitter:card large image builder", "test twitter link appearance", "twitter seo tag generator", "optimize links for x"]
+      tldr: "Drive more engagement from X (Twitter) with perfectly optimized Summary and Large Image cards."
+      entity_definition: "Twitter Card Generator is a social utility specifically designed for the X (formerly Twitter) ecosystem. It creates the twitter:card, twitter:site, and twitter:creator tags necessary to transform a simple link into a rich, interactive card that takes up more screen real estate and drives higher engagement."
+      how_it_works: "Users input their content details and select a card type; the tool then provides a visual preview and the exact HTML snippets to paste into their site's <head>."
+      use_cases:
+        - "Promoting technical articles on Twitter"
+        - "Standardizing brand presence on social media"
+        - "Increasing click-through rates for shared links"
+      features:
+        - "Support for 'Summary' and 'Summary with Large Image'"
+        - "Real-time visual preview card"
+        - "Automatic handle formatting (@username)"
+        - "One-click HTML code generation"
+      faq:
+        - question: "Which card type should I use?"
+        - answer: "Use 'Summary with Large Image' for high-impact visual content and 'Summary' for text-heavy articles."
+        - question: "Do I need Twitter cards if I have Open Graph?"
+        - answer: "Twitter will fall back to Open Graph, but using dedicated Twitter cards allows for more control and specific formatting for the platform."
+
+  - name: "SEO URL Slug Optimizer"
+    slug: "slug-optimizer"
+    category: "SEO & Search Optimization"
+    icon: "Type"
+    subcategory: "on-page-seo"
+    tags: ["slug", "url", "seo", "optimization", "keywords"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Create clean and SEO-friendly URL slugs"
+      secondary: "Remove stop-words and special characters for better ranking"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "SEO URL Slug Optimizer — Create Search-Friendly URLs"
+    content:
+      title: "URL Slug Optimizer — Clean & Search-Ready Links"
+      description: "Transform your titles into clean, search-friendly URL slugs. Automatically remove stop-words and special characters to create short, descriptive URLs that rank better."
+      keywords: ["create seo friendly urls", "slug generator with keyword cleaning", "url slug optimizer online", "clean url builder for seo", "remove stop words from url", "generate permalinks for blog"]
+      tldr: "Generate clean, high-performance URL slugs by automatically stripping bloat and optimizing for search engine relevance."
+      entity_definition: "SEO URL Slug Optimizer is a permalink utility that converts plain-English titles into optimized URL strings. It follows SEO best practices by removing non-essential 'stop words' (the, and, of), replacing spaces with hyphens, and stripping special characters that can cause crawling or social sharing issues."
+      how_it_works: "The tool applies a sequence of string transformations: lowercasing, character replacement, stop-word filtering, and hyphen normalization."
+      use_cases:
+        - "Creating permalinks for WordPress or Jamstack blogs"
+        - "Standardizing URL structures for large e-commerce sites"
+        - "Cleaning up messy query-string based URLs"
+      features:
+        - "Automatic stop-word removal (200+ words)"
+        - "Customizable separator (hyphen or underscore)"
+        - "URL-safe character filtering"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Why remove 'stop words' like 'the' or 'and'?"
+        - answer: "Shorter URLs are generally more user-friendly and keep the focus on the primary keywords that search engines use for ranking."
+        - question: "Should I change my slugs after publishing?"
+        - answer: "Only if absolutely necessary, and always implement a 301 redirect if you do to preserve your SEO authority."
+
+  - name: "Keyword Density Analyzer"
+    slug: "keyword-density"
+    category: "SEO & Search Optimization"
+    icon: "BarChart"
+    subcategory: "content-optimization"
+    tags: ["keywords", "density", "seo", "analysis", "content"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Analyze keyword frequency and distribution in text"
+      secondary: "Identify primary topics and prevent keyword stuffing"
+    technical:
+      input_formats: ["text", "url"]
+      output_formats: ["data-table"]
+      processing: "client-side"
+    meta:
+      title: "Keyword Density Analyzer — Check Content Frequency Online"
+    content:
+      title: "Keyword Density Analyzer — Optimize Your SEO Content"
+      description: "Analyze the keyword frequency of your content to ensure optimal distribution. Find your most important terms and prevent keyword stuffing penalties with our visual analyzer."
+      keywords: ["check keyword frequency in text", "seo content density tool", "keyword density analyzer free", "analyze on-page keywords", "find top keywords in article", "keyword stuffing checker online"]
+      tldr: "Understand your content's topical focus and optimize for search engines without over-optimizing."
+      entity_definition: "Keyword Density Analyzer is a content audit utility that calculates the percentage of times a specific word or phrase appears compared to the total word count. It provides a statistical breakdown of 1, 2, and 3-word phrases, helping writers ensure they are targeting their primary keywords without triggering 'keyword stuffing' filters."
+      how_it_works: "The tool tokenizes the input text, removes common filler words, and counts occurrences of unique n-grams (phrases) to generate a frequency table."
+      use_cases:
+        - "Auditing blog posts for topical relevance"
+        - "Comparing content focus against competitors"
+        - "Identifying opportunities for LSI (Latent Semantic Indexing) keywords"
+      features:
+        - "1-word, 2-word, and 3-word phrase analysis"
+        - "Stop-word filtering for meaningful results"
+        - "Percentage-based density calculation"
+        - "Visual distribution charts"
+      faq:
+        - question: "What is the ideal keyword density?"
+        - answer: "There is no 'perfect' number, but generally, 1-2% for primary keywords is considered safe and effective."
+        - question: "What is keyword stuffing?"
+        - answer: "It is the practice of overloading a page with keywords in an attempt to manipulate search rankings, which can lead to penalties."
+
+  - name: "JSON-LD Schema Validator"
+    slug: "schema-validator"
+    category: "SEO & Search Optimization"
+    icon: "Code"
+    subcategory: "technical-seo"
+    tags: ["schema", "json-ld", "validator", "structured-data", "google"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Validate and debug JSON-LD structured data"
+      secondary: "Verify Schema.org compliance for rich search snippets"
+    technical:
+      input_formats: ["json", "txt"]
+      output_formats: ["validation-report"]
+      processing: "client-side"
+    meta:
+      title: "JSON-LD Schema Validator — Validate Structured Data Online"
+    content:
+      title: "Schema Validator — Verify Your Structured Data"
+      description: "Debug and validate your JSON-LD schema markup. Ensure your structured data is compliant with Schema.org standards to qualify for Google rich search results and snippets."
+      keywords: ["validate schema markup online", "json-ld syntax checker", "test structured data for google", "schema.org validator free", "debug rich snippets online", "check website schema markup"]
+      tldr: "Ensure your structured data is perfect for search engines with our real-time JSON-LD schema validator."
+      entity_definition: "JSON-LD Schema Validator is a technical SEO utility for auditing structured data. It parses JSON-LD blocks to identify syntax errors, missing required properties (like 'name' or 'image'), and structural inconsistencies that could prevent a page from appearing with 'Rich Results' (stars, prices, FAQs) in Google Search."
+      how_it_works: "The tool utilizes a strict JSON parser and a schema-mapping engine to cross-reference your markup against the official Schema.org vocabularies."
+      use_cases:
+        - "Debugging rich results eligibility"
+        - "Validating automated schema generation from a CMS"
+        - "Fixing 'Parsing error: Missing } or ]' in Search Console"
+      features:
+        - "Real-time syntax and structural validation"
+        - "Detection of missing recommended properties"
+        - "Support for Article, Product, FAQ, and more"
+        - "Clean error reporting with line numbers"
+      faq:
+        - question: "Why is structured data important?"
+        - answer: "It helps search engines understand the context of your content, which can lead to enhanced display features like star ratings."
+        - question: "Does this tool support Microdata?"
+        - answer: "Currently, we focus on JSON-LD, as it is the format officially recommended by Google for structured data."
+
   - name: "Nginx Configuration Generator"
     slug: "nginx-generator"
     category: "Developer Tools"
