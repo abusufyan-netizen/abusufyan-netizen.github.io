@@ -37,7 +37,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
   const [favorites, setFavorites] = useState<string[]>([])
-  const [viewMode, setViewMode] = useState<'grid' | 'list' | 'details'>('grid')
+  const [viewMode, setViewMode] = useState<'grid' | 'list' | 'details'>('details')
 
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 

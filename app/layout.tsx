@@ -152,9 +152,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
               (function() {
                 try {
                   var theme = localStorage.getItem('theme');
-                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-                  if (!theme && supportDarkMode) theme = 'dark';
+                  if (!theme) theme = 'dark';
                   if (theme === 'dark') document.documentElement.classList.add('dark');
+                  else document.documentElement.classList.remove('dark');
                 } catch (e) {}
               })();
             `,
