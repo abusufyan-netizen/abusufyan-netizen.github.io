@@ -1795,6 +1795,357 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "User-Agent Parser (Modern)"
+    slug: "ua-parser"
+    category: "Network & Performance"
+    icon: "Monitor"
+    subcategory: "browser-utilities"
+    tags: ["user-agent", "browser", "parsing", "device-detection", "networking"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Parse and decode browser User-Agent strings"
+      secondary: "Identify device type, OS, and browser engine details"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["data-table"]
+      processing: "client-side"
+    meta:
+      title: "User-Agent Parser — Decode Browser & OS Info Online"
+    content:
+      title: "UA Parser — Identify Modern Browser & Device Specs"
+      description: "Parse any browser User-Agent string to identify the device type, operating system, and browser engine. A professional utility for debugging device-specific issues and analytics."
+      keywords: ["parse browser user agent string", "identify mobile vs desktop browser", "user agent decoder online free", "check browser engine version", "device detection from ua string", "browser compatibility auditor tool"]
+      tldr: "Instantly decode complex User-Agent strings into human-readable device and browser specifications."
+      entity_definition: "User-Agent Parser (Modern) is a diagnostic networking utility that breaks down the 'User-Agent' string sent by browsers in every HTTP request. It extracts critical metadata such as the browser name (Chrome, Safari, Firefox), the OS (Windows, macOS, Android), and the device type, helping developers troubleshoot responsive design and compatibility issues."
+      how_it_works: "The tool uses a high-precision regex engine to match UA patterns against a database of thousands of browser and hardware signatures."
+      use_cases:
+        - "Debugging device-specific layout bugs"
+        - "Analyzing web server logs for bot traffic"
+        - "Optimizing content delivery based on browser capabilities"
+      features:
+        - "Real-time parsing of custom strings"
+        - "Detection of Browser, OS, and Device Brand"
+        - "Identification of Bot/Crawler signatures"
+        - "Browser Engine (Blink, WebKit, Gecko) details"
+      faq:
+        - question: "What is a User-Agent string?"
+        - answer: "It is a line of text that identifies your browser and operating system to the web server you are visiting."
+        - question: "Why do some strings look identical?"
+        - answer: "Many modern browsers use similar 'base' strings (like Chrome using Safari/WebKit strings) for compatibility reasons; our parser looks for specific tokens to differentiate them."
+
+  - name: "Browser Cache Header Builder"
+    slug: "cache-header-gen"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "performance-optimization"
+    tags: ["caching", "headers", "performance", "cache-control", "page-speed"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate optimized Cache-Control and ETag headers"
+      secondary: "Build caching policies for static and dynamic assets"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["http-headers"]
+      processing: "client-side"
+    meta:
+      title: "Browser Cache Header Builder — Optimize Static Asset Loading"
+    content:
+      title: "Cache Header Generator — Master Your Content Expiration"
+      description: "Generate perfectly optimized Cache-Control, Expires, and ETag headers for your website. Improve repeat-visit performance and reduce server load with professional caching policies."
+      keywords: ["generate cache control headers online", "optimize browser caching for performance", "browser cache policy builder", "static asset caching guide", "generate etag headers online", "performance audit caching helper"]
+      tldr: "Reduce server load and speed up repeat visits by generating optimized browser caching headers."
+      entity_definition: "Browser Cache Header Builder is a performance utility for configuring how browsers store and reuse website assets. By generating precise 'Cache-Control' directives (like max-age, public, or immutable), developers can ensure that static files like images and scripts are served from the user's local disk, eliminating unnecessary network requests."
+      how_it_works: "Users select the asset type and desired cache duration; the tool then generates the exact HTTP header syntax for Nginx, Apache, or Cloudflare."
+      use_cases:
+        - "Optimizing 'Serve static assets with an efficient cache policy' in Lighthouse"
+        - "Reducing CDN bandwidth costs"
+        - "Ensuring critical updates aren't stuck in user caches"
+      features:
+        - "Preset policies for Images, Scripts, and HTML"
+        - "Support for 'Immutable' and 'Stale-While-Revalidate'"
+        - "Direct code output for common web servers"
+        - "Visual explanation of cache behavior"
+      faq:
+        - question: "What is the best cache duration for images?"
+        - answer: "For static assets that don't change often, a duration of 1 year (max-age=31536000) is standard practice."
+        - question: "How do I clear a browser cache remotely?"
+        - answer: "You can't directly, which is why 'cache busting' (adding a version hash to the filename) is essential when using long cache headers."
+
+  - name: "JS Execution Time Audit (Sim)"
+    slug: "js-execution-audit"
+    category: "Network & Performance"
+    icon: "Activity"
+    subcategory: "performance-optimization"
+    tags: ["javascript", "performance", "rendering", "main-thread", "tbt"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Simulate and audit JavaScript execution costs"
+      secondary: "Identify main-thread blocking segments and TBT impact"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["visual-timeline"]
+      processing: "client-side"
+    meta:
+      title: "JS Execution Time Audit — Visualize Main Thread Blocking"
+    content:
+      title: "JS Execution Auditor — Optimize Your Script Performance"
+      description: "Estimate and visualize the cost of JavaScript execution on the main thread. Identify potential Total Blocking Time (TBT) issues and optimize your script loading for better Core Web Vitals."
+      keywords: ["estimate js execution cost", "visualize script processing delay", "audit main thread blocking js", "optimize total blocking time online", "js performance simulation tool", "improve fid and inp metrics"]
+      tldr: "Understand the hidden performance cost of your JavaScript and optimize your site's interactivity."
+      entity_definition: "JS Execution Time Audit (Sim) is a performance utility focused on the 'Interactivity' pillar of Core Web Vitals. It simulates how different script sizes and execution patterns block the browser's main thread, helping developers understand the relationship between JS weight and metrics like First Input Delay (FID) and Interaction to Next Paint (INP)."
+      how_it_works: "The tool uses a timing-model based on average CPU speeds to visualize 'Long Tasks' and their impact on a theoretical user interaction timeline."
+      use_cases:
+        - "Planning JS budgets for heavy frameworks"
+        - "Identifying the cost of third-party tracking scripts"
+        - "Optimizing hydration times for SSR apps"
+      features:
+        - "Main-thread blocking visualization"
+        - "Preset CPU throttling levels (Mobile vs Desktop)"
+        - "Calculation of theoretical Total Blocking Time (TBT)"
+        - "Recommendations for code splitting and deferring"
+      faq:
+        - question: "What is a 'Long Task'?"
+        - answer: "In browser performance, any task that takes longer than 50ms is considered a long task because it blocks the user from interacting with the page."
+        - question: "Does script size equal execution time?"
+        - answer: "Not necessarily. A small script with a complex loop can block the thread longer than a large script with simple logic."
+
+  - name: "Resource Priority Mapper"
+    slug: "resource-priority"
+    category: "Network & Performance"
+    icon: "ArrowUpCircle"
+    subcategory: "performance-optimization"
+    tags: ["performance", "preload", "prefetch", "optimization", "lcp"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Preload, Prefetch, and Preconnect tags"
+      secondary: "Optimize resource discovery for critical assets"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["html-tags"]
+      processing: "client-side"
+    meta:
+      title: "Resource Priority Mapper — Generate Preload & Prefetch Tags"
+    content:
+      title: "Priority Mapper — Optimize Your Resource Discovery"
+      description: "Generate perfectly formatted preload, prefetch, and preconnect tags. Tell browsers which assets to prioritize for near-instant page loads and better LCP scores."
+      keywords: ["generate preload tags online", "optimize resource discovery seo", "preconnect tag generator free", "dns-prefetch builder online", "speed up critical asset loading", "performance optimization link tags"]
+      tldr: "Speed up your site by telling browsers exactly which assets to load first with optimized priority tags."
+      entity_definition: "Resource Priority Mapper is a performance utility that helps developers implement 'Resource Hints'. By using tags like <link rel='preload'>, browsers can start downloading critical assets (like fonts or LCP images) before they are even discovered in the HTML or CSS, significantly reducing load times."
+      how_it_works: "Users input the asset URL and type (Font, Script, Image); the tool then generates the exact HTML syntax with the correct 'as' and 'crossorigin' attributes."
+      use_cases:
+        - "Speeding up custom font rendering"
+        - "Preconnecting to third-party API domains"
+        - "Preloading hero images for LCP optimization"
+      features:
+        - "Preload, Prefetch, and Preconnect support"
+        - "Automatic attribute validation (as='font', etc.)"
+        - "Crossorigin policy configuration"
+        - "One-click copy to head"
+      faq:
+        - question: "Preload vs Prefetch: what is the difference?"
+        - answer: "Preload is for assets needed in the *current* page. Prefetch is for assets needed in the *next* page the user might visit."
+        - question: "Can I preload everything?"
+        - answer: "No. Preloading too many assets can actually slow down your site by competing for bandwidth with other critical resources."
+
+  - name: "Network Throttling Visualizer"
+    slug: "network-throttling"
+    category: "Network & Performance"
+    icon: "WifiOff"
+    subcategory: "performance-optimization"
+    tags: ["performance", "throttling", "network", "latency", "3g"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visualize the impact of network speed on load times"
+      secondary: "Simulate 3G, 4G, and slow DSL connectivity profiles"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["visual-timeline"]
+      processing: "client-side"
+    meta:
+      title: "Network Throttling Visualizer — See Site Speed on 3G"
+    content:
+      title: "Network Throttling — Experience Your Site Like Your Users"
+      description: "Visualize how your website performs on slow network connections. Simulate 3G, 4G, and high-latency profiles to identify performance bottlenecks for mobile users globally."
+      keywords: ["visualize website speed on 3g", "network throttling simulation tool", "test mobile performance online", "latency impact visualizer", "slow network speed simulator", "page load time on mobile audit"]
+      tldr: "Stop guessing how slow your site is for mobile users. Visualize the impact of network latency and bandwidth in real-time."
+      entity_definition: "Network Throttling Visualizer is an educational performance utility that models the 'Real User Monitoring' (RUM) experience. It allows developers to see a side-by-side comparison of how their asset delivery is affected by network conditions like packet loss, high latency, and restricted bandwidth."
+      how_it_works: "The tool uses a simulation engine to generate load timelines based on standardized network profiles (e.g., 'Slow 3G' = 400ms RTT, 400kbps down)."
+      use_cases:
+        - "Designing for 'Next Billion Users' (emerging markets)"
+        - "Verifying site usability on spotty mobile data"
+        - "Comparing asset-loading sequences on different speeds"
+      features:
+        - "Preset profiles: Slow 3G, Fast 3G, 4G, Fiber"
+        - "Visual 'First Meaningful Paint' indicators"
+        - "Impact analysis for large JS/Image payloads"
+        - "Interactive latency slider"
+      faq:
+        - question: "Why should I test on Slow 3G?"
+        - answer: "Google uses 'Slow 3G' throttling for its Lighthouse audits to ensure sites remain accessible even in suboptimal network conditions."
+        - question: "Does this actually slow down my browser?"
+        - answer: "This is a simulation for visualization. To actually throttle your connection, use the 'Network' tab in your browser's DevTools."
+
+  - name: "HSTS Policy Generator"
+    slug: "hsts-gen"
+    category: "Security Tools"
+    icon: "Lock"
+    subcategory: "security-audit"
+    tags: ["hsts", "security", "https", "headers", "networking"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate HTTP Strict Transport Security (HSTS) headers"
+      secondary: "Configure secure-only connections and preload eligibility"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["http-headers"]
+      processing: "client-side"
+    meta:
+      title: "HSTS Policy Generator — Secure Your Website with HTTPS Only"
+    content:
+      title: "HSTS Generator — Enforce Permanent HTTPS Security"
+      description: "Generate perfectly formatted HSTS (HTTP Strict Transport Security) headers. Protect your users from protocol downgrade attacks and get your domain ready for the HSTS Preload list."
+      keywords: ["generate hsts headers online", "strict transport security policy builder", "hsts preload list eligibility checker", "enforce https only online free", "secure protocol downgrade protection", "hsts max-age calculator tool"]
+      tldr: "Eliminate insecure connections and protect your users by enforcing permanent HTTPS with a professional HSTS policy."
+      entity_definition: "HSTS Policy Generator is a security utility that creates the 'Strict-Transport-Security' header. This directive tells browsers that they should *only* communicate with your site via HTTPS, even if the user types 'http://'. This prevents 'Man-in-the-Middle' attacks and protocol downgrades."
+      how_it_works: "Users select the security duration and subdomain policies; the tool then generates the header string and server-specific configuration code."
+      use_cases:
+        - "Improving security audit scores (SSLLabs, etc.)"
+        - "Applying for the global HSTS Preload list"
+        - "Securing all subdomains under a single policy"
+      features:
+        - "Max-age calculation (up to 2 years)"
+        - "IncludeSubDomains support"
+        - "Preload directive integration"
+        - "Nginx and Apache config snippets"
+      faq:
+        - question: "What is HSTS Preloading?"
+        - answer: "It is a list built into browsers that tells them to use HTTPS for your domain before the first time a user even visits your site."
+        - question: "Can HSTS break my site?"
+        - answer: "Yes, if you enable HSTS and then lose your SSL certificate, users will be unable to access your site until the max-age expires. Start with a short duration first."
+
+  - name: "Content Security Policy (CSP) Builder"
+    slug: "csp-builder"
+    category: "Security Tools"
+    icon: "ShieldAlert"
+    subcategory: "security-audit"
+    tags: ["csp", "security", "xss", "headers", "networking"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate complex Content Security Policy (CSP) headers"
+      secondary: "Protect against XSS and data injection attacks"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["http-headers"]
+      processing: "client-side"
+    meta:
+      title: "Content Security Policy (CSP) Builder — Prevent XSS Attacks"
+    content:
+      title: "CSP Builder — Create Robust Security Directives"
+      description: "Build perfectly formatted Content Security Policies (CSP) to protect your website from XSS, clickjacking, and data injection. A professional visual builder for complex security headers."
+      keywords: ["generate csp headers online", "prevent xss with content security policy", "csp directive builder free", "secure script sources online", "clickjacking protection tool", "content security policy audit helper"]
+      tldr: "Take control of your site's security by building a custom CSP that defines exactly which scripts and resources are allowed to run."
+      entity_definition: "Content Security Policy (CSP) Builder is a high-level security utility for modern web applications. A CSP header allows site owners to restrict which resources (JS, CSS, Images, Frames) can be loaded and from where, effectively neutralizing most Cross-Site Scripting (XSS) and data injection vulnerabilities."
+      how_it_works: "The tool provides a structured interface for defining 'Directives' (like script-src, img-src, connect-src) and generates a valid, minified header string."
+      use_cases:
+        - "Protecting user data from malicious script injection"
+        - "Preventing unauthorized 'iFrame' embedding (clickjacking)"
+        - "Auditing and whitelisting third-party tracking scripts"
+      features:
+        - "Visual directive-by-directive builder"
+        - "Support for 'nonce' and 'unsafe-inline' policies"
+        - "Report-URI and Report-To integration"
+        - "Real-time policy validation and warnings"
+      faq:
+        - question: "Why is CSP so hard to implement?"
+        - answer: "Because it requires knowing every single external resource your site uses. If you miss one, that feature will break when the policy is live."
+        - question: "What is 'Report-Only' mode?"
+        - answer: "It's a way to test your CSP without actually blocking anything. The browser just sends reports of what *would* have been blocked."
+
+  - name: "Subresource Integrity (SRI) Hasher"
+    slug: "sri-hasher"
+    category: "Security Tools"
+    icon: "Key"
+    subcategory: "security-audit"
+    tags: ["sri", "security", "hashing", "cdn", "networking"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Subresource Integrity (SRI) hashes"
+      secondary: "Secure CDN assets against unauthorized modification"
+    technical:
+      input_formats: ["url", "file"]
+      output_formats: ["html-tags"]
+      processing: "client-side"
+    meta:
+      title: "Subresource Integrity (SRI) Hasher — Secure Your CDN Assets"
+    content:
+      title: "SRI Hasher — Verify Your External Scripts"
+      description: "Generate high-security Subresource Integrity (SRI) hashes for your scripts and stylesheets. Ensure that assets loaded from a CDN haven't been tampered with or modified by a third party."
+      keywords: ["generate sri hashes online", "secure cdn scripts with integrity", "subresource integrity hash generator", "sha-384 script integrity checker", "protect website from compromised cdn", "sri tag builder online"]
+      tldr: "Protect your site from compromised CDNs by generating integrity hashes that verify every script you load."
+      entity_definition: "Subresource Integrity (SRI) Hasher is a security utility for supply-chain protection. SRI is a browser security feature that allows the browser to verify that a file fetched from a third-party server (like a CDN) has not been unexpectedly altered. It does this by comparing a cryptographic hash of the file against the one provided in your HTML."
+      how_it_works: "The tool fetches the target file, calculates its SHA-256 or SHA-384 hash, and generates the 'integrity' and 'crossorigin' attributes for your <script> or <link> tags."
+      use_cases:
+        - "Securing jQuery or Bootstrap loads from public CDNs"
+        - "Preventing 'Man-in-the-Middle' script modification"
+        - "Complying with high-security industry standards"
+      features:
+        - "Support for SHA-256, SHA-384, and SHA-512"
+        - "Remote URL or Local File hashing"
+        - "Complete HTML tag generation"
+        - "Automatic crossorigin attribute inclusion"
+      faq:
+        - question: "What happens if the hash doesn't match?"
+        - answer: "The browser will refuse to execute the script or apply the stylesheet, protecting your users from potentially malicious code."
+        - question: "Does SRI affect performance?"
+        - answer: "The performance impact is negligible compared to the massive security benefit of preventing script injection."
+
+  - name: "Permissions Policy Generator"
+    slug: "permissions-policy"
+    category: "Security Tools"
+    icon: "Settings"
+    subcategory: "security-audit"
+    tags: ["security", "privacy", "headers", "networking", "browser"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Browser Permissions Policy headers"
+      secondary: "Control access to Camera, Mic, and Geolocation features"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["http-headers"]
+      processing: "client-side"
+    meta:
+      title: "Permissions Policy Generator — Control Browser Features Online"
+    content:
+      title: "Permissions Policy — Protect User Privacy & Security"
+      description: "Generate perfectly formatted Permissions-Policy headers (formerly Feature-Policy). Control which browser features (Camera, Microphone, Geolocation) can be used by your site and embedded iframes."
+      keywords: ["generate permissions policy headers online", "browser feature policy builder", "control camera and mic access seo", "secure geolocation access online", "disable browser features via header", "privacy audit permission policy tool"]
+      tldr: "Enhance user privacy and security by explicitly defining which browser features are allowed on your domain."
+      entity_definition: "Permissions Policy Generator is a security and privacy utility for controlling browser APIs. Formerly known as Feature-Policy, this header allows site owners to enable, disable, or restrict the use of browser features like the camera, microphone, geolocation, and payment APIs for both their own site and any embedded third-party content."
+      how_it_works: "The tool provides a toggle-based interface for various browser features and generates the structured header string required for server configuration."
+      use_cases:
+        - "Disabling microphone/camera on static content sites"
+        - "Restricting geolocation access to trusted origins only"
+        - "Preventing third-party ads from using intrusive browser APIs"
+      features:
+        - "Support for 30+ browser feature directives"
+        - "Whitelisting for specific trusted origins"
+        - "Support for 'self', 'none', and '*' policies"
+        - "Instant header syntax generation"
+      faq:
+        - question: "Does this replace CSP?"
+        - answer: "No. CSP controls *resources* (like scripts), while Permissions Policy controls *browser features* (like the camera)."
+        - question: "Why should I disable features I'm not using?"
+        - answer: "It's a security best practice (Principle of Least Privilege). If your site is compromised, the attacker still won't be able to access the user's mic if it's disabled via header."
+
   - name: "DNS Propagation Checker"
     slug: "dns-propagation"
     category: "Network & Performance"
