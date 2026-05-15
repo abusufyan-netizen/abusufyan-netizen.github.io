@@ -41,9 +41,9 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#0D1526] border border-[#1E2D47] rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 bg-elevated border border-border rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest">
             <Sparkles className="w-4 h-4 shrink-0" />
-            Brand Guidelines v1.0 • 40+ Free Developer Tools
+            Brand Guidelines v1.1 • 150+ Free Developer Tools
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter">
@@ -61,13 +61,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/tools"
-              className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
+              className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
             >
               Explore All Tools <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link 
               href="/blog"
-              className="bg-[#0D1526] text-white border border-[#1E2D47] font-bold px-10 py-5 rounded-2xl hover:bg-[#152035] transition-all"
+              className="bg-elevated text-foreground border border-border font-bold px-10 py-5 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-all"
             >
               Read Our Blog
             </Link>
@@ -83,7 +83,7 @@ export default function Home() {
             >
               <img 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light&t=1778387824061" 
-                alt="Web Toolkit Pro - 40+ premium developer tools with a perfect 100 speed score | Product Hunt" 
+                alt="Web Toolkit Pro - 150+ premium developer tools with a perfect 100 speed score | Product Hunt" 
                 width="250" 
                 height="54" 
                 className="dark:brightness-90 dark:contrast-125"
@@ -313,7 +313,7 @@ export default function Home() {
 
               <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
                 <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">40+</div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">150+</div>
                   <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
                 </div>
                 <div>
