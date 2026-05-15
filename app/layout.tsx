@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
   publisher: 'WebToolkit Pro',
+  referrer: 'strict-origin-when-cross-origin',
   formatDetection: {
     email: false,
     address: false,
