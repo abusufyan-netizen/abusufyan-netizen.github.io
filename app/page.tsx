@@ -54,6 +54,17 @@ export default function Home() {
             </span>
           </h1>
 
+          <div className="flex items-center justify-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-[#00D4B4]" />
+              100% Client-Side
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-blue-500" />
+              Open Source v2.1
+            </div>
+          </div>
+
           <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Format JSON. Generate passwords. Encode data. All in your browser.<br />
             Free, private tools for your daily coding tasks. No login required.

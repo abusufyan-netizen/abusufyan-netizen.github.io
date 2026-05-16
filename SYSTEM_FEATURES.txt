@@ -1,0 +1,86 @@
+================================================================
+WEBTOOLKIT PRO - TECHNICAL INFRASTRUCTURE & FEATURE LOG
+================================================================
+Generated: 2026-05-16
+Status: Production Ready (V2.1 - Topical Authority Hardened)
+
+----------------------------------------------------------------
+1. CORE ARCHITECTURE (BACKEND & DATA LAYER)
+----------------------------------------------------------------
+
+[A] The Tools Registry (config/tools.yaml)
+- Description: The single source of truth for every tool on the platform.
+- Features:
+    - Dynamic Metadata: Stores SEO titles, descriptions, and keywords.
+    - Technical Specs: Defines input/output formats and processing types (client/server).
+    - Release Management: Uses 'releaseDate' to handle scheduled deployments.
+    - Priority System: Numerical weight (1-10) for sorting and visibility.
+    - FAQ Schema: Stores tool-specific FAQs for Google Rich Snippets.
+
+[B] The Parsing Engine (lib/tools.ts)
+- Description: Bridges the YAML data to the Next.js frontend.
+- Features:
+    - Slug-to-Tool Mapping: Dynamic lookup of tool configurations.
+    - Category Aggregation: Automatically compiles unique categories from the registry.
+    - Safety Filters: Ensures "Coming Soon" or future-dated tools are hidden from users but visible in development.
+
+[C] Technical SEO Layer (next.config.js & sitemap.ts)
+- Description: Controls crawl behavior and URL health.
+- Features:
+    - Slash-Free URLs: Enforces standard slash-less paths for SEO consistency.
+    - 301 Redirect Engine: Automates the transition from legacy /category/ paths to premium /hub/ paths.
+    - Automated Sitemap: Dynamically generates URLs for 40+ tools, 90+ blog posts, and 8 Topical Hubs.
+    - Security Headers: Hardened CSP, HSTS, and XSS protection.
+
+----------------------------------------------------------------
+2. DYNAMIC FRONTEND FEATURES (UX & INTERACTIVITY)
+----------------------------------------------------------------
+
+[A] Advanced Tools Directory (app/tools/ToolsClient.tsx)
+- Description: The central hub for user discovery.
+- Features:
+    - Live Search: Instant, case-insensitive filtering across names and descriptions.
+    - Sort Engine: Allows users to sort by Priority (featured), Newest (latest), or Name (A-Z).
+    - Category Filter Bar: Dynamically populated from the category registry with horizontal mobile-scrolling.
+    - Multi-View Switcher: Grid (Visual), List (Compact), and Details (Tabular) views.
+    - Local Favorites: Uses 'wtk_favorites' in LocalStorage to save user-preferred tools without a database.
+
+[B] Topical Hubs Architecture (/tools/hub/[category])
+- Description: High-authority SEO silos.
+- Features:
+    - Pillar Integration: Ingests specialized metadata (CATEGORY_PILLARS) to target high-intent keywords.
+    - Automated Schema: Generates 'CollectionPage' structured data for every hub.
+    - Silo FAQ: Category-specific FAQs to capture "People Also Ask" SERP features.
+
+[C] Internal Linking Engine (lib/related-tools-map.ts)
+- Description: Distributes PageRank and user session depth.
+- Features:
+    - Manual Mapping: Curated "Featured" and "Pill" links for every tool.
+    - Description Deep-Linking: Manual cross-links within tool definitions to connect related workflows (e.g., Hash -> Password).
+
+----------------------------------------------------------------
+3. PRIVACY & PERFORMANCE
+----------------------------------------------------------------
+
+[A] Privacy-First Execution
+- Description: 99% of tools are "Client-Side Only".
+- Logic: Data processing happens in the user's browser memory. Zero transmission to any server for sensitive data (hashes, formatters, compressors).
+
+[B] V8 Optimization
+- Description: Uses hardware-accelerated APIs (Web Crypto, Canvas, Worker Threads) for near-instant results on large payloads.
+
+[C] AI Visibility Layer
+- Description: Standardized protocols for LLMs and AI crawlers.
+- Assets: /ai-visibility hub and /llms.txt file to ensure AI models (ChatGPT, Gemini) cite WebToolkit Pro correctly.
+
+----------------------------------------------------------------
+4. BREADCRUMB & SCHEMA SYSTEM
+----------------------------------------------------------------
+
+- BreadcrumbList: Dynamically maps [Home > Hub > Tool] for every page.
+- SoftwareApplication: Automated JSON-LD for every tool, including rating and operational metadata.
+- Article Schema: Deeply integrated into the blog (lib/blog.ts) for Journal entries and Engineering notes.
+
+================================================================
+END OF LOG - MAINTAIN THIS FILE FOR ARCHITECTURAL CONTINUITY
+================================================================

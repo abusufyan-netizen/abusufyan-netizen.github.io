@@ -1,15 +1,15 @@
 import React from 'react'
-import { Zap, Users, Star, Code } from 'lucide-react'
+import { Zap, Code, Shield, Clock } from 'lucide-react'
 import { getGlobalStats } from '@/lib/stats'
 
 export default async function StatsDashboard() {
   const stats = await getGlobalStats()
 
   const statItems = [
-    { label: 'Tools Available', value: '150+', icon: Zap },
-    { label: 'Early Adopters', value: 'Verified', icon: Users },
-    { label: 'Tools Run', value: '250+', icon: Star },
-    { label: 'Client-Side', value: '100%', icon: Code },
+    { label: 'Tools Live', value: '150+', icon: Zap },
+    { label: 'Privacy', value: 'Local-Only', icon: Shield },
+    { label: 'Latency', value: '< 1ms', icon: Clock },
+    { label: 'Open Source', value: 'Verified', icon: Code },
   ]
 
   return (
