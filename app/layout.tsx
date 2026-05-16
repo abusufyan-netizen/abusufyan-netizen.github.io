@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: 'WebToolkit Pro',
     images: [
       {
-        url: 'https://wtkpro.site/og-image.png?v=3',
+        url: 'https://wtkpro.site/og-image.png?v=4',
         width: 1200,
         height: 630,
         alt: 'WebToolkit Pro - 150+ Professional Developer Tools',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'WebToolkit Pro (WTK) | 150+ Premium Developer Tools',
     description: 'WebToolkit Pro offers 150+ free premium developer tools. Secure, fast, and optimized for 2026 standards.',
-    images: ['https://wtkpro.site/og-image.png?v=3'],
+    images: ['https://wtkpro.site/og-image.png?v=4'],
     creator: '@WebToolKitPro',
   },
   icons: {
