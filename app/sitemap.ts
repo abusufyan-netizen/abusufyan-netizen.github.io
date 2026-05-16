@@ -98,5 +98,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...staticUrls, ...categoryUrls, ...blogUrls, ...toolUrls]
+  const hubUrls = Object.keys(CATEGORY_MAP).map((slug) => ({
+    url: `${baseUrl}/tools/hub/${slug.replace(/ & /g, '-').replace(/\s+/g, '-')}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }))
+
+  return [...staticUrls, ...hubUrls, ...blogUrls, ...toolUrls]
 }

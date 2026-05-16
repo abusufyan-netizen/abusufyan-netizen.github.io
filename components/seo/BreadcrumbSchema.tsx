@@ -32,7 +32,7 @@ export default function BreadcrumbSchema({ name, slug, category }: BreadcrumbSch
       '@type': 'ListItem',
       'position': 3,
       'name': category,
-      'item': `https://wtkpro.site/tools/category/${categorySlug}/`
+      'item': `https://wtkpro.site/tools/hub/${categorySlug}/`
     })
   }
 

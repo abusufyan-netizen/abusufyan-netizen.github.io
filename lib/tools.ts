@@ -37,7 +37,11 @@ export function getToolBySlug(slug: string): ToolConfig | undefined {
 
 export function getToolsByCategory(category: string): ToolConfig[] {
   const tools = getTools()
-  return tools.filter(t => t.category.toLowerCase() === category.toLowerCase())
+  const normalizedSearch = category.toLowerCase().replace(/-/g, ' ')
+  return tools.filter(t => {
+    const normalizedToolCat = t.category.toLowerCase().replace(/ & /g, ' ').replace(/-/g, ' ')
+    return normalizedToolCat === normalizedSearch
+  })
 }
 
 export function getCategories(): string[] {

@@ -31,6 +31,15 @@ const INTERNAL_LINKS = [
   { keyword: 'DEVHUB INDEX', url: 'https://devhubindex.vercel.app' },
   { keyword: 'Abu Sufyan', url: 'https://abusufyan.xyz' },
   { keyword: 'Trust Network', url: '/blog/webtoolkit-pro-trust-network' },
+  { keyword: 'RFC 8259', url: '/blog/what-is-json-complete-guide' },
+  { keyword: 'JSON-LD', url: '/blog/json-ld-schema-tutorial' },
+  { keyword: 'password entropy', url: '/blog/how-secure-is-my-password' },
+  { keyword: 'RegEx patterns', url: '/blog/regex-cheat-sheet-javascript' },
+  { keyword: 'Edge Runtime', url: '/blog/edge-computing-performance-2026' },
+  { keyword: 'TTFB', url: '/blog/3ms-ttfb-performance-study' },
+  { keyword: 'meta tags', url: '/blog/seo-meta-tags-complete-guide' },
+  { keyword: 'XML formatter', url: '/tools/xml-formatter' },
+  { keyword: 'Base64 encode', url: '/tools/base64-encoder' },
 ]
 
 function applySmartLinks(htmlString: string): string {

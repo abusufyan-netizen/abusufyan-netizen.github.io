@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "publish-reddit": "node scripts/publish-reddit.mjs"
+    "publish-reddit": "node scripts/publish-reddit.mjs",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@types/jszip": "^3.4.0",
@@ -36,6 +37,7 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.35",
     "@tailwindcss/typography": "^0.5.10",
     "@types/canvas-confetti": "^1.9.0",
     "@types/js-beautify": "^1.14.3",
@@ -45,6 +47,7 @@
     "@types/react-dom": "^18.0.0",
     "autoprefixer": "^10.0.0",
     "critters": "^0.0.23",
+    "cross-env": "^10.1.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "14.0.0",
     "postcss": "^8.0.0",

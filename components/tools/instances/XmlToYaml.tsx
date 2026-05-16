@@ -25,12 +25,13 @@ export default function XmlToYaml() {
         const spaces = '  '.repeat(indent)
 
         if (node.nodeType === 1) { // element
-          yaml += `${spaces}${node.nodeName}:\n`
+          const element = node as Element
+          yaml += `${spaces}${element.nodeName}:\n`
           
           // Attributes
-          if (node.attributes && node.attributes.length > 0) {
-            for (let j = 0; j < node.attributes.length; j++) {
-              const attr = node.attributes.item(j)
+          if (element.attributes && element.attributes.length > 0) {
+            for (let j = 0; j < element.attributes.length; j++) {
+              const attr = element.attributes.item(j)
               if (attr) yaml += `${spaces}  _${attr.nodeName}: ${attr.nodeValue}\n`
             }
           }

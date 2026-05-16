@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { FileJson, Search, Copy, Check, Trash2, ArrowDownWideEqual, ChevronRight, ChevronDown, ListTree, Code } from 'lucide-react'
+import { FileJson, Search, Copy, Check, Trash2, ChevronRight, ChevronDown, ListTree, Code } from 'lucide-react'
 
 export default function JsonFormatterPro() {
   const [json, setJson] = useState('{\n  "id": "user_01H2",\n  "name": "Alex Rivera",\n  "active": true,\n  "roles": ["Admin", "Developer"],\n  "metadata": {\n    "last_login": "2026-05-15T14:30:00Z",\n    "ip_source": "192.168.1.45"\n  },\n  "stats": {\n    "logins": 124,\n    "errors": 0\n  }\n}')

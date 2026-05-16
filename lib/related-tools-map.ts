@@ -449,4 +449,82 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Word Counter', href: '/tools/word-counter/' },
     ]
   },
+  'xml-to-yaml': {
+    featured: { name: 'XML to JSON', href: '/tools/xml-to-json/', desc: 'Convert XML to JSON objects', icon: '🔄' },
+    cards: [
+      { name: 'JSON Formatter', href: '/tools/json-formatter/', desc: 'Validate your output', icon: '📋' },
+      { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode data for transport', icon: '🧩' },
+      { name: 'YAML Formatter', href: '/tools/yaml-formatter/', desc: 'Clean up YAML structure', icon: '📄' },
+    ],
+    pills: [
+      { name: 'JSON to YAML', href: '/tools/json-to-yaml/' },
+      { name: 'HTML Encoder', href: '/tools/html-encoder/' },
+      { name: 'URL Encoder', href: '/tools/url-encoder/' },
+    ]
+  },
+  'xml-to-json': {
+    featured: { name: 'XML to YAML', href: '/tools/xml-to-yaml/', desc: 'Convert XML to YAML structure', icon: '🔄' },
+    cards: [
+      { name: 'JSON Formatter', href: '/tools/json-formatter/', desc: 'Validate your output', icon: '📋' },
+      { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode data for transport', icon: '🧩' },
+      { name: 'DOM Analyzer', href: '/tools/dom-analyzer/', desc: 'Inspect DOM structures', icon: '🔍' },
+    ],
+    pills: [
+      { name: 'JSON to CSV', href: '/tools/json-to-csv/' },
+      { name: 'HTML Encoder', href: '/tools/html-encoder/' },
+      { name: 'URL Encoder', href: '/tools/url-encoder/' },
+    ]
+  },
+  'dom-analyzer': {
+    featured: { name: 'Meta Tag Generator', href: '/tools/meta-tag-generator/', desc: 'SEO title and meta tags', icon: '🏷️' },
+    cards: [
+      { name: 'Broken Link Checker', href: '/tools/broken-link-checker/', desc: 'Find dead URLs', icon: '🔗' },
+      { name: 'Schema Generator', href: '/tools/schema-generator/', desc: 'Structured data tool', icon: '🤖' },
+      { name: 'Redirect Checker', href: '/tools/redirect-checker/', desc: 'Trace redirect hops', icon: '🔄' },
+    ],
+    pills: [
+      { name: 'Word Counter', href: '/tools/word-counter/' },
+      { name: 'Sitemap Validator', href: '/tools/sitemap-validator/' },
+      { name: 'Robots Generator', href: '/tools/robots-generator/' },
+    ]
+  },
+  'broken-link-checker': {
+    featured: { name: 'Redirect Checker', href: '/tools/redirect-checker/', desc: 'Trace redirect hops', icon: '🔄' },
+    cards: [
+      { name: 'Sitemap Validator', href: '/tools/sitemap-validator/', desc: 'Validate XML sitemaps', icon: '🗺️' },
+      { name: 'Meta Tag Generator', href: '/tools/meta-tag-generator/', desc: 'SEO title and meta tags', icon: '🏷️' },
+      { name: 'Robots Generator', href: '/tools/robots-generator/', desc: 'Control search bots', icon: '🤖' },
+    ],
+    pills: [
+      { name: 'Word Counter', href: '/tools/word-counter/' },
+      { name: 'DOM Analyzer', href: '/tools/dom-analyzer/' },
+      { name: 'Schema Generator', href: '/tools/schema-generator/' },
+    ]
+  },
+  'image-compressor-pro': {
+    featured: { name: 'Social Preview Tester', href: '/tools/social-preview-tester/', desc: 'Test OG & Twitter cards', icon: '📱' },
+    cards: [
+      { name: 'Meta Tag Generator', href: '/tools/meta-tag-generator/', desc: 'SEO title and meta tags', icon: '🏷️' },
+      { name: 'Favicon Generator', href: '/tools/favicon-generator/', desc: 'Create site icons', icon: '🖼️' },
+      { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode images to base64', icon: '🧩' },
+    ],
+    pills: [
+      { name: 'Color Picker', href: '/tools/color-picker/' },
+      { name: 'CSS Unit Converter', href: '/tools/css-unit-converter/' },
+      { name: 'Word Counter', href: '/tools/word-counter/' },
+    ]
+  },
+  'redirect-checker': {
+    featured: { name: 'Broken Link Checker', href: '/tools/broken-link-checker/', desc: 'Find dead URLs', icon: '🔗' },
+    cards: [
+      { name: 'Sitemap Validator', href: '/tools/sitemap-validator/', desc: 'Validate XML sitemaps', icon: '🗺️' },
+      { name: 'Meta Tag Generator', href: '/tools/meta-tag-generator/', desc: 'SEO title and meta tags', icon: '🏷️' },
+      { name: 'Robots Generator', href: '/tools/robots-generator/', desc: 'Control search bots', icon: '🤖' },
+    ],
+    pills: [
+      { name: 'Word Counter', href: '/tools/word-counter/' },
+      { name: 'DOM Analyzer', href: '/tools/dom-analyzer/' },
+      { name: 'Schema Generator', href: '/tools/schema-generator/' },
+    ]
+  },
 }

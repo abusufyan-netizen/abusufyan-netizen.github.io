@@ -14,18 +14,15 @@ import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
 import * as Icons from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
+import { CATEGORY_MAP } from '@/lib/categories'
 
-const categories = [
-  'All', 
-  'Developer Tools', 
-  'SEO Tools', 
-  'Design Tools', 
-  'Generators', 
-  'Network & Performance', 
-  'Content Utilities', 
-  'Revenue & Analytics', 
-  'Social Media Tools'
+const sortOptions = [
+  { label: 'Priority', value: 'priority' },
+  { label: 'Newest', value: 'newest' },
+  { label: 'Name', value: 'name' }
 ]
+
+const categories = ['All', ...Object.values(CATEGORY_MAP)]
 
 interface ToolsClientProps {
   initialTools: ToolConfig[]
@@ -38,6 +35,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   const [activeCategory, setActiveCategory] = useState('All')
   const [favorites, setFavorites] = useState<string[]>([])
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'details'>('details')
+  const [sortBy, setSortBy] = useState<'priority' | 'newest' | 'name'>('priority')
 
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 
@@ -58,19 +56,23 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   }
 
   const visibleTools = useMemo(() => {
-    return initialTools.filter(tool => {
+    return [...initialTools].filter(tool => {
       if (!tool.releaseDate) return true
       return tool.releaseDate <= today
     }).sort((a, b) => {
-      if ((a.priority || 10) !== (b.priority || 10)) {
-        return (a.priority || 10) - (b.priority || 10)
+      if (sortBy === 'priority') {
+        if ((a.priority || 10) !== (b.priority || 10)) {
+          return (a.priority || 10) - (b.priority || 10)
+        }
       }
-      if (a.releaseDate && b.releaseDate) {
-        return b.releaseDate.localeCompare(a.releaseDate)
+      if (sortBy === 'newest' || sortBy === 'priority') {
+        if (a.releaseDate && b.releaseDate && a.releaseDate !== b.releaseDate) {
+          return b.releaseDate.localeCompare(a.releaseDate)
+        }
       }
       return a.name.localeCompare(b.name)
     })
-  }, [initialTools, today])
+  }, [initialTools, today, sortBy])
 
   const filteredTools = useMemo(() => {
     return visibleTools.filter(tool => {
@@ -107,14 +109,14 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               className="w-full bg-background dark:bg-elevated border border-border rounded-[12px] pl-12 pr-4 py-4 text-foreground placeholder-muted-foreground/50 focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium appearance-none"
             />
           </div>
-          <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-            {categories.slice(0, 4).map(cat => (
+          <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide scroll-smooth no-scrollbar">
+            {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-4 rounded-[12px] text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
+                className={`px-6 py-4 rounded-[12px] text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
                   activeCategory === cat 
-                    ? 'bg-[#00D4B4] text-[#0D1117] border-[#00D4B4]' 
+                    ? 'bg-[#00D4B4] text-[#0D1117] border-[#00D4B4] shadow-lg shadow-blue-500/10' 
                     : 'bg-background dark:bg-elevated text-muted-foreground border-border hover:border-[#00D4B4]/30'
                 }`}
               >
@@ -127,28 +129,44 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
         <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Tools Catalog' : `${activeCategory} Suite Catalog`} className="mb-0" />
         
-        <div className="flex items-center gap-2 bg-background dark:bg-elevated p-1 rounded-xl border border-border">
-          <button 
-            onClick={() => setViewMode('grid')}
-            className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
-            title="Large Icons"
-          >
-            <LayoutGrid className="w-5 h-5" strokeWidth={1.5} />
-          </button>
-          <button 
-            onClick={() => setViewMode('list')}
-            className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
-            title="List"
-          >
-            <List className="w-5 h-5" strokeWidth={1.5} />
-          </button>
-          <button 
-            onClick={() => setViewMode('details')}
-            className={`p-2 rounded-lg transition-all ${viewMode === 'details' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
-            title="Details"
-          >
-            <AlignJustify className="w-5 h-5" strokeWidth={1.5} />
-          </button>
+        <div className="flex items-center gap-3">
+          {/* Sort Dropdown */}
+          <div className="relative group/sort">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="appearance-none bg-background dark:bg-elevated border border-border px-4 py-2 pr-10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-muted-foreground focus:outline-none focus:ring-1 focus:ring-[#00D4B4] cursor-pointer"
+            >
+              {sortOptions.map(opt => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+            <Settings className="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-muted-foreground pointer-events-none" />
+          </div>
+
+          <div className="flex items-center gap-2 bg-background dark:bg-elevated p-1 rounded-xl border border-border">
+            <button 
+              onClick={() => setViewMode('grid')}
+              className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
+              title="Large Icons"
+            >
+              <LayoutGrid className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+            <button 
+              onClick={() => setViewMode('list')}
+              className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
+              title="List"
+            >
+              <List className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+            <button 
+              onClick={() => setViewMode('details')}
+              className={`p-2 rounded-lg transition-all ${viewMode === 'details' ? 'bg-[#00D4B4] text-[#0D1117] shadow-sm' : 'text-muted-foreground/60 hover:text-foreground'}`}
+              title="Details"
+            >
+              <AlignJustify className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -293,16 +311,20 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       {/* SEO Hub Links */}
       <section className="mt-24 pt-16 border-t border-border">
         <SectionHeading number="02" title="Specialized Engineering Hubs" className="mb-12" as="h3" />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {categories.filter(c => c !== 'All').map(category => {
-            const slug = category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+          {Object.entries(CATEGORY_MAP).map(([slug, name]) => {
             return (
               <Link 
-                key={category}
-                href={`/tools/category/${slug}`}
-                className="p-6 bg-background dark:bg-elevated border border-border rounded-[12px] text-center text-xs font-bold text-muted-foreground/60 uppercase tracking-widest hover:border-[#00D4B4]/30 hover:text-[#00D4B4] dark:hover:text-white transition-all shadow-xl"
+                key={slug}
+                href={`/tools/hub/${slug}`}
+                className="p-6 bg-background dark:bg-elevated border border-border rounded-[12px] text-center flex flex-col items-center justify-center gap-3 hover:border-[#00D4B4]/30 hover:shadow-2xl hover:shadow-[#00D4B4]/5 transition-all group"
               >
-                {category} Hub
+                <div className="w-8 h-8 rounded-full bg-muted/20 flex items-center justify-center group-hover:bg-[#00D4B4]/20 transition-colors">
+                  <Layers className="w-4 h-4 text-muted-foreground group-hover:text-[#00D4B4]" />
+                </div>
+                <span className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-[0.1em] group-hover:text-foreground transition-colors leading-tight">
+                  {name} Hub
+                </span>
               </Link>
             )
           })}

@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-background text-muted-foreground pt-20 pb-8 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" aria-label="WebToolkit Pro Home" className="flex items-center gap-2 mb-6 outline-none focus-visible:ring-2 focus-visible:ring-[#00D4B4] rounded-lg">
               <Logo light />
@@ -65,12 +65,25 @@ export default function Footer() {
               <li><Link href="/brand" className="hover:text-[#00D4B4] transition-colors">Brand Assets</Link></li>
             </ul>
           </div>
+
+          <div>
+            <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">Topical Hubs</h3>
+            <ul className="space-y-2 text-[11px] font-medium">
+              <li><Link href="/tools/hub/developer-tools" className="hover:text-[#00D4B4] transition-colors">Developer Suite</Link></li>
+              <li><Link href="/tools/hub/seo-tools" className="hover:text-[#00D4B4] transition-colors">SEO Performance</Link></li>
+              <li><Link href="/tools/hub/network-performance" className="hover:text-[#00D4B4] transition-colors">Edge & Network</Link></li>
+              <li><Link href="/tools/hub/generators" className="hover:text-[#00D4B4] transition-colors">Security Generators</Link></li>
+              <li><Link href="/tools/hub/revenue-analytics" className="hover:text-[#00D4B4] transition-colors">Ad Revenue Calc</Link></li>
+              <li><Link href="/tools/hub/content-utilities" className="hover:text-[#00D4B4] transition-colors">Content Optimization</Link></li>
+            </ul>
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-6">
           <div className="flex items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] font-mono">
             <Link href="/privacy" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
+            <Link href="/disclaimer" className="hover:text-[#00D4B4] transition-colors">Disclaimer</Link>
             <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</Link>
             <Link href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</Link>
             <span className="text-muted-foreground/50">v1.0.8</span>

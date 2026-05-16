@@ -137,7 +137,7 @@ export default function ToolPage({ params }: ToolPageProps) {
                 <p className="text-gray-600 dark:text-[#8A9BBE] font-medium">
                   {tool.function?.primary} {tool.function?.secondary ? `• ${tool.function.secondary}` : ''}
                 </p>
-                <Link href={`/tools/category/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all">
+                <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all">
                   {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
                 </Link>
               </div>
@@ -147,7 +147,7 @@ export default function ToolPage({ params }: ToolPageProps) {
             <div className="mb-12 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
               <p className="text-lg text-gray-900 dark:text-[#F0F6FF] leading-relaxed font-medium relative z-10">
-                {tool.content.description}
+                {tool.content?.description || `Professional ${tool.name} utility for modern web development.`}
               </p>
             </div>
 
@@ -165,11 +165,11 @@ export default function ToolPage({ params }: ToolPageProps) {
             {/* Detailed Info */}
             <ToolInfo 
               title={tool.name}
-              description={tool.content.description}
-              howItWorks={tool.content.how_it_works}
-              features={tool.content.features}
-              faqs={tool.content.faq.map(f => ({ q: f.question, a: f.answer }))}
-              technicalSpecs={tool.content.technical_specs}
+              description={tool.content?.description || ''}
+              howItWorks={tool.content?.how_it_works || ''}
+              features={tool.content?.features || []}
+              faqs={tool.content?.faq?.map(f => ({ q: f.question, a: f.answer })) || []}
+              technicalSpecs={tool.content?.technical_specs}
             />
 
             {/* Further Reading Section */}
@@ -209,8 +209,8 @@ export default function ToolPage({ params }: ToolPageProps) {
           <aside className="w-full lg:w-80 shrink-0 space-y-8">
             <AIOContextButton 
               toolName={tool.name} 
-              description={tool.content.description} 
-              features={tool.content.features} 
+              description={tool.content?.description || ''} 
+              features={tool.content?.features || []} 
             />
             <RelatedToolsSidebar relatedTools={relatedTools} />
             <div className="p-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[12px] text-[#0B1120] shadow-xl shadow-blue-500/10">

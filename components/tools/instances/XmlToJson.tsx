@@ -25,10 +25,11 @@ export default function XmlToJson() {
         const obj: any = {}
         
         if (node.nodeType === 1) { // element
-          if (node.attributes.length > 0) {
+          const element = node as Element
+          if (element.attributes.length > 0) {
             obj['@attributes'] = {}
-            for (let j = 0; j < node.attributes.length; j++) {
-              const attribute = node.attributes.item(j)
+            for (let j = 0; j < element.attributes.length; j++) {
+              const attribute = element.attributes.item(j)
               if (attribute) obj['@attributes'][attribute.nodeName] = attribute.nodeValue
             }
           }
