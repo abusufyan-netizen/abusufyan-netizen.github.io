@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Zap, Download, Image as ImageIcon, Trash2, Info, Check } from 'lucide-react'
 
 export default function ImageCompressorPro() {
@@ -25,7 +26,7 @@ export default function ImageCompressorPro() {
   }
 
   const compress = (dataUrl: string, q: number) => {
-    const img = new Image()
+    const img = new window.Image()
     img.onload = () => {
       const canvas = document.createElement('canvas')
       canvas.width = img.width
@@ -113,7 +114,7 @@ export default function ImageCompressorPro() {
           <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0B1120] rounded-[2.5rem] p-8 border-2 border-dashed border-gray-100 dark:border-[#1E2D47] min-h-[300px]">
             {image ? (
               <div className="relative group w-full">
-                <img src={compressedImage || image} alt="Preview" className="w-full h-auto rounded-2xl shadow-2xl" />
+                <Image src={compressedImage || image} alt="Preview" className="w-full h-auto rounded-2xl shadow-2xl" width={800} height={600} unoptimized />
                 <button 
                   onClick={() => { setImage(null); setCompressedImage(null); setOriginalSize(0); setCompressedSize(0) }}
                   className="absolute top-4 right-4 p-3 bg-red-500 text-white rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity"

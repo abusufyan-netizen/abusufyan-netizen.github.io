@@ -11,6 +11,7 @@ export default function RgbaToHex() {
   const [a, setA] = useState(1)
   const [hex, setHex] = useState('')
   const [copied, setCopied] = useState(false)
+  const handleEnter = useEnterSubmit(() => {})
 
   useEffect(() => {
     const toHex = (n: number) => n.toString(16).padStart(2, '0')
@@ -44,7 +45,7 @@ export default function RgbaToHex() {
                 step={c.step || 1}
                 value={c.val}
                 onChange={(e) => c.set(parseFloat(e.target.value))}
-                onKeyDown={useEnterSubmit(() => {})}
+                onKeyDown={handleEnter}
                 className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold text-center outline-none"
               />
             </div>

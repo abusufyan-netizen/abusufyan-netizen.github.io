@@ -31,7 +31,7 @@ export default function StorageAuditor() {
         </div>
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">Browser Storage Auditor</h3>
         <p className="text-sm text-gray-500 dark:text-slate-500 max-w-sm mx-auto mb-8 font-medium">
-          Analyze how much data websites are storing in your browser's local and session storage.
+          Analyze how much data websites are storing in your browser&apos;s local and session storage.
         </p>
         
         <button

@@ -27,7 +27,7 @@ export default function CssGradientGenerator() {
     if (gradientType === 'linear') return `linear-gradient(${angle}deg, ${stopsStr})`
     if (gradientType === 'radial') return `radial-gradient(circle, ${stopsStr})`
     return `conic-gradient(from ${angle}deg, ${stopsStr})`
-  }, [gradientType, angle, stops, sortedStops])
+  }, [gradientType, angle, sortedStops])
 
   const cssCode = `background: ${gradient};`
 

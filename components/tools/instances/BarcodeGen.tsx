@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Barcode, Download, RefreshCcw } from 'lucide-react'
 
 export default function BarcodeGen() {
@@ -65,7 +66,7 @@ export default function BarcodeGen() {
 
           <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0B1120] rounded-3xl p-8 border border-gray-100 dark:border-[#1E2D47]">
             <div className="bg-white p-4 rounded-xl shadow-xl mb-6">
-              <img src={url} alt="Barcode" className="max-w-full h-auto" />
+              <Image src={url} alt="Barcode" className="max-w-full h-auto" width={300} height={100} unoptimized />
             </div>
             <button 
               onClick={download}

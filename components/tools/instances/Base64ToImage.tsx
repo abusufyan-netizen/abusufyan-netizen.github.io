@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Image as ImageIcon, Download, Copy, Check, RotateCcw } from 'lucide-react'
 
 export default function Base64ToImage() {
@@ -63,7 +64,7 @@ export default function Base64ToImage() {
             </button>
           </div>
           <div className="bg-gray-50 dark:bg-[#0B1120] rounded-2xl border border-dashed border-gray-200 dark:border-[#1E2D47] p-8 flex items-center justify-center min-h-[300px]">
-            <img src={imageSrc} alt="Base64 Preview" className="max-w-full max-h-[500px] shadow-2xl rounded-lg" />
+            <Image src={imageSrc} alt="Base64 Preview" className="max-w-full max-h-[500px] shadow-2xl rounded-lg" width={800} height={500} unoptimized />
           </div>
         </div>
       )}

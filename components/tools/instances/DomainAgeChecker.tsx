@@ -79,7 +79,7 @@ export default function DomainAgeChecker() {
         <div>
           <h5 className="text-lg font-bold text-blue-900 dark:text-blue-400 mb-2 tracking-tight">Domain Authority Insights</h5>
           <p className="text-sm text-blue-800/70 dark:text-blue-500/70 leading-relaxed font-medium">
-            Domain age is a significant factor in SEO and trust-building. Older domains often carry more authority in search engines, while expiration dates provide insights into a project's long-term commitment.
+            Domain age is a significant factor in SEO and trust-building. Older domains often carry more authority in search engines, while expiration dates provide insights into a project&apos;s long-term commitment.
           </p>
         </div>
       </div>

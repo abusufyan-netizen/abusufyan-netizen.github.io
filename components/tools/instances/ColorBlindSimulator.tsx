@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Eye, Image as ImageIcon, Search, Download, Trash2, Info } from 'lucide-react'
 
 const TYPES = [
@@ -70,11 +71,14 @@ export default function ColorBlindSimulator() {
           <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0B1120] rounded-[2.5rem] p-8 border-2 border-dashed border-gray-100 dark:border-[#1E2D47]">
             {image ? (
               <div className="relative w-full group">
-                <img 
+                <Image 
                   src={image} 
                   alt="Preview" 
                   className="w-full h-auto rounded-2xl shadow-2xl transition-all duration-500"
                   style={{ filter: activeType.filter }}
+                  width={600}
+                  height={400}
+                  unoptimized
                 />
                 <button 
                   onClick={() => setImage(null)}

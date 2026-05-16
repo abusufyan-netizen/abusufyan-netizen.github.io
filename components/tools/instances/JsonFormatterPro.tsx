@@ -114,7 +114,7 @@ function JsonTree({ data, search }: { data: any; search: string }) {
     if (val === null) return <span className="text-gray-500">null</span>
     if (typeof val === 'boolean') return <span className="text-amber-400 font-bold">{val.toString()}</span>
     if (typeof val === 'number') return <span className="text-purple-400 font-bold">{val}</span>
-    if (typeof val === 'string') return <span className="text-emerald-400">"{val}"</span>
+    if (typeof val === 'string') return <span className="text-emerald-400">&quot;{val}&quot;</span>
     
     const isArray = Array.isArray(val)
     const isExpanded = !collapsed[path]

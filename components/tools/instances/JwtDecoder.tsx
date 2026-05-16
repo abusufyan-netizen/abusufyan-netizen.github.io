@@ -10,7 +10,7 @@ export default function JwtDecoder() {
   const [error, setError] = useState('')
   const [copied, setCopied] = useState<{ header: boolean; payload: boolean }>({ header: false, payload: false })
 
-  const decodeJwt = () => {
+  const decodeJwt = React.useCallback(() => {
     if (!token.trim()) {
       setHeader('')
       setPayload('')
@@ -35,11 +35,11 @@ export default function JwtDecoder() {
       setHeader('')
       setPayload('')
     }
-  }
+  }, [token])
 
   useEffect(() => {
     decodeJwt()
-  }, [token])
+  }, [decodeJwt])
 
   const handleCopy = (type: 'header' | 'payload') => {
     const text = type === 'header' ? header : payload

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import QRCode from 'qrcode'
 import { QrCode, Download, Copy, Check, RefreshCw } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
@@ -10,15 +11,7 @@ export default function QrCodeGenerator() {
   const [copied, setCopied] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  useEffect(() => {
-    if (text) {
-      generateQr()
-    } else {
-      setQrUrl('')
-    }
-  }, [text])
-
-  const generateQr = async () => {
+  const generateQr = React.useCallback(async () => {
     try {
       const url = await QRCode.toDataURL(text, {
         width: 1000,
@@ -32,7 +25,15 @@ export default function QrCodeGenerator() {
     } catch (err) {
       console.error(err)
     }
-  }
+  }, [text])
+
+  useEffect(() => {
+    if (text) {
+      generateQr()
+    } else {
+      setQrUrl('')
+    }
+  }, [text, generateQr])
 
   const handleDownload = () => {
     if (!qrUrl) return
@@ -82,7 +83,7 @@ export default function QrCodeGenerator() {
           {qrUrl ? (
             <>
               <div className="p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
-                <img src={qrUrl} alt="QR Code" className="w-64 h-64" />
+                <Image src={qrUrl} alt="QR Code" className="w-64 h-64" width={256} height={256} unoptimized />
               </div>
               <div className="flex gap-4 w-full max-w-xs">
                 <button 

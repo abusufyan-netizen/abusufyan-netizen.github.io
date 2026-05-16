@@ -108,7 +108,7 @@ export default function CanonicalChecker() {
         <div>
           <h5 className="text-lg font-bold text-blue-900 dark:text-blue-400 mb-2 tracking-tight">Why Canonical Tags Matter?</h5>
           <p className="text-sm text-blue-800/70 dark:text-blue-500/70 leading-relaxed font-medium">
-            Canonical tags tell search engines which version of a URL is the "master" copy. This prevents duplicate content issues and ensures that your SEO authority is concentrated on the correct page, especially for sites with tracking parameters or multiple entry paths.
+            Canonical tags tell search engines which version of a URL is the &quot;master&quot; copy. This prevents duplicate content issues and ensures that your SEO authority is concentrated on the correct page, especially for sites with tracking parameters or multiple entry paths.
           </p>
         </div>
       </div>

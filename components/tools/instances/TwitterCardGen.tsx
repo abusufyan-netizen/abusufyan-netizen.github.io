@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Twitter, ImageIcon, Copy, Check, Info } from 'lucide-react'
 
 export default function TwitterCardGen() {
@@ -89,7 +90,7 @@ export default function TwitterCardGen() {
         <div className={`max-w-[500px] bg-white dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-2xl overflow-hidden shadow-lg transition-all ${cardType === 'summary' ? 'flex h-[120px]' : 'block'}`}>
           <div className={`${cardType === 'summary' ? 'w-[120px] h-[120px] shrink-0 border-r dark:border-[#1E2D47]' : 'aspect-[1.91/1] border-b dark:border-[#1E2D47]'} bg-gray-100 dark:bg-[#1E2D47] relative flex items-center justify-center overflow-hidden`}>
             {image ? (
-              <img src={image} alt="Twitter Preview" className="w-full h-full object-cover" />
+              <Image src={image} alt="Twitter Preview" className="w-full h-full object-cover" fill unoptimized />
             ) : (
               <ImageIcon className="w-8 h-8 opacity-20 text-gray-400" />
             )}

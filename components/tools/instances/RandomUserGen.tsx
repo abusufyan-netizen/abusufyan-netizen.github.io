@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { User, RefreshCcw, Copy, Check, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function RandomUserGen() {
@@ -46,7 +47,7 @@ export default function RandomUserGen() {
         </div>
 
         <div className="flex flex-col items-center text-center">
-          <img src={user.avatar} alt="Avatar" className="w-24 h-24 rounded-full border-4 border-blue-500/20 mb-4" />
+          <Image src={user.avatar} alt="Avatar" className="w-24 h-24 rounded-full border-4 border-blue-500/20 mb-4" width={96} height={96} unoptimized />
           <h4 className="text-2xl font-black text-gray-900 dark:text-white mb-6">{user.name}</h4>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">

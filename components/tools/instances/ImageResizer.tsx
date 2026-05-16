@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { Upload, Download, Maximize, FileImage, RefreshCw, Trash2, CheckCircle2, AlertCircle } from 'lucide-react'
 
 export default function ImageResizer() {
@@ -32,7 +33,7 @@ export default function ImageResizer() {
 
     const reader = new FileReader()
     reader.onload = (event) => {
-      const img = new Image()
+      const img = new window.Image()
       img.onload = () => {
         setOriginalDimensions({ width: img.width, height: img.height })
         setTargetWidth(img.width)
@@ -64,7 +65,7 @@ export default function ImageResizer() {
     setError(null)
 
     try {
-      const img = new Image()
+      const img = new window.Image()
       img.src = preview
       await new Promise((resolve) => { img.onload = resolve })
 
@@ -191,7 +192,7 @@ export default function ImageResizer() {
                 </button>
               </div>
               <div className="p-6 flex items-center justify-center bg-checkered">
-                <img src={preview!} alt="Original" className="max-h-64 object-contain shadow-lg rounded-lg" />
+                <Image src={preview!} alt="Original" className="max-h-64 object-contain shadow-lg rounded-lg" width={500} height={300} unoptimized />
               </div>
               <div className="p-4 bg-gray-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800 grid grid-cols-2 gap-4">
                 <div className="text-center">
@@ -284,7 +285,7 @@ export default function ImageResizer() {
               
               <div className="flex-grow flex items-center justify-center p-8 bg-checkered min-h-[300px]">
                 {result ? (
-                  <img src={result.url} alt="Result" className="max-w-full shadow-2xl rounded-lg" />
+                  <Image src={result.url} alt="Result" className="max-w-full shadow-2xl rounded-lg" width={800} height={600} unoptimized />
                 ) : (
                   <div className="text-center space-y-4">
                     <div className="w-16 h-16 bg-gray-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto opacity-50">

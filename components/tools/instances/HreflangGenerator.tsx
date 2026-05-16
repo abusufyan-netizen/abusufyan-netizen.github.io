@@ -132,7 +132,7 @@ export default function HreflangGenerator() {
               <h5 className="text-sm font-bold text-white tracking-tight uppercase">SEO Compliance</h5>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed font-medium">
-              These tags ensure that Google serves the correct language version of your content based on the user's location and browser settings. Always include an <span className="text-white font-bold">x-default</span> tag for global fallback.
+              These tags ensure that Google serves the correct language version of your content based on the user&apos;s location and browser settings. Always include an <span className="text-white font-bold">x-default</span> tag for global fallback.
             </p>
           </div>
         </div>

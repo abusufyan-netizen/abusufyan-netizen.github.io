@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -73,7 +74,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Product Hunt Badge */}
           <div className="mt-12 flex justify-center">
             <a 
               href="https://www.producthunt.com/products/webtoolkit-pro?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
@@ -81,12 +81,13 @@ export default function Home() {
               rel="noopener noreferrer nofollow"
               className="hover:scale-105 transition-transform duration-300"
             >
-              <img 
+              <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light&t=1778387824061" 
                 alt="Web Toolkit Pro - 150+ premium developer tools with a perfect 100 speed score | Product Hunt" 
-                width="250" 
-                height="54" 
+                width={250} 
+                height={54} 
                 className="dark:brightness-90 dark:contrast-125"
+                unoptimized
               />
             </a>
           </div>

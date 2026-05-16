@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { QrCode, Download, RefreshCcw, Copy, Check } from 'lucide-react'
 
 export default function QrCodeGen() {
@@ -51,7 +52,7 @@ export default function QrCodeGen() {
           </div>
 
           <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0B1120] rounded-3xl p-8 border border-gray-100 dark:border-[#1E2D47]">
-            <img src={qrUrl} alt="QR Code" className="w-48 h-48 rounded-xl shadow-2xl mb-6" />
+            <Image src={qrUrl} alt="QR Code" className="w-48 h-48 rounded-xl shadow-2xl mb-6" width={192} height={192} unoptimized />
             <button 
               onClick={download}
               className="px-8 py-3 bg-white dark:bg-white/10 text-gray-900 dark:text-white rounded-xl font-bold uppercase tracking-widest text-[9px] hover:bg-gray-100 transition-all flex items-center gap-2 border border-gray-100 dark:border-white/10"

@@ -11,7 +11,7 @@ export default function LoremIpsum() {
   const [text, setText] = useState('')
   const [copied, setCopied] = useState(false)
 
-  const generateText = () => {
+  const generateText = React.useCallback(() => {
     let result = []
     for (let p = 0; p < paragraphs; p++) {
       let sentenceCount = Math.floor(Math.random() * 4) + 4
@@ -29,11 +29,11 @@ export default function LoremIpsum() {
       result.push(sentences.join(' '))
     }
     setText(result.join('\n\n'))
-  }
+  }, [paragraphs])
 
   useEffect(() => {
     generateText()
-  }, [])
+  }, [generateText])
 
   const handleCopy = () => {
     navigator.clipboard.writeText(text)

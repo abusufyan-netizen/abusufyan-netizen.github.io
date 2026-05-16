@@ -7,7 +7,7 @@ export default function UuidGenerator() {
   const [count, setCount] = useState(1)
   const [copied, setCopied] = useState<number|null>(null)
 
-  const gen = () => {
+  const gen = React.useCallback(() => {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
       return crypto.randomUUID()
     }
@@ -15,11 +15,11 @@ export default function UuidGenerator() {
       var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
-  }
+  }, [])
 
   useEffect(() => {
     setUuids([gen()])
-  }, [])
+  }, [gen])
 
   const generate = () => {
     const arr = []

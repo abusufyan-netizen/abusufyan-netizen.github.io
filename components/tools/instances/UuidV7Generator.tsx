@@ -7,7 +7,7 @@ export default function UuidV7Generator() {
   const [count, setCount] = useState(5)
   const [copied, setCopied] = useState<number | null>(null)
 
-  const generateV7 = () => {
+  const generateV7 = React.useCallback(() => {
     const newUuids = []
     for (let i = 0; i < count; i++) {
       const now = Date.now()
@@ -34,11 +34,11 @@ export default function UuidV7Generator() {
       newUuids.push(formatted)
     }
     setUuids(newUuids)
-  }
+  }, [count])
 
   useEffect(() => {
     generateV7()
-  }, [])
+  }, [generateV7])
 
   const handleCopy = (text: string, index: number) => {
     navigator.clipboard.writeText(text)

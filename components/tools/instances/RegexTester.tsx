@@ -23,7 +23,7 @@ export default function RegexTester() {
     setFlags(prev => prev.includes(flag) ? prev.replace(flag, '') : prev + flag)
   }
 
-  const performMatch = () => {
+  const performMatch = React.useCallback(() => {
     if (!regex) {
       setMatches([])
       setError('')
@@ -62,11 +62,11 @@ export default function RegexTester() {
       setError(err.message)
       setMatches([])
     }
-  }
+  }, [regex, flags, testText])
 
   useEffect(() => {
     performMatch()
-  }, [regex, flags, testText])
+  }, [performMatch])
 
   const highlightedText = useMemo(() => {
     if (!testText) return 'Your matches will appear here...'

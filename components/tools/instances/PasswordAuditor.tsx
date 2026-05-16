@@ -9,11 +9,7 @@ export default function PasswordAuditor() {
   const [score, setScore] = useState(0)
   const [feedback, setFeedback] = useState<string[]>([])
 
-  useEffect(() => {
-    auditPassword()
-  }, [password])
-
-  const auditPassword = () => {
+  const auditPassword = React.useCallback(() => {
     const issues: string[] = []
     let s = 0
 
@@ -36,7 +32,11 @@ export default function PasswordAuditor() {
 
     setScore(s)
     setFeedback(issues)
-  }
+  }, [password])
+
+  useEffect(() => {
+    auditPassword()
+  }, [auditPassword])
 
   const getStrengthLabel = () => {
     if (score <= 2) return { label: 'CRITICAL', color: 'text-red-500', bg: 'bg-red-500/10', border: 'border-red-500/20' }

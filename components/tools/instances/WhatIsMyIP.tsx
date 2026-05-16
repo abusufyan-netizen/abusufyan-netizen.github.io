@@ -7,7 +7,7 @@ export default function WhatIsMyIP() {
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState(false)
 
-  const fetchIP = async () => {
+  const fetchIP = React.useCallback(async () => {
     setLoading(true)
     try {
       const res = await fetch('/api/whoami')
@@ -18,11 +18,11 @@ export default function WhatIsMyIP() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
   useEffect(() => {
     fetchIP()
-  }, [])
+  }, [fetchIP])
 
   const copyToClipboard = (text: string) => {
     if (!text) return;

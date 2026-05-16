@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Clock, Info, Copy, Check, Trash2, Calendar } from 'lucide-react'
 
 export default function CronGenerator() {
@@ -15,11 +15,11 @@ export default function CronGenerator() {
   const [months, setMonths] = useState('*')
   const [weekdays, setWeekdays] = useState('*')
 
-  const updateCron = () => {
+  const updateCron = useCallback(() => {
     const newCron = `${minutes} ${hours} ${days} ${months} ${weekdays}`
     setCron(newCron)
     generateExplanation(newCron)
-  }
+  }, [minutes, hours, days, months, weekdays])
 
   const generateExplanation = (exp: string) => {
     // Simple mock explanation logic for visual demo
@@ -31,7 +31,7 @@ export default function CronGenerator() {
 
   useEffect(() => {
     updateCron()
-  }, [minutes, hours, days, months, weekdays])
+  }, [updateCron])
 
   const handleCopy = () => {
     navigator.clipboard.writeText(cron)

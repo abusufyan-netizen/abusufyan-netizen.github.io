@@ -11,7 +11,7 @@ export default function PasswordGenerator() {
   const [includeSymbols, setIncludeSymbols] = useState(true)
   const [copied, setCopied] = useState(false)
 
-  const generatePassword = () => {
+  const generatePassword = React.useCallback(() => {
     let charset = 'abcdefghijklmnopqrstuvwxyz'
     if (includeUppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if (includeNumbers) charset += '0123456789'
@@ -22,11 +22,11 @@ export default function PasswordGenerator() {
       newPassword += charset.charAt(Math.floor(Math.random() * charset.length))
     }
     setPassword(newPassword)
-  }
+  }, [length, includeUppercase, includeNumbers, includeSymbols])
 
   useEffect(() => {
     generatePassword()
-  }, [])
+  }, [generatePassword])
 
   const handleCopy = () => {
     navigator.clipboard.writeText(password)

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Search, Facebook, Twitter, Linkedin, RefreshCw, Smartphone, Monitor } from 'lucide-react'
 
 export default function SocialPreviewTester() {
@@ -55,7 +56,7 @@ export default function SocialPreviewTester() {
             <div className="space-y-4">
               <div className="text-blue-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</div>
               <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 overflow-hidden max-w-[500px]">
-                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-slate-800">{metadata.image && <img src={metadata.image} className="w-full h-full object-cover" alt="" />}</div>
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-slate-800 relative">{metadata.image && <Image src={metadata.image} className="w-full h-full object-cover" alt="" fill unoptimized />}</div>
                 <div className="p-4 bg-gray-50 dark:bg-slate-900">
                   <div className="text-xs text-gray-500 uppercase mb-1">{metadata.siteName}</div>
                   <div className="text-lg font-bold dark:text-white line-clamp-2">{metadata.title}</div>
@@ -67,7 +68,7 @@ export default function SocialPreviewTester() {
             <div className="space-y-4">
               <div className="text-gray-900 dark:text-white font-bold text-xs uppercase tracking-widest flex items-center gap-2"><Twitter className="w-4 h-4" /> Twitter / X</div>
               <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 overflow-hidden max-w-[500px]">
-                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-slate-800">{metadata.image && <img src={metadata.image} className="w-full h-full object-cover" alt="" />}</div>
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-slate-800 relative">{metadata.image && <Image src={metadata.image} className="w-full h-full object-cover" alt="" fill unoptimized />}</div>
                 <div className="p-4"><div className="text-sm font-bold dark:text-white">{metadata.title}</div><div className="text-sm text-gray-500 line-clamp-2">{metadata.description}</div></div>
               </div>
             </div>

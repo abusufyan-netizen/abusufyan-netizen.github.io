@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Share2, Image as ImageIcon, Link2, Copy, Check, Info } from 'lucide-react'
 
 export default function OgDebugger() {
@@ -64,7 +65,7 @@ export default function OgDebugger() {
         <div className="max-w-[500px] bg-white dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-xl overflow-hidden shadow-lg">
           <div className="aspect-[1.91/1] bg-gray-100 dark:bg-[#1E2D47] relative flex items-center justify-center overflow-hidden">
             {image ? (
-              <img src={image} alt="OG Preview" className="w-full h-full object-cover" />
+              <Image src={image} alt="OG Preview" className="w-full h-full object-cover" fill unoptimized />
             ) : (
               <div className="flex flex-col items-center gap-2 opacity-30 text-gray-400">
                 <ImageIcon className="w-12 h-12" />
