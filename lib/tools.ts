@@ -72,7 +72,7 @@ export function getRelatedTools(currentTool: ToolConfig, limit: number = 4): Too
 }
 
 export function generateSoftwareSchema(tool: ToolConfig) {
-  const url = `https://wtkpro.site/tools/${tool.slug}`
+  const url = `https://wtkpro.site/tools/${tool.slug}/`
   
   return {
     '@context': 'https://schema.org',

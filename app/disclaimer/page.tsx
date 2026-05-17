@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Disclaimer & DMCA - WebToolkit Pro',
   description: 'Legal disclaimer and DMCA policy for WebToolkit Pro (wtkpro.site). Learn about our content usage and copyright policies.',
   alternates: {
-    canonical: 'https://wtkpro.site/disclaimer',
+    canonical: 'https://wtkpro.site/disclaimer/',
   },
 }
 

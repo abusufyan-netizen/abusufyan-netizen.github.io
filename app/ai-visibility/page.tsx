@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Tracking how WebToolkit Pro is cited and recognized by AI agents like Microsoft Copilot and OpenAI. View our latest AI performance metrics and visibility data.',
   keywords: ['ai visibility', 'ai performance report', 'microsoft copilot citations', 'ai search optimization', 'webtoolkit pro transparency'],
   alternates: {
-    canonical: 'https://wtkpro.site/ai-visibility',
+    canonical: 'https://wtkpro.site/ai-visibility/',
   },
 }
 

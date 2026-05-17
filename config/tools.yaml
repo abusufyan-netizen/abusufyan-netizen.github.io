@@ -2294,13 +2294,13 @@ tools:
       output_formats: ["sql"]
       processing: "client-side"
     meta:
-      title: "SQL Query Minifier â€” Compress Database Code Online"
+      title: "SQL Minifier Online — Minify SQL Database Queries"
     content:
-      title: "SQL Minifier â€” Optimize Your Database Queries"
-      description: "Compress and minify your SQL queries for production environments. Remove comments, newlines, and extra whitespace to reduce query string size and improve code portability."
-      keywords: ["minify sql queries online", "compress sql code free", "remove sql comments online", "sql query optimization tool", "minify postgresql mysql queries", "clean sql code for production"]
+      title: "SQL Minifier — Compress & Optimize Database Queries"
+      description: "Minify SQL database queries instantly with our secure online SQL minifier. Strip comments, spaces, and formatting to optimize queries 100% client-side."
+      keywords: ["minify sql", "sql minifier", "compress sql code online", "sql query minifier free", "remove sql comments", "optimize sql database query"]
       tldr: "Reduce the overhead of your database queries by stripping unnecessary characters while maintaining full functionality."
-      entity_definition: "SQL Query Minifier is a utility for optimizing database code. It takes readable, commented SQL and strips out everything not required for executionâ€”such as comments, newlines, and redundant spacesâ€”resulting in a single line of code that is more efficient for transmission and storage in application code."
+      entity_definition: "SQL Query Minifier is a utility for optimizing database code. It takes readable, commented SQL and strips out everything not required for execution—such as comments, newlines, and redundant spaces—resulting in a single line of code that is more efficient for transmission and storage in application code."
       how_it_works: "The tool parses the SQL string, identifies non-functional characters, and re-assembles the query into a dense block."
       use_cases:
         - "Embedding SQL in application source code"
@@ -2313,9 +2313,9 @@ tools:
         - "Real-time compression statistics"
       faq:
         - question: "Does minifying SQL improve performance?"
-        - answer: "It slightly reduces the amount of data sent to the database server and can marginally speed up initial parsing, but it doesn't affect execution speed on the database engine itself."
+          answer: "It slightly reduces the amount of data sent to the database server and can marginally speed up initial parsing, but it doesn't affect execution speed on the database engine itself."
         - question: "Is it safe for complex joins?"
-        - answer: "Yes, the minifier preserves all functional characters and keywords, ensuring your query logic remains identical."
+          answer: "Yes, the minifier preserves all functional characters and keywords, ensuring your query logic remains identical."
 
   - name: "JSON to Java Class (POJO)"
     slug: "json-to-java"
@@ -5259,11 +5259,11 @@ tools:
       output_formats: ["xml", "txt"]
       processing: "client-side"
     meta:
-      title: "XML Formatter & Beautifier â€” Clean & Structure XML Data Online"
+      title: "XML Formatter Online — Clean & Beautify XML Markup"
     content:
-      title: "XML Formatter â€” Professional Markup Beautification"
-      description: "Format and structure XML data for better readability. Our secure XML beautifier provides precise indentation and structural validation for soap messages, sitemaps, and config files."
-      keywords: ["xml formatter online", "beautify xml code", "xml beautifier with indentation", "format sitemap xml", "clean xml data", "xml markup optimizer"]
+      title: "XML Formatter Online — Beautiful XML Markup Beautifier"
+      description: "Format and beautify XML code instantly with our secure XML formatter online. Get structural validation and customizable indentation, 100% client-side."
+      keywords: ["xml formatter online", "xml formatter", "beautify xml code free", "xml beautifier with indentation", "format sitemap xml online", "clean xml data structure"]
       tldr: "Instantly structure messy XML strings into clean, human-readable trees with precise hierarchical indentation."
       entity_definition: "XML Formatter & Beautifier is a markup utility that processes Extensible Markup Language into a structured visual hierarchy. It handles nested tags, attributes, and namespaces, applying consistent indentation to make data structures easily navigable for developers and analysts."
       how_it_works: "The tool parses the XML DOM and reconstructs the string with uniform spacing, ensuring each level of nesting is clearly visible."
@@ -5278,9 +5278,9 @@ tools:
         - "Real-time structural validation"
       faq:
         - question: "Can it handle large XML files?"
-        - answer: "Yes, our engine is optimized to process large XML payloads up to 10MB instantly."
+          answer: "Yes, our engine is optimized to process large XML payloads up to 10MB instantly."
         - question: "Does it validate my XML?"
-        - answer: "Yes, it will identify basic structural errors like unclosed tags during the formatting process."
+          answer: "Yes, it will identify basic structural errors like unclosed tags during the formatting process."
 
   - name: "Title Case Converter (Pro)"
     slug: "title-case"
@@ -6319,3 +6319,81 @@ tools:
       features:
         - "Multi-language support"
         - "Adjustable pitch and rate"
+
+  - name: "JS Evaluator & Sandbox"
+    slug: "js-evaluator"
+    category: "Developer Tools"
+    icon: "Play"
+    subcategory: "code-optimization"
+    tags: ["javascript", "evaluator", "sandbox", "compiler", "coding"]
+    priority: 8
+    releaseDate: "2026-05-16"
+    function:
+      primary: "Evaluate and test JavaScript in a secure sandbox"
+      secondary: "Real-time console logs and performance tracking"
+    technical:
+      input_formats: ["js", "txt"]
+      output_formats: ["console-log", "txt"]
+      processing: "client-side"
+    meta:
+      title: "JS Evaluator Online — Secure JavaScript Sandbox & Tester"
+    content:
+      title: "JS Evaluator — Interactive JavaScript Sandbox & Console"
+      description: "Evaluate and test JavaScript code in a secure, sandboxed environment. Real-time console logs, execution timing, and performance metrics, 100% client-side."
+      keywords: ["js evaluator", "javascript evaluator online", "js sandbox", "evaluate js online", "execute javascript online", "js console tester"]
+      tldr: "Safely execute, test, and benchmark JavaScript snippets in real-time right inside your web browser."
+      entity_definition: "JS Evaluator & Sandbox is a professional developer utility that executes JavaScript code client-side inside an isolated, sandboxed environment. It intercepts system outputs to display clear console logs, execution timings, and performance profiles, allowing developers to safely prototype algorithms and debug snippets."
+      how_it_works: "The tool intercepts the dynamic script context and maps console.log/error overrides to a structured output registry, running in an isolated environment."
+      use_cases:
+        - "Testing custom JavaScript functions and algorithms"
+        - "Benchmarking performance using microsecond precision"
+        - "Debugging APIs and parsing logic with sample payloads"
+      features:
+        - "Secure, sandboxed local environment"
+        - "Real-time output terminal and log explorer"
+        - "Performance tracking with execution metrics"
+        - "Code templates for common developer algorithms"
+      faq:
+        - question: "Is it safe to run proprietary code here?"
+          answer: "Yes, 100%. All compilation and execution are completed inside your local web browser context. Absolutely zero code leaves your device."
+        - question: "Does it support modern ES6+ syntax?"
+          answer: "Yes! The compiler uses your browser's native JavaScript engine, supporting modern features like async/await, arrow functions, destructuring, and ES modules."
+
+  - name: "XML Minifier & Compressor"
+    slug: "xml-minifier"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "code-optimization"
+    tags: ["xml", "minifier", "compressor", "optimization", "markup"]
+    priority: 8
+    releaseDate: "2026-05-16"
+    function:
+      primary: "Compress and minify XML payloads instantly"
+      secondary: "Remove comments and redundant spacing for SEO optimization"
+    technical:
+      input_formats: ["xml", "txt"]
+      output_formats: ["xml"]
+      processing: "client-side"
+    meta:
+      title: "XML Minifier Online — Fast & Secure XML Compressor"
+    content:
+      title: "XML Minifier — Optimize XML Data Files"
+      description: "Compress and minify XML payloads instantly. Remove comments, redundant whitespace, and optimize sitemaps or SOAP tags in a secure client-side editor."
+      keywords: ["xml minifier", "minify xml online", "xml compressor free", "optimize xml sitemap", "remove xml comments", "compress xml tags"]
+      tldr: "Instantly compress bulky XML sitemaps, configurations, or SOAP feeds to their smallest functional form."
+      entity_definition: "XML Minifier & Compressor is an optimization utility that structures Extensible Markup Language into its most compact format. By stripping redundant nodes, block comments, processing tags, and white spacing, it optimizes loading performance and saves server storage."
+      how_it_works: "The minifier parses the XML tree, processes non-functional markup, collapses empty tags, and outputs a highly compressed single-line output."
+      use_cases:
+        - "Compressing large XML sitemaps for Google index submission"
+        - "Optimizing API data feeds and SOAP service payloads"
+        - "Reducing storage footprint for structural XML configurations"
+      features:
+        - "Aggressive comment and whitespace stripping"
+        - "Visual file size compression statistics"
+        - "Real-time parsing and DOM validation"
+        - "One-click copy and download functionality"
+      faq:
+        - question: "Does minifying XML break formatting or logic?"
+          answer: "No. The minification process strictly targets non-functional white spacing and comments. The structural node relationships and attributes remain completely intact and valid."
+        - question: "Can it handle custom SOAP structures?"
+          answer: "Yes, it parses all tag namespaces, CDATA structures, and SOAP envelopes perfectly."

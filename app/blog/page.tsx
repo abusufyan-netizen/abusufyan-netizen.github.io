@@ -8,7 +8,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
   const page = searchParams.page || '1'
   const jpage = searchParams.jpage || '1'
   
-  let url = 'https://wtkpro.site/blog'
+  let url = 'https://wtkpro.site/blog/'
   const params = []
   if (page !== '1') params.push(`page=${page}`)
   if (jpage !== '1') params.push(`jpage=${jpage}`)

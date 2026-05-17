@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: HubPageProps): Promise<Metada
     description,
     keywords: pillar?.keywords,
     alternates: {
-      canonical: `https://wtkpro.site/tools/hub/${params.category}`,
+      canonical: `https://wtkpro.site/tools/hub/${params.category}/`,
     }
   }
 }

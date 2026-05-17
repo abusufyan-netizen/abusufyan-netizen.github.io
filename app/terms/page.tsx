@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Terms of Service - WebToolkit Pro', 
   description: 'WebToolkit Pro terms of service and usage agreement for wtkpro.site.',
   alternates: {
-    canonical: 'https://wtkpro.site/terms',
+    canonical: 'https://wtkpro.site/terms/',
   },
 }
 

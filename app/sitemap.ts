@@ -105,5 +105,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  return [...staticUrls, ...hubUrls, ...blogUrls, ...toolUrls]
+  const allUrls = [...staticUrls, ...hubUrls, ...blogUrls, ...toolUrls]
+
+  return allUrls.map((item) => {
+    let formattedUrl = item.url
+    if (!formattedUrl.endsWith('/')) {
+      formattedUrl = `${formattedUrl}/`
+    }
+    return {
+      ...item,
+      url: formattedUrl,
+    }
+  })
 }

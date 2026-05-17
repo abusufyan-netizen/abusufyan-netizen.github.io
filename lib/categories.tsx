@@ -34,11 +34,6 @@ export const CATEGORY_PILLARS: Record<string, { title: string; description: stri
     description: 'Calculators and estimators for AdSense earnings and website monetization analysis.',
     keywords: 'adsense revenue estimator, monetization calculator, website earnings, ad revenue'
   },
-  'social-media-tools': {
-    title: 'Social Media Tools - Free Online Developer Suite | wtkpro',
-    description: 'Pinterest downloading and social media content management utilities.',
-    keywords: 'pinterest downloader, social media tools, board downloader, image extraction'
-  }
 }
 
 export const CATEGORY_MAP: Record<string, string> = {
@@ -48,6 +43,5 @@ export const CATEGORY_MAP: Record<string, string> = {
   'generators': 'Generators',
   'network-performance': 'Network & Performance',
   'content-utilities': 'Content Utilities',
-  'revenue-analytics': 'Revenue & Analytics',
-  'social-media-tools': 'Social Media Tools'
+  'revenue-analytics': 'Revenue & Analytics'
 }

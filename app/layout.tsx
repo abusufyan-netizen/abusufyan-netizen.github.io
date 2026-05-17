@@ -27,10 +27,10 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
   alternates: {
-    canonical: 'https://wtkpro.site',
+    canonical: 'https://wtkpro.site/',
   },
-  title: 'WebToolkit Pro (WTK) | 150+ Premium Web Toolkit Online Tools',
-  description: 'Access the complete Web Toolkit online. 150+ free premium developer tools including JSON formatters, XML beautifiers, and SEO utilities.',
+  title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+  description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
   keywords: ['wtk', 'wtkpro', 'Web Toolkit', 'Web Toolkit Online', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools'],
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'WebToolkit Pro (WTK) | 150+ Premium Web Toolkit Online Tools',
-    description: 'Access the most complete Web Toolkit online. 150+ free premium developer tools and engineering journals.',
-    url: 'https://wtkpro.site',
+    title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+    description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
+    url: 'https://wtkpro.site/',
     siteName: 'WebToolkit Pro',
     images: [
       {
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WebToolkit Pro (WTK) | 150+ Premium Developer Tools',
-    description: 'WebToolkit Pro offers 150+ free premium developer tools. Secure, fast, and optimized for 2026 standards.',
+    title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+    description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
     images: ['https://wtkpro.site/og-image.png?v=4'],
     creator: '@WebToolKitPro',
   },

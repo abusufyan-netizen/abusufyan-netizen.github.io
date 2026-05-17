@@ -59,13 +59,13 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
     title,
     description,
     alternates: {
-      canonical: `https://wtkpro.site/tools/${tool.slug}`,
+      canonical: `https://wtkpro.site/tools/${tool.slug}/`,
     },
     keywords,
     openGraph: {
       title,
       description,
-      url: `https://wtkpro.site/tools/${tool.slug}`,
+      url: `https://wtkpro.site/tools/${tool.slug}/`,
       siteName: 'WebToolkit Pro',
       locale: 'en_US',
       type: 'website',

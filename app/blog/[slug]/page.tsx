@@ -46,12 +46,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
     alternates: {
-      canonical: `https://wtkpro.site/blog/${post.slug}`,
+      canonical: `https://wtkpro.site/blog/${post.slug}/`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://wtkpro.site/blog/${post.slug}`,
+      url: `https://wtkpro.site/blog/${post.slug}/`,
       siteName: 'WebToolkit Pro',
       type: 'article',
       publishedTime: post.date,
@@ -392,7 +392,7 @@ export default async function BlogPostPage({ params }: Props) {
             'author': {
               '@type': 'Person',
               'name': post.author,
-              'url': 'https://wtkpro.site/author',
+              'url': 'https://wtkpro.site/author/',
             },
             'publisher': {
               '@type': 'Organization',
@@ -401,16 +401,16 @@ export default async function BlogPostPage({ params }: Props) {
                 '@type': 'ImageObject',
                 'url': 'https://wtkpro.site/logo-high-res.png'
               },
-              'url': 'https://wtkpro.site',
+              'url': 'https://wtkpro.site/',
             },
             'mainEntityOfPage': {
               '@type': 'WebPage',
-              '@id': `https://wtkpro.site/blog/${post.slug}`,
+              '@id': `https://wtkpro.site/blog/${post.slug}/`,
             },
             'keywords': post.keywords.join(', '),
             'articleSection': post.category,
             'inLanguage': 'en-US',
-            'url': `https://wtkpro.site/blog/${post.slug}`,
+            'url': `https://wtkpro.site/blog/${post.slug}/`,
           }),
         }}
       />
@@ -448,19 +448,19 @@ export default async function BlogPostPage({ params }: Props) {
                 '@type': 'ListItem',
                 'position': 1,
                 'name': 'Home',
-                'item': 'https://wtkpro.site',
+                'item': 'https://wtkpro.site/',
               },
               {
                 '@type': 'ListItem',
                 'position': 2,
                 'name': 'Blog',
-                'item': 'https://wtkpro.site/blog',
+                'item': 'https://wtkpro.site/blog/',
               },
               {
                 '@type': 'ListItem',
                 'position': 3,
                 'name': post.title,
-                'item': `https://wtkpro.site/blog/${post.slug}`,
+                'item': `https://wtkpro.site/blog/${post.slug}/`,
               },
             ],
           }),

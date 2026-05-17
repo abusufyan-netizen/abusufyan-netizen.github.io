@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Privacy Policy - WebToolkit Pro', 
   description: 'WebToolkit Pro privacy policy. Learn how we handle your data, our use of cookies, and our commitment to GDPR, CCPA, and Google Consent Mode v2.',
   alternates: {
-    canonical: 'https://wtkpro.site/privacy',
+    canonical: 'https://wtkpro.site/privacy/',
   },
 }
 

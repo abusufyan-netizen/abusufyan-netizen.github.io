@@ -6,7 +6,7 @@ export const metadata = {
   title: 'About WebToolkit Pro: Our Mission, Privacy & Developer Tools',
   description: 'Learn about WebToolkit Pro, the free online developer tools platform built for web professionals. Discover our mission, privacy values, and the team behind the tools.',
   alternates: {
-    canonical: 'https://wtkpro.site/about',
+    canonical: 'https://wtkpro.site/about/',
   },
 }
 

@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'WebToolkit Pro - 150+ Premium Web Toolkit Tools for Engineers',
-  description: 'Access 150+ secure, client-side developer tools in our free WebToolkit Pro. High-performance utilities for JSON formatting, SEO optimization, and enterprise engineering workflows.',
+  title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+  description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
   keywords: ['wtkpro', 'WebToolkit', 'WebToolkit Pro', 'web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
   alternates: {
-    canonical: 'https://wtkpro.site',
+    canonical: 'https://wtkpro.site/',
   },
 }
 import { 
@@ -411,27 +411,39 @@ export default function Home() {
       {/* SEO FAQs */}
       <section className="py-[var(--space-xl)] bg-gray-50 dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-10 text-center uppercase">Web Toolkit FAQs</h2>
+          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-10 text-center uppercase">Web Toolkit & Development FAQs</h2>
           <div className="space-y-6">
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">What is Google Web Toolkit?</h3>
-              <p className="text-gray-600 dark:text-slate-400">Google Web Toolkit (GWT) is an open-source set of tools that allows web developers to create and maintain complex JavaScript front-end applications in Java. Our web toolkit is different, providing ready-to-use utilities directly in your browser.</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">What is Google Web Toolkit (GWT)?</h3>
+              <p className="text-gray-600 dark:text-slate-400">Google Web Toolkit is an open-source development suite that allows engineers to write front-end applications in Java and compile them into optimized JavaScript. WTK Pro is a different modern browser-native platform requiring no compilation.</p>
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How Google Web Toolkit works compared to modern web toolkits?</h3>
-              <p className="text-gray-600 dark:text-slate-400">While GWT compiles Java code into optimized JavaScript for browser execution, a modern web toolkit like ours provides native client-side web tools leveraging modern browser APIs. Many developers wonder how to add google web toolkit in eclipse or how to install google web toolkit development plugin in eclipse, but our toolkit requires no installation.</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How Google Web Toolkit works compared to modern browser utilities?</h3>
+              <p className="text-gray-600 dark:text-slate-400">GWT compiles Java source files into highly optimized JavaScript for client-side execution. In contrast, modern suites like WTK Pro run directly in the browser utilizing native browser APIs, offering instant processing with zero compile latency.</p>
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Can I add react-dom into wt web toolkit?</h3>
-              <p className="text-gray-600 dark:text-slate-400">Our web toolkit focuses on standalone, client-side developer utilities. It is not a framework where you add react-dom into wt web toolkit, but rather a collection of web toolkits for everyday developer tasks.</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to add Google Web Toolkit in Eclipse and install the development plugin?</h3>
+              <p className="text-gray-600 dark:text-slate-400">To configure Eclipse for GWT, install the plugin via the Eclipse Marketplace, download the GWT SDK, add it to your project build path, and enable compilation. For developers wanting fast tools without IDE configurations, our online suite runs instantly with no setup.</p>
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to use ajax toolkit in asp.net web application?</h3>
-              <p className="text-gray-600 dark:text-slate-400">Many developers ask how to add ajax toolkit reference in web.config or use it in ASP.NET. While we don&apos;t host ASP.NET components, our web toolkit can help format and validate the JSON, XML, or base64 data your AJAX calls rely on.</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to install Google Web Toolkit developer plugin for Chrome?</h3>
+              <p className="text-gray-600 dark:text-slate-400">The legacy GWT developer plugin for Chrome is deprecated due to modern browser security standards. Debugging is now handled using standard Chrome DevTools and browser-native developer extensions.</p>
             </div>
             <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to install web experience toolkit?</h3>
-              <p className="text-gray-600 dark:text-slate-400">You don&apos;t need to install anything. Unlike finding out how to install google web toolkit developer plugin for chrome or how to give attribution for google web toolkit, our web toolkit is instantly available online.</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to give attribution for Google Web Toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">GWT is licensed under the Apache License 2.0. To give proper attribution, include a copy of the Apache 2.0 License in your distribution, keep all copyright and patent notices intact, and provide a clear notice file acknowledging the original GWT codebase.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Can I add react-dom into WT Web Toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">No. React-DOM is a rendering library for React components, while WTK Pro is a compiled set of standalone browser utilities. You can use our client-side tools to format or validate outputs and copy them directly into your React applications.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to use AJAX toolkit in ASP.NET web application and add reference in web.config?</h3>
+              <p className="text-gray-600 dark:text-slate-400">To integrate AjaxControlToolkit, install the package via NuGet and declare the controls in your web.config file inside the system.web section. For rapid client-side debugging, WTK Pro can help format or inspect JSON and Base64 structures exchanged in your AJAX calls.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to install Web Experience Toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">To deploy Web Experience Toolkit (WET), download the official release assets, extract the pre-built CSS/JS templates, and host them on your web server. Alternatively, WTK Pro provides instant developer utilities directly in your browser with zero installation needed.</p>
             </div>
           </div>
         </div>
