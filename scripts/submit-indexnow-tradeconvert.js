@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const KEY = 'd3b469adcef147d2861a79281624f890';
+const KEY = 'e805d2d098f04e6f9d18431a2f3329f1';
 const HOST = 'tradeconvert.pro';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
