@@ -172,7 +172,11 @@ export default function ToolPage({ params }: ToolPageProps) {
             </div>
 
             {/* Tool UI Container */}
-            <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-20 transition-colors duration-300">
+            <div 
+              className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-20 transition-colors duration-300"
+              data-agent-container="interactive-tool"
+              aria-label={`Interactive ${tool.name} Utility UI`}
+            >
               {ToolComponent ? <ToolComponent /> : (
                 <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
                   Tool interface coming soon...
