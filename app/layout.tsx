@@ -187,7 +187,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             'sameAs': [
               'https://github.com/WebToolkit-Pro',
               'https://twitter.com/WebToolKitPro',
-              'https://producthunt.com/products/webtoolkit-pro'
+              'https://producthunt.com/products/webtoolkit-pro',
+              'https://severancecalculator.xyz',
+              'https://tradeconvert.pro',
+              'https://abusufyan.xyz'
             ],
             'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
             'contactPoint': {

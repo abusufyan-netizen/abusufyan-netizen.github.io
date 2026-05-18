@@ -136,24 +136,21 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="dynamic-padding max-w-4xl mx-auto min-h-screen">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-12 pt-12">
-          <ol className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60" itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
-                <span itemProp="name">Root</span>
+          <ol className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60">
+            <li>
+              <Link href="/" className="hover:text-[#00D4B4] transition-colors">
+                Root
               </Link>
-              <meta itemProp="position" content="1" />
             </li>
             <li className="text-border">/</li>
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/blog" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
-                <span itemProp="name">Knowledge Center</span>
+            <li>
+              <Link href="/blog" className="hover:text-[#00D4B4] transition-colors">
+                Knowledge Center
               </Link>
-              <meta itemProp="position" content="2" />
             </li>
             <li className="text-border">/</li>
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-muted-foreground" itemProp="name">Entry</span>
-              <meta itemProp="position" content="3" />
+            <li>
+              <span className="text-muted-foreground">Entry</span>
             </li>
           </ol>
         </nav>
@@ -175,10 +172,12 @@ export default async function BlogPostPage({ params }: Props) {
             {post.description}
           </p>
 
-          <div className="flex items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60 pb-8 border-b border-border mb-12">
+          <div className="flex flex-wrap items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60 pb-8 border-b border-border mb-12">
             <time dateTime={post.date} itemProp="datePublished">
-              {formattedDate}
+              Published: {formattedDate}
             </time>
+            <span className="text-border">•</span>
+            <span>Last Updated: {formattedDate}</span>
             <span className="text-border">•</span>
             <span itemProp="author" className="text-muted-foreground">{post.author}</span>
           </div>

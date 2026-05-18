@@ -160,6 +160,8 @@ export default function ToolPage({ params }: ToolPageProps) {
                 </span>
                 <span className="text-gray-300 dark:text-gray-700">•</span>
                 <span className="text-gray-400 dark:text-[#5B719E]">Compliance: 2026 Standards</span>
+                <span className="text-gray-300 dark:text-gray-700">•</span>
+                <span className="text-gray-400 dark:text-[#5B719E]">Last Updated: May 2026</span>
               </div>
             </div>
 
@@ -208,8 +210,11 @@ export default function ToolPage({ params }: ToolPageProps) {
               <p className="mb-4">
                 <strong>Content Creation & Automation Transparency:</strong> To ensure our dynamic developer specifications and reference datasets remain fully comprehensive and updated against newly released RFC updates, this page compiles technical documentation using advanced programmatic retrieval tools. Every output data block, feature list, and system specification is subsequently audited, fact-checked, and verified by our systems engineers for absolute correctness and accuracy.
               </p>
-              <p>
+              <p className="mb-4">
                 <strong>Security Guarantee:</strong> To guarantee absolute user privacy, this tool executes 100% client-side inside your web browser. None of your input strings, payloads, keys, or files are ever transmitted to a server or stored externally.
+              </p>
+              <p className="mt-4 pt-4 border-t border-gray-200 dark:border-[#1E2D47] text-xs font-mono">
+                Built by <a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">Abu Sufyan</a> • Also explore: <a href="https://www.severancecalculator.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">Severance Calculator</a> & <a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">TradeConvert</a>
               </p>
             </div>
 
