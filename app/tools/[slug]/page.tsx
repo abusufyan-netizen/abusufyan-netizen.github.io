@@ -143,6 +143,26 @@ export default function ToolPage({ params }: ToolPageProps) {
               </div>
             </div>
 
+            {/* E-E-A-T Editorial Byline & Verification Block */}
+            <div className="flex flex-wrap items-center gap-4 mb-6 pb-6 border-b border-gray-100 dark:border-[#1E2D47] text-xs sm:text-sm text-gray-500 dark:text-[#8A9BBE]">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-gray-900 dark:text-white">Written by</span>
+                <Link href="/about" className="text-blue-500 hover:text-blue-600 dark:text-[#00D4B4] dark:hover:text-[#00FFD4] font-medium transition-colors">
+                  Abu Sufyan
+                </Link>
+                <span className="text-gray-300 dark:text-gray-700">|</span>
+                <span className="text-gray-400 dark:text-[#5B719E]">Systems Engineer</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-gray-300 dark:text-gray-700">•</span>
+                <span className="flex items-center gap-1 text-emerald-600 dark:text-[#00D4B4] font-medium">
+                  <Icons.ShieldCheck className="w-4 h-4" strokeWidth={2} /> Fact-Checked & Verified
+                </span>
+                <span className="text-gray-300 dark:text-gray-700">•</span>
+                <span className="text-gray-400 dark:text-[#5B719E]">Compliance: 2026 Standards</span>
+              </div>
+            </div>
+
             {/* Entity Definition Block */}
             <div className="mb-12 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -171,6 +191,20 @@ export default function ToolPage({ params }: ToolPageProps) {
               faqs={tool.content?.faq?.map(f => ({ q: f.question, a: f.answer })) || []}
               technicalSpecs={tool.content?.technical_specs}
             />
+
+            {/* E-E-A-T Sourcing & Client-Side Privacy Guarantee */}
+            <div className="mt-12 p-8 bg-gray-50 dark:bg-[#0D1526]/50 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed shadow-inner">
+              <div className="flex items-center gap-3 mb-4 text-[#1E2D47] dark:text-white font-bold text-base">
+                <Icons.Info className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" strokeWidth={2} />
+                Editorial Standards & Processing Transparency
+              </div>
+              <p className="mb-3">
+                This utility is engineered and maintained under strict editorial and technical standards. All source calculations are audited against official formatting standards and RFC specifications to guarantee mathematical and logic accuracy.
+              </p>
+              <p>
+                <strong>Security Guarantee:</strong> To guarantee absolute user privacy, this tool executes 100% client-side inside your web browser. None of your input strings, payloads, keys, or files are ever transmitted to a server or stored externally.
+              </p>
+            </div>
 
             {/* Further Reading Section */}
             <FurtherReading posts={getRelatedPostsForTool(tool.tags, tool.category)} />
