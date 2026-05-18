@@ -55,7 +55,7 @@ Allow: /
 ```markdown
 # WebToolkit Pro
 
-> A premium collection of 40+ free developer tools.
+> A premium collection of 150+ free developer tools.
 > All processing is client-side for maximum privacy.
 
 - URL: https://wtkpro.site

@@ -32,7 +32,7 @@ The specification was proposed by Jeremy Howard (founder of fast.ai) and has bee
 ```markdown
 # WebToolkit Pro
 
-> A collection of 40+ free developer tools for modern web engineering.
+> A collection of 150+ free developer tools for modern web engineering.
 > All tools run client-side for maximum privacy.
 
 - URL: https://wtkpro.site

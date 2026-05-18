@@ -11,6 +11,13 @@ tldr: "Decoding a JWT payload requires only atob() and JSON.parse — no library
 author: "WebToolkit Pro Security Team"
 image: "/blog/decode-jwt.jpg"
 imageAlt: "Code editor showing JWT decoding in JavaScript"
+steps:
+  - name: "Extract the Payload segment"
+    text: "Split the JWT string by the dot character (.) and retrieve the middle element (index 1), which contains the Base64URL-encoded payload."
+  - name: "Convert Base64URL to Standard Base64"
+    text: "Replace hyphen characters (-) with plus (+) and underscore characters (_) with forward slash (/) to conform to traditional Base64 standards."
+  - name: "Decode and parse the JSON string"
+    text: "Use atob() combined with decodeURIComponent() to decode the Base64 string, then use JSON.parse() to convert the resulting string into a usable JavaScript object."
 ---
 
 ## What's Actually Inside a JWT?

@@ -93,12 +93,12 @@ export default function Home() {
               className="hover:scale-105 transition-transform duration-300"
             >
               <Image 
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light&t=1778387824061" 
+                src="/product-hunt-badge.svg" 
                 alt="Web Toolkit Pro - 150+ premium developer tools with a perfect 100 speed score | Product Hunt" 
                 width={250} 
                 height={54} 
                 className="dark:brightness-90 dark:contrast-125"
-                unoptimized
+                priority
               />
             </a>
           </div>
@@ -247,7 +247,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* JSON Formatter Deep-Dive */}
-            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center mb-8 border border-blue-600/20 group-hover:scale-110 transition-transform">
                 <FileJson className="w-7 h-7 text-blue-600" />
               </div>
@@ -267,7 +267,7 @@ export default function Home() {
             </div>
 
             {/* Cryptography Deep-Dive */}
-            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="w-14 h-14 bg-emerald-600/10 rounded-2xl flex items-center justify-center mb-8 border border-emerald-600/20 group-hover:scale-110 transition-transform">
                 <Shield className="w-7 h-7 text-emerald-600" />
               </div>
@@ -287,7 +287,7 @@ export default function Home() {
             </div>
 
             {/* SEO Deep-Dive */}
-            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 backdrop-blur-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div className="group p-10 bg-white dark:bg-slate-900/50 rounded-[3rem] border border-gray-100 dark:border-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="w-14 h-14 bg-purple-600/10 rounded-2xl flex items-center justify-center mb-8 border border-purple-600/20 group-hover:scale-110 transition-transform">
                 <Zap className="w-7 h-7 text-purple-600" />
               </div>

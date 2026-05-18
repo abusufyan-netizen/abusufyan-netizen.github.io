@@ -10,6 +10,13 @@ tldr: "Generate, validate, and convert standard Unix, Java Quartz, and AWS Event
 author: "WebToolkit Pro Engineering"
 image: "/blog/cron-generator.jpg"
 imageAlt: "Interactive Cron Expression Generator interface translating cron schedules to plain English"
+steps:
+  - name: "Set the Minute & Hour Fields"
+    text: "Determine when you want the task to run (e.g., */15 * * * * or 30 16)."
+  - name: "Configure Day of Month & Month"
+    text: "Specify the date limits (e.g., 0 0 1 * * for monthly tasks)."
+  - name: "Handle Weekdays and Special Operators"
+    text: "Restrict execution to specific weekdays (e.g., 0 9 * * 1-5 for Monday through Friday)."
 ---
 
 **A cron expression is a compact, space-separated string of five to seven fields that defines a precise, recurring time schedule for automated system tasks.** Used globally by system administrators, backend engineers, and cloud architects, cron expressions instruct daemon processes (like Unix `crontab` or Java Quartz) exactly when to execute batch jobs, database backups, or API synchronization scripts. In 2026, understanding how to generate and validate these expressions is key for reliable serverless scheduling and backend infrastructure operations.

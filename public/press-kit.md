@@ -4,7 +4,7 @@ Use the following information when submitting WebToolkit Pro (Wtkpro) to tool di
 
 ## Brand Overview
 - **Name**: WebToolkit Pro (Wtkpro)
-- **Tagline**: 40+ Premium Developer Tools & Expert Technical Guides
+- **Tagline**: 150+ Premium Developer Tools & Expert Technical Guides
 - **URL**: https://wtkpro.site
 - **Category**: Developer Tools / SEO / Productivity
 - **Release Date**: May 2026

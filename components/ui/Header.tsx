@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <header 
-      className={`bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-[100] h-20 transition-all duration-300 ${
+      className={`bg-background border-b border-border sticky top-0 z-[100] h-20 transition-all duration-300 ${
         scrolled ? 'shadow-md shadow-blue-500/5' : ''
       }`}
     >

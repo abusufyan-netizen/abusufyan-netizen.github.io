@@ -87,8 +87,13 @@ export function generateSoftwareSchema(tool: ToolConfig) {
     'isAccessibleForFree': true,
     'version': tool.releaseDate || '2026.01.01',
     'author': {
-      '@type': 'Organization',
-      'name': 'WebToolkit Pro'
+      '@type': 'Person',
+      'name': 'Abu Sufyan',
+      'url': 'https://abusufyan.xyz',
+      'sameAs': [
+        'https://abusufyan.xyz',
+        'https://github.com/abusufyan-netizen'
+      ]
     },
     'offers': {
       '@type': 'Offer',

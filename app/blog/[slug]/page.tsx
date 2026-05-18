@@ -390,8 +390,12 @@ export default async function BlogPostPage({ params }: Props) {
             'dateModified': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
             'author': {
               '@type': 'Person',
-              'name': post.author,
-              'url': 'https://wtkpro.site/author/',
+              'name': post.author === 'WebToolkit Pro Engineering' ? 'Abu Sufyan' : post.author,
+              'url': 'https://abusufyan.xyz',
+              'sameAs': [
+                'https://abusufyan.xyz',
+                'https://github.com/abusufyan-netizen'
+              ]
             },
             'publisher': {
               '@type': 'Organization',
@@ -465,6 +469,29 @@ export default async function BlogPostPage({ params }: Props) {
           }),
         }}
       />
+
+      {/* JSON-LD HowTo Schema */}
+      {post.steps && post.steps.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'HowTo',
+              'name': post.title,
+              'description': post.description,
+              'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.png',
+              'step': post.steps.map((step, idx) => ({
+                '@type': 'HowToStep',
+                'position': idx + 1,
+                'name': step.name,
+                'text': step.text,
+                'url': `https://wtkpro.site/blog/${post.slug}/#step-${idx + 1}`
+              }))
+            }),
+          }}
+        />
+      )}
     </>
   )
 }

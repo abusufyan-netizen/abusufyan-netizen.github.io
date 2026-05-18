@@ -138,6 +138,7 @@ export interface BlogPost {
   htmlContent?: string
   faqs?: { q: string; a: string }[]
   expertTips?: string[]
+  steps?: { name: string; text: string }[]
   type: 'blog' | 'journal'
 }
 
@@ -171,6 +172,7 @@ export function getAllPosts(): BlogPost[] {
       content,
       faqs: data.faqs || [],
       expertTips: data.expertTips || [],
+      steps: data.steps || [],
       type: ['Research', 'Engineering'].includes(data.category) ? 'journal' : 'blog',
     } as BlogPost
   });
@@ -219,6 +221,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     htmlContent,
     faqs: data.faqs || [],
     expertTips: data.expertTips || [],
+    steps: data.steps || [],
     type: ['Research', 'Engineering'].includes(data.category) ? 'journal' : 'blog',
   }
 }
